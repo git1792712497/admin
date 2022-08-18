@@ -1,0 +1,32 @@
+{
+  "name": "vue3.2_vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ant-design-vue": "^3.2.11",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.5",
+    "element-plus": "^2.2.13",
+    "lodash": "^4.17.21",
+    "pinia": "^2.0.18",
+    "vue": "^3.2.37",
+    "vue-router": "4.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.6",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vitejs/plugin-vue-jsx": "^2.0.0",
+    "less": "^4.1.3",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.8",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue-tsc": "^0.40.1"
+  }
+}
