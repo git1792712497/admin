@@ -1,10 +1,8 @@
 <template>
-  <section class="section">
-	 vite
-  </section>
+
 </template>
 
-<script>
+<script lang="ts" setup name="index">
 
 </script>
 
