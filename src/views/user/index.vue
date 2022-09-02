@@ -1,8 +1,8 @@
 <template>
-<h1>home</h1>
+<h1>user</h1>
 </template>
 
-<script lang="ts" setup name="home">
+<script lang="ts" setup name="index">
 
 </script>
 
