@@ -1,24 +1,55 @@
 <template>
 	<template v-for="item in menuList" :key="item.path">
-		<el-sub-menu :index="item.path" v-if="item.children">
-			<template #title>
-				<el-icon><component :is="item.icon"></component></el-icon>
-				<span>{{item.title}}</span>
-			</template>
-			<SubItem :menuList="item.children"></SubItem>
-		</el-sub-menu>
-		<el-menu-item :index="item.path" v-else>
-			<el-icon><component :is="item.icon"></component></el-icon>
-			<span>{{item.title}}</span>
-		</el-menu-item>
+		<template v-if="item.meta?.menu">
+			<el-sub-menu v-if="item.children" :index="item.path">
+				<template #title>
+					<el-icon>
+						<component :is="item.meta.menu?.icon"></component>
+					</el-icon>
+					<span>{{item.meta.menu?.title}}</span>
+				</template>
+				<SubItem :menuList="item.children"></SubItem>
+			</el-sub-menu>
+			<el-menu-item v-else :index="item.path">
+				<el-icon>
+					<component :is="item.meta.menu?.icon"></component>
+				</el-icon>
+				<span>{{item.meta.menu?.title}}</span>
+			</el-menu-item>
+		</template>
 	</template>
 </template>
 <script lang="ts" name="SubItem" setup>
 defineProps({
-	menuList:{
-		type:Array,
-		default:[]
+	menuList: {
+		type: Array,
+		default: []
 	}
 })
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.el-menu, .el-menu--popup{
+	.el-menu-item{
+		&.is-active{
+			background-color: #060708;
+			&::before{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 4px;
+				content: "";
+				background: var(--el-color-primary);
+			}
+		}
+	}
+}
+
+.menu-href{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	color: #bdbdc0;
+	text-decoration: none;
+}
+</style>

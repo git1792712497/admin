@@ -1,22 +1,17 @@
 <template>
-	<div>
-		<div>{{obj}}</div>
-		<button @click="handelClick">按钮</button>
-	</div>
+<div>
+	<el-button type="primary" @click="handClick">按钮</el-button>
+</div>
 </template>
-<script setup>
-import { reactive, ref, toRef } from "vue";
 
-const obj = reactive({
-	age:22
-})
+<script lang="ts" setup name="index">
+import {_debounce} from '@/utils/debounce'
 
-
-const demo = toRef(obj,"age")
-
-
-function handelClick () {
-	obj.age = 100000
-}
+const handClick = _debounce(() => {
+	console.log('防抖')
+},1000,true)
 </script>
 
+<style scoped lang="less">
+
+</style>

@@ -5,21 +5,26 @@
 		</nav>
 		<el-scrollbar>
 			<el-menu :collapse="menuStore().isCollapse"
-				:default-active="$route.path"
+				:default-active="$route.meta.currentActive || $route.path"
 				:unique-opened="true"
-				active-text-color="#fff"
+				:active-text-color="globalConfig.themeConfig.primary"
 				background-color="#191a20"
 				router text-color="#bdbdc0">
-				<SubItem :menuList="menuList.data"/>
+				<SubItem :menuList="useSort(routerArray)"/>
 			</el-menu>
 		</el-scrollbar>
 	</aside>
 </template>
 <script lang="ts" name="Menus" setup>
-import menuList from '@/assets/json/menu.json'
+import {routerArray} from '@/router'
 import SubItem from './childComponents/SubItem.vue'
 import {menuStore} from '@/store/modules/menu'
-
+import {globalConfigStore} from "@/store/modules/globalConfig";
+const globalConfig = globalConfigStore()
+function useSort(arr){
+	arr.forEach(item => item.meta.menu.index ||= Number.MAX_SAFE_INTEGER)
+	return arr.sort((x,y) => x.meta.menu.index - y.meta.menu.index)
+}
 </script>
 <style lang="less" scoped>
 .menu{
@@ -66,29 +71,5 @@ import {menuStore} from '@/store/modules/menu'
 	}
 }
 
-.el-menu, .el-menu--popup{
-	.el-menu-item{
-		&.is-active{
-			background-color: #060708;
-			
-			&::before{
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				width: 4px;
-				content: "";
-				background: #409eff;
-			}
-		}
-	}
-}
 
-.menu-href{
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	color: #bdbdc0;
-	text-decoration: none;
-}
 </style>

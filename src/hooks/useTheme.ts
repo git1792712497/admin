@@ -15,6 +15,7 @@ export const useDark = () => {
 export const changePrimary = (val: string) => {
 	if (!val) globalConfig.themeConfig.primary = '#409eff';
 	document.documentElement.style.setProperty("--el-color-primary-dark-2", `${getDarkColor(globalConfig.themeConfig.primary, 0.1)}`);
+	document.documentElement.style.setProperty("--geeker-main-bg-color",'#141414');
 	document.documentElement.style.setProperty("--el-color-primary", globalConfig.themeConfig.primary);
 	for(let i = 1; i <= 9; i ++){
 		document.documentElement.style.setProperty(

@@ -7,7 +7,7 @@ export const globalConfigStore:any = defineStore('globalConfig', {
   state: () => {
     return {
 	    // element组件大小
-	    assemblySize: "default",
+	    componentSize: "default",
 	    // themeConfig
 	    themeConfig: {
 		    // 默认 primary 主题颜色

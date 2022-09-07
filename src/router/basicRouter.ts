@@ -1,11 +1,18 @@
-export const errorRouter = [
+export const basicRouter = [
+	{
+		path: '/login',
+		name: 'login',
+		component: () => import('@/views/login/index.vue'),
+		meta: {
+			title: "登录",
+		}
+	},
 	{
 		path: "/403",
 		name: "403",
 		component: () => import("@/views/ErrorPage/403.vue"),
 		meta: {
 			title: "403页面",
-			key: "403"
 		}
 	},
 	{
@@ -13,8 +20,7 @@ export const errorRouter = [
 		name: "404",
 		component: () => import("@/views/ErrorPage/404.vue"),
 		meta: {
-			title: "404页面",
-			key: "404"
+			title: "404页面"
 		}
 	},
 	{
@@ -23,7 +29,7 @@ export const errorRouter = [
 		component: () => import("@/views/ErrorPage/500.vue"),
 		meta: {
 			title: "500页面",
-			key: "500"
 		}
-	}
+	},
+	
 ]

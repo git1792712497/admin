@@ -1,7 +1,7 @@
 <template>
 	<el-dropdown trigger="hover">
 		<div class="avatar">
-			<img alt="avatar" src="https://7cguo.gaoyuanyunguo.com/assets/logo.5c53f568.png"/>
+			<img alt="avatar" src="../../../assets/images/logo.svg"/>
 		</div>
 		<template #dropdown>
 			<el-dropdown-menu>

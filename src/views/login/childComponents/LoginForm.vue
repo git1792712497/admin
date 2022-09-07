@@ -46,7 +46,7 @@ let loginRules = {
 const login = async () => {
 	loginFormRef.value.validate((isValid) => {
 		if(isValid){
-		
+			
 		}
 	})
 }

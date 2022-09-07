@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    // 辅助的导入功能
+    "importHelpers": true,
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",

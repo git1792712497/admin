@@ -9,6 +9,7 @@ import 'element-plus/dist/index.css';
 import * as Icons from "@element-plus/icons-vue";
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
+import {directives} from '@/directives'
 
 // element dark(内置暗黑模式)
 import "element-plus/theme-chalk/dark/css-vars.css";
@@ -20,6 +21,8 @@ const app = createApp(App)
 Object.keys(Icons).forEach(key => {
 	app.component(key, Icons[key]);
 });
+
+app.use(directives) //自定义指令
 app.use(Antd)
 app.use(ElementPlus)
 app.use(Avue)

@@ -6,6 +6,7 @@
 		</div>
 		<div class="header-right">
 			<nav class="header-icon">
+				<ComponentSize/>
 				<Fullscreen/>
 				<Theme/>
 			</nav>
@@ -20,6 +21,7 @@ import CollapseIcon from './childComponents/CollapseIcon.vue'
 import Breadcrumb from './childComponents/Breadcrumb.vue'
 import Fullscreen from './childComponents/Fullscreen.vue'
 import Theme from './childComponents/Theme.vue'
+import ComponentSize from './childComponents/ComponentSize.vue'
 </script>
 <style lang="less" scoped>
 .header{
