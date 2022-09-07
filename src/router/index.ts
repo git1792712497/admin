@@ -10,7 +10,6 @@ Object.keys(metaRouters).forEach(item => {
 	});
 });
 
-
 export const routes:RouteRecordRaw[]= [
 	{
 		path: '',
