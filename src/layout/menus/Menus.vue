@@ -1,7 +1,7 @@
 <template>
 	<aside :style="{ width: menuStore().isCollapse ? '65px' : '220px' }" class="menu">
 		<nav class="logo">
-			<img alt="logo" src="@/assets/images/logo.svg"/> <span v-show="!menuStore().isCollapse">Vue3</span>
+			<img alt="logo" src="@/assets/images/logo.svg"/> <span v-if="!menuStore().isCollapse">Vue3</span>
 		</nav>
 		<el-scrollbar>
 			<el-menu :collapse="menuStore().isCollapse"
@@ -22,8 +22,8 @@ import {menuStore} from '@/store/modules/menu'
 import {globalConfigStore} from "@/store/modules/globalConfig";
 const globalConfig = globalConfigStore()
 function useSort(arr){
-	arr.forEach(item => item.meta.menu.index ||= Number.MAX_SAFE_INTEGER)
-	return arr.sort((x,y) => x.meta.menu.index - y.meta.menu.index)
+	arr.forEach(item => item.meta.index ||= Number.MAX_SAFE_INTEGER)
+	return arr.sort((x,y) => x.meta.index - y.meta.index)
 }
 </script>
 <style lang="less" scoped>

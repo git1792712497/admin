@@ -15,8 +15,6 @@ import { Sunny, Moon } from "@element-plus/icons-vue";
 import {globalConfigStore} from "@/store/modules/globalConfig";
 const globalConfig = globalConfigStore()
 import {useDark} from "@/hooks/useTheme";
-import {shallowRef} from "vue";
-let app = shallowRef(1)
 </script>
 
 <style scoped lang="less">

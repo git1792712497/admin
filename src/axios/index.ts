@@ -2,6 +2,8 @@ import axios from 'axios'
 import type {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
 import type {RequestConfig, Interceptors} from './type'
 
+
+
 class Axios{
 	instance: AxiosInstance
 	interceptors: Interceptors
@@ -11,7 +13,7 @@ class Axios{
 		this.interceptors = config.interceptors
 		
 		this.instance.interceptors.request.use((config: AxiosRequestConfig) => {
-				console.log('全局请求拦截器')
+				// console.log('全局请求拦截器',config)
 				return config
 			}, (err: any) => {
 				console.log(err)
@@ -19,7 +21,7 @@ class Axios{
 		)
 		
 		this.instance.interceptors.response.use((res: AxiosResponse) => {
-				console.log('全局响应拦截器')
+				// console.log('全局响应拦截器')
 				return res.data
 			}, (err: any) => {
 				console.log(err)

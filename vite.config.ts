@@ -4,6 +4,7 @@ import jsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import viteCompression from "vite-plugin-compression";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig(({ command, mode }) => {
 	return {
@@ -21,7 +22,13 @@ export default defineConfig(({ command, mode }) => {
 				}
 			}
 		},
-		plugins: [vue(), jsx(), viteCompression(), vueSetupExtend()],
+		plugins: [
+			vue(),
+			jsx(),
+			viteCompression(),
+			vueSetupExtend(),
+			viteMockServe({mockPath: 'mock',localEnabled: command === 'serve'}),
+		],
 		base: "./",
 		css: {
 			devSourcemap: true,

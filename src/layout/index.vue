@@ -8,7 +8,7 @@
 		</el-container>
 	</el-container>
 </template>
-<script lang="ts" setup>
+<script lang="ts" setup name="Layout">
 import Menus from './menus/Menus.vue'
 import NavBar from './header/NavBar.vue'
 import Content from './main/Content.vue'

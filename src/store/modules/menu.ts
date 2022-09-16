@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
-export const menuStore:any = defineStore('menu', {
+export const menuStore = defineStore({
+	id:'menu',
 	persist: true,
   state: () => {
     return {
@@ -12,8 +13,11 @@ export const menuStore:any = defineStore('menu', {
 		setCollapse(){
 			this.isCollapse = !this.isCollapse
 		},
-		setMenuList(menuList) {
-			this.menuList = menuList;
+		setMenuList() {
+		
+		},
+		getMenuList(){
+		
 		}
 	},
 })

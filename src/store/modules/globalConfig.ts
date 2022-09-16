@@ -24,9 +24,6 @@ export const globalConfigStore:any = defineStore('globalConfig', {
     }
   },
 	actions:{
-		setAssemblySizeSize(assemblySize: string) {
-			this.assemblySize = assemblySize;
-		},
 		async	setTheme(){
 			const {useDark,changePrimary} = await import('@/hooks/useTheme')
 			this.themeConfig.isDark ? useDark() : ''

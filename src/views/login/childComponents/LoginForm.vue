@@ -27,16 +27,22 @@
 	</div>
 </template>
 <script lang="ts" name="LoginForm" setup>
+import md5 from 'md5'
 import { shallowReactive, shallowRef ,onMounted,toRaw} from "vue";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
-import md5 from 'md5'
+import { ElMessage } from 'element-plus'
+import {useRouter} from "vue-router";
+import {userStore} from '@/store/modules/user'
+const user = userStore()
+const router = useRouter()
+
 
 // 登录表单数据
 let loading = shallowRef(false)
 let loginFormRef = shallowRef();
 let loginForm = shallowReactive({
-  "password": "",
-  "username": "",
+	"username": "admin",
+  "password": 123456,
 });
 let loginRules = {
 	username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
@@ -44,10 +50,24 @@ let loginRules = {
 }
 
 const login = async () => {
-	loginFormRef.value.validate((isValid) => {
-		if(isValid){
-			
-		}
+	loginFormRef.value.validate(async (isValid) => {
+			if(!isValid)return
+			loading.value = true
+			try{
+				const {getLogin} = await import('@/api/login')
+				const {data} = await getLogin(toRaw(loginForm)) as any
+				if(data.status){
+					user.setUser(data.userInfo)
+					await router.push('/home')
+					ElMessage({type:'success',message:'登录成功'})
+				}else{
+					ElMessage({type:'error',message:'账号或密码错误!'})
+				}
+			}catch(e){
+				ElMessage({type:'error',message:'网络错误'})
+			}finally{
+				loading.value = false
+			}
 	})
 }
 const resetForm = () => {

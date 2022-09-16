@@ -1,22 +1,16 @@
 <template>
 	<template v-for="item in menuList" :key="item.path">
-		<template v-if="item.meta?.menu">
-			<el-sub-menu v-if="item.children" :index="item.path">
-				<template #title>
-					<el-icon>
-						<component :is="item.meta.menu?.icon"></component>
-					</el-icon>
-					<span>{{item.meta.menu?.title}}</span>
-				</template>
-				<SubItem :menuList="item.children"></SubItem>
-			</el-sub-menu>
-			<el-menu-item v-else :index="item.path">
-				<el-icon>
-					<component :is="item.meta.menu?.icon"></component>
-				</el-icon>
-				<span>{{item.meta.menu?.title}}</span>
-			</el-menu-item>
-		</template>
+		<el-sub-menu v-if="item.children" :index="item.path">
+			<template #title>
+				<el-icon><component :is="item.meta?.icon"></component></el-icon>
+				<span>{{item.meta?.title}}</span>
+			</template>
+			<SubItem :menuList="item.children"></SubItem>
+		</el-sub-menu>
+		<el-menu-item v-else :index="item.path">
+			<el-icon><component :is="item.meta?.icon"></component></el-icon>
+			<span>{{item.meta?.title}}</span>
+		</el-menu-item>
 	</template>
 </template>
 <script lang="ts" name="SubItem" setup>

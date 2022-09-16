@@ -1,5 +1,5 @@
 <template>
-	<el-config-provider :button="{autoInsertSpace:true}" :locale="zhCn" :size="globalConfig.componentSize">
+	<el-config-provider :button="{autoInsertSpace:false}" :locale="zhCn" :size="globalConfig.componentSize">
 		<router-view/>
 	</el-config-provider>
 </template>

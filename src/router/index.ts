@@ -1,32 +1,51 @@
-import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router";
-import {basicRouter} from './basicRouter'
+import {createRouter,createWebHistory,RouteRecordRaw} from "vue-router";
 
 const metaRouters = import.meta.globEager("./modules/*.ts");
 
 export const routerArray: RouteRecordRaw[] = [];
 Object.keys(metaRouters).forEach(item => {
-	Object.keys(metaRouters[item]).forEach((key: any) => {
+	Object.keys(metaRouters[item]).forEach(key => {
 		routerArray.push(...metaRouters[item][key]);
 	});
 });
 
-export const routes:RouteRecordRaw[]= [
+
+function mapMenuPath(routes){
+	routes.forEach(route => {
+		route.children?.forEach(item => {
+			item.path = `${route.path}/${item.path}`
+			item.children && mapMenuPath(route.children)
+		})
+	})
+}
+mapMenuPath(routerArray)
+
+export const routes:any = [
 	{
 		path: '',
 		component: () => import('@/layout/index.vue'),
-		name: 'main',
-		redirect:'/home'
+		name: 'AppMain',
+		redirect: '/home'
 	}
 ]
 
+import {basicRouter} from './basicRouter'
 export const router = createRouter({
 	history: createWebHistory(process.env.BASE_URL),
 	routes: routes.concat(basicRouter),
-	strict: false,
-	// 切换页面，滚动到最顶部
-	scrollBehavior: () => ({ left: 0, top: 0 })
+	strict: true,
+	scrollBehavior: () => ({left: 0,top: 0})
 })
-routerArray.forEach(route => router.addRoute('main',route))
 
+routerArray.forEach(route => router.addRoute('AppMain',route))
 
+import {userStore} from "@/store/modules/user";
+router.beforeEach((to,from) => {
+	const user = userStore()
+	if(to.path !== '/login'){
+		if(!user.profile)return '/login'
+	}else{
+		if(user.profile)return from.path
+	}
+})
 
