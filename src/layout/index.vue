@@ -2,7 +2,10 @@
 	<el-container>
 			<el-aside><Menus/></el-aside>
 		<el-container>
-			<el-header><NavBar/></el-header>
+			<el-header>
+        <NavBar/>
+        <TabsView/>
+      </el-header>
 			<el-main><Content/></el-main>
 			<el-footer><Bottom/></el-footer>
 		</el-container>
@@ -10,6 +13,7 @@
 </template>
 <script lang="ts" setup name="Layout">
 import Menus from './menus/Menus.vue'
+import TabsView from './tabsView/TabsView.vue'
 import NavBar from './header/NavBar.vue'
 import Content from './main/Content.vue'
 import Bottom from './bottom/Bottom.vue'

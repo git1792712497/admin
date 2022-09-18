@@ -1,13 +1,13 @@
 <template>
-<footer>
-
-</footer>
+  <footer>
+  
+  </footer>
 </template>
 
-<script lang="ts" setup name="Bottom">
+<script lang="ts" name="Bottom" setup>
 
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 
 </style>

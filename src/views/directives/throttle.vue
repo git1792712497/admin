@@ -1,5 +1,8 @@
 <template>
-<el-button type="primary" v-throttle="handClick">节流指令</el-button>
+  <el-card>
+    <el-button type="primary" v-throttle="handClick">节流指令</el-button>
+  </el-card>
+  
 </template>
 
 <script lang="ts" setup name="directives">

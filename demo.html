@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    debugger
+
+    function useSearchMap(routers, prefixTitle = []) {
+        let result = []
+
+
+        for (let route of routers) {
+            const data = {
+                path: route.path, title: [...prefixTitle]
+            }
+            if (route.meta && route.meta.title) {
+                data.title = [...data.title, route.meta.title]
+                result.push(data)
+            }
+            if (route.children) {
+                const routers = useSearchMap(route.children, data.title)
+
+                result = [...result, ...routers]
+
+            }
+        }
+        return result
+    }
+
+    useSearchMap()
+</script>
+</body>
+</html>

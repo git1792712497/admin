@@ -4,9 +4,7 @@
 	</el-tooltip>
 	<el-drawer v-model="drawerVisible" size="300px" title="布局设置">
 		<el-divider class="divider" content-position="center">
-			<el-icon>
-				<ColdDrink/>
-			</el-icon>
+			<el-icon><ColdDrink/></el-icon>
 			全局主题
 		</el-divider>
 		<div class="theme-item">
@@ -17,6 +15,14 @@
 			<span>主题颜色</span>
 			<el-color-picker v-model="globalConfig.themeConfig.primary" :predefine="colorList" @change="changePrimary"/>
 		</div>
+    <el-divider class="divider" content-position="center">
+      <el-icon><Setting /></el-icon>
+      页面设置
+    </el-divider>
+    <div class="theme-item">
+      <span>标签栏</span>
+      <el-switch v-model="globalConfig.themeConfig.tabs" />
+    </div>
 	</el-drawer>
 </template>
 <script lang="ts" name="Theme" setup>

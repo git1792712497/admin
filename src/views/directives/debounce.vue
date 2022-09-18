@@ -1,5 +1,7 @@
 <template>
-	<el-button type="primary" v-debounce="handClick">防抖指令</el-button>
+	<el-card>
+    <el-button type="primary" v-debounce="handClick">防抖指令</el-button>
+  </el-card>
 </template>
 
 <script lang="ts" setup name="directives">

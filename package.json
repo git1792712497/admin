@@ -23,6 +23,7 @@
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "mitt": "^3.0.0",
+    "path-browserify": "^1.0.1",
     "pinia": "2.0.22",
     "pinia-plugin-persistedstate": "^2.1.1",
     "qs": "^6.11.0",

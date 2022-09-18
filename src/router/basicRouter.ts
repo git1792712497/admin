@@ -16,7 +16,7 @@ export const basicRouter:any = [
 		}
 	},
 	{
-		path: '/:path(.*)*',
+		path: '/:pathMatch(.*)*',
 		name: "404",
 		component: () => import("@/views/errorPage/404.vue"),
 		meta: {

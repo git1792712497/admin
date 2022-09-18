@@ -3,12 +3,15 @@
 		<i class="iconfont icon-search" @click="clickSearch"></i>
 		<el-popover v-model:visible="isPopover" :width="200" placement="bottom" popper-class="popover" trigger="contextmenu">
 			<template #reference>
-				<div v-show="isShow" :class="{active:isShow}" class="form">
-					<input ref="searchInput" v-model="value" class="input" placeholder="菜单搜索" type="text"> <span class="input-border"></span>
-				</div>
+				<transition enter-active-class="in" leave-active-class="out">
+					<div v-show="isShow" class="form">
+						<input ref="searchInput" v-model="value" class="input" placeholder="菜单搜索" type="text"> <span class="input-border"></span>
+					</div>
+				</transition>
 			</template>
 			<div v-for="item in searchOption" :key="item.path" class="hover-active">
-				<strong>{{item.item.meta.title}}</strong>
+				<strong @click="$router.push(item.path)" v-if="item.title.length > 1">{{item.title[0]}} > {{item.title.at(-1)}}</strong>
+        <strong @click="$router.push(item.path)" v-else>{{item.title[0]}}</strong>
 			</div>
 		</el-popover>
 	</nav>
@@ -16,13 +19,12 @@
 <script lang="ts" name="Search" setup>
 import Fuse from "fuse.js";
 import {routerArray} from "@/router";
+import {useSearchMap} from '@/hooks/useSearchMap'
 import {onMounted,shallowRef,watch,ref} from 'vue'
 
 onMounted(() => {
-	const dom = document.querySelector('.el-popper') as HTMLHtmlElement
-	dom.style.padding = '0px'
 	searchInput.value.addEventListener('focus',() => {
-		if(searchOption.value.length)isPopover.value = true
+		if(searchOption.value.length) isPopover.value = true
 	})
 	searchInput.value.addEventListener('blur',() => {
 		isPopover.value = false
@@ -32,13 +34,12 @@ onMounted(() => {
 const searchInput = shallowRef()
 const value = shallowRef('')
 
-
 let isShow = shallowRef(false)
 const clickSearch = () => {
 	isShow.value = !isShow.value
 }
 
-const fuse = new Fuse(routerArray,{
+const fuse = new Fuse(useSearchMap(routerArray),{
 	// 是否按优先级进行排序
 	shouldSort: true,
 	// 匹配算法放弃的时机， 阈值 0.0 需要完美匹配（字母和位置），阈值 1.0 将匹配任何内容。
@@ -48,20 +49,25 @@ const fuse = new Fuse(routerArray,{
 	// 将被搜索的键列表。 这支持嵌套路径、加权搜索、在字符串和对象数组中搜索。
 	// name：搜索的键
 	// weight：对应的权重
-	keys: ['meta.title']
+	keys: [{name: 'title',weight: 0.7},{name: 'path',weight: 0.3}]
 })
-
 
 let searchOption = ref([])
 let isPopover = shallowRef(false)
 watch(value,newValue => {
-	searchOption.value = fuse.search(newValue)
+	searchOption.value = fuse.search(newValue).map(item => item.item)
 	console.log(fuse.search(newValue))
 	searchOption.value.length ? isPopover.value = true : isPopover.value = false
 })
 </script>
 <style lang="less" scoped>
-@keyframes inputAnimate{
+.in{
+	animation: input 0.3s;
+}
+.out{
+	animation:input 0.3s reverse;
+}
+@keyframes input{
 	0%{
 		width: 0;
 	}
@@ -77,6 +83,9 @@ watch(value,newValue => {
 	height: 40px;
 	line-height: 40px;
 	color: var(--el-color-primary);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .hover-active:hover{
@@ -89,18 +98,14 @@ watch(value,newValue => {
 	align-items: center;
 	font-size: 0 !important;
 	
-	.active{
-		animation: 0.5s inputAnimate;
-	}
-	
 	.icon-search{
 		font-size: 22px;
 		color: rgb(0 0 0 / 75%);
 		cursor: pointer;
-		margin-right: 5px;
 	}
 	
 	.form{
+		margin-left: 5px;
 		--width-of-input: 200px;
 		--border-height: 1px;
 		--border-before-color: rgb(58, 61, 66);

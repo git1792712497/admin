@@ -1,17 +1,26 @@
 <template>
-	 <el-input v-model="input" placeholder="Please input">
+  <el-card shadow="hover">
+    <template #header>
+      复制指令
+    </template>
+    <el-input v-model="input" placeholder="Please input">
       <template #append>
-	      <el-button type="primary" v-copy="input">复制指令</el-button>
+        <el-button v-copy="input" type="primary">复制指令</el-button>
       </template>
     </el-input>
+  </el-card>
 </template>
 
-<script setup lang="ts" name="copy">
+<script lang="ts" name="copy" setup>
 import {ref} from "vue";
 
 let input = ref()
+
+
+
+
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 
 </style>
