@@ -16,6 +16,8 @@ import "element-plus/theme-chalk/dark/css-vars.css";
 // custom element dark(自定义暗黑模式)
 import "@/assets/style/dark.less";
 
+import "@/assets/style/tailwind.css"
+
 const app = createApp(App)
 // 注册element Icons组件
 Object.keys(Icons).forEach(key => {

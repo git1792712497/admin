@@ -1,7 +1,7 @@
 <template>
 	<el-dropdown trigger="hover">
 		<div class="avatar">
-			<img alt="avatar" src="@/assets/images/logo.svg"/>
+			<img alt="avatar" :src="user.profile?.avatar"/>
 		</div>
 		<template #dropdown>
 			<el-dropdown-menu>
@@ -9,6 +9,7 @@
 			</el-dropdown-menu>
 		</template>
 	</el-dropdown>
+  <span class="username">{{user.profile?.nick_name}}</span>
 </template>
 <script lang="ts" name="Avatar" setup>
 import {userStore} from "@/store/modules/user";
@@ -23,8 +24,8 @@ const logout = () => {
 <style lang="less" scoped>
 .avatar{
 	margin-left: 20px;
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	overflow: hidden;
 	cursor: pointer;
 	border-radius: 50%;
@@ -32,5 +33,10 @@ const logout = () => {
 		width: 100%;
 		height: 100%;
 	}
+}
+.username{
+  margin: 0 5px 0 5px;
+  font-size: 15px;
+  color: rgb(0 0 0 / 75%);
 }
 </style>

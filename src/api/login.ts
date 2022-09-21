@@ -1,8 +1,7 @@
-import {fastMock} from "@/axios/config";
-
+import {axios} from "@/axios/config";
 export function getLogin(data){
-	return fastMock.post({
-		url:'/login',
+	return axios.post({
+		url:`/blade-auth/oauth/token?username=${data.username}&password=${data.password}&grant_type=password`,
 		data,
 		interceptors:{
 			requestInterceptor(config){

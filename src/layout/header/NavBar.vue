@@ -12,7 +12,7 @@
 				<Theme/>
 			</el-space>
 			<Avatar/>
-			<span class="username">Vue3</span>
+			
 		</div>
 	</header>
 </template>
@@ -53,12 +53,6 @@ const Theme = defineAsyncComponent(() => import('./childComponents/Theme.vue'))
 	.header-right{
 		display: flex;
 		align-items: center;
-		.username{
-			margin: 0 10px 0 0;
-			font-size: 15px;
-			color: rgb(0 0 0 / 75%);
-		}
-		
 		.theme-item{
 			display: flex;
 			align-items: center;

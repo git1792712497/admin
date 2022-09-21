@@ -7,15 +7,33 @@ export const useUtils: RouteRecordRaw[] = [
 		meta: {
 			index: 3,
 			title: '常用功能',
-			icon:'useUtils'
+			icon:'Monitor'
 		},
 		children: [
 			{
-				path: 'menuList',
-				name: 'menuList',
-				component: () => import('@/views/system/menusList/index.vue'),
+				path: 'driver',
+				name: 'driver',
+				component: () => import('@/views/useUtils/driver.vue'),
 				meta: {
-					title: '复制到剪切板',
+					title: '功能引导',
+					icon:'Menu'
+				}
+			},
+			{
+				path: 'fuse',
+				name: 'fuse',
+				component: () => import('@/views/useUtils/fuse.vue'),
+				meta: {
+					title: '模糊搜索',
+					icon:'Menu'
+				}
+			},
+			{
+				path: 'excel',
+				name: 'excel',
+				component: () => import('@/views/useUtils/excel.vue'),
+				meta: {
+					title: 'excel处理',
 					icon:'Menu'
 				}
 			}

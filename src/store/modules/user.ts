@@ -1,4 +1,6 @@
 import {defineStore} from 'pinia'
+import {useRouter} from "vue-router";
+const router = useRouter()
 
 export const userStore = defineStore({
 	id: 'user',
@@ -14,7 +16,13 @@ export const userStore = defineStore({
 		},
 		clearUser(){
 			this.profile = null
+			router.push('/login')
 		}
 	},
-	getters: {}
+	getters: {
+		getToken(){
+			return this.profile?.access_token
+		},
+		
+	}
 })
