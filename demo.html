@@ -8,31 +8,27 @@
 </head>
 <body>
 <script>
-    debugger
+    const arr = [{
+        '订单编号': '11111111', '详细地址': '阿萨大撒大大'
+    }]
+    const object = {
+        '订单编号': 'orderNo', '详细地址': 'address'
+    }
 
-    function useSearchMap(routers, prefixTitle = []) {
-        let result = []
-
-
-        for (let route of routers) {
-            const data = {
-                path: route.path, title: [...prefixTitle]
-            }
-            if (route.meta && route.meta.title) {
-                data.title = [...data.title, route.meta.title]
-                result.push(data)
-            }
-            if (route.children) {
-                const routers = useSearchMap(route.children, data.title)
-
-                result = [...result, ...routers]
-
-            }
-        }
+    function formatExcel(array) {
+        const result = []
+        array.forEach(item => {
+            let obj = {}
+            Object.keys(item).forEach(key => {
+                obj[object[key]] = item[key]
+                console.log(obj[object[key]])
+            })
+            arr.push(obj)
+        })
         return result
     }
 
-    useSearchMap()
+    console.log(formatExcel(arr))
 </script>
 </body>
 </html>

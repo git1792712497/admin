@@ -59,19 +59,19 @@ class Axios {
       return this.request({...data, method: 'post'})
    }
    
-   uploadFile<T = any>(config: AxiosRequestConfig, params: UploadFileParams){
+   uploadFile<T = any>(config: AxiosRequestConfig){
       const formData = new FormData();
-      const customFilename = params.name || 'file';
+      const customFilename = config.data.name || 'file';
       
-      if(params.filename){
-         formData.append(customFilename, params.file, params.filename);
+      if(config.data.filename){
+         formData.append(customFilename, config.data.file, config.data.filename);
       }else{
-         formData.append(customFilename, params.file);
+         formData.append(customFilename, config.data.file);
       }
       
-      if(params.data){
-         Object.keys(params.data).forEach((key) => {
-            const value = params.data![key];
+      if(config.data.data){
+         Object.keys(config.data.data).forEach((key) => {
+            const value = config.data.data![key];
             if(Array.isArray(value)){
                value.forEach((item) => {
                   formData.append(`${key}[]`, item);
@@ -79,10 +79,10 @@ class Axios {
                return;
             }
             
-            formData.append(key, params.data![key]);
+            formData.append(key, config.data.data![key]);
          });
       }
-      
+      console.log(formData)
       return this.request<T>({
          ...config,
          method: 'POST',
