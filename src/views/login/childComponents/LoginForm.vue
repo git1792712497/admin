@@ -3,9 +3,7 @@
     <el-form-item prop="username">
       <el-input v-model="loginForm.username" placeholder="请输入用户名">
         <template #prefix>
-          <el-icon class="el-input__icon">
-            <user/>
-          </el-icon>
+          <el-icon><User /></el-icon>
         </template>
       </el-input>
     </el-form-item>
@@ -29,7 +27,7 @@
 <script lang="ts" name="LoginForm" setup>
 import md5 from 'md5'
 import {shallowReactive, shallowRef, onMounted, toRaw} from "vue";
-import {CircleClose, UserFilled} from "@element-plus/icons-vue";
+import {CircleClose, UserFilled,User} from "@element-plus/icons-vue";
 import {ElMessage} from 'element-plus'
 import {useRouter} from "vue-router";
 import {userStore} from '@/store/modules/user'

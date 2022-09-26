@@ -31,9 +31,10 @@ import * as XLSX from 'xlsx'
 import {getHeaderRow, formatExcel, formatJson} from '@/utils/excel'
 import {object} from '@/utils/excel'
 import type {UploadRequestOptions} from 'element-plus'
-import {shallowRef,unref} from "vue";
+import {unref} from "vue";
+import {useStorage} from "@vueuse/core";
 
-let tableData = shallowRef([])
+let tableData = useStorage('tableData',[])
 
 const upload = ({file}: UploadRequestOptions) => {
   const fileReader = new FileReader()

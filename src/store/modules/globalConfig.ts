@@ -11,7 +11,7 @@ export const globalConfigStore: any = defineStore('globalConfig', {
             // themeConfig
             themeConfig: {
                 // 默认 primary 主题颜色
-                primary: '#009688',
+                primary: '#409eff',
                 // 深色模式
                 isDark: false,
                 // 面包屑导航
