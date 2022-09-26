@@ -55,6 +55,24 @@ export const useUtils: RouteRecordRaw[] = [
 							 icon: 'Menu'
 						}
 				 },
+				 {
+						path: 'markdown',
+						name: 'markdown',
+						component: () => import('@/views/useUtils/markdown.vue'),
+						meta: {
+							 title: 'markdown编辑器',
+							 icon: 'Menu'
+						}
+				 },
+				 {
+						path: 'wangEditor',
+						name: 'wangEditor',
+						component: () => import('@/views/useUtils/wangEditor.vue'),
+						meta: {
+							 title: '富文本编辑器',
+							 icon: 'Menu'
+						}
+				 },
 			]
 	 }
 ]
