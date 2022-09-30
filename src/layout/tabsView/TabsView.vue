@@ -30,7 +30,8 @@ const close = index => tabsView.removeTabs(index)
 
 <style lang="less" scoped>
 .tabs-view {
-  
+  width: 100%;
+  overflow: hidden;
   box-sizing: border-box;
   padding: 5px 15px;
 }

@@ -29,6 +29,12 @@ app.config.globalProperties.$foo = () => {
 	console.log('全局函数')
 }
 
+app.config.errorHandler = (err,vm,info) => {
+	console.log('全局异常处理',err)
+	console.log('全局异常处理',vm)
+	console.log('全局异常处理',info)
+}
+
 app.use(directives) //自定义指令
 app.use(Antd)
 app.use(pinia)

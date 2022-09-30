@@ -16,15 +16,6 @@ class Axios {
              return config
           }, (err: any) => {
              console.log(err, '全局请求错误')
-             this.interceptors.requestInterceptorsCatch(err)
-          }
-      )
-      
-      this.instance.interceptors.response.use((res: AxiosResponse) => {
-             return res.data
-          }, (err: any) => {
-             console.log(err, '全局响应错误')
-             this.interceptors.responseInterceptorsCatch(err)
           }
       )
       
@@ -32,6 +23,12 @@ class Axios {
       this.instance.interceptors.request.use(this.interceptors.requestInterceptor, this.interceptors.requestInterceptorsCatch)
       this.instance.interceptors.response.use(this.interceptors.responseInterceptor, this.interceptors.responseInterceptorsCatch)
       
+      this.instance.interceptors.response.use((res: AxiosResponse) => {
+             return res.data
+          }, (err: any) => {
+             console.log('全局响应错误')
+          }
+      )
    }
    
    request<T>(config: RequestConfig): Promise<T> {

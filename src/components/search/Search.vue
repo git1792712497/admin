@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script lang="ts" name="index" setup>
+<script lang="ts" name="Search" setup>
 import {computed, onMounted, shallowRef} from "vue";
 
 const props = defineProps({

@@ -1,7 +1,5 @@
 import {defineStore} from 'pinia'
-import {useRouter} from "vue-router";
-const router = useRouter()
-
+import { router } from "@/router";
 export const userStore = defineStore({
 	id: 'user',
 	persist: true,
@@ -15,6 +13,8 @@ export const userStore = defineStore({
 			this.profile = profile
 		},
 		clearUser(){
+			console.log('退出登录')
+			localStorage.clear()
 			this.profile = null
 			router.push('/login')
 		}

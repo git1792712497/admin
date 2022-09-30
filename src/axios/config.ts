@@ -2,9 +2,9 @@ import Axios from "./index";
 import type {AxiosRequestConfig, AxiosResponse} from 'axios'
 import {Base64} from 'js-base64';
 import {ElMessage} from "element-plus";
-
 import {userStore} from "@/store/modules/user";
 const user = userStore()
+
 
 export const ContentType = {
    // json
@@ -29,14 +29,20 @@ export const axios = new Axios({
          return config
       },
       responseInterceptor(config: AxiosResponse) {
+         console.log(config,'响应拦截')
          return config
       },
       requestInterceptorsCatch(error: any) {
          console.log('请求失败')
       },
       responseInterceptorsCatch(error: any) {
-         if (error.response.data.code === 401)user.clearUser()
-         ElMessage({type: 'error', message: error.response.data?.error_description || error.response.data?.msg})
+         ElMessage({type: 'error', message: error.response?.data.error_description || error.response?.data.msg})
+         console.log('响应错误1',error)
+         if (error.response?.data.code === 401){
+            console.log('useRouter')
+            user.clearUser()
+         }
+         
       }
    }
 })

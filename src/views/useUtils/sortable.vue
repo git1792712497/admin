@@ -26,8 +26,8 @@ import {getOrderList} from "@/api/order";
 import {onMounted, shallowRef} from "vue";
 
 let tableData = shallowRef([])
-getOrderList({queryType:'seller'}).then(({data}) => {
-  tableData.value = data.records
+getOrderList({queryType:'seller'}).then((res:any) => {
+  tableData.value = res?.data.records
 })
 
 const tableRef = shallowRef(null)
