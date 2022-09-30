@@ -1,6 +1,4 @@
 import * as XLSX from 'xlsx'
-
-
 /**
  * 获取表头（通用方式）
  */

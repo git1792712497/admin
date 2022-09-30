@@ -1,8 +1,6 @@
 <template>
   <h2>
-    <keep-alive>
-      <Child></Child>
-    </keep-alive>
+    <component :is="Child"></component>
   </h2>
 </template>
 

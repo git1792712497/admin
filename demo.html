@@ -8,27 +8,16 @@
 </head>
 <body>
 <script>
-    const arr = [{
-        '订单编号': '11111111', '详细地址': '阿萨大撒大大'
-    }]
-    const object = {
-        '订单编号': 'orderNo', '详细地址': 'address'
-    }
+const object = {
+  app:1
+}
 
-    function formatExcel(array) {
-        const result = []
-        array.forEach(item => {
-            let obj = {}
-            Object.keys(item).forEach(key => {
-                obj[object[key]] = item[key]
-                console.log(obj[object[key]])
-            })
-            arr.push(obj)
-        })
-        return result
-    }
+Object.freeze(object)
 
-    console.log(formatExcel(arr))
+
+object.app = 100
+
+console.log(object)
 </script>
 </body>
 </html>

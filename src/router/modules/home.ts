@@ -8,7 +8,8 @@ export const home: RouteRecordRaw[] = [
 		meta: {
 			index: 1,
 			icon: 'home-filled',
-			title: '首页'
+			title: '首页',
+			keepAlive:true
 		}
 	}
 ]

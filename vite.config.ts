@@ -5,6 +5,8 @@ import path from "path";
 import viteCompression from "vite-plugin-compression";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
 import { viteMockServe } from 'vite-plugin-mock'
+import AutoImport from "./src/plugin/autoImport";
+import createSvgIconsPlugin from './src/plugin/svgIcon'
 
 export default defineConfig(({ command, mode }) => {
 	return {
@@ -28,6 +30,8 @@ export default defineConfig(({ command, mode }) => {
 			viteCompression(),
 			vueSetupExtend(),
 			viteMockServe({mockPath: 'mock',localEnabled: command === 'serve'}),
+			AutoImport,
+			createSvgIconsPlugin
 		],
 		base: "./",
 		css: {
