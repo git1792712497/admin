@@ -48,6 +48,12 @@ export const axios = new Axios({
 })
 
 
+export const bilibili = new Axios({
+   baseURL: '/bilibili',
+   timeout: 10000
+})
+
+
 export const fastMock = new Axios({
    baseURL: 'https://www.fastmock.site/mock/957ffa30daa6a998277620d86656998b/mock',
    timeout: 10000,

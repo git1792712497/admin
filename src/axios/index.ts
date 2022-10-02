@@ -20,13 +20,13 @@ class Axios {
       )
       
       //每个实例自定义拦截器
-      this.instance.interceptors.request.use(this.interceptors.requestInterceptor, this.interceptors.requestInterceptorsCatch)
-      this.instance.interceptors.response.use(this.interceptors.responseInterceptor, this.interceptors.responseInterceptorsCatch)
+      this.instance.interceptors.request.use(this.interceptors?.requestInterceptor, this.interceptors?.requestInterceptorsCatch)
+      this.instance.interceptors.response.use(this.interceptors?.responseInterceptor, this.interceptors?.responseInterceptorsCatch)
       
       this.instance.interceptors.response.use((res: AxiosResponse) => {
              return res.data
           }, (err: any) => {
-             console.log('全局响应错误')
+             console.error('全局响应错误',err)
           }
       )
    }

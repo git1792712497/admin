@@ -73,6 +73,15 @@ export const useUtils: RouteRecordRaw[] = [
 							 icon: 'Menu'
 						}
 				 },
+				{
+					path: 'svgIcon',
+					name: 'svgIcon',
+					component: () => import('@/views/useUtils/svgIcon.vue'),
+					meta: {
+						title: 'svg图标',
+						icon: 'Menu'
+					}
+				},
 			]
 	 }
 ]

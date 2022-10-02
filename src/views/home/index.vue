@@ -1,10 +1,10 @@
-<template>
-  <h2>
-    <component :is="Child"></component>
-  </h2>
-</template>
+<script setup lang="ts">
+import { app } from "@/views/home/demo";
 
-<script setup lang="ts" name="home">
-console.log('home')
-import Child from './Child.vue'
 </script>
+
+<template>
+  <div ref="el">
+
+  </div>
+</template>
