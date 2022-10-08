@@ -31,7 +31,7 @@ app.config.globalProperties.$foo = () => {
 }
 
 app.config.errorHandler = (err,vm,info) => {
-	console.log('全局异常处理',err)
+	console.error('全局异常处理',err)
 	console.log('全局异常处理',vm)
 	console.log('全局异常处理',info)
 }

@@ -56,9 +56,6 @@ const props = withDefaults(defineProps<RichEditorProps>(), {
   disabled: false
 });
 
-// 判断当前富文本编辑器是否禁用
-if (props.disabled) nextTick(() => editorRef.value.disable());
-
 // 富文本的内容监听，触发父组件改变，实现双向数据绑定
 type EmitProps = {
   (e: "update:value", val: string): void;

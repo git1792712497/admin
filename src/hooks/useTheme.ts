@@ -2,7 +2,7 @@ import {globalConfigStore} from "@/store/modules/globalConfig";
 import {getDarkColor, getLightColor} from "@/utils/theme";
 const globalConfig = globalConfigStore()
 
-export const useDark = () => {
+export const useDark = ():any => {
 		const body = document.documentElement;
 		if (globalConfig.themeConfig.isDark){
 			 body.setAttribute("class", "dark");

@@ -48,6 +48,12 @@ export const axios = new Axios({
 })
 
 
+export const music = new Axios({
+   baseURL: 'https://music-api.heheda.top',
+   timeout: 10000
+})
+
+
 export const bilibili = new Axios({
    baseURL: '/bilibili',
    timeout: 10000

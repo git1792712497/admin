@@ -2,12 +2,14 @@ import {App} from "vue";
 import {throttle} from './modules/throttle'
 import {debounce} from './modules/debounce'
 import {copy} from './modules/copy'
+import {cleave} from './modules/cleave'
 
 export const directives = {
 	install(app: App){
 		throttle(app)
 		debounce(app)
 		copy(app)
+		cleave(app)
 	}
 }
 

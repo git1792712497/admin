@@ -13,8 +13,6 @@ export const userStore = defineStore({
 			this.profile = profile
 		},
 		clearUser(){
-			console.log('退出登录')
-			localStorage.clear()
 			this.profile = null
 			router.push('/login')
 		}

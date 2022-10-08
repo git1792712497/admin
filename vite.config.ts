@@ -30,7 +30,11 @@ export default defineConfig(({ command, mode }) => {
 			}
 		},
 		build: {
-			assetsInlineLimit: 4096
+			// 消除打包大小超过500kb警告
+			assetsInlineLimit: 4096,
+			outDir: "dist",
+			minify: "esbuild",
+			sourcemap: false,
 		}
 	};
 });
