@@ -38,15 +38,6 @@ export const directives: RouteRecordRaw[] = [
 				}
 			},
 			{
-				path: 'cleave',
-				name: 'cleave',
-				component: () => import('@/views/directives/cleave.vue'),
-				meta: {
-					title: '输入格式化',
-					icon: 'Menu'
-				}
-			},
-			{
 				path: 'test6666',
 				name: 'text',
 				meta: {
