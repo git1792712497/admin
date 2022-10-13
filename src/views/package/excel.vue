@@ -5,6 +5,7 @@
         <el-space>
           <el-upload :http-request="upload" :show-file-list="false">
             <template #trigger>
+              {{tableData.length}}
               <el-button type="primary">excel导入</el-button>
             </template>
           </el-upload>
@@ -31,10 +32,10 @@ import {getHeaderRow, formatExcel, formatJson} from '@/utils/excel'
 import {object} from '@/utils/excel'
 import type {UploadRequestOptions} from 'element-plus'
 import {unref} from "vue";
-import {useStorage} from "@vueuse/core";
+import order from '@/assets/json/order.json'
 
-let tableData = useStorage('tableData',[])
 
+let tableData = ref(order)
 const upload = ({file}: UploadRequestOptions) => {
   const fileReader = new FileReader()
   fileReader.readAsArrayBuffer(file)
@@ -57,11 +58,15 @@ const upload = ({file}: UploadRequestOptions) => {
 
 const handleExcelExport = async () => {
   const header = Object.keys(object)
+  console.log(header)
   const body = formatJson(unref(tableData))
+  console.log(body)
+  console.time('时间')
   const workSheet = utils.aoa_to_sheet([header,...body]);
   const workBook =  utils.book_new();
   utils.book_append_sheet(workBook, workSheet, "数据报表");
   writeFile(workBook, "订单导出.xlsx");
+  console.timeEnd('时间')
 }
 </script>
 

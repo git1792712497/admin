@@ -15,6 +15,7 @@ import "element-plus/theme-chalk/dark/css-vars.css";
 import "@/assets/style/dark.less";
 //svgIcon
 import 'virtual:svg-icons-register'
+
 // tailwind.css
 import "@/assets/style/tailwind.css"
 

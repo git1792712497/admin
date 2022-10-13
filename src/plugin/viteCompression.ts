@@ -1,6 +1,6 @@
 import viteCompression from "vite-plugin-compression";
 
-export default function () {
+export default function (){
 	return viteCompression({
 		verbose: true,
 		disable: false,

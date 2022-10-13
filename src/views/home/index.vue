@@ -1,13 +1,13 @@
 <template>
-  <span v-if="isLoading">Loading</span>
-  <img v-else :src="avatarUrl">
+  <div>
+   {{app}}
+  </div>
 </template>
+<script lang="ts" setup>
 
+const app = ref(1000)
 
-<script setup>
-import { useImage } from '@vueuse/core'
-
-const avatarUrl = 'https://place.dog/300/200'
-const { isLoading } = useImage({ src: avatarUrl })
 </script>
+<style scoped>
 
+</style>

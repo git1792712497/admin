@@ -31,6 +31,7 @@ const formatDate = (number: number) => {
 
 export const object = {'订单编号': 'orderNo', '下单时间': 'orderDate', '详细地址': 'address', '收件人': 'receiver', '收件人电话': 'receiverPhone'}
 
+//处理时间
 export function formatExcel(list: any[]) {
 	 const result = []
 	 list.forEach(item => {

@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import path from "path";
-import {plugins} from './src/plugin'
+import installPlugins from './src/plugin'
 import {proxy} from "./src/settings/proxy";
 
 export default defineConfig(({ command, mode }) => {
@@ -12,7 +12,7 @@ export default defineConfig(({ command, mode }) => {
 			open: true,
 			proxy
 		},
-		plugins,
+		plugins:installPlugins(),
 		base: "./",
 		css: {
 			devSourcemap: true,

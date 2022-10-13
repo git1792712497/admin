@@ -1,15 +1,13 @@
 import {App} from "vue";
-import {throttle} from './modules/throttle'
-import {debounce} from './modules/debounce'
-import {copy} from './modules/copy'
-import {cleave} from './modules/cleave'
+const directiveList = import.meta.globEager('./modules/*.ts')
 
 export const directives = {
 	install(app: App){
-		throttle(app)
-		debounce(app)
-		copy(app)
-		cleave(app)
+    Object.keys(directiveList).forEach(item => {
+      Object.keys(directiveList[item]).forEach(value => {
+        directiveList[item][value](app)
+      })
+    })
 	}
 }
 

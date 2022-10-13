@@ -10,5 +10,4 @@ export default function(){
 		// 指定symbolId格式
 		symbolId: 'icon-[dir]-[name]'
 	})
-	
 }

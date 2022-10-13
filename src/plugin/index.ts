@@ -5,15 +5,19 @@ import jsx from "@vitejs/plugin-vue-jsx";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
 import viteCompression from './viteCompression'
 import viteMockServe from './mock'
+import Components from './unpluginVueComponents'
 
-export const plugins = [
-	vue(),
-	jsx(),// * vite 可以使用 jsx/tsx 语法
-	autoImport(),
-	svgIcon(),
-	vueSetupExtend(),// * name 可以写在 script 标签上
-	viteCompression(),
-	viteMockServe()
-]
+export default function (){
+	 return [
+			vue(),
+			jsx(),// * vite 可以使用 jsx/tsx 语法
+		 	vueSetupExtend(),// * name 可以写在 script 标签上
+			autoImport(),
+			svgIcon(),
+			viteCompression(),
+			viteMockServe(),
+		  Components()
+	]
+}
 
 
