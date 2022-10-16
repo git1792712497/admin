@@ -1,7 +1,7 @@
 import {App} from "vue";
 const directiveList = import.meta.globEager('./modules/*.ts')
 
-export const directives = {
+export default {
 	install(app: App){
     Object.keys(directiveList).forEach(item => {
       Object.keys(directiveList[item]).forEach(value => {

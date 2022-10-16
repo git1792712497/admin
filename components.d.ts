@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
+    ACascader: typeof import('ant-design-vue/es')['Cascader']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
@@ -33,13 +34,18 @@ declare module '@vue/runtime-core' {
     ElSpace: typeof import('element-plus/es')['ElSpace']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    ElUpload: typeof import('element-plus/es')['ElUpload']
+    Popover: typeof import('./src/components/popover/index.vue')['default']
+    Popup: typeof import('./src/components/popup/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Search: typeof import('./src/components/search/Search.vue')['default']
-    SvgIcon: typeof import('./src/components/svgIcon/SvgIcon.vue')['default']
+    Search: typeof import('./src/components/search/index.vue')['default']
+    SvgIcon: typeof import('./src/components/svgIcon/index.vue')['default']
     UpCircleOutlined: typeof import('@ant-design/icons-vue')['UpCircleOutlined']
-    WangEditor: typeof import('./src/components/wangEditor/WangEditor.vue')['default']
+    WangEditor: typeof import('./src/components/wangEditor/index.vue')['default']
   }
 }

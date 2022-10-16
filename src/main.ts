@@ -6,8 +6,9 @@ import {pinia} from "@/store";
 import Avue from '@smallwei/avue';
 import '@smallwei/avue/lib/index.css';
 
-import {directives} from '@/directives'
 
+import components from "@/components";
+import directives from '@/directives'
 
 // element dark(内置暗黑模式)
 import "element-plus/theme-chalk/dark/css-vars.css";
@@ -15,7 +16,6 @@ import "element-plus/theme-chalk/dark/css-vars.css";
 import "@/assets/style/dark.less";
 //svgIcon
 import 'virtual:svg-icons-register'
-
 // tailwind.css
 import "@/assets/style/tailwind.css"
 
@@ -40,6 +40,7 @@ app.config.errorHandler = (err,vm,info) => {
 	console.log('全局异常处理',info)
 }
 
+app.use(components) //组件
 app.use(directives) //自定义指令
 app.use(pinia)
 app.use(router)
