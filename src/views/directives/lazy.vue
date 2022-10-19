@@ -27,6 +27,7 @@ onMounted(() => loadImage())
 </script>
 
 <style scoped lang="less">
+//多列布局
 .waterfall{
   width: 100%;
   columns: 4;

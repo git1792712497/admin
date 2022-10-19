@@ -66,6 +66,9 @@ const handleClick = () => {
       dialogVisible.value = true
     };
     fileReader.readAsDataURL(blob);
+
+    //浏览器显示URL
+    console.log(URL.createObjectURL(blob));
   }, "image/jpeg")
 }
 
@@ -80,6 +83,7 @@ const handleVueCropper = () => {
   cropperRef.value.getCropData(data => {
     src.value = data
     dialogVisible.value = true
+
   })
 
   cropperRef.value.getCropBlob(data => {

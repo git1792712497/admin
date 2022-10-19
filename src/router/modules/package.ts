@@ -199,6 +199,15 @@ export const Package: RouteRecordRaw[] = [
 						icon: 'Menu'
 					}
 				},
+				{
+					path: 'veeValidate',
+					name: 'veeValidate',
+					component: () => import('@/views/package/veeValidate.vue'),
+					meta: {
+						title: '表单校验',
+						icon: 'Menu'
+					}
+				},
 			]
 	 }
 ]

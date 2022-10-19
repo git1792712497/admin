@@ -5,6 +5,9 @@
 		</div>
 		<template #dropdown>
 			<el-dropdown-menu>
+        <el-dropdown-item divided>
+          <el-link type="primary" target="_blank" href="https://support.qq.com/product/442929">立即反馈</el-link>
+        </el-dropdown-item>
 				<el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
 			</el-dropdown-menu>
 		</template>
