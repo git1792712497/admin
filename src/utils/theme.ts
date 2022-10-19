@@ -57,3 +57,19 @@ export function getLightColor(color: string, level: number) {
 	for (let i = 0; i < 3; i++) rgb[i] = Math.floor((255 - rgb[i]) * level + rgb[i]);
 	return rgbToHex(rgb[0], rgb[1], rgb[2]);
 }
+
+//随机生成十六进制颜色
+export function randomHexColor() {
+	let hex = Math.floor(Math.random() * 16777216).toString(16); //生成ffffff以内16进制数
+	while (hex.length < 6) { //while循环判断hex位数，少于6位前面加0凑够6位
+		hex = '0' + hex;
+	}
+	return '#' + hex; //返回‘#'开头16进制颜色
+}
+
+export function randomRgbColor() { //随机生成RGB颜色
+	const r = Math.floor(Math.random() * 256); //随机生成256以内r值
+	const g = Math.floor(Math.random() * 256); //随机生成256以内g值
+	const b = Math.floor(Math.random() * 256); //随机生成256以内b值
+	return `rgb(${r},${g},${b})`; //返回rgb(r,g,b)格式颜色
+}

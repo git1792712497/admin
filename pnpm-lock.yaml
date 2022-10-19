@@ -29,6 +29,7 @@ specifiers:
   esbuild: ^0.15.5
   file-saver: ^2.0.5
   fuse.js: ^6.6.2
+  gsap: ^3.11.3
   howler: ^2.2.3
   js-base64: ^3.7.2
   jsbarcode: ^3.11.5
@@ -99,6 +100,7 @@ dependencies:
   esbuild: 0.15.10
   file-saver: 2.0.5
   fuse.js: 6.6.2
+  gsap: 3.11.3
   howler: 2.2.3
   js-base64: 3.7.2
   jsbarcode: 3.11.5
@@ -2761,6 +2763,10 @@ packages:
 
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
+
+  /gsap/3.11.3:
+    resolution: {integrity: sha512-xc/iIJy+LWiMbRa4IdMtdnnKa/7PXEK6NNzV71gdOYUVeTZN7UWnLU0fB7Hi1iwiz4ZZoYkBZPPYGg+2+zzFHA==}
+    dev: false
 
   /has-ansi/2.0.0:
     resolution: {integrity: sha512-C8vBJ8DwUCx19vhm7urhTuUsr4/IyP6l4VzNQDv+ryHQObW3TTTp9yB68WpYgRe2bbaGuZ/se74IqFeVnMnLZg==}

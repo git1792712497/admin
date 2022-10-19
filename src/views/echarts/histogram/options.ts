@@ -1,4 +1,4 @@
-import { getHistogramData } from "@/api/echarts";
+import { getHistogramData } from "@/api/fastMock";
 
 export async function getOption(){
 	const {data} = await getHistogramData()

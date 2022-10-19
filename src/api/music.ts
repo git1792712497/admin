@@ -1,9 +1,9 @@
 import { music } from "@/axios/config";
 
-
-// 通过ip确定位置
-export function getBanner(){
+export function getArtist(params):any{
 	return music.get({
-		url:`/banner`
+		url:`/artist/list`,
+		params
 	})
 }
+

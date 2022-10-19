@@ -11,14 +11,14 @@
 </template>
 
 <script lang="ts" name="download" setup>
-import FileSaver from "file-saver";
+import {saveAs} from "file-saver";
 
 
 const onText = () => {
   const blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
   // 参数1：支持的类型：blob（二进制）、File（文件）、Url（url链接）
   // 参数2：文件类型
-  FileSaver.saveACos(blob, "hello world.txt");
+  saveAs(blob, "hello world.txt");
 }
 </script>
 

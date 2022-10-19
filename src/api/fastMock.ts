@@ -4,3 +4,10 @@ export function getHistogramData():any{
 		url:`/histogram`,
 	})
 }
+
+
+export function getImageList(page = 0):any{
+	return fastMock.get({
+		url:`/images${page}`
+	})
+}

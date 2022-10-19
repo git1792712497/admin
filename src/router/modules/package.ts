@@ -190,6 +190,15 @@ export const Package: RouteRecordRaw[] = [
 						icon: 'Menu'
 					}
 				},
+				{
+					path: 'gasp',
+					name: 'gasp',
+					component: () => import('@/views/package/gsap.vue'),
+					meta: {
+						title: 'gasp动画',
+						icon: 'Menu'
+					}
+				},
 			]
 	 }
 ]

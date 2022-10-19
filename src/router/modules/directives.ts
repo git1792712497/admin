@@ -38,46 +38,14 @@ export const directives: RouteRecordRaw[] = [
 				}
 			},
 			{
-				path: 'test6666',
-				name: 'text',
+				path: 'lazy',
+				name: 'lazy',
+				component: () => import('@/views/directives/lazy.vue'),
 				meta: {
-					title: '测试',
+					title: '图片懒加载',
 					icon: 'Menu'
-				},
-				children: [
-					{
-						path: 'deep',
-						name: 'deep',
-						meta: {
-							title: '深度',
-							icon: 'Menu'
-						},
-						children: [
-							{
-								path: 'test',
-								name: 'text',
-								meta: {
-									title: '测试demo',
-									icon: 'Menu'
-								},
-								component: () => import('@/views/demo/test.vue')
-							},
-							 {
-									path: 'detail',
-									name: 'detail',
-									props: route => {
-										 console.log(route)
-										 return route.query
-									},
-									meta:{
-										currentActive:'/directives/test6666/deep/test'
-									},
-									component: () => import('@/views/demo/detail.vue')
-							 },
-						]
-					}
-				]
-			}
+				}
+			},
 		]
 	}
 

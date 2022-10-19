@@ -6,7 +6,11 @@
         <NavBar/>
         <TabsView/>
       </el-header>
-			<el-main><Content/></el-main>
+			<el-main>
+        <el-scrollbar>
+          <Content/>
+        </el-scrollbar>
+      </el-main>
 			<el-footer><Bottom/></el-footer>
 		</el-container>
 	</el-container>

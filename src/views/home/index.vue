@@ -1,58 +1,14 @@
 <template>
-  <a-cascader
-      v-model:value="value"
-      :options="options"
-      :load-data="loadData"
-      placeholder="Please select"
-      change-on-select
-  />
+ <div class="waterfall">
+    <el-button type="primary" @click="handleClick">按钮</el-button>
+ </div>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import type { CascaderProps } from 'ant-design-vue';
+<script lang="ts" setup>
+import message from '@/components/message/message'
 
-export default defineComponent({
-  setup() {
-    const options = ref<CascaderProps['options']>([
-      {
-        value: 'zhejiang',
-        label: 'Zhejiang',
-        isLeaf: false,
-      },
-      {
-        value: 'jiangsu',
-        label: 'Jiangsu',
-        isLeaf: false,
-      },
-    ]);
-
-    const loadData: CascaderProps['loadData'] = selectedOptions => {
-      const targetOption = selectedOptions[selectedOptions.length - 1];
-      targetOption.loading = true;
-
-      // load options lazily
-      setTimeout(() => {
-        targetOption.loading = false;
-        targetOption.children = [
-          {
-            label: `${targetOption.label} Dynamic 1`,
-            value: 'dynamic1',
-          },
-          {
-            label: `${targetOption.label} Dynamic 2`,
-            value: 'dynamic2',
-          },
-        ];
-        options.value = [...options.value];
-      }, 1000);
-    };
-
-    return {
-      value: ref<string[]>([]),
-      options,
-      loadData,
-    };
-  },
-});
+const handleClick = () => {
+  message({type:'success',text:'成功'})
+}
 </script>
+
 
