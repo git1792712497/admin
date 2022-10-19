@@ -15,6 +15,7 @@ export interface Interceptors {
 // 自定义传入的参数
 export interface RequestConfig extends AxiosRequestConfig {
   interceptors?: Interceptors
+  paramsToUrl?:boolean
 }
 
 export interface UploadFileParams {

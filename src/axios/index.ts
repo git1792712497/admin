@@ -1,7 +1,9 @@
 import axios from 'axios'
+import qs from 'qs'
+import {ContentType} from './config'
 import type {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
 import type {RequestConfig, Interceptors,UploadFileParams} from './type'
-import {ContentType} from './config'
+
 
 class Axios {
    instance: AxiosInstance
@@ -12,7 +14,8 @@ class Axios {
       this.interceptors = config.interceptors
       
       this.instance.interceptors.request.use((config: AxiosRequestConfig) => {
-             // console.log('全局请求拦截器',config)
+             console.log('全局请求拦截器',config)
+         
              return config
           }, (err: any) => {
              console.log(err, '全局请求错误')
@@ -33,6 +36,10 @@ class Axios {
    
    request<T>(config: RequestConfig): Promise<T> {
       return new Promise((resolve: any, reject) => {
+         //参数拼接到url
+         if (config.paramsToUrl === true){
+            config.url = `${config.url}?${qs.stringify(config.data)}`
+         }
          // 1.单个请求的请求拦截
          if (config.interceptors?.requestInterceptor) {
             config = config.interceptors.requestInterceptor(config)
@@ -54,6 +61,14 @@ class Axios {
    
    post(data:RequestConfig) {
       return this.request({...data, method: 'post'})
+   }
+   
+   patch(data:RequestConfig){
+      return this.request({...data, method: 'patch'})
+   }
+   
+   delete(data:RequestConfig){
+      return this.request({...data, method: 'delete'})
    }
    
    uploadFile<T = any>(config: AxiosRequestConfig){

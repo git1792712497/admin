@@ -87,3 +87,9 @@ export const mock = new Axios({
 })
 
 
+export const jsonServer = new Axios({
+   baseURL: 'http://localhost:8888',
+   timeout: 10000
+})
+
+

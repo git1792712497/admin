@@ -1,13 +1,45 @@
 <template>
  <div class="waterfall">
-    <el-button type="primary" @click="handleClick">按钮</el-button>
+    <el-button type="primary" @click="handleAdd">增加数据</el-button>
+    <el-button type="primary" @click="handleUpdate">更新数据</el-button>
+    <el-button type="primary" @click="handleDelete">删除数据</el-button>
+
+   {{data}}
  </div>
 </template>
 <script lang="ts" setup>
-import message from '@/components/message/message'
+import { getAddData, getDelete, getList, getUpdate } from '@/api/jsonServe'
 
-const handleClick = () => {
-  message({type:'success',text:'成功'})
+
+let data = ref([])
+getList().then(res => {
+  data.value = res
+})
+
+const handleAdd = () => {
+  getAddData({name:'李白',age:10}).then(res => {
+    console.log(res)
+    getList().then(res => {
+      data.value = res
+    })
+  })
+}
+
+const handleUpdate = () => {
+  getUpdate({id:1,name:'更新数据'}).then(res => {
+    getList().then(res => {
+      data.value = res
+    })
+  })
+}
+
+
+const handleDelete = () => {
+  getDelete({id:1}).then(res => {
+    getList().then(res => {
+      data.value = res
+    })
+  })
 }
 </script>
 
