@@ -64,6 +64,15 @@ export const Package: RouteRecordRaw[] = [
 							 icon: 'Menu'
 						}
 				 },
+				{
+					path: 'gridLayout',
+					name: 'gridLayout',
+					component: () => import('@/views/package/gridLayout.vue'),
+					meta: {
+						title: '栅格布局',
+						icon: 'Menu'
+					}
+				},
 				 {
 						path: 'markdown',
 						name: 'markdown',

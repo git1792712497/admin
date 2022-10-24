@@ -38,16 +38,18 @@ import Bottom from './bottom/Bottom.vue'
 		height: auto;
 		padding: 0;
 	}
-	
 	.el-main{
 		box-sizing: border-box;
 		padding: 10px 12px;
 		overflow-x: hidden;
 		background: #f0f2f5;
-		
+    :deep(.el-scrollbar__view){
+      height: 100%;
+    }
 		&::-webkit-scrollbar{
 			background-color: #f0f2f5;
 		}
 	}
 }
+
 </style>

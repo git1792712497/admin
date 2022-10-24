@@ -28,6 +28,15 @@ export const toolComponents: RouteRecordRaw[] = [
 					icon:'Menu'
 				}
 			},
+			{
+				path: 'scrollbar',
+				name: 'scrollbar',
+				component: () => import('@/views/study/scrollbar.vue'),
+				meta: {
+					title: '滚动条样式',
+					icon:'Menu'
+				}
+			},
 		]
 	}
 ]

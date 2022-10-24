@@ -18,6 +18,15 @@ export const echarts: RouteRecordRaw[] = [
 					title: '柱状图',
 					icon:'Menu'
 				}
+			},
+			{
+				path: 'lineChart',
+				name: 'lineChart',
+				component: () => import('@/views/echarts/lineChart/lineChart.vue'),
+				meta: {
+					title: '折线图',
+					icon:'Menu'
+				}
 			}
 		]
 	}

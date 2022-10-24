@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "mock": "json-server db.json --port 8888"
+    "mock": "json-server --c ./jsonServer/json_sever_config.json ./jsonServer/db.json"
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
@@ -61,6 +61,7 @@
     "vue-cropper": "^1.0.5",
     "vue-echarts": "^6.2.3",
     "vue-fullpage.js": "^0.2.7",
+    "vue-grid-layout": "^2.4.0",
     "vue-router": "4.1.3",
     "vuedraggable": "^4.1.0",
     "watermark-dom": "^2.3.0",

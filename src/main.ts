@@ -6,7 +6,6 @@ import {pinia} from "@/store";
 import Avue from '@smallwei/avue';
 import '@smallwei/avue/lib/index.css';
 
-
 import components from "@/components";
 import directives from '@/directives'
 
