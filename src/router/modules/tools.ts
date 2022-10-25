@@ -46,6 +46,15 @@ export const tools: RouteRecordRaw[] = [
           icon:'Menu'
         }
       },
+      {
+        path: 'noticeBar',
+        name: 'noticeBar',
+        component: () => import('@/views/tools/noticeBar.vue'),
+        meta: {
+          title: '通告栏',
+          icon:'Menu'
+        }
+      },
     ]
   }
 ]
