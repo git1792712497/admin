@@ -11,3 +11,10 @@ export function getImageList(page = 0):any{
 		url:`/images${page}`
 	})
 }
+
+
+export function getExcel():any{
+	return fastMock.get({
+		url:`/excel`
+	})
+}

@@ -5,7 +5,6 @@
         <el-space>
           <el-upload :http-request="upload" :show-file-list="false">
             <template #trigger>
-              {{tableData.length}}
               <el-button type="primary">excel导入</el-button>
             </template>
           </el-upload>
@@ -28,12 +27,10 @@
 
 <script lang="ts" name="excel" setup>
 import {utils,writeFile,read} from 'xlsx'
-import {getHeaderRow, formatExcel, formatJson} from '@/utils/excel'
-import {object} from '@/utils/excel'
+import {getHeaderRow, formatExcel,jsonToExcel} from '@/utils/excel'
 import type {UploadRequestOptions} from 'element-plus'
 import {unref} from "vue";
 import order from '@/assets/json/order.json'
-
 
 let tableData = ref(order)
 const upload = ({file}: UploadRequestOptions) => {
@@ -56,17 +53,17 @@ const upload = ({file}: UploadRequestOptions) => {
   }
 }
 
-const handleExcelExport = async () => {
-  const header = Object.keys(object)
-  console.log(header)
-  const body = formatJson(unref(tableData))
-  console.log(body)
-  console.time('时间')
-  const workSheet = utils.aoa_to_sheet([header,...body]);
-  const workBook =  utils.book_new();
-  utils.book_append_sheet(workBook, workSheet, "数据报表");
-  writeFile(workBook, "订单导出.xlsx");
-  console.timeEnd('时间')
+
+const handleExcelExport = () => {
+  const data = toRaw(unref(tableData))
+  const header = {
+    orderNo:'订单编号',
+    orderDate:'下单时间',
+    address:'详细地址',
+    receiver:'收件人',
+    receiverPhone:'收件人电话'
+  }
+  jsonToExcel({data,header})
 }
 </script>
 

@@ -1,4 +1,14 @@
-import {utils} from 'xlsx'
+import {utils,writeFile} from 'xlsx'
+import type { WorkBook } from 'xlsx';
+import type { JSON2SheetOpts, WritingOptions } from 'xlsx';
+export interface JsonToSheet<T = any> {
+	data: T[];
+	header?: T;
+	filename?: string;
+	json2sheetOpts?: JSON2SheetOpts;
+	write2excelOpts?: WritingOptions;
+}
+
 /**
  * 获取表头（通用方式）
  */
@@ -53,7 +63,66 @@ export function formatJson(list: any[]) {
 			})
 	 })
 }
+function getCellWidth(value) {
+	// 判断是否为null或undefined
+	if (value) {
+		if (/.*[\u4e00-\u9fa5]+.*$/.test(value)) {
+			// 中文的长度
+			const chineseLength = value.match(/[\u4e00-\u9fa5]/g).length;
+			// 其他不是中文的长度
+			const otherLength = value.length - chineseLength;
+			return chineseLength * 2.1 + otherLength * 1.2;
+		} else {
+			value = value.toString()
+			return value.replace(/[\u0391-\uFFE5]/g, 'aa').length
+		}
+	} else {
+		return 4;
+	}
+}
 
+function setColumnWidth(data, worksheet, min = 4) {
+	const obj = {};
+	worksheet['!cols'] = [];
+	data.forEach((item) => {
+		Object.keys(item).forEach((key) => {
+			const cur = item[key];
+			obj[key] = Math.max(obj[key] ?? min,getCellWidth(cur))
+		});
+	});
+	Object.keys(obj).forEach((key) => {
+		worksheet['!cols'].push({
+			wch: obj[key],
+		});
+	});
+}
+
+export function jsonToExcel<T = any>({data,header,filename = '表.xlsx',json2sheetOpts = {},write2excelOpts = { bookType: 'xlsx' }}: JsonToSheet<T>) {
+	let arrData = [...data]
+	for (let key in header){
+		if (!header[key])delete header[key]
+	}
+	if (Object.keys(header).length) {
+		arrData = data.map(item => {
+			let tmp:any = {}
+			for(let key in header) {
+				tmp[key] = item[key]
+			}
+			return tmp
+		});
+		arrData.unshift(header);
+		json2sheetOpts.skipHeader = true;
+	}
+	const worksheet = utils.json_to_sheet(arrData, json2sheetOpts);
+	setColumnWidth(arrData, worksheet);
+	const workbook: WorkBook = {
+		SheetNames: [filename],
+		Sheets: {
+			[filename]: worksheet,
+		},
+	};
+	writeFile(workbook, filename, write2excelOpts);
+}
 
 
 
