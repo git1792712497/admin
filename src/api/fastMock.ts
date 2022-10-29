@@ -13,8 +13,8 @@ export function getImageList(page = 0):any{
 }
 
 
-export function getExcel():any{
+export function getOrderList():any{
 	return fastMock.get({
-		url:`/excel`
+		url:`/order`
 	})
 }

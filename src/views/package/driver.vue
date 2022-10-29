@@ -6,9 +6,9 @@
         <el-link type="primary" target="_blank" href="https://github.com/kamranahmedse/driver.js">github地址</el-link>
       </div>
     </template>
-    <el-button type="primary" id="a">步骤一</el-button>
-    <el-button type="primary" id="b">步骤二</el-button>
-    <el-button type="primary" id="c">步骤三</el-button>
+    <el-button type="primary" id="A">步骤一</el-button>
+    <el-button type="primary" id="B">步骤二</el-button>
+    <el-button type="primary" id="C">步骤三</el-button>
   </el-card>
 </template>
 
@@ -32,7 +32,7 @@ const handClick = () => {
   // Define the steps for introduction
   driver.defineSteps([
     {
-      element: '#a',
+      element: '#A',
       popover: {
         className: 'first-step-popover-class',
         title: 'Title on Popover',
@@ -42,7 +42,7 @@ const handClick = () => {
       }
     },
     {
-      element: '#b',
+      element: '#B',
       popover: {
         title: 'Title on Popover',
         description: 'Body of the popover',
@@ -50,7 +50,7 @@ const handClick = () => {
       }
     },
     {
-      element: '#c',
+      element: '#C',
       popover: {
         title: 'Title on Popover',
         description: 'Body of the popover',

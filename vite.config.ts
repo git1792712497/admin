@@ -9,6 +9,7 @@ export default defineConfig(({ command, mode }) => {
 			'process.env': {}
 		},
 		server: {
+			host:'0.0.0.0',
 			open: true,
 			proxy
 		},

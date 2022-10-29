@@ -92,15 +92,6 @@ export const Package: RouteRecordRaw[] = [
 						}
 				 },
 				{
-					path: 'svgIcon',
-					name: 'svgIcon',
-					component: () => import('@/views/package/svgIcon.vue'),
-					meta: {
-						title: 'svg图标',
-						icon: 'Menu'
-					}
-				},
-				{
 					path: 'watermark',
 					name: 'watermark',
 					component: () => import('@/views/package/watermark.vue'),

@@ -8,13 +8,17 @@
 </head>
 <body>
   <script>
-    let obj = {
-      age:21,
-      name:20,
-      a:''
+    const header = {
+      orderNo:'订单编号',
+      orderDate:'下单时间',
+      address:'详细地址',
+      receiver:'收件人',
+      receiverPhone:'收件人电话'
     }
-
-
+    let obj = {}
+    for (let key in header) {
+      obj[header[key]] = key
+    }
     console.log(obj)
   </script>
 </body>
