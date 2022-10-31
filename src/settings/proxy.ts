@@ -1,6 +1,6 @@
 export const proxy = {
 	'/api': {
-		target: 'https://7cguo.gaoyuanyunguo.com',  //你要跨域访问的网址
+		target: 'http://39.130.133.24:32623/api',  //你要跨域访问的网址
 		changeOrigin: true,   // 允许跨域
 	},
 	'/jsonServer': {
@@ -8,3 +8,4 @@ export const proxy = {
 		changeOrigin: true,   // 允许跨域
 	}
 }
+

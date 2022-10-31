@@ -5,13 +5,19 @@
     </template>
 
     <div contenteditable="true">
-        aa
+
     </div>
   </el-card>
 </template>
 <script lang="ts" setup>
+import { getOrderList } from "@/api/upload";
+
 const observe = new MutationObserver((mutationsList) => {
   console.log(mutationsList)
+})
+
+getOrderList().then(res => {
+  console.log(res)
 })
 </script>
 

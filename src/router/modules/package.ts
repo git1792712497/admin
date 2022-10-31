@@ -200,6 +200,24 @@ export const Package: RouteRecordRaw[] = [
 					}
 				},
 				{
+					path: 'scrollreveal',
+					name: 'scrollreveal',
+					component: () => import('@/views/package/scrollreveal.vue'),
+					meta: {
+						title: '滚动动画',
+						icon: 'Menu'
+					}
+				},
+				{
+					path: 'waves',
+					name: 'waves',
+					component: () => import('@/views/package/waves.vue'),
+					meta: {
+						title: '波纹效果',
+						icon: 'Menu'
+					}
+				},
+				{
 					path: 'veeValidate',
 					name: 'veeValidate',
 					component: () => import('@/views/package/veeValidate.vue'),

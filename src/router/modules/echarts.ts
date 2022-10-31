@@ -27,6 +27,15 @@ export const echarts: RouteRecordRaw[] = [
 					title: '折线图',
 					icon:'Menu'
 				}
+			},
+			{
+				path: 'waterChart',
+				name: 'waterChart',
+				component: () => import('@/views/echarts/waterChart/waterChart.vue'),
+				meta: {
+					title: '水型图',
+					icon:'Menu'
+				}
 			}
 		]
 	}

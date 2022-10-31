@@ -17,7 +17,7 @@ export const ContentType = {
 
 
 export const axios = new Axios({
-   baseURL: '/api',
+   baseURL: 'http://39.130.133.24:32623/api',
    timeout: 10000,
    headers: {
       'Content-Type': ContentType.JSON,
@@ -29,7 +29,6 @@ export const axios = new Axios({
          return config
       },
       responseInterceptor(config: AxiosResponse) {
-         console.log(config,'响应拦截')
          return config
       },
       requestInterceptorsCatch(error: any) {
@@ -42,7 +41,6 @@ export const axios = new Axios({
             console.log('useRouter')
             user.clearUser()
          }
-         
       }
    }
 })

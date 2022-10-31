@@ -16,7 +16,7 @@ export default function (){
 			svgIcon(),
 			viteCompression(),
 			viteMockServe(),
-		  Components()
+		  Components() //按需导入组件库
 	]
 }
 

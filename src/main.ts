@@ -3,6 +3,7 @@ import App from './App.vue'
 import {router} from '@/router'
 import {pinia} from "@/store";
 
+
 import Avue from '@smallwei/avue';
 import '@smallwei/avue/lib/index.css';
 

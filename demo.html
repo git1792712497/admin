@@ -1,25 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid布局和scrollreveal使用demo</title>
+  <script src="https://unpkg.com/scrollreveal@4"></script>
+  <script>
+    ScrollReveal({ reset: true });
+  </script>
+  <link href="" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: rgb(233, 86, 62);
+      --text-color-darker: #333;
+      --text-color-normal: #666;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Helvetica, sans-serif, Arial;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 80px 20px 20px;
+    }
+    .wrapper > h1 {
+      font-size: 18px;
+      color: var(--text-color-darker);
+    }
+    .wrapper > h1::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: var(--primary-color);
+      width: 80%;
+      margin: 20px auto;
+    }
+    .wrapper > h3 {
+      font-size: 16px;
+      color: var(--text-color-normal);
+      margin: 20px auto 40px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 120px 120px;
+      column-gap: 5vw;
+      row-gap: 20px;
+    }
+    .feature-item {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      grid-template-rows: 1fr 2fr;
+      grid-template-areas:
+          'icon title'
+          'icon content';
+    }
+    .feature-item > i {
+      grid-area: icon;
+      font-size: 28px;
+      color: var(--primary-color);
+    }
+    .feature-item > p {
+      line-height: 24px;
+    }
+
+    @media screen and (max-width: 786px) {
+      .feature-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .feature-item {
+        grid-template-columns: 40px 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <script>
-    const header = {
-      orderNo:'订单编号',
-      orderDate:'下单时间',
-      address:'详细地址',
-      receiver:'收件人',
-      receiverPhone:'收件人电话'
-    }
-    let obj = {}
-    for (let key in header) {
-      obj[header[key]] = key
-    }
-    console.log(obj)
-  </script>
+<div style="height: 800px"></div>
+<section class="wrapper">
+  <h1>Font Awesome字体图标</h1>
+  <h3>Font Awesome为您提供可缩放的矢量图标，您可以使用CSS所提供的所有特性对它们进行更改。</h3>
+  <div class="feature-list">
+    <div class="feature-item">
+      <i class="fa fa-flag"></i>
+      <h4 class="item-tit">一个字库，675个图标</h4>
+      <p>仅一个Font Awesome字库，就包含了与网页相关的所有形象图标。</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa fa-ban"></i>
+      <h4 class="item-tit">无需依赖JavaScript</h4>
+      <p>Font Awesome完全不依赖JavaScript，因此无需担心兼容性。</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa fa-arrows-alt"></i>
+      <h4 class="item-tit">无限缩放</h4>
+      <p>无论在任何尺寸下，可缩放的矢量图形都会为您呈现出完美的图标。</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa fa-microphone"></i>
+      <h4 class="item-tit">如言语一般自由</h4>
+      <p>Font Awesome完全免费，哪怕是商业用途。请查看许可。</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa fa-pencil"></i>
+      <h4 class="item-tit">CSS控制</h4>
+      <p>Font Awesome的矢量图标，将使您的网站在视网膜级的高分屏上大放异彩。</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa fa-eye"></i>
+      <h4 class="item-tit">高分屏完美呈现</h4>
+      <p>Font Awesome的矢量图标，将使您的网站在视网膜级的高分屏上大放异彩。</p>
+    </div>
+  </div>
+</section>
+<section class="wrapper">
+  <h1>疫情速报</h1>
+  <h3>记者从西宁市新冠肺炎疫情防控处置工作指挥部获悉，10月28日0时20分，西宁市新增3名新冠肺炎病毒核酸检测阳性人员</h3>
+</section>
+<script>
+  // 单个项的动画持续时间2s，从下往上，间隔400ms
+  ScrollReveal().reveal('.feature-item', { distance: '48px', duration: 2000, interval: 400 });
+</script>
 </body>
 </html>
