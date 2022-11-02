@@ -5,7 +5,7 @@ export const tools: RouteRecordRaw[] = [
     path: '/tools',
     name: 'tools',
     meta: {
-      index: 1,
+      index: 3,
       title: '常用工具',
       icon:'FolderAdd'
     },

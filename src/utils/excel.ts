@@ -1,4 +1,4 @@
-import {invert} from 'lodash'
+import {invert} from 'lodash-es'
 import { read, utils, writeFile } from 'xlsx'
 import type { WorkBook } from 'xlsx';
 import type { JSON2SheetOpts, WritingOptions } from 'xlsx';

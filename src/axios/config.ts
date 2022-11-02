@@ -17,7 +17,7 @@ export const ContentType = {
 
 
 export const axios = new Axios({
-   baseURL: 'http://39.130.133.24:32623/api',
+   baseURL: 'https://7cguo.gaoyuanyunguo.com/api',
    timeout: 10000,
    headers: {
       'Content-Type': ContentType.JSON,

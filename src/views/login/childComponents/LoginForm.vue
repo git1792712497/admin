@@ -40,8 +40,8 @@ const router = useRouter()
 let loading = shallowRef(false)
 let loginFormRef = shallowRef();
 let loginForm = shallowReactive({
-  "username": "admin317050",
-  "password": "admin",
+  "username": "admin",
+  "password": "wh_order!@#$%^",
   "grant_type": "password"
 });
 let loginRules = {

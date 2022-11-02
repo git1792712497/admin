@@ -3,7 +3,6 @@ import App from './App.vue'
 import {router} from '@/router'
 import {pinia} from "@/store";
 
-
 import Avue from '@smallwei/avue';
 import '@smallwei/avue/lib/index.css';
 
@@ -29,7 +28,6 @@ Object.keys(Icons).forEach(key => {
 	app.component(key, Icons[key]);
 });
 
-
 app.config.globalProperties.$foo = () => {
 	console.log('全局函数')
 }
@@ -38,6 +36,10 @@ app.config.errorHandler = (err,vm,info) => {
 	console.error('全局异常处理',err)
 	console.log('全局异常处理',vm)
 	console.log('全局异常处理',info)
+}
+
+export function Time(){
+	console.log('aaaa')
 }
 
 app.use(components) //组件

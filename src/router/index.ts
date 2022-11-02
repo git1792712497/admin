@@ -19,7 +19,6 @@ function mapMenuPath(routes){
 }
 mapMenuPath(routerArray)
 
-
 function getKeepAliveList(routers){
 	let keepAliveList = new Set()
 	routers.forEach(route => {
@@ -52,8 +51,7 @@ export const router = createRouter({
 	strict: true,
 	scrollBehavior: () => ({left: 0,top: 0})
 })
-
-routerArray.forEach(route => router.addRoute('AppMain',route))
+routerArray.forEach(route => route.meta.fullScreen === true ? router.addRoute(route) : router.addRoute('AppMain',route))
 
 import {userStore} from "@/store/modules/user";
 router.beforeEach((to,from) => {

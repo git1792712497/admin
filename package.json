@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "npm run build && vite preview",
     "mock": "json-server --c ./jsonServer/json_sever_config.json ./jsonServer/db.json"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     "howler": "^2.2.3",
     "js-base64": "^3.7.2",
     "jsbarcode": "^3.11.5",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "md5": "^2.3.0",
     "mitt": "^3.0.0",
     "nprogress": "^0.2.0",

@@ -1,4 +1,6 @@
-export const basicRouter:any = [
+import {RouteRecordRaw} from "vue-router";
+
+export const basicRouter:RouteRecordRaw[] = [
 	{
 		path: '/login',
 		name: 'login',
