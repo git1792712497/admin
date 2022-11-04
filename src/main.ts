@@ -38,10 +38,6 @@ app.config.errorHandler = (err,vm,info) => {
 	console.log('全局异常处理',info)
 }
 
-export function Time(){
-	console.log('aaaa')
-}
-
 app.use(components) //组件
 app.use(directives) //自定义指令
 app.use(pinia)

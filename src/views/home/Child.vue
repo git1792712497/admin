@@ -6,7 +6,7 @@
     {{data}}
   </div>
 </template>
-<script lang="ts" setup>
+<script lang="ts" setup name="Child">
 import { getAddData, getDelete, getList, getUpdate } from '@/api/jsonServe'
 
 
