@@ -1,17 +1,34 @@
 <template>
- <div>
-   <demo></demo>
- </div>
+  <div>
+    <a-dropdown>
+      <a class="ant-dropdown-link" @click.prevent>
+        Hover me
+        <DownOutlined />
+      </a>
+      <template #overlay>
+        <a-menu>
+          <a-menu-item>
+            <a href="javascript:;">1st menu item</a>
+          </a-menu-item>
+          <a-menu-item>
+            <a href="javascript:;">2nd menu item</a>
+          </a-menu-item>
+          <a-menu-item>
+            <a href="javascript:;">3rd menu item</a>
+          </a-menu-item>
+        </a-menu>
+      </template>
+    </a-dropdown>
+  </div>
 </template>
-<script setup lang="ts">
-import demo from './demo.tsx'
-import { useGeolocation } from '@vueuse/core'
-const {
-  coords, // 经纬度
-  locatedAt, // 时间
-  error
-} = useGeolocation()
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { DownOutlined } from '@ant-design/icons-vue';
 
-
-console.log(coords.value)
+export default defineComponent({
+  components: {
+    DownOutlined,
+  },
+});
 </script>
+

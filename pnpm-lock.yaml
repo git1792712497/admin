@@ -6,6 +6,7 @@ specifiers:
   '@element-plus/icons-vue': ^2.0.9
   '@smallwei/avue': ^3.1.0
   '@toast-ui/editor': ^3.2.0
+  '@types/echarts': ^4.9.16
   '@types/file-saver': ^2.0.5
   '@types/fullpage.js': ^2.9.3
   '@types/gsap': ^3.0.0
@@ -88,6 +89,7 @@ dependencies:
   '@element-plus/icons-vue': 2.0.9_vue@3.2.40
   '@smallwei/avue': 3.2.0
   '@toast-ui/editor': 3.2.1
+  '@types/echarts': 4.9.16
   '@types/fullpage.js': 2.9.3
   '@types/gsap': 3.0.0
   '@types/howler': 2.2.7
@@ -945,6 +947,12 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
+  /@types/echarts/4.9.16:
+    resolution: {integrity: sha512-bfiagfPw3dWauAIJ9fgoJQoL4hLWlGcltqwbE6LGye0NIY5xnbZau+mDmadCzGojic3MWuFDCUiO25kl4sRGeA==}
+    dependencies:
+      '@types/zrender': 4.0.3
+    dev: false
+
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
@@ -1026,6 +1034,10 @@ packages:
 
   /@types/web-bluetooth/0.0.15:
     resolution: {integrity: sha512-w7hEHXnPMEZ+4nGKl/KDRVpxkwYxYExuHOYXyzIzCDzEZ9ZCGMAewulr9IqJu2LR4N37fcnb1XVeuZ09qgOxhA==}
+
+  /@types/zrender/4.0.3:
+    resolution: {integrity: sha512-EPI269lkHNsObwILJ1k1z7znLjKyePuWRy/XKK0shSGpBb9cIX307arcwJV4+2NeZj5wEjN06r4D8yFv7sI06g==}
+    dev: false
 
   /@uppy/companion-client/2.2.2:
     resolution: {integrity: sha512-5mTp2iq97/mYSisMaBtFRry6PTgZA6SIL7LePteOV5x0/DxKfrZW3DEiQERJmYpHzy7k8johpm2gHnEKto56Og==}

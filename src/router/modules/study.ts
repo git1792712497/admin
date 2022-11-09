@@ -11,13 +11,41 @@ export const toolComponents: RouteRecordRaw[] = [
 		},
 		children: [
 			{
-				path: 'hFunction',
-				name: 'hFunction',
-				component: () => import('@/views/study/hFunction.vue'),
+				path: '/vue3',
+				name: 'vue3',
 				meta: {
-					title: 'h函数',
-					icon:'Menu'
-				}
+					title: 'vue3',
+					icon:'ElementPlus'
+				},
+				children:[
+					{
+						path: 'hFunction',
+						name: 'hFunction',
+						component: () => import('@/views/study/hFunction.vue'),
+						meta: {
+							title: 'h函数',
+							icon:'Menu'
+						}
+					},
+					{
+						path: 'watch',
+						name: 'watch',
+						component: () => import('@/views/study/watch.vue'),
+						meta: {
+							title: 'watch使用',
+							icon:'Menu'
+						}
+					},
+					{
+						path: 'watchEffect',
+						name: 'watchEffect',
+						component: () => import('@/views/study/watchEffect.vue'),
+						meta: {
+							title: 'watchEffect使用',
+							icon:'Menu'
+						}
+					},
+				]
 			},
 			{
 				path: 'methods',

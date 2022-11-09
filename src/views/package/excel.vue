@@ -48,7 +48,7 @@ const upload = async ({file}: UploadRequestOptions) => {
 
 const handleExcelExport = async () => {
   const data = await getOrderList()
-  jsonToExcel({data,header})
+  jsonToExcel({data:[...data,...tableData.value],header})
 }
 </script>
 

@@ -1,6 +1,6 @@
 // * Echarts 按需引入
 import * as echarts from "echarts/core";
-import { BarChart, BarSeriesOption, LineChart, LineSeriesOption } from "echarts/charts";
+import { BarChart,PieChart, BarSeriesOption, LineChart, LineSeriesOption } from "echarts/charts";
 import { LegendComponent } from "echarts/components";
 import {
 	TitleComponent,
@@ -35,11 +35,13 @@ echarts.use([
 	GridComponent,
 	DatasetComponent,
 	TransformComponent,
-	BarChart,
-	LineChart,
 	LabelLayout,
 	UniversalTransition,
-	CanvasRenderer
+	CanvasRenderer,
+	
+	BarChart,
+	LineChart,
+	PieChart
 ]);
 
 export default echarts;

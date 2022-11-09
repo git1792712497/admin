@@ -36,6 +36,15 @@ export const echarts: RouteRecordRaw[] = [
 					title: '水型图',
 					icon:'Menu'
 				}
+			},
+			{
+				path: 'pieChart',
+				name: 'pieChart',
+				component: () => import('@/views/echarts/pieChart/pieChart.vue'),
+				meta: {
+					title: '饼图',
+					icon:'Menu'
+				}
 			}
 		]
 	}
