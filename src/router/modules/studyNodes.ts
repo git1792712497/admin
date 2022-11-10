@@ -1,9 +1,9 @@
 import {RouteRecordRaw} from "vue-router";
 
-export const toolComponents: RouteRecordRaw[] = [
+export const studyNodes: RouteRecordRaw[] = [
 	{
-		path: '/study',
-		name: 'study',
+		path: '/studyNodes',
+		name: 'studyNodes',
 		meta: {
 			index: 0,
 			title: '学习笔记',
@@ -11,7 +11,7 @@ export const toolComponents: RouteRecordRaw[] = [
 		},
 		children: [
 			{
-				path: '/vue3',
+				path: 'vue3',
 				name: 'vue3',
 				meta: {
 					title: 'vue3',
@@ -21,7 +21,7 @@ export const toolComponents: RouteRecordRaw[] = [
 					{
 						path: 'hFunction',
 						name: 'hFunction',
-						component: () => import('@/views/study/hFunction.vue'),
+						component: () => import('@/views/studyNodes/vue3/hFunction.vue'),
 						meta: {
 							title: 'h函数',
 							icon:'Menu'
@@ -30,7 +30,7 @@ export const toolComponents: RouteRecordRaw[] = [
 					{
 						path: 'watch',
 						name: 'watch',
-						component: () => import('@/views/study/watch.vue'),
+						component: () => import('@/views/studyNodes/vue3/watch.vue'),
 						meta: {
 							title: 'watch使用',
 							icon:'Menu'
@@ -39,7 +39,7 @@ export const toolComponents: RouteRecordRaw[] = [
 					{
 						path: 'watchEffect',
 						name: 'watchEffect',
-						component: () => import('@/views/study/watchEffect.vue'),
+						component: () => import('@/views/studyNodes/vue3/watchEffect.vue'),
 						meta: {
 							title: 'watchEffect使用',
 							icon:'Menu'
@@ -50,7 +50,7 @@ export const toolComponents: RouteRecordRaw[] = [
 			{
 				path: 'methods',
 				name: 'methods',
-				component: () => import('@/views/study/methods.vue'),
+				component: () => import('@/views/studyNodes/methods.vue'),
 				meta: {
 					title: '功能方法',
 					icon:'Menu'
@@ -59,7 +59,7 @@ export const toolComponents: RouteRecordRaw[] = [
 			{
 				path: 'scrollbar',
 				name: 'scrollbar',
-				component: () => import('@/views/study/scrollbar.vue'),
+				component: () => import('@/views/studyNodes/scrollbar.vue'),
 				meta: {
 					title: '滚动条样式',
 					icon:'Menu'

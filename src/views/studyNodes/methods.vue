@@ -8,14 +8,14 @@
           <el-button type="primary" @click="handleChangeUrl">按钮</el-button>
       </el-collapse-item>
       <el-collapse-item title="可编辑元素" :name="1">
-        <div contenteditable="true">可编辑元素</div>
+        <div contenteditable="true">点击编辑元素</div>
       </el-collapse-item>
     </el-collapse>
   </el-card>
 </template>
 
 <script setup lang="ts" name="methods">
-let activeNames = shallowRef(1)
+let activeNames = shallowRef(0)
 //修改url
 const handleChangeUrl = () => history.pushState(null,null,'/修改url')
 addEventListener('popstate',() => {}) //监听回退
