@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import path from "path";
 import installPlugins from './src/plugin'
 import {proxy} from "./src/settings/proxy";
-import { Time } from "./src/main";
 
 export default defineConfig(({ command, mode }) => {
 	return {
