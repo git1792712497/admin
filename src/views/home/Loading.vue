@@ -1,11 +1,11 @@
 <template>
 <div>
-
+<el-button></el-button>
 </div>
 </template>
 
 <script setup lang="ts" name="Loading">
-console.log(useSlots());
+
 </script>
 
 <style scoped lang="less">

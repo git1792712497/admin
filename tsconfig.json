@@ -34,5 +34,13 @@
     },
     "types": ["vite/client"]
   },
-  "include": ["src/**/*.ts","src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","env.d.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "env.d.ts",
+    "auto-import.d.ts",
+    "components.d.ts"
+  ],
 }
