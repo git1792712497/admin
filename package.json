@@ -17,7 +17,6 @@
     "@toast-ui/editor": "^3.2.0",
     "@types/echarts": "^4.9.16",
     "@types/fullpage.js": "^2.9.3",
-    "@types/gsap": "^3.0.0",
     "@types/howler": "^2.2.7",
     "@types/sortablejs": "^1.15.0",
     "@types/watermark-dom": "^2.3.1",

@@ -9,7 +9,6 @@ specifiers:
   '@types/echarts': ^4.9.16
   '@types/file-saver': ^2.0.5
   '@types/fullpage.js': ^2.9.3
-  '@types/gsap': ^3.0.0
   '@types/howler': ^2.2.7
   '@types/node': ^18.7.6
   '@types/sortablejs': ^1.15.0
@@ -91,7 +90,6 @@ dependencies:
   '@toast-ui/editor': 3.2.1
   '@types/echarts': 4.9.16
   '@types/fullpage.js': 2.9.3
-  '@types/gsap': 3.0.0
   '@types/howler': 2.2.7
   '@types/sortablejs': 1.15.0
   '@types/watermark-dom': 2.3.1
@@ -969,13 +967,6 @@ packages:
     resolution: {integrity: sha512-mNtlZTRyIDkiu2S+A3JzpdMpzQYT0Wtk7qhBllxItOPyybX7OvTdNdo9vYTGwAqMsa/mUAM95mINW42ODUA5hw==}
     dependencies:
       '@types/jquery': 3.5.14
-    dev: false
-
-  /@types/gsap/3.0.0:
-    resolution: {integrity: sha512-BbWLi4WRHGze4C8NV7U7yRevuBFiPkPZZyGa0rryanvh/9HPUFXTNBXsGQxJZJq7Ix7j4RXMYodP3s+OsqCErg==}
-    deprecated: This is a stub types definition. gsap provides its own type definitions, so you do not need this installed.
-    dependencies:
-      gsap: 3.11.3
     dev: false
 
   /@types/howler/2.2.7:

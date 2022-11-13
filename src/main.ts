@@ -18,11 +18,10 @@ import 'virtual:svg-icons-register'
 // tailwind.css
 import "@/assets/style/tailwind.css"
 
-
 const app = createApp(App)
-// 注册element Icons组件
 // ElMessage组件样式要手动导入
-import 'element-plus/es/components/message/style/css'
+import 'element-plus/theme-chalk/el-message.css'
+// 注册element Icons组件
 import * as Icons from "@element-plus/icons-vue";
 Object.keys(Icons).forEach(key => {
 	app.component(key, Icons[key]);

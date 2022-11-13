@@ -7,6 +7,7 @@ import viteCompression from './viteCompression'
 import viteMockServe from './mock'
 import Components from './unpluginVueComponents'
 
+
 export default function (){
 	 return [
 			vue(),
@@ -16,7 +17,7 @@ export default function (){
 			svgIcon(),
 			viteCompression(),
 			viteMockServe(),
-		  Components() //按需导入组件库
+		  Components(), //按需导入组件库
 	]
 }
 
