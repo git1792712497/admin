@@ -1,6 +1,6 @@
 import {createRouter,createWebHistory} from "vue-router";
 import NProgress from '@/settings/nprogress'
-const metaRouters = import.meta.glob("./modules/*.ts",{ eager: true });
+const metaRouters = import.meta.glob("./modules/**/*.ts",{ eager: true });
 
 export let routerArray = [];
 Object.values(metaRouters).forEach(modules => {

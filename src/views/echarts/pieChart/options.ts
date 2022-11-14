@@ -7,16 +7,21 @@ export async function getOption(){
 			}
 		},
 		legend: {
+			lineStyle:{
+				color:"#ffffff"
+			},
 			show: true,
 			icon: 'circle',
 			right: '3%',
 			left: 'center',
 			bottom: '10%',
 			itemWidth: 10,
+			
 			itemStyle: {
 				borderColor: 'none',
 			},
 			textStyle: {
+				color:'#ffffff',
 				rich: {
 					name: {
 						color: '#606266',
@@ -36,6 +41,13 @@ export async function getOption(){
 				name: '访问来源',
 				type: 'pie',
 				radius: '60%',
+				label:{
+					normal:{
+						position:'inner',
+						show:true,
+						formatter:'{d}%'
+					}
+				},
 				data: [
 					{value: 1048, name: '搜索引擎',groupId:1},
 					{value: 735, name: '直接访问',groupId:2},
