@@ -1,5 +1,5 @@
 import {App} from "vue";
-const directiveList = import.meta.globEager('./modules/*.ts')
+const directiveList = import.meta.glob('./modules/*.ts',{ eager: true })
 
 export default {
 	install(app: App){

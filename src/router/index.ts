@@ -1,13 +1,12 @@
-import {createRouter,createWebHistory,RouteRecordRaw} from "vue-router";
+import {createRouter,createWebHistory} from "vue-router";
 import NProgress from '@/settings/nprogress'
-const metaRouters = import.meta.globEager("./modules/*.ts");
+const metaRouters = import.meta.glob("./modules/*.ts",{ eager: true });
 
-export const routerArray: RouteRecordRaw[] = [];
-Object.keys(metaRouters).forEach(item => {
-	Object.keys(metaRouters[item]).forEach(key => {
-		routerArray.push(...metaRouters[item][key]);
-	});
-});
+export let routerArray = [];
+Object.values(metaRouters).forEach(modules => {
+	const router = Object.values(modules).flat()
+	routerArray.push(...router)
+})
 
 function mapMenuPath(routes){
 	routes.forEach(route => {
