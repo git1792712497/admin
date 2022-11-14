@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let promise = new Promise((resolve,reject) => {
+        resolve()
+    })
+    //无论成功异常都会执行一次
+    promise.finally(() => {
+        console.log(1)
+    })
+</script>
+</body>
+</html>

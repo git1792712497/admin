@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1工厂模式创建对象,缺点获取不到对象的真实类型
+    function createPerson(name,age,height){
+        let obj = {}
+
+        obj.name = name
+        obj.age = age
+        obj.height = height
+
+        return obj
+    }
+    let p = createPerson('李白',20,180)
+    console.log(p)
+
+    //2字面量创建对象
+
+    //3new关键字创建对象
+</script>
+</body>
+</html>

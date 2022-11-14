@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        <script>
+//原型是一个对象,每个构造函数都会存在一个prototype 原型,原型的作用是,共享方法
+//一般情况公共属性定义到构造函数里,方法定义到原型对象上(不会开辟新内存空间)
+
+function User(name,age){
+                this.name = name;
+                this.age = age;
+                // this.play = function(){
+                //     console.log("打游戏");
+                // }
+        }
+
+        User.prototype.play = function(){
+            console.log("打游戏");
+        }
+
+        let u = new User("李白",21);
+
+        console.dir(User.prototype) //console.dir可以打印对象的所以属性
+        u.play(); //
+        </script>
+</body>
+</html>

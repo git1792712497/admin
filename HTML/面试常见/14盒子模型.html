@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{background-color: seagreen;
+            width: 500px;
+            height: 500px;     /* width和height表示内容区大小*/
+        
+
+            /* 盒子分为 
+                       1 内容区(content) 
+                       2 内边距(padding)
+                       3 边框 (border)
+                       4 外边距 (margin)
+                       */
+
+            /* 边框 有三个样式
+                            1 边框宽度 border-width
+                            2 边框颜色 border-height
+                            3 边框样式 border-style   
+
+            
+                指定边框样式
+                            1 solid 实线
+                            2 dotted 点虚线
+                            3 dashed 虚线
+                            4 double 双线
+                            */
+
+            border-width: 10px 20px 30px 40px; /*表示上(top) 右(right) 下(bottom) 左(left) 
+                                                  border-top-width: 50px; 用来指定某边宽度  */
+            border-color: tomato;
+            border-style: dashed;
+
+            border-top: springgreen;  /*同理 也用来指定四边框颜色*/
+            border-left: tan;
+
+
+
+            border: 30px greenyellow double;    /*简写: 宽度 颜色 样式*/
+        
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //展开运算符实际是进行浅拷贝
+    let obj = {name:'李白',age:20}
+    let array = [1,2,3]
+    let str = 'abc'
+
+    function foo(x,y,z){
+        console.log(x,y,z)
+    }
+    //1_函数调用时
+    foo(...array) //展开数组
+    foo(...str) //展开字符串
+
+
+    //2_构造数组时
+    let newArray = [...array]
+
+    //3_构造对象字面量时
+    let newObj = {...obj}
+</script>
+</body>
+</html>

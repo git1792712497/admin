@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p[title]{color: yellowgreen;} 
+        /*p加 [属性名] 加{}  选择含有指定属性的元素  */
+
+        p[title="def"]{color: violet} 
+        /*p加 [属性名=属性值] 加{}  选择含有指定属性和属性值的元素*/
+
+        p[title^="abc"]{color: darkblue;} 
+        /*p加[属性名^=属性值]加{} 选择属性值以什么开头的元素*/
+
+        p[title$="c"]{color: darkgray;} 
+         /*选择以什么属性值结尾的元素*/
+
+        p[title*="b"]{color: darkmagenta;} 
+        /*选择含有属性名中的含有b元素*/
+
+
+    </style>
+
+
+</head>
+<body>
+    <p title="abc">少壮不努力,老大徒伤悲</p>
+    <p title="abcdef">床前明月光,疑是地上霜</p>
+    <p title="ggc">情不知所起,一往而情深</p>
+    <p title="def">自信点你没那么多观众</p>
+
+</body>
+</html>

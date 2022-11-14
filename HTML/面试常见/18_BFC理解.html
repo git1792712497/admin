@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>18_BFC理解</title>
+  <meta name="viewport" content="width=device-width">
+    <style>
+        .bfc{
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+        }
+
+        .parent{
+           /*
+           开启bfc 最好方式overflow: hidden;
+            float: left;
+            position: absolute;
+            display: inline-block;*/
+        }
+    </style>
+</head>
+<body>
+<!--BFC 块级格式上下文,现象一个盒子不设置高当内容元素浮动时导致无法撑起自身这个盒子没有形成BFC
+    BFC可以解决外边距塌陷(在父子盒子里给子盒子设置外边距时会导致父盒子移动)解决给父盒子开启BFC
+    BFC可以阻止元素被浮动元素覆盖
+-->
+<div class="parent">
+    <div class="bfc"></div>
+    <div class="bfc"></div>
+    <div class="bfc"></div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

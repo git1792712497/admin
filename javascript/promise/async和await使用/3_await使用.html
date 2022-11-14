@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function request(){
+        return new Promise((resolve,reject) => {
+            setTimeout(() => {
+                resolve(100)
+            },2000)
+        })
+    }
+
+
+    async function foo(){
+        //await后面一般跟Promise,会阻塞后面代码执行
+        let result1 = await request()
+        //后面的代码相当于在Promise.then中执行
+        console.log('await没有结果后面代码捕获执行')
+
+        let result2 = await request()
+
+        console.log(1)//等待4秒
+    }
+
+
+    foo()
+</script>
+</body>
+</html>

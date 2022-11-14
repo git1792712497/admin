@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let object = {
+
+    }
+    //属性描述符
+    //三个必须参数
+    //1 obj目标对象
+    //2 定义或者修改的属性的名
+    //3 目标属性所拥有的特性以对象的形式写(4个参数) //1 value设置属性的值默认为undefined
+                                                //2 writable 值是否可以重写 true或false 默认false
+                                                //3 Enumerable 目标属性是否可以被遍历 true或者false 默认false
+                                                //4 configurable 目标属性是否可以再删除或者被修改默认false
+
+
+    Object.defineProperty(object, 'name', {
+      value: 1000,
+      writable:false,
+      Enumerable:false,
+      configurable:false
+    });
+
+    delete object.name  //删除
+    console.log(object)
+  </script>
+</body>
+
+</html>

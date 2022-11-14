@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <canvas width="500px" height="500px" id="canvas"></canvas>
+    <script>
+      //动画思想 清屏,更新,渲染
+      const canvas = document.getElementById("canvas");
+
+      //获取上下文 2d,或者3d
+      const canvas2d = canvas.getContext("2d");
+      //设置颜色
+      canvas2d.fillStyle = "pink";
+      
+      canvas2d.fillRect(100, 100, 100, 100);
+
+      //canvas 转base64
+      console.log(canvas.toDataURL());
+    </script>
+  </body>
+</html>

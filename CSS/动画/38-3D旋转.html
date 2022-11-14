@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* 透视越小立体感越强 */
+            perspective: 300px;
+        }
+        img{
+            /* img是行内元素 */
+            display: block;
+            margin: 300px auto;
+            transition: all 1s;
+        }
+        img:hover{
+            /* 旋转 沿着x轴旋转 */
+            transform: rotate3d(1, 1, 0, 45deg);
+            transform: rotateX();
+            transform: rotateZ();
+            transform: rotateY();
+        }
+    </style>
+</head>
+<body>
+    <img src="../project/img/1 (1).jpg">
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let object = {
+            name:"李白"
+        }
+
+        function fn(a,b){
+            console.log(this);
+            console.log(a+b);
+        }
+
+        fn.apply(object,[1,2]);//调用函数改变this指向,并传参(以伪数组形式)
+
+
+        let arr = [1,22,34,5,6,8];
+
+        let array = Math.max.apply(Math,arr); //求数组最大值
+
+        console.log(array);
+    </script>
+</body>
+</html>

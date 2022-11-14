@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //1- Number.EPSILON是 JavaScript 能够表示的最小精度。误差如果小于这个值,两个数差值小于这个数就认为是相等
+  //EPSILON 属性的值接近于 2.2204460492503130808472633361816E-16，或者 2-52。
+
+  //2- 变量可以用用进制表示二进制
+  let b = 0b1010 //(二进制)
+  let o = 0o777 //(八进制)
+  let x = 0xfff //(十六进制)
+
+  //3- 检测一个数是否是有限数
+  Number.isFinite(100);
+
+  //4-检测数值是否是NaN
+  Number.isNaN(1);
+
+//5-字符串转数字
+  console.log(Number.parseInt('123Love'))
+  console.log(Number.parseFloat('123Love'))
+
+  //6-判断数组是否是整数
+  Number.isInteger(2)
+
+  //将小数部分去除
+  Math.trunc(1.22);
+
+  //检测一个数是正数还是负数还是0(返回1,0,-1)
+  Math.sign(-1);
+</script>
+</body>
+</html>

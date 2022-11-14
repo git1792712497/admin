@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 80%;
+            height: 320px;
+            background-color: burlywood;
+            display: flex;
+            /* 主轴居中 */
+            justify-content: center;
+
+             /* 拉伸(子元素加要高度) */
+             align-items: stretch;
+
+            /* 我们需要侧轴居中对齐 */
+            align-items: center;
+        }
+
+        span{
+            width: 200px;
+            height: 150px;
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ①所有引用类型(object,array,function)都有一个__proto__(隐式原型)属性，属性值是一个普通的对象
+        // ②所有函数都有一个prototype(原型)属性，属性值是一个普通的对象
+        // ③所有引用类型的__proto__属性指向它构造函数的prototype
+
+        let object = []
+        console.dir(object)
+        console.log(typeof(object));
+        console.log(Object.getPrototypeOf(object)) //获取原型
+
+    </script>
+    
+</body>
+</html>

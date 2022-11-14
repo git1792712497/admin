@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+        <button onclick="request()">获取数据</button>
+<script>
+//async异步,只能用于函数
+async function request(){
+    //await等待,获取异步结果
+     const res = await axios({
+         method:'GET',
+         url:'https://unpkg.com/axios/dist/axios.min.js'
+     })
+
+    console.log(res)
+
+
+    const res1 = await axios({
+        url:'https://api.shop.eduwork.cn/api/index'
+    })
+
+    console.log(res1)
+ }
+</script>
+</body>
+</html>

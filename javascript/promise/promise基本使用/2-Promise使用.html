@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+                        //结果    拒绝
+    new Promise(function(resolve,reject){
+        resolve('成功')
+        setTimeout(function(){
+
+        },1000)
+
+        reject('失败')
+        // 成功时调用then
+    }).then(function(){
+
+        // 失败时调用 catch
+    }).catch(function(){
+
+    })
+
+    */
+
+
+
+    new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve('成功')
+            reject('失败')
+        },1000)
+        // 简写 then 里有两个参数
+    }).then(data=>{
+        console.log(data);
+    },error=>{
+        console.log(error)
+    })
+    </script>
+</body>
+</html>

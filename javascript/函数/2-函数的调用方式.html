@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1-普通函数(this指向window)
+        function sum(){
+            console.log("sum");
+        }
+        sum();
+        sum.call();
+
+        //2-对象的方法(this指向object对象)
+        let object = {
+            play(){
+                console.log("ES6写法");
+            }
+        }
+
+        object.play();
+
+        //3-构造函数(this指向实例对象)
+        function User(){}
+        let n = new User();
+
+        //4-绑定事件函数(this指向button)
+        button.onclick = function(){}  //点击按钮调用
+
+        //5-定时器函数(this指向window)
+        setInterval(function(){},1000)
+
+        //6-立即执行函数(this指向window)
+        (function(){
+            console.log("立即执行函数");
+        })()
+
+    </script>
+</body>
+</html>

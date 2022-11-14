@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="fu">
+        <span id="zi"></span>
+    </div>
+
+    <ul>
+        <li>我是1</li>
+        <li>我是2</li>
+        <li>我是3</li>
+        <li>我是4</li>
+        <li>我是100</li>
+    </ul>
+
+
+    <script>
+        //parentNode 父节点
+
+        var span=document.querySelector('.zi')
+        console.log(zi.parentNode); // .父节点获取父元素属性
+
+
+        //children 获取所有子元素节点(常用)
+        var ul=document.querySelector('ul');
+        console.log(ul.children);
+
+        //firstElementChild 第一个元素节点
+        console.log(ul.firstElementChild);
+
+        //lastElementChild 返回最后一个子元素节点
+        console.log(ul.lastElementChild);
+
+
+        //实际开发中 .childer[索引] 无兼容性问题
+        console.log(ul.children[2]); //获取第三个
+
+        //获取最后一个元素 减一
+        console.log(ul.children[ul.children.length -1]) 
+    </script>
+</body>
+</html>

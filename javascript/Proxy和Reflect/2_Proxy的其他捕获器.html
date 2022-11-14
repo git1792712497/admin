@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let obj = {
+        name:'周龙权',
+        age:18
+    }
+
+    let p = new Proxy(obj,{
+        //监听in的捕获器
+        has(target,key){
+            return key in target
+        },
+        //监听delete的捕获其
+        deleteProperty(target,key){
+            console.log(`监听到${target[key]}被删除`)
+            delete target[key]
+        }
+    })
+
+    console.log('name' in p)
+    delete p.age
+</script>
+</body>
+</html>

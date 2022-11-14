@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let promise = Promise.resolve('resolve')//Promise的reject方法
+    // let promise2 = Promise.reject('reject')//Promise的reject方法
+
+    function app(){
+       return Promise.resolve('resolve')
+    }
+
+
+
+    app().then(res => {
+        console.log(res)
+    })
+
+
+</script>
+</body>
+</html>

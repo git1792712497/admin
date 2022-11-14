@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let object = {
+        name:"李白",
+        age:21
+    }
+
+    //  let json = JSON.stringify(object,['name']) //第二个参数那几个key要转是个数组
+
+
+    //第二个参数
+        let json1 = JSON.stringify(object,(key,value) => {
+            if (key === 'age'){
+                 return value + ''
+            }
+            return value
+        })
+
+        console.log(json1);
+
+
+    //   //第三个参数
+    // let json2 = JSON.stringify(object,null,9)
+    // console.log(json2)
+
+</script>
+</body>
+</html>

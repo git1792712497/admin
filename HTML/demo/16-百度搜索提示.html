@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="" value="" id="Oinput">
+<ul id="Oul"></ul>
+<script>
+  let Oinput = document.getElementById("Oinput");
+  let Oul = document.getElementById("Oul");
+  Oinput.oninput = function(){
+    let script = document.createElement("script");
+    script.src = "http://suggestion.baidu.com/su?wd="+this.value+"&cb=fun";
+    document.body.appendChild(script);
+  }
+  function fun(str){
+    let strHtml = "";
+    for(let i=0;i<str.s.length;i++){
+      strHtml+=`<li>${str.s[i]}</li>`
+
+    }
+    Oul.innerHTML = strHtml;
+  }
+</script>
+</body>
+</html>

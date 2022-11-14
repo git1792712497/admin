@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>                  
+            <!--HTML5 规定自定义属性以date- 开头-->
+
+    <div id="8848" data-index='1' data-first-name="666"></div>
+
+    <script>
+        var div=document.querySelector('div');
+
+        // 获取div元素的属性值  只能获取自带的
+        console.log(div.id);
+
+        //.getAttribute('')可获取自定义属性值
+        console.log(div.getAttribute('id'));  
+
+        //比如给div添加 index='1' 可以用getAttribute获取
+        console.log(div.getAttribute('index'));
+
+        //更改内置属性值
+        div.id='7748';
+
+        //更改自定义属性
+        div.setAttribute('index',2);
+
+        //移除属性
+        div.removeAttribute('index');           //Attribute 译 属性
+
+        //dataset 获取自定义属性集合 只能获取data- 开头的属性
+        console.log(div.dataset);
+        console.log(div.dataset.index);
+
+        //如果自定义属性比较长则用驼峰命名获取
+        console.log(div.dataset.firstName);
+    </script>
+</body>
+</html>

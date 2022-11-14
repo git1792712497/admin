@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //迭代器是帮助我们对某个数据结构进行遍历的对象
+        //js中迭代器也是一个具体对象,这个对象需要符合迭代器协议
+        //在js中这个标准就是一个特定的next方法
+        //next是一个无参函数或有一个参数的函数,需要有返回值返回一个对象
+
+        
+        //编写的一个迭代器
+        const obj = {
+            next:() => {
+                return{done:Boolean,value:''}
+            }
+        }
+
+    </script>
+</body>
+</html>

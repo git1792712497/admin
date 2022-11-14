@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width">
+  <style>*{margin: 0;padding: 0;}</style>
+    <style>
+        div{
+            width: 100%;
+            height: 50vh;
+            background: darkgrey;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+const div = document.querySelector('div')
+div.addEventListener('touchstart',() => {
+    console.log('手指触摸开始')
+})
+div.addEventListener('touchend',() => {
+    console.log('手指触摸离开')
+})
+div.addEventListener('touchmove',() => {
+    console.log('手指触摸移动(手指离开元素离开元素也会触发)')
+})
+div.addEventListener('touchcancel',() => {
+    console.log('手指触摸打断')
+})
+</script>
+</body>
+</html>

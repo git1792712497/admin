@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    async 表示异步。当浏览器遇到带有 async 属性的 script 时，
+    请求该脚本的网络请求是异步的，不会阻塞浏览器解析 HTML
+    如果存在多个 async 的时候，它们之间的执行顺序也不确定，
+    完全依赖于网络传输结果，谁先到执行谁
+   -->
+
+  <script type="module" async src="./demo.js"></script>
+  <script type="module" src="./test.js"></script>
+
+
+  <!-- defer 表示延迟,HTML 还没有解析完浏览器不会暂停解析并执行 JS 代码，
+    而是等待 HTML 解析完毕再执行 JS 代码。 -->
+</body>
+</html>

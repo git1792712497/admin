@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Depend{
+        constructor() {
+            this.reactive = []
+        }
+        addDepend(fun){
+            this.reactive.push(fun)
+        }
+        notify(){
+            this.reactive.forEach(fun => {
+                fun()
+            })
+        }
+    }
+
+    const depend = new Depend()
+
+    function watch(fun){
+        depend.addDepend(fun)
+    }
+
+    const targetMap = new WeakMap()
+    
+    function getDepend(target,key){
+        let map = targetMap.get(target)
+        if (!map){
+            map = new Map()
+            targetMap.set(target,map)
+        }
+
+        let depend = map.get(key)
+        if(!depend){
+            depend = new Depend()
+            map.set(key,depend)
+        }
+        return depend
+    }
+
+    const obj = {
+        name:'周龙权',
+        age:18
+    }
+
+    const proxyObj = new Proxy(obj,{
+        get(target,key,relative){
+            return Reflect.get(target,key,relative)
+        },
+        set(target,key,newValue,relative){
+            Reflect.set(target,key,newValue,relative)
+            const depend = getDepend(target,key)
+            depend.notify()
+        }
+    })
+
+    watch(function (){
+        console.log('代理数据改变重新执行')
+    })
+
+
+    proxyObj.name = '代理改变自动执行'
+
+
+</script>
+</body>
+</html>

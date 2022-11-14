@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const pending = 'pending'
+    const fulfilled = 'fulfilled'
+    const rejected = 'rejected'
+
+    class MYPromise{
+        constructor(executor) {
+            this.status = pending
+            this.success = undefined
+            this.error = undefined
+
+            const resolve = success => {
+                if (this.status === 'pending'){
+                    this.status = fulfilled
+                    queueMicrotask(() => {
+                        this.success = success
+                        this.res(this.success)
+                    })
+
+                }
+            }
+
+            const reject = error => {
+                if (this.status === 'pending'){
+                    this.status = rejected
+                    queueMicrotask(() => {
+                        this.error = error
+
+                        this.err(this.error)
+                    })
+                }
+
+            }
+
+            executor(resolve,reject)
+
+        }
+
+        then(res,err){
+            this.res = res
+            this.err = err
+        }
+
+    }
+
+
+    let p = new MYPromise((resolve,reject) => {
+        resolve(1)
+        reject(2)
+    })
+
+
+    p.then(res => {
+        console.log(res)
+    },err => {
+        console.log(err)
+    })
+
+</script>
+</body>
+</html>

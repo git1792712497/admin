@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    async function foo(){
+
+        let result = await new Promise(resolve => {
+            setInterval(() => {
+                resolve('异步编程解决方案')
+            },2000)
+        })
+
+        console.log(result)
+    }
+    foo()
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Foo(name,age){
+        //把名字,年纪添加到创建出来的对象
+        this.name = name
+        this.age = age
+    }
+    //当我们通过new区调用一个函数时,那么这个函数就是构造函数,
+    let f = new Foo('周龙权',18)
+
+    console.log(f)
+</script>
+</body>
+</html>

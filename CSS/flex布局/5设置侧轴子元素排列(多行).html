@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* 换行侧轴上控制子元素的对齐方式使用 align-content */
+        div{
+            width: 1000px;
+            height: 520px;
+            background-color: cornflowerblue;
+            display: flex;
+            /* 换行 */
+            flex-wrap: wrap;
+            /* 盒子贴在一起 */
+            align-content: flex-start;
+            /* 盒子居中(适用于换行盒子) */
+            align-content: center;
+            /* 子元素贴在上侧和下侧 */
+            align-content: space-between;
+            /* 上侧盒子和下册盒子有距离 */
+            align-content: space-around;
+        }
+
+        span{
+            width: 200px;
+            height: 150px;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+    </div>
+</body>
+</html>

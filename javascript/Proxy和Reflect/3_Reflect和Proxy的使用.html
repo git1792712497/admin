@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let obj = {
+        name:'周龙权',
+        age:18
+    }
+
+    //创建代理对象的目的是为了不直接操作原来的对象
+    let p = new Proxy(obj,{
+        get(target,key,receiver){
+            return Reflect.get(target,key)
+        },
+        set(target,key,newValue,receiver){
+            //设置成功失败返回布尔类型值
+            let result =  Reflect.set(target,key)
+        }
+    })
+
+    console.log(p.name)
+    p.age = 21
+</script>
+</body>
+</html>

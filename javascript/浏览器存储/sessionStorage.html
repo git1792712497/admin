@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessionStorage会话存储当页面关闭清空</title>
+</head>
+<body>
+    <button id="button1">保存数据</button>
+    <button id="button2">读取数据</button>
+    <button id="button3">删除数据</button>
+    <button id="button4">清空数据</button>
+
+    <script>
+        const button1 = document.getElementById('button1')        
+        const button2 = document.getElementById('button2')
+        const button3 = document.getElementById('button3')
+        const button4 = document.getElementById('button4')
+
+        let user = {
+            name:'李白',
+            age:18,
+        }
+        //存的时候要把对象转字符串
+        let user1 = JSON.stringify(user)
+
+
+
+        button1.onclick = ()=>{
+            //保存数据以key,value形式
+            sessionStorage.setItem('demo',user1)
+        }
+        
+        button2.onclick = ()=>{
+            //读取数据传key,把字符串转对象
+           console.log(JSON.parse(sessionStorage.getItem('demo')))
+        }
+
+        button3.onclick = ()=>{
+           //删除
+            sessionStorage.removeItem('demo')
+        }
+
+        button4.onclick = ()=>{
+            //清空
+            sessionStorage.clear()
+        }
+    </script>
+</body>
+</html>

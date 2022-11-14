@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 400px;
+        background-color: aquamarine;
+        transition: all 1s;
+        margin: 200px auto;
+    }
+    
+    div:hover{
+        /* 过度旋转缩放综合写法(先把位移写前面) */
+        transform: translate(200px,0) rotate(180deg) scale(1,8);
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

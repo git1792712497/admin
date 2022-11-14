@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="getPosition()">获取地理位置</button>
+<script>
+
+    function getPosition(){
+        navigator.geolocation.getCurrentPosition((success)=>{
+            console.log(`纬度${success.coords.latitude}`)
+            console.log(`经度${success.coords.longitude}`)
+        },(error) => {
+            console.log(err);
+        },{enableHighAccuracy:true,timeout:300,maximumAge:0});
+    }
+
+</script>
+</body>
+</html>

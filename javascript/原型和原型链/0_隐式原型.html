@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //什么是原型?
+  //每个对象都有他的原型对象,他可以使用自己原型对象上的索引属性和方法
+  //获取原型的方法?(2种)
+  //通过对象的__proto__方法,通过构造函数的prototype
+
+  const dog = {
+    name:'李白'
+  }
+  //原型上增加方法
+  dog.__proto__.eat = function (){
+    console.log("吃")
+  }
+  dog.eat()
+</script>
+</body>
+</html>

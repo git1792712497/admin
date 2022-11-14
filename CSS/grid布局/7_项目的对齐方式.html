@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1_容器属性</title>
+    <link rel="stylesheet" href="./0_基础样式.css">
+  <meta name="viewport" content="width=device-width">
+    <style>
+        section{
+            display: grid;
+            grid-template-columns: repeat(3,300px);
+        }
+
+        .div3{
+            /*项目自身属性*/
+            justify-self: start;/*水平属性 => start, end ,center*/
+            align-self: start; /*垂直属性 =>start, end ,center*/
+
+            /*简写:place-self: 水平 垂直;*/
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="div1">1</div>
+        <div>2</div>
+        <div class="div3">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </section>
+</body>
+</html>

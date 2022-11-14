@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // js中有全局作用域,函数作用域,块级作用域
+    // ES6的块级作用域,对let,const,function,class声明的类型是有效的
+    // 对var声明的无效
+    {
+        let message = '块级作用域'
+    }
+
+
+    if (true){
+        //这里是块ji作用域
+     }
+
+    var color = 'red'
+    switch (color){
+        //块级作用域
+    }
+
+    //for语句也是块级作用域
+    for (var i=0;i<10;i++){
+
+    }
+    console.log(i) //可以访问到i,let访问不到
+</script>
+</body>
+</html>

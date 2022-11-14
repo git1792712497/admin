@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //当需要发送两个请求才能完成时使用
+
+        let p1 = new Promise((resolve,reject) => {
+            setTimeout(() =>{
+                resolve(2)
+            },1000)
+
+        })
+        let p2 = new Promise((resolve,reject) => {
+            setTimeout(() =>{
+                resolve(1)
+            },2000)
+        })
+
+        //等所有Promise都拿到结果,如果有一个reject就会进入catch
+        Promise.all([p1,p2,'all']).then(res => {
+            console.log(res)
+        }).catch(err => {
+            console.log('reject')
+        })
+
+    </script>
+</body>
+</html>

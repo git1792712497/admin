@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        new Promise(function(resolve,reject){
+            //第一次网络请求代码
+            setTimeout(function(){
+                resolve()
+            },1000)
+            
+        }).then(function(){
+            //第一次拿到结果的代码
+            console.log("Vue");
+
+
+            return new Promise(function(resolve,reject){
+                //第二次发送网络请求
+                resolve('hello world')
+                setTimeout(function(){
+
+                },1000)
+    
+            }).then(function(data){
+                // 第二次处理的代码
+                console.log(data);
+            })
+
+        }).then(function(){
+
+        })
+    </script>
+</body>
+</html>

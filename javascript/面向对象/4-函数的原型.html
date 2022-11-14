@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Foo(){
+
+    }
+    //函数也是个对象,函数作为对象来说也是有隐式原型prototype
+    //函数也有一个原型prototype显示原型
+    let f = new Foo()
+    // 当使用new关键字创建对象时,这个函数的显示原型会被赋值给创建出来对象的隐式原型
+    console.log(f.__proto__ === Foo.prototype)
+    //函数的显示原型上有一个constructor属性指向这个函数
+    console.log(Foo.prototype.constructor)
+</script>
+</body>
+</html>

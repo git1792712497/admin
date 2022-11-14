@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{border:10px red solid;
+        /*overflow: hidden;  使其可以包含浮动元素防止塌陷*/
+
+        }
+
+        .box2{width: 400px;
+            height: 400px; 
+            background-color: rgb(66, 206, 23);
+            float: left;
+        }
+
+    
+
+/* 
+        .box1::after{
+                    content: "";
+                    display: block;   通过伪元素解决高度塌陷问题(谁塌陷设置谁)
+                    clear: both;
+
+        } */
+
+                    
+                
+        
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+       <div class="box2"></div>
+    </div>
+
+    <div class="box3"></div>
+</body>
+</html>

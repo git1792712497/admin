@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let obj = {
+        name:'周龙权',
+    }
+
+    obj.__proto__= {
+
+    }
+
+    obj.__proto__.__proto__= {
+        age:18
+    }
+    //查找属性会沿着原型链来查找
+    console.log(obj.__proto__.__proto__)
+
+</script>
+</body>
+</html>

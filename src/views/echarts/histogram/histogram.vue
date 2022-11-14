@@ -22,6 +22,6 @@ onMounted(async ()=>{
 <style scoped>
 .histogram{
   width: 100%;
-  height: 90%;
+  height: 85%;
 }
 </style>

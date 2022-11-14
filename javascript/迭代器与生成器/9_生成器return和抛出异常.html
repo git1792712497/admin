@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function* foo(){
+        console.log(1)
+        const n = yield
+
+        // console.log(n)
+        // yield
+
+        try {
+            console.log(3)
+            yield
+        }catch (error){
+            console.log('捕获异常')
+        }
+    }
+
+    let generator = foo()
+    console.log(generator.next())
+
+    // console.log(generator.return(10));//终止执行
+
+    console.log(generator.throw('err'))//代码抛出异常
+</script>
+</body>
+</html>

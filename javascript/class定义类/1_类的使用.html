@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person{
+        //对象属性 public 
+        name = 1
+        age = 2
+        //es13 私有属性
+        #app = '抖音'
+    
+        //类的构造方法,只有一个,当new调用这个类时,constructor就会被调用
+        constructor(name,age) {
+            this.name = name
+            this.age = age
+        }
+        //类中写方法
+        run(){
+            console.log(this.name)
+        }
+        //类的访问方法
+        get(){
+            return this.name
+        }
+
+        set(newValue){
+            this.name = newValue
+        }
+
+        //静态方法访问,Person.createPerson()访问
+        static createPerson(){
+
+        }
+    }
+
+    let p = new Person('李白',21) //传的参到constructor()里
+
+    console.log(p)
+
+</script>
+</body>
+</html>

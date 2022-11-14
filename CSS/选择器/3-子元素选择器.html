@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box_1, .box_2 {
+            border: solid 1px red;
+            margin: 10px;
+            float: left;
+            width: 100px;
+            text-align: center;
+        }
+        /*后代选择器会选择所有*/
+        .box_1 p {
+            color: red;
+        }
+
+        .box_2 > p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box_1">
+    <p>第一行</p>
+    <p>第二行</p>
+    <div>
+        <p>第三行</p>
+        <p>第四行</p>
+    </div>
+</div>
+<div class="box_2">
+    <p>第一行</p>
+    <p>第二行</p>
+    <div>
+        <p>第三行</p>
+        <p>第四行</p>
+    </div>
+</div>
+</body>
+</html>

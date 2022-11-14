@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Map数据结构,是键值对集合,但键可以是各种类型的值包括对象
+  let m = new Map();
+
+  //添加元素参数(键,值)
+  m.set('李白',20);
+  m.set("play",function (){
+    console.log('Map')
+  })
+
+  let key = {
+    age:20
+  }
+
+  //设置
+  m.set(key,[1,23,4])
+  //获取元素个数
+  console.log(m.size)
+  //删除
+  m.delete("key")
+  //获取
+  m.get("play")
+  //清空
+  m.clear()
+  //遍历
+  for (let item of m){
+
+  }
+</script>
+</body>
+</html>

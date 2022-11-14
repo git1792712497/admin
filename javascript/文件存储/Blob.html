@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // minme类型
+    // text/plain    纯文本文档
+    // text/html    html文档
+    // image/jpeg    jpeg图像
+    // image/png  
+    // audio/mpeg  MP3文件
+    // audio/ogg 
+    // audio/*
+    // audio/mp4
+    // application/*
+    // application/json    json文件
+    // application/javascript
+    // application/ecmascript
+    // application/octet-stream
+
+
+    //Blob 里面可以存储二级编码数据,不可修改,
+    const blob = new Blob(['hello'],{type:'text/plain'})
+    
+    //分片
+    console.log(blob.slice(1,2,'text/plain'));
+  </script>
+</body>
+
+</html>

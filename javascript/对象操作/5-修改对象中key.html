@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [
+        {
+          id: 1,
+          name: "小明",
+        },
+        {
+          id: 2,
+          name: "小红",
+        },
+      ];
+
+      /**/
+      //旧key到新key的映射
+      let keyMap = {
+        id: "value",
+        name: "label",
+      };
+
+      for (let i = 0; i < array.length; i++) {
+        let obj = array[i];
+        for (let key in obj) {
+          let newKey = keyMap[key];
+          if (newKey) {
+            obj[newKey] = obj[key];
+            delete obj[key];
+          }
+        }
+      }
+
+      console.log(array);
+    </script>
+  </body>
+</html>

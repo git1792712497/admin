@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //ES8 async和await的原理
+    function foo(url){
+        return new Promise((resolve,reject) => {
+            setTimeout(() => {
+                resolve(url)
+            },1000)
+        })
+    }
+
+
+    function* getData(){
+        //模拟网络请求
+        let res1 = yield foo(100)
+        let res2 = yield foo(res1 + 10)
+        let res3 = yield foo(res2 + 10)
+        console.log(res3)
+        return undefined
+    }
+
+   /* let generator = getData()
+    //调用next会执行生成器里第一段代码返回一个迭代器
+    let iterator = generator.next()
+    //迭代器.value可以拿到值是个Promise
+    iterator.value.then(res => {
+        //传值给yield
+        generator.next(res).value.then(res => {
+            console.log(res)
+        })
+    })*/
+
+    //传入一个生成器函数
+    function auto(genFn){
+        let generator = genFn()
+        //递归函数
+        function recursion(res){
+            const result = generator.next(res)
+            if (result.done) return result.value
+
+            result.value.then(res => {
+                recursion(res)
+            })
+        }
+        recursion()
+    }
+
+    auto(getData)
+</script>
+</body>
+</html>
