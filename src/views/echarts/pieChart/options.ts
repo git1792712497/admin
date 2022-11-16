@@ -41,13 +41,6 @@ export async function getOption(){
 				name: '访问来源',
 				type: 'pie',
 				radius: '60%',
-				label:{
-					normal:{
-						position:'inner',
-						show:true,
-						formatter:'{d}%'
-					}
-				},
 				data: [
 					{value: 1048, name: '搜索引擎',groupId:1},
 					{value: 735, name: '直接访问',groupId:2},

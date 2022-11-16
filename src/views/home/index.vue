@@ -1,19 +1,16 @@
 <template>
   <div>
-    <el-button type="primary" @click="handle">按钮</el-button>
+
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 
-import {ElMessage} from "element-plus";
-
-
-const handle = () => {
-  ElMessage.success('唱歌')
-}
 </script>
 
 <style scoped>
-
+img{
+  width: 700px;
+  height: 500px;
+}
 </style>

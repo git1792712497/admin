@@ -1,10 +1,11 @@
 import {createRouter,createWebHistory} from "vue-router";
+import type {RouteRecordRaw} from "vue-router";
 import NProgress from '@/settings/nprogress'
-const metaRouters = import.meta.glob("./modules/**/*.ts",{ eager: true });
+const metaRouters:Record<string, any> = import.meta.glob("./modules/**/*.ts",{ eager: true });
 
-export let routerArray = [];
+export let routerArray: RouteRecordRaw[] = [];
 Object.values(metaRouters).forEach(modules => {
-	const router = Object.values(modules).flat()
+	const router = Object.values(modules).flat() as RouteRecordRaw[]
 	routerArray.push(...router)
 })
 
