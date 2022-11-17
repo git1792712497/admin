@@ -216,16 +216,7 @@ export const Package: RouteRecordRaw[] = [
 						title: '波纹效果',
 						icon: 'Menu'
 					}
-				},
-				{
-					path: 'veeValidate',
-					name: 'veeValidate',
-					component: () => import('@/views/package/veeValidate.vue'),
-					meta: {
-						title: '表单校验',
-						icon: 'Menu'
-					}
-				},
+				}
 			]
 	 }
 ]

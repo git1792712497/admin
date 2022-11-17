@@ -5,35 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+      /* 如果想让盒子垂直水平居中可以和transform:translate配合使用(对行内元素无效) */
         div{
-            width: 800px;
-            height: 800px;
+            width: 100px;
+            height: 100px;
             background-color: aquamarine;
             transition: all 2s;
             position: absolute;
         }
 
         div:hover{
-            transform: rotate(-1800deg);  /* 旋转 */
-
            /* 如果用百分号则是盒子自身宽度或高度计算 */
-            transform: translate(-20px,-20px); /* 移动 */
+            transform: translate(100px,100px); /* 移动 */
         }
-        p{
-            width: 100px;
-            height: 100px;
-            background-color: black;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            /* 如果想让盒子垂直水平居中可以和transform:translate配合使用(对行内元素无效) */
-            transform:translate(-50%,-50%) ;
-        }
+
     </style>
 </head>
 <body>
     <div>
-        <p></p>
+
     </div>
 </body>
 </html>
