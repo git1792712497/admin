@@ -1,7 +1,8 @@
 // * Echarts 按需引入
 import * as echarts from "echarts/core";
-import { BarChart,PieChart, BarSeriesOption, LineChart, LineSeriesOption } from "echarts/charts";
-import { LegendComponent } from "echarts/components";
+import { CanvasRenderer } from "echarts/renderers";
+
+import { BarChart,PieChart,LineChart,MapChart,LineSeriesOption,BarSeriesOption } from "echarts/charts";
 import {
 	TitleComponent,
 	// 组件类型的定义后缀都为 ComponentOption
@@ -14,10 +15,20 @@ import {
 	DatasetComponent,
 	DatasetComponentOption,
 	// 内置数据转换器组件 (filter, sort)
-	TransformComponent
+	TransformComponent,
+	GeoComponent,
+	
+		TimelineComponent,
+	LegendComponent,
+	
+	VisualMapComponent,
+	VisualMapContinuousComponent,
+		VisualMapPiecewiseComponent,
+		
 } from "echarts/components";
-import { LabelLayout, UniversalTransition } from "echarts/features";
-import { CanvasRenderer } from "echarts/renderers";
+import { LabelLayout, UniversalTransition} from "echarts/features";
+
+
 
 // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
 export type ECOption = echarts.ComposeOption<| BarSeriesOption
@@ -26,6 +37,7 @@ export type ECOption = echarts.ComposeOption<| BarSeriesOption
 		| TooltipComponentOption
 		| GridComponentOption
 		| DatasetComponentOption>;
+
 
 // 注册必须的组件
 echarts.use([
@@ -41,7 +53,13 @@ echarts.use([
 	
 	BarChart,
 	LineChart,
-	PieChart
+	PieChart,
+	//地图
+	GeoComponent,
+	VisualMapComponent,
+	TimelineComponent,
+	VisualMapContinuousComponent,
+	MapChart
 ]);
 
 export default echarts;

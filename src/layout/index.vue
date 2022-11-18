@@ -27,21 +27,17 @@ import Bottom from './bottom/Bottom.vue'
 	width: 100%;
 	min-width: 970px;
 	height: 100%;
-	
 	.el-aside{
 		width: auto;
 		overflow: inherit;
 	}
-	
-	.el-header,
-	.el-footer{
+	.el-header,.el-footer{
 		height: auto;
 		padding: 0;
 	}
 	.el-main{
 		box-sizing: border-box;
 		padding: 10px 12px;
-		overflow-x: hidden;
 		background: #f0f2f5;
     :deep(.el-scrollbar__view){
       height: 100%;

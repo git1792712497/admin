@@ -11,10 +11,3 @@
 <script lang="ts" name="content" setup>
 import {keepAliveList} from '@/router'
 </script>
-
-<style lang="less" scoped>
-.content {
-  width: 100%;
-  height: 100%;
-}
-</style>

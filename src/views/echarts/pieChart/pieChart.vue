@@ -1,35 +1,42 @@
 <template>
-  <el-card shadow="hover" style="height: 100%;" :body-style="{height:'100%'}">
-    <div class="pieChart" ref="target">
-
-    </div>
+  <el-card :body-style="{height:'100%'}" shadow="hover">
+   <section>
+     <div class="pieChart" id="pieChart1"/>
+     <div class="pieChart" id="pieChart2"/>
+   </section>
   </el-card>
 </template>
 
-<script setup lang="ts" name="pieChart">
+<script lang="ts" name="pieChart" setup>
 import { onClickOutside } from '@vueuse/core'
 import echarts from "@/settings/echarts";
-import {getOption} from './options'
+import { getOption1} from './options1'
+import {getOption2} from './options2'
 
 const target = shallowRef(null)
-onMounted(async ()=>{
+onMounted(async () => {
   //初始化echarts,init接收三个参数:1是DOM元素,2是主题,3是渲染器
-  const echartsInstance = echarts.init(document.querySelector('.pieChart'),'',{renderer:'svg'})
-  const options = await getOption()
-  echartsInstance.setOption(options)
-
-  echartsInstance.on('click', function (params) {
+  const echartsInstance1 = echarts.init(document.querySelector('#pieChart1'), '', {renderer: 'svg'})
+  echartsInstance1.setOption(getOption1())
+  echartsInstance1.on('click', function (params) {
     console.log(params);
   });
+
+  const echartsInstance2 = echarts.init(document.querySelector('#pieChart2'), '', {renderer: 'svg'})
+  echartsInstance2.setOption(getOption2())
+  echartsInstance2.on('click', function (params) {
+    console.log(params);
+  });
+
 })
 
 onClickOutside(target, (event) => console.log(event))
 
 </script>
 
-<style scoped lang="less">
-.pieChart{
+<style lang="less" scoped>
+.pieChart {
   width: 100%;
-  height: 90%;
+  height: 800px;
 }
 </style>

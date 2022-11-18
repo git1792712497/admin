@@ -45,7 +45,16 @@ export const echarts: RouteRecordRaw[] = [
 					title: '饼图',
 					icon:'Menu'
 				}
-			}
+			},
+			{
+				path: 'mapChart',
+				name: 'mapChart',
+				component: () => import('@/views/echarts/mapChart/mapChart.vue'),
+				meta: {
+					title: '地图',
+					icon:'Menu'
+				}
+			},
 		]
 	}
 ]
