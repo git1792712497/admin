@@ -1,17 +1,21 @@
 import { MockMethod } from 'vite-plugin-mock';
+import {mapData} from './mapData/china'
+import {yunNan} from "./mapData/yunNan";
 
-const logList = {
-  total: 31,
-  page: 1,
-  page_size: 20,
-};
 
 export default [
 	 {
-    url: '/mock/api/getList',
-    method: 'post',
+    url: '/mock/chinaMapData',
+    method: 'get',
     response: () => {
-      return logList;
+      return mapData;
+    },
+  },
+  {
+    url: '/mock/yunNanData',
+    method: 'get',
+    response: () => {
+      return yunNan;
     },
   },
 ] as MockMethod[];
