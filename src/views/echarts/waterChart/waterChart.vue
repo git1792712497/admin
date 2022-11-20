@@ -1,18 +1,18 @@
 <template>
-  <el-card shadow="hover" style="height: 100%;" :body-style="{height:'100%'}">
+  <el-card :body-style="{height:'100%'}" shadow="hover" style="height: 100%;">
     <div class="waterChart">
 
     </div>
   </el-card>
 </template>
 
-<script setup lang="ts" name="waterChart">
-import echarts from "@/settings/echarts";
+<script lang="ts" name="waterChart" setup>
 import "echarts-liquidfill";
+import { useEcharts } from "@/hooks/useEcharts";
 
 onMounted(() => {
-  const echartsInstance = echarts.init(document.querySelector('.waterChart'),'',{renderer:'svg'})
-  echartsInstance.setOption(
+  const {setOption} = useEcharts('.waterChart')
+  setOption(
       {
         series: [{
           type: 'liquidFill',
@@ -43,8 +43,8 @@ onMounted(() => {
 });
 </script>
 
-<style scoped lang="less">
-.waterChart{
+<style lang="less" scoped>
+.waterChart {
   width: 100%;
   height: 80%;
 }

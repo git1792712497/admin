@@ -74,15 +74,6 @@ export const Package: RouteRecordRaw[] = [
 					}
 				},
 				 {
-						path: 'markdown',
-						name: 'markdown',
-						component: () => import('@/views/package/markdown.vue'),
-						meta: {
-							 title: 'markdown编辑器',
-							 icon: 'Menu'
-						}
-				 },
-				 {
 						path: 'wangEditor',
 						name: 'wangEditor',
 						component: () => import('@/views/package/wangEditor.vue'),

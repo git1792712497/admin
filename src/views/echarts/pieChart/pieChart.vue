@@ -9,25 +9,24 @@
 
 <script lang="ts" name="pieChart" setup>
 import { onClickOutside } from '@vueuse/core'
-import echarts from "@/settings/echarts";
 import { getOption1} from './options1'
 import {getOption2} from './options2'
+import {useEcharts} from "@/hooks/useEcharts";
 
 const target = shallowRef(null)
 onMounted(async () => {
   //初始化echarts,init接收三个参数:1是DOM元素,2是主题,3是渲染器
-  const echartsInstance1 = echarts.init(document.querySelector('#pieChart1'), '', {renderer: 'svg'})
-  echartsInstance1.setOption(getOption1())
+  const {echartsInstance:echartsInstance1,setOption:setOption1} = useEcharts('#pieChart1')
+  setOption1(getOption1())
   echartsInstance1.on('click', function (params) {
     console.log(params);
   });
 
-  const echartsInstance2 = echarts.init(document.querySelector('#pieChart2'), '', {renderer: 'svg'})
-  echartsInstance2.setOption(getOption2())
+  const {echartsInstance:echartsInstance2,setOption:setOption2} = useEcharts('#pieChart2')
+  setOption2(getOption2())
   echartsInstance2.on('click', function (params) {
     console.log(params);
   });
-
 })
 
 onClickOutside(target, (event) => console.log(event))

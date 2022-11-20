@@ -7,16 +7,16 @@
 </template>
 
 <script setup lang="ts" name="mapChart">
-import echarts from "@/settings/echarts";
 import {getChinaMapData,getYunNanMapData} from '@/api/mock'
 import {options} from './options'
+import {useEcharts} from "@/hooks/useEcharts";
 
 onMounted(async () => {
-  const instance = echarts.init(document.querySelector('.mapChart'))
+  const {setOption,echartsInstance,echarts} = useEcharts('.mapChart')
   echarts.registerMap('china',await getChinaMapData())
-  instance.showLoading()
-  instance.setOption(options)
-  setTimeout(() => instance.hideLoading(),500)
+  echartsInstance.showLoading()
+  setOption(options)
+  setTimeout(() => echartsInstance.hideLoading(),500)
 
   // 自动轮播图 bar
   setInterval(function () {
@@ -29,7 +29,7 @@ onMounted(async () => {
       index = 0;
     }
     // 1.显示提示框
-    instance.dispatchAction({
+    echartsInstance.dispatchAction({
       type: "showTip", // 触发的action type
       seriesIndex: 0, // 系列的 索引
       dataIndex: index,// 数据项的 索引
@@ -38,7 +38,7 @@ onMounted(async () => {
   }
 
   //下钻
-  instance.on('click',({name}) => {
+  echartsInstance.on('click',({name}) => {
     if (Object.is(name,'云南')){
       getYunNanMapData().then(data => {
         console.log(data)
@@ -46,7 +46,7 @@ onMounted(async () => {
           echarts.registerMap(name,data)
         }
         options.series[0].map = name
-        instance.setOption(options)
+        echartsInstance.setOption(options)
       })
     }
   })
