@@ -44,7 +44,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   width: 100%;
   height: 100%;
   background-color: #070a3c;
-  background-image: url(@/assets/images/bg.png);
+  background-image: url(./images/bg.png);
 }
 
 .header {
@@ -54,7 +54,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   width: 100%;
   height: 56px;
 
-  background-image: url(@/assets/images/bg_header.svg);
+  background-image: url(./images/bg_header.svg);
 }
 
 .left-top {
@@ -66,7 +66,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   height: 443px;
 
   /* 背景 */
-  background-image: url(@/assets/images/bg_left-top.svg);
+  background-image: url(./images/bg_left-top.svg);
 }
 
 .left-bottom {
@@ -77,7 +77,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   height: 443px;
   width: 536px;
   /* 背景 */
-  background-image: url(@/assets/images/bg_left_bottom.svg);
+  background-image: url(./images/bg_left_bottom.svg);
 }
 
 .right-top {
@@ -87,7 +87,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   width: 519px;
   height: 327px;
 
-  background-image: url(@/assets/images/bg_right_top.svg);
+  background-image: url(./images/bg_right_top.svg);
 }
 
 .right-center {
@@ -97,7 +97,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   width: 519px;
   height: 327px;
 
-  background-image: url(@/assets/images/bg_right_center.svg);
+  background-image: url(./images/bg_right_center.svg);
 }
 
 .right-bottom {
@@ -111,7 +111,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   justify-content: center;
   align-items: center;
 
-  background-image: url(@/assets/images/bg_right_bottom.svg);
+  background-image: url(./images/bg_right_bottom.svg);
 }
 .center {
   position: absolute;
@@ -130,6 +130,6 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   width: 823px;
   height: 209px;
 
-  background-image: url(@/assets/images/bg_bottom.svg);
+  background-image: url(./images/bg_bottom.svg);
 }
 </style>
