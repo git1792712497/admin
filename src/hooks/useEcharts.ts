@@ -1,12 +1,12 @@
 import echarts from '../settings/echarts'
-import {_debounce} from '@/utils/debounce'
 
 export function useEcharts(selector: string, theme: 'light' | 'dark' | 'default' = 'default') {
 	const echartsInstance = echarts.init(document.querySelector(selector), theme, {renderer: 'svg'})
 	
-	function setOption(options){
+	function setOption(options) {
 		echartsInstance.setOption(options)
 	}
+	
 	function resize() {
 		echartsInstance.resize({
 			animation: {
@@ -15,6 +15,7 @@ export function useEcharts(selector: string, theme: 'light' | 'dark' | 'default'
 			},
 		});
 	}
+	
 	return {
 		setOption,
 		echartsInstance,

@@ -12,18 +12,14 @@ class Axios {
 	constructor(config: RequestConfig) {
 		this.instance = axios.create(config)
 		this.interceptors = config.interceptors
-		
+		//全局请求处理
 		this.instance.interceptors.request.use((config: AxiosRequestConfig) => {
 					return config
 				}, (err: any) => {
 					console.error(err, '全局请求错误')
 				}
 		)
-		
-		//每个实例自定义拦截器
-		this.instance.interceptors.request.use(this.interceptors?.requestInterceptor, this.interceptors?.requestInterceptorsCatch)
-		this.instance.interceptors.response.use(this.interceptors?.responseInterceptor, this.interceptors?.responseInterceptorsCatch)
-		
+		//全局响应处理
 		this.instance.interceptors.response.use((res: AxiosResponse) => {
 					if (res.request.responseType === "blob") {
 						let filename = res.headers["content-disposition"];
@@ -43,6 +39,11 @@ class Axios {
 					console.error('全局响应错误', err)
 				}
 		)
+		
+		//每个实例自定义请求响应拦截
+		this.instance.interceptors.request.use(this.interceptors?.requestInterceptor, this.interceptors?.requestInterceptorsCatch)
+		this.instance.interceptors.response.use(this.interceptors?.responseInterceptor, this.interceptors?.responseInterceptorsCatch)
+		
 	}
 	
 	request<T>(config: RequestConfig): Promise<T> {

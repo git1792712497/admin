@@ -5,7 +5,6 @@ import {ElMessage} from "element-plus";
 import {userStore} from "@/store/modules/user";
 const user = userStore()
 
-
 export const ContentType = {
    // json
    JSON: 'application/json;charset=UTF-8',
@@ -14,7 +13,6 @@ export const ContentType = {
    // form-data  upload
    FORM_DATA: 'multipart/form-data;charset=UTF-8',
 }
-
 
 export const axios = new Axios({
    baseURL: 'https://7cguo.gaoyuanyunguo.com/api',
@@ -32,25 +30,22 @@ export const axios = new Axios({
          return config
       },
       requestInterceptorsCatch(error: any) {
-         console.log('请求失败')
+         console.log('请求失败',error)
       },
       responseInterceptorsCatch(error: any) {
          ElMessage({type: 'error', message: error.response?.data.error_description || error.response?.data.msg})
          console.log('响应错误1',error)
          if (error.response?.data.code === 401){
-            console.log('useRouter')
             user.clearUser()
          }
       }
    }
 })
 
-
 export const music = new Axios({
    baseURL: 'https://music-api.heheda.top',
    timeout: 10000
 })
-
 
 export const fastMock = new Axios({
    baseURL: 'https://www.fastmock.site/mock/957ffa30daa6a998277620d86656998b/mock',
@@ -78,13 +73,10 @@ export const mock = new Axios({
    }
 })
 
-
 export const jsonServer = new Axios({
    baseURL: 'http://localhost:3004',
    timeout: 10000
 })
-
-
 
 export const image = new Axios({
    baseURL: 'https://unsplash.com',

@@ -6,10 +6,28 @@ export const tools: RouteRecordRaw[] = [
     name: 'tools',
     meta: {
       index: 3,
-      title: '常用工具',
+      title: '常用功能',
       icon:'FolderAdd'
     },
     children: [
+      {
+        path: 'VueUse',
+        name: 'VueUse',
+        component: () => import('@/views/tools/VueUse.vue'),
+        meta: {
+          title: 'VueUse使用',
+          icon: 'Menu'
+        }
+      },
+      {
+        path: 'lodash',
+        name: 'lodash',
+        component: () => import('@/views/tools/lodash.vue'),
+        meta: {
+          title: 'lodash使用',
+          icon: 'Menu'
+        }
+      },
       {
         path: 'svgIcon',
         name: 'svgIcon',

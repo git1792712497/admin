@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import {router} from '@/router'
-import {pinia} from "@/store";
+import router from '@/router'
+import pinia from "@/store";
 //样式重置
 import 'normalize.css'
 

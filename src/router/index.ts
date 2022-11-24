@@ -45,13 +45,20 @@ export const routes:any = [
 ]
 
 import {basicRouter} from './basicRouter'
-export const router = createRouter({
+const router = createRouter({
 	history: createWebHistory(process.env.BASE_URL),
 	routes: routes.concat(basicRouter),
 	strict: true,
 	scrollBehavior: () => ({left: 0,top: 0})
 })
-routerArray.forEach(route => route.meta.fullScreen === true ? router.addRoute(route) : router.addRoute('AppMain',route))
+
+routerArray.forEach(route => {
+	if (route.meta.fullScreen === true){
+		router.addRoute(route)
+	}else {
+		router.addRoute('AppMain',route)
+	}
+})
 
 import {userStore} from "@/store/modules/user";
 router.beforeEach((to,from) => {
@@ -67,4 +74,6 @@ router.beforeEach((to,from) => {
 router.afterEach(() => {
 	NProgress.done();
 })
+
+export default router
 

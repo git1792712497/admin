@@ -1,29 +1,29 @@
 <template>
   <div>
-    <a-radio-button v-for="(item,index) in buttonArr" :key="item.name" @click="buttonArr[index].value = !buttonArr[index].value" v-model:checked="item.value">
-      {{item.name}}
-    </a-radio-button>
+    {{value}}
+    <a-select
+        v-model:value="value"
+        mode="tags"
+        style="width: 100%"
+        placeholder="Tags Mode"
+        :options="options"
+        @change="handleChange"
+    ></a-select>
   </div>
 </template>
-<script lang="ts" class="home" setup>
-let buttonArr = reactive([
-  {
-    value:false,
-    name:'续存'
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+export default defineComponent({
+  setup() {
+    const handleChange = (value: string) => {
+      console.log(`selected ${value}`);
+    };
+    return {
+      value: ref([]),
+      handleChange,
+      options: [...Array(25)].map((_, i) => ({ value: (i + 10).toString(36) + (i + 1) })),
+    };
   },
-  {
-    value:false,
-    name:'注销'
-  },
-  {
-    value:false,
-    name:'在业'
-  },
-])
-const handle = () => {
-  //提交
-  console.log(buttonArr.filter(item => item.value));
-}
-
+});
 </script>
 
