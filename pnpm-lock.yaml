@@ -15,6 +15,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.0.3
   '@vitejs/plugin-vue-jsx': ^2.0.0
   '@vueuse/core': ^9.2.0
+  '@vueuse/math': ^9.6.0
   '@wangeditor/editor': ^5.1.18
   '@wangeditor/editor-for-vue': ^5.1.12
   ant-design-vue: ^3.2.11
@@ -92,6 +93,7 @@ dependencies:
   '@types/sortablejs': 1.15.0
   '@types/watermark-dom': 2.3.1
   '@vueuse/core': 9.5.0_vue@3.2.45
+  '@vueuse/math': 9.6.0_vue@3.2.45
   '@wangeditor/editor': 5.1.23
   '@wangeditor/editor-for-vue': 5.1.12_3apfu3xbp6awzuex7ed3sbrv6y
   ant-design-vue: 3.2.15_vue@3.2.45
@@ -1241,6 +1243,16 @@ packages:
       - '@vue/composition-api'
       - vue
 
+  /@vueuse/math/9.6.0_vue@3.2.45:
+    resolution: {integrity: sha512-bYTFZjTcJwgqPdY7SaxS/J5mrWy1QaESxD5HK5UhXY49DUYf4jjZxXjMVBObM/A46jQgRolqSEQDOXrrpEfEww==}
+    dependencies:
+      '@vueuse/shared': 9.6.0_vue@3.2.45
+      vue-demi: 0.13.11_vue@3.2.45
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
   /@vueuse/metadata/9.5.0:
     resolution: {integrity: sha512-4M1AyPZmIv41pym+K5+4wup3bKuYebbH8w8BROY1hmT7rIwcyS4tEL+UsGz0Hiu1FCOxcoBrwtAizc0YmBJjyQ==}
 
@@ -1251,6 +1263,15 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  /@vueuse/shared/9.6.0_vue@3.2.45:
+    resolution: {integrity: sha512-/eDchxYYhkHnFyrb00t90UfjCx94kRHxc7J1GtBCqCG4HyPMX+krV9XJgVtWIsAMaxKVU4fC8NSUviG1JkwhUQ==}
+    dependencies:
+      vue-demi: 0.13.11_vue@3.2.45
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
 
   /@wangeditor/basic-modules/1.1.7_j7icpicfeimtkldwmemjnpdjs4:
     resolution: {integrity: sha512-cY9CPkLJaqF05STqfpZKWG4LpxTMeGSIIF1fHvfm/mz+JXatCagjdkbxdikOuKYlxDdeqvOeBmsUBItufDLXZg==}

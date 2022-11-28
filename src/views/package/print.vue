@@ -6,17 +6,16 @@
         <el-button type="primary" @click="onClickPrint">打印</el-button>
       </nav>
     </template>
-    <el-descriptions id="descriptions" :column="1" border title="用户信息">
-      <el-descriptions-item label="姓名">张三</el-descriptions-item>
-      <el-descriptions-item label="年龄">22岁</el-descriptions-item>
-      <el-descriptions-item label="性别">男</el-descriptions-item>
-    </el-descriptions>
+    <div id="print-cover-order">
+      <div class="page">分页2</div>
+      <div class="page">分页3</div>
+      <div class="page">分页4</div>
+    </div>
   </el-card>
 </template>
 
 <script lang="ts" name="print" setup>
 import print from 'print-js'
-import {onMounted, shallowRef} from "vue";
 
 /*
 参数	默认值	说明
@@ -46,21 +45,16 @@ onPdfOpen	null	打印 pdf 时，如果浏览器不兼容（检查浏览器兼容
 onPrintDialogClose	null	在浏览器打印对话框关闭后执行的回调函数。
 onError	error => throw error	发生错误时要执行的回调函数。
 base64	false	在打印作为 base64 数据传递的 PDF 文档时使用。
-honorMarginPadding (已弃用)	true	这用于保留或删除正在打印的元素中的填充和边距。有时这些样式设置在屏幕上很棒，但在打印时看起来很糟糕。您可以通过将其设置为 false 来将其删除。
-honorColor (已弃用)	false	若要以彩色打印文本，请将此属性设置为 true。默认情况下，所有文本都将以黑色打印。
-font(已弃用)	‘TimesNewRoman’	打印 HTML 或 JSON 时使用的字体。
-font_size (已弃用)	‘12pt’	打印 HTML 或 JSON 时使用的字体大小。
-imageStyle(已弃用)	‘width:100%;’	打印图像时使用。接受具有要应用于每个图像的自定义样式的字符串。*/
+*/
 const onClickPrint = () => {
   print({
-    printable: 'table',	//打印区域id
-    type: 'html',		//打印类型是html
-    scanStyles: true,
-    targetStyles: ['*'],
+    printable:['https://api.kuaidi100.com/label/getImage/20221125/23869323723F45AFAF7766D3478576AA','https://api.kuaidi100.com/label/getImage/20221125/23869323723F45AFAF7766D3478576AA'],
+    type: 'image',
+    imageStyle: 'width:306px;height:525px;margin:auto'
   })
 }
 </script>
 
 <style lang="less" scoped>
-
+.page {page-break-after:always;}
 </style>

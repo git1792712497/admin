@@ -4,8 +4,9 @@
       VueUse常用工具函数
     </template>
     <el-collapse model-value="1">
-      <el-collapse-item name="1" title="Consistency">
-
+      <el-collapse-item name="1" title="窗口大小改变">
+        <h1>宽{{width}}</h1>
+        <h1>高{{height}}</h1>
       </el-collapse-item>
       <el-collapse-item name="2" title="Feedback">
 
@@ -15,9 +16,12 @@
 </template>
 
 <script lang="ts" name="VueUse" setup>
-import { useWindowScroll } from '@vueuse/core'
+import { useWindowSize } from '@vueuse/core'
+const {width, height} = useWindowSize()
 
-const { x, y } = useWindowScroll({window})
+
+
+
 </script>
 
 <style lang="less" scoped>
