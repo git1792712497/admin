@@ -1,19 +1,19 @@
 <template>
-  <BigScreenScale>
+  <BigScreenZoom>
     <main class="screen-bg">
-      <div class="header"></div>
+      <header class="header"></header>
 
-      <div class="left-top">
+      <aside class="left-top">
 
-      </div>
+      </aside>
 
-      <div class="left-bottom">
+      <aside class="left-bottom">
 
-      </div>
+      </aside>
 
-      <div class="right-top">
+      <aside class="right-top">
 
-      </div>
+      </aside>
 
       <div class="right-center">
 
@@ -25,14 +25,14 @@
       <div class="center">
 
       </div>
-      <div class="bottom">
+      <footer class="bottom">
 
-      </div>
+      </footer>
     </main>
-  </BigScreenScale>
+  </BigScreenZoom>
 </template>
 <script lang="ts" setup name="BigScreenZoom">
-import BigScreenScale from '@/components/bigScreen/BigScreenScale.vue'
+import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
 </script>
 
 
@@ -53,7 +53,6 @@ import BigScreenScale from '@/components/bigScreen/BigScreenScale.vue'
   left: 0;
   width: 100%;
   height: 56px;
-
   background-image: url(./images/bg_header.svg);
 }
 
@@ -106,11 +105,9 @@ import BigScreenScale from '@/components/bigScreen/BigScreenScale.vue'
   bottom: 49px;
   width: 519px;
   height: 242px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-image: url(./images/bg_right_bottom.svg);
 }
 .center {
@@ -119,8 +116,6 @@ import BigScreenScale from '@/components/bigScreen/BigScreenScale.vue'
   bottom: 272px;
   width: 823px;
   height: 710px;
-
-  /* border: 2px solid pink; */
 }
 
 .bottom {

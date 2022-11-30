@@ -1,5 +1,5 @@
 <template>
-  <section class="BigScreenScale" ref="scaleRef" :style="{ width: width + 'px', height: height + 'px'}">
+  <section class="bigScreenScale" ref="scaleRef" :style="{ width: width + 'px', height: height + 'px'}">
     <slot></slot>
   </section>
 </template>
@@ -18,30 +18,26 @@ type Props = {
 }
 const props = withDefaults(defineProps<Props>(), {
   width: 1920,
-  height: 1080,
-  rootValue: 192
+  height: 1080
 })
 const scaleRef = ref()
 
 const reRender = () => {
   const screenWidth: number = document.documentElement.clientWidth
   const screenHeight: number = document.documentElement.clientHeight
-  if (!screenWidth || !screenHeight) return
 
   const widthScale = (screenWidth / props.width).toFixed(10)
   const heightScale = (screenHeight / props.height).toFixed(10)
   const scale = widthScale < heightScale ? widthScale : heightScale
 
-  document.documentElement.style.fontSize = props.rootValue + 'px'
   scaleRef.value.style.transform = `scale(${scale})`
   scaleRef.value.style.transformOrigin = 'left top'
-
+  //非标准屏居中显示
   if (widthScale > heightScale) {
-    scaleRef.value.style.marginLeft = (screenWidth - Number.parseInt((props.width * Number(scale)).toFixed(2))) / 2 + 'px'
+    scaleRef.value.style.marginLeft = (screenWidth - parseInt((props.width * Number(scale)).toFixed(2))) / 2 + 'px'
   } else {
-    scaleRef.value.style.marginTop = (screenHeight - Number.parseInt((props.height * Number(scale)).toFixed(2))) / 2 + 'px'
+    scaleRef.value.style.marginTop = (screenHeight - parseInt((props.height * Number(scale)).toFixed(2))) / 2 + 'px'
   }
-  scaleRef.value.style.marginLeft = (screenWidth - Number.parseInt((props.width * Number(scale)).toFixed(2))) / 2 + 'px'
 }
 onMounted(() => {
   reRender()
@@ -51,7 +47,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.BigScreenScale{
+.bigScreenScale{
   position: relative;
 }
 </style>
