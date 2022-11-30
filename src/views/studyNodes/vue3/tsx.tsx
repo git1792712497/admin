@@ -1,5 +1,5 @@
 export default defineComponent({
-	name:'demo',
+	name:'tsx',
 	setup(){
 		const a = ref(1)
 		setInterval(() => {
@@ -11,6 +11,10 @@ export default defineComponent({
 		
 		let arr = [1,2,3,4,5,6]
 		
-		return () => arr.map(item => <div class={'caret-amber-200 caret-amber-400'}>{item}</div>)
+		return () => (
+				arr.map(item => <div>
+					<div className={'caret-amber-200 caret-amber-400'}>{item}</div>
+				</div>)
+		)
 	}
 })

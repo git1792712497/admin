@@ -25,17 +25,32 @@ export async function getOption() {
 			backgroundColor: 'rgba(255,0,0,0.1)',
 			containLabel: true //绘图区域包含坐标轴名称
 		},
-		legend: {
-			data: [{
-				name: '销量',
-				// 强制设置图形为圆。
-				icon: 'circle',
-				// 设置文本为红色
+		
+		dataZoom: [
+			{
+				show: true,
+				height: 12,
+				xAxisIndex: [0],
+				bottom: "8%",
+				start: 10,
+				end: 90,
+				handleSize: "110%",
+				handleStyle: {
+					color: "#292a2d",
+				},
 				textStyle: {
-					color: 'red'
-				}
-			}]
-		},
+					color: "#292a2d",
+				},
+				borderColor: "#292a2d",
+			},
+			{
+				type: "inside",
+				show: true,
+				height: 15,
+				start: 1,
+				end: 35,
+			},
+		],
 		//x坐标系
 		xAxis: {
 			show: true,
@@ -77,6 +92,17 @@ export async function getOption() {
 					return value + 'kg' + index;
 				}
 			}
+		},
+		legend: {
+			data: [{
+				name: '销量',
+				// 强制设置图形为圆。
+				icon: 'circle',
+				// 设置文本为红色
+				textStyle: {
+					color: 'red'
+				}
+			}]
 		},
 		/*系列组件*/
 		series: [

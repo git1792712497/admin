@@ -45,7 +45,25 @@ export const studyNodes: RouteRecordRaw[] = [
 							icon:'Menu'
 						}
 					},
+					{
+						path: 'tsx',
+						name: 'tsx',
+						component: () => import('@/views/studyNodes/vue3/tsx.tsx'),
+						meta: {
+							title: 'tsx使用',
+							icon:'Menu'
+						}
+					},
 				]
+			},
+			{
+				path: 'jsonServer',
+				name: 'jsonServer',
+				component: () => import('@/views/studyNodes/jsonServer.vue'),
+				meta: {
+					title: 'jsonServer使用',
+					icon:'Menu'
+				}
 			},
 			{
 				path: 'methods',
@@ -65,6 +83,7 @@ export const studyNodes: RouteRecordRaw[] = [
 					icon:'Menu'
 				}
 			},
+			
 		]
 	}
 ]

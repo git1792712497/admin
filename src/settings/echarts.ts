@@ -23,8 +23,8 @@ import {
 	
 	VisualMapComponent,
 	VisualMapContinuousComponent,
-		VisualMapPiecewiseComponent,
-		
+	DataZoomComponent
+	
 } from "echarts/components";
 import { LabelLayout, UniversalTransition} from "echarts/features";
 
@@ -50,7 +50,7 @@ echarts.use([
 	LabelLayout,
 	UniversalTransition,
 	CanvasRenderer,
-	
+	DataZoomComponent,
 	BarChart,
 	LineChart,
 	PieChart,

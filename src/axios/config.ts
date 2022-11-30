@@ -64,7 +64,7 @@ export const fastMock = new Axios({
 
 
 export const mock = new Axios({
-   baseURL: 'http://127.0.0.1:5173',
+   baseURL: 'http://127.0.0.1:8888',
    timeout: 10000,
    interceptors: {
       requestInterceptor(config: AxiosRequestConfig) {

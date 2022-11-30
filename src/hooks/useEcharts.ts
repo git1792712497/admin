@@ -1,7 +1,7 @@
 import echarts from '../settings/echarts'
 
 export function useEcharts(selector: string, theme: 'light' | 'dark' | 'default' = 'default') {
-	const echartsInstance = echarts.init(document.querySelector(selector), theme, {renderer: 'svg'})
+	const echartsInstance = echarts.init(document.querySelector(selector), theme, {renderer: 'canvas'})
 	
 	function setOption(options) {
 		echartsInstance.setOption(options)

@@ -1,5 +1,5 @@
 <template>
-  <BigScreenZoom>
+  <BigScreenScale>
     <main class="screen-bg">
       <div class="header"></div>
 
@@ -29,10 +29,10 @@
 
       </div>
     </main>
-  </BigScreenZoom>
+  </BigScreenScale>
 </template>
 <script lang="ts" setup name="BigScreenZoom">
-import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
+import BigScreenScale from '@/components/bigScreen/BigScreenScale.vue'
 </script>
 
 

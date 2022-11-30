@@ -5,20 +5,13 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style>
-    html,body{
-      height: 3000px;
-    }
-  </style>
 </head>
 <body>
-<script type="module">
-  let nanoid = (t=21) => crypto.getRandomValues(new Uint8Array(t)).reduce(((t,e)=>t+=(e&=63)<36?e.toString(36):e<62?(e-26).toString(36).toUpperCase():e>62?"-":"_"),"");
+<script>
+  let a = '1.0003'
+  let b = '1.0002'
 
-  const img = document.createElement("img")
-  img.src = 'https://api.kuaidi100.com/label/getImage/20221125/23869323723F45AFAF7766D3478576AA'
-  console.log(img)
-
+  console.log(a > b)
 </script>
 </body>
 </html>

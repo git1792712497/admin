@@ -13,6 +13,11 @@ import {useEcharts} from "@/hooks/useEcharts";
 
 onMounted(async () => {
   const {setOption,echartsInstance,echarts} = useEcharts('.mapChart')
+
+  getChinaMapData().then(res => {
+    console.log(res,'地图数据')
+  })
+
   echarts.registerMap('china',await getChinaMapData())
   echartsInstance.showLoading()
   setOption(options)

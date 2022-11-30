@@ -1,18 +1,18 @@
 <template>
   <div>
-    <el-table v-bind="$attrs">
-      <template v-for="item in $attrs.columns" :key="item.prop">
-        <el-table-column v-bind="item">
-          <template #default="scope">
-            <slot :name="item.slot" v-bind="scope"></slot>
-          </template>
-        </el-table-column>
-      </template>
-    </el-table>
+<h2>子组件{{fooRef}}</h2>
   </div>
 </template>
 
 <script setup>
+const props = defineProps({
+  data:{
+    type:Number
+  }
+})
+
+const fooRef = toRef(props, 'data')
+
 
 </script>
 

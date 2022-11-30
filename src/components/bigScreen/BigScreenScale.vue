@@ -24,16 +24,15 @@ const props = withDefaults(defineProps<Props>(), {
 const scaleRef = ref()
 
 const reRender = () => {
-  const docEl = document.documentElement as HTMLElement
-  const screenWidth: number = docEl.clientWidth
-  const screenHeight: number = docEl.clientHeight
+  const screenWidth: number = document.documentElement.clientWidth
+  const screenHeight: number = document.documentElement.clientHeight
   if (!screenWidth || !screenHeight) return
 
   const widthScale = (screenWidth / props.width).toFixed(10)
   const heightScale = (screenHeight / props.height).toFixed(10)
   const scale = widthScale < heightScale ? widthScale : heightScale
 
-  // document.documentElement.style.fontSize = props.rootValue + 'px'
+  document.documentElement.style.fontSize = props.rootValue + 'px'
   scaleRef.value.style.transform = `scale(${scale})`
   scaleRef.value.style.transformOrigin = 'left top'
 

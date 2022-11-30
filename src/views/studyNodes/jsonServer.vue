@@ -1,12 +1,16 @@
 <template>
-  <div class="waterfall">
-    <el-button type="primary" @click="handleAdd">增加数据</el-button>
-    <el-button type="primary" @click="handleUpdate">更新数据</el-button>
-    <el-button type="primary" @click="handleDelete">删除数据</el-button>
+  <el-card shadow="hover" :body-style="{height:'100%'}" style="height: 100%;">
+    <template #header>
+      <nav>
+        <el-button type="primary" @click="handleAdd">增加数据</el-button>
+        <el-button type="primary" @click="handleUpdate">更新数据</el-button>
+        <el-button type="primary" @click="handleDelete">删除数据</el-button>
+      </nav>
+    </template>
     {{data}}
-  </div>
+  </el-card>
 </template>
-<script lang="ts" setup name="Child">
+<script lang="ts" setup name="jsonServer">
 import { getAddData, getDelete, getList, getUpdate } from '@/api/jsonServe'
 
 
