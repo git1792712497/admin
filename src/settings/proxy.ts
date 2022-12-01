@@ -1,6 +1,6 @@
 export const proxy = {
 	'/api': {
-		target: 'http://39.130.133.24:32623/api',  //你要跨域访问的网址
+		target: 'http://yzy.sirenruanjian.com/kyhl-weixin-1.0/usercard/findAllUserCardByOpenid.do',  //你要跨域访问的网址
 		changeOrigin: true,   // 允许跨域
 	},
 	'/jsonServer': {

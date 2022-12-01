@@ -13,7 +13,7 @@ export default defineComponent({
 		
 		return () => (
 				arr.map(item => <div>
-					<div className={'caret-amber-200 caret-amber-400'}>{item}</div>
+					<div class={'caret-amber-200 caret-amber-400'}>{item}</div>
 				</div>)
 		)
 	}

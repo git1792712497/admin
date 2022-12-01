@@ -48,9 +48,18 @@ export const studyNodes: RouteRecordRaw[] = [
 					{
 						path: 'tsx',
 						name: 'tsx',
-						component: () => import('@/views/studyNodes/vue3/tsx.tsx'),
+						component: () => import('@/views/studyNodes/vue3/tsx'),
 						meta: {
 							title: 'tsx使用',
+							icon:'Menu'
+						}
+					},
+					{
+						path: 'v-model',
+						name: 'v-model',
+						component: () => import('@/views/studyNodes/vue3/v-model/parent.vue'),
+						meta: {
+							title: '组件v-model',
 							icon:'Menu'
 						}
 					},
