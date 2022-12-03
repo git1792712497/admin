@@ -14,7 +14,11 @@
 		<el-table size="large" border :data="routerArray" row-key="path">
 			<el-table-column prop="meta.title" label="菜单名称" width="180"/>
 	    <el-table-column prop="path" label="路由路径"/>
-	    <el-table-column prop="component" label="组件路径"/>
+      <el-table-column prop="component" label="组件路径">
+        <template #default="scope">
+          {{app(scope)}}
+        </template>
+      </el-table-column>
 	  </el-table>
 	</el-card>
 </template>
@@ -26,8 +30,9 @@ import {computed,shallowRef} from "vue";
 
 let input = shallowRef()
 
-
-
+function app(scope){
+  console.log(scope)
+}
 </script>
 
 <style scoped lang="less">

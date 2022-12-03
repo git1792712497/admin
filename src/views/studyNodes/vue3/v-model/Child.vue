@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>子组件中的值{{modelValue}}</h1>
+  <h1 class="h1">子组件中的值{{modelValue}}</h1>
   <el-button type="primary" @click="handelClick">子组件更新</el-button>
   <el-button type="primary" @click="handelUseVModel">子组件useVModel更新</el-button>
 </div>
@@ -18,7 +18,6 @@ const emit = defineEmits(['update:modelValue'])
 const handelClick = () => {
   emit("update:modelValue",[Math.random()])
 }
-
 
 import { useVModel } from '@vueuse/core'
 const data = useVModel(props, 'modelValue', emit)

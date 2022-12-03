@@ -2,12 +2,14 @@
   <router-view v-slot="{Component,route}">
     <transition appear mode="out-in" name="el-zoom-in-bottom">
       <keep-alive :include="keepAliveList">
-        <component :is="Component"></component>
+        <el-scrollbar>
+          <component :is="Component"></component>
+        </el-scrollbar>
       </keep-alive>
     </transition>
   </router-view>
 </template>
 
 <script lang="ts" name="content" setup>
-import {keepAliveList} from '@/router'
+import { keepAliveList } from '@/router'
 </script>

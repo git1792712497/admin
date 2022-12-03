@@ -7,9 +7,7 @@
         <TabsView/>
       </el-header>
 			<el-main>
-        <el-scrollbar>
-          <Content/>
-        </el-scrollbar>
+        <Content/>
       </el-main>
 			<el-footer><Bottom/></el-footer>
 		</el-container>
@@ -25,7 +23,6 @@ import Bottom from './bottom/Bottom.vue'
 <style lang="less" scoped>
 .el-container{
 	width: 100%;
-	min-width: 970px;
 	height: 100%;
 	.el-aside{
 		width: auto;
@@ -37,13 +34,14 @@ import Bottom from './bottom/Bottom.vue'
 	}
 	.el-main{
 		box-sizing: border-box;
-		padding: 10px 12px;
+		padding:10px;
+    width: 100%;
 		background: #f0f2f5;
     :deep(.el-scrollbar__view){
       height: 100%;
     }
 		&::-webkit-scrollbar{
-			background-color: #f0f2f5;
+      width: 0;
 		}
 	}
 }

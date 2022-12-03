@@ -12,9 +12,13 @@ export default defineComponent({
 		let arr = [1,2,3,4,5,6]
 		
 		return () => (
-				arr.map(item => <div>
-					<div class={'caret-amber-200 caret-amber-400'}>{item}</div>
-				</div>)
+				<section>
+					{
+						arr.map(item => {
+							return <div class={'caret-amber-200 caret-amber-400'}>{item}</div>
+						})
+					}
+				</section>
 		)
 	}
 })
