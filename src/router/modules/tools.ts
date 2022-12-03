@@ -29,15 +29,6 @@ export const tools: RouteRecordRaw[] = [
         }
       },
       {
-        path: 'svgIcon',
-        name: 'svgIcon',
-        component: () => import('@/views/tools/svgIcon.vue'),
-        meta: {
-          title: 'svg图标',
-          icon: 'Menu'
-        }
-      },
-      {
         path: 'popup',
         name: 'popup',
         component: () => import('@/views/tools/popup.vue'),
@@ -70,15 +61,6 @@ export const tools: RouteRecordRaw[] = [
         component: () => import('@/views/tools/waterfall.vue'),
         meta: {
           title: '瀑布流',
-          icon:'Menu'
-        }
-      },
-      {
-        path: 'noticeBar',
-        name: 'noticeBar',
-        component: () => import('@/views/tools/noticeBar.vue'),
-        meta: {
-          title: '通告栏',
           icon:'Menu'
         }
       },
