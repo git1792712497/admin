@@ -198,6 +198,15 @@ export const Package: RouteRecordRaw[] = [
 						title: '波纹效果',
 						icon: 'Menu'
 					}
+				},
+				{
+					path: 'hover.css',
+					name: 'hover.css',
+					component: () => import('@/views/package/hover.css.vue'),
+					meta: {
+						title: 'hover.css',
+						icon: 'Menu'
+					}
 				}
 			]
 	 }
