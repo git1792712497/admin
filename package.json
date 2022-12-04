@@ -15,6 +15,7 @@
 		"@element-plus/icons-vue": "^2.0.9",
 		"@smallwei/avue": "^3.1.0",
 		"@types/echarts": "^4.9.16",
+		"@types/fs-extra": "^9.0.13",
 		"@types/fullpage.js": "^2.9.3",
 		"@types/howler": "^2.2.7",
 		"@types/sortablejs": "^1.15.0",
