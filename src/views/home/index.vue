@@ -1,18 +1,17 @@
 <template>
-  <el-card ref="dom" shadow="hover" style="height: 100%;" :body-style="{height:'100%'}">
+  <el-card ref="dom" :body-style="{height:'100%'}" shadow="hover" style="height: 100%;">
     <template #header>
 
     </template>
+    <Loading>
+      <template v-slot:icon>
+        aaaaa
+      </template>
+    </Loading>
   </el-card>
 </template>
 <script lang="ts" setup>
-const dom = shallowRef(null)
-const obj = {
-
-}
-onMounted(() => {
-
-})
+import Loading from './Loading.vue'
 </script>
 <style>
 

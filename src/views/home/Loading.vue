@@ -1,6 +1,6 @@
 <template>
   <div>
-<h2>子组件{{fooRef}}</h2>
+      <slot name="icon"></slot>
   </div>
 </template>
 

@@ -1,6 +1,4 @@
-import echarts from "@/settings/echarts";
-
-export async function getOption(){
+export async function getOption(echarts){
 	return {
 		backgroundColor: '#ffffff',
 		title: {

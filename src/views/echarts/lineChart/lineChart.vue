@@ -11,8 +11,8 @@ import {getOption} from './options'
 import {useEcharts} from "@/hooks/useEcharts";
 
 onMounted(async ()=>{
-  const {setOption} = useEcharts('.lineChart')
-  const options = await getOption()
+  const {setOption,echarts} = useEcharts('.lineChart')
+  const options = await getOption(echarts)
   setOption(options)
 })
 </script>
