@@ -19,7 +19,7 @@ class Axios {
 					console.error(err, '全局请求错误')
 				}
 		)
-		//全局响应处理
+		//全局响应处理文件下载
 		this.instance.interceptors.response.use((res: AxiosResponse) => {
 					if (res.request.responseType === "blob") {
 						let filename = res.headers["content-disposition"];
@@ -82,7 +82,10 @@ class Axios {
 	delete(data: RequestConfig) {
 		return this.request({...data, method: 'delete'})
 	}
-	
+	/*
+	不考虑文件大小文件上传,调用后端提供的post请求接口
+	FormData携带File对象或者Blob(二进制)对象
+	*/
 	uploadFile<T = any>(config: AxiosRequestConfig) {
 		const formData = new FormData();
 		const customFilename = config.data.name || 'file';

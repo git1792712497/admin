@@ -32,11 +32,17 @@ export default defineConfig(({ command, mode }) => {
 			}
 		},
 		build: {
-			// 消除打包大小超过500kb警告
-			assetsInlineLimit: 4096,
+			assetsInlineLimit: 4096,// 消除打包大小超过500kb警告
 			outDir: "dist",
 			minify: "esbuild",
+			target:'es2015',// 目标语言
 			sourcemap: false,
+			terserOptions: {
+				compress: {
+					drop_console: true,//打包后移除console
+					drop_debugger: true, // 生产环境移除debugger
+				},
+			},
 		}
 	};
 });

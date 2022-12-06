@@ -1,5 +1,6 @@
 import Components from 'unplugin-vue-components/vite' // 按需加载自定义组件
-import { ElementPlusResolver, AntDesignVueResolver} from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver,AntDesignVueResolver} from 'unplugin-vue-components/resolvers'
+import IconsResolver from 'unplugin-icons/resolver'
 
 /*
 pnpm install unplugin-vue-components -D
@@ -20,7 +21,12 @@ export default function (){
       AntDesignVueResolver({
         resolveIcons: true,
         importStyle:true
-      })
+      }),
+      IconsResolver({
+        prefix: false, // 自动引入的Icon组件统一前缀，默认为 i，设置false为不需要前缀
+        // {prefix}-{collection}-{icon} 使用组件解析器时，您必须遵循名称转换才能正确推断图标。
+        // alias: { park: 'icon-park' } 集合的别名
+      }),
     ],
   })
 }
