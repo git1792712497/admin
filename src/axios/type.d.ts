@@ -7,7 +7,7 @@ export interface Interceptors {
   requestInterceptor?: (config: AxiosRequestConfig) => AxiosRequestConfig
   requestInterceptorsCatch?: (err: any) => any
   // 响应拦截
-  responseInterceptor?: (config: AxiosResponse) => AxiosResponse | any
+  responseInterceptor?: (res: AxiosResponse) => AxiosResponse
   responseInterceptorsCatch?: (err: any) => any
 }
 
@@ -18,14 +18,3 @@ export interface RequestConfig extends AxiosRequestConfig {
   paramsToUrl?:boolean
 }
 
-export interface UploadFileParams {
-  // Other parameters
-  data?: Recordable;
-  // File parameter interface field name
-  name?: string;
-  // file name
-  file: File | Blob;
-  // file name
-  filename?: string;
-  [key: string]: any;
-}

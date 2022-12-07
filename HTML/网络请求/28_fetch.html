@@ -16,9 +16,9 @@
 <body>
   <div></div>
   <script>
-    fetch('https://unsplash.com/napi/photos?per_page=10&page=1',{method:'get'}).then(res => {
+    fetch('https://cdn.bootcdn.net/ajax/libs/hover.css/2.3.1/css/hover.css',{method:'get'}).then(res => {
      return res.json().then(res => {
-       return res
+       console.log(res)
      })
    })
 

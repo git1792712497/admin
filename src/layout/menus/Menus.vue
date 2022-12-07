@@ -5,7 +5,7 @@
 		</nav>
 		<el-scrollbar>
 			<el-menu :collapse="menuStore().isCollapse"
-				:default-active="$route.meta.currentActive || $route.path"
+				:default-active="$route.meta.currentActive ?? $route.path"
 				:unique-opened="true"
 				:active-text-color="globalConfig.themeConfig.primary"
 				background-color="#191a20"

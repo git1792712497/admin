@@ -22,11 +22,13 @@ export const axios = new Axios({
    },
    interceptors: {
       requestInterceptor(config: AxiosRequestConfig) {
+         console.log('实例请求拦截')
          config.headers.Authorization = `Basic ${Base64.encode('saber:saber_secret')}`
          config.headers['Blade-Auth'] = user.getToken
          return config
       },
       responseInterceptor(config: AxiosResponse) {
+         console.log(config,'实例响应拦截')
          return config
       },
       requestInterceptorsCatch(error: any) {
@@ -36,7 +38,7 @@ export const axios = new Axios({
          ElMessage({type: 'error', message: error.response?.data.error_description || error.response?.data.msg})
          console.log('响应错误1',error)
          if (error.response?.data.code === 401){
-            user.clearUser()
+            // user.clearUser()
          }
       }
    }
