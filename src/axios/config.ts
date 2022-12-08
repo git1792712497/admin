@@ -51,16 +51,7 @@ export const music = new Axios({
 export const fastMock = new Axios({
    baseURL: 'https://www.fastmock.site/mock/957ffa30daa6a998277620d86656998b/mock',
    timeout: 10000,
-   interceptors: {
-      requestInterceptor(config: AxiosRequestConfig) {
-         if (user.profile) {
-            config.headers.common['Authorization'] = `Bearer ${user.profile.token}`
-         } else {
-            user.clearUser()
-         }
-         return config
-      }
-   }
+
 })
 
 export const easyMock = new Axios({
