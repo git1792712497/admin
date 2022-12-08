@@ -16,25 +16,22 @@ class Axios {
     //全局请求处理
     this.instance.interceptors.request.use((config: AxiosRequestConfig) => {
       //实例请求拦截
-      this.interceptors?.requestInterceptor(config)
-      return config
+      return this.interceptors?.requestInterceptor(config)
     }, (err: any) => {
       console.log(err, '全局请求错误拦截')
       //实例请求错误拦截
       this.interceptors?.requestInterceptorsCatch(err)
     })
 
-    this.instance.interceptors.response.use((res: AxiosResponse) => {
-      res.request.responseType === "blob" && download(res)
-      this.interceptors?.responseInterceptor(res)
-      return res
+    this.instance.interceptors.response.use((result: AxiosResponse) => {
+      result.request.responseType === "blob" && download(result)
+      return this.interceptors?.responseInterceptor(result)
     }, (err: any) => {
       console.log('全局响应错误', err)
       //axios实例响应错误
       this.interceptors?.responseInterceptorsCatch(err)
     })
   }
-
 
   request<T>(config: RequestConfig): Promise<T> {
     return new Promise((resolve: any, reject) => {

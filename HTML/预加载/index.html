@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+  <meta name="viewport" content="width=device-width">
+<!--  当浏览器解析到preload会立即进行资源的请求，
+  需要注意的是使用preload进行预加载时需要指定文件的类型-->
+
+  <!--当浏览器解析到prefetch时，不会立即请求资源，会等待浏览器空闲以后再进行资源的请求-->
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+<div class="hvr-wobble-bottom">
+
+</div>
+<!--在预加载的时候link作为预加载的容器,href指定预加载的路径,as指定预加载内容的类型;
+可以用来预加载的类型-->
+<script>
+  // console.time('test')
+  // let a = 0
+  // for (let index = 0; index < 1000000000; index++) {
+  //   a += 1
+  // }
+  // console.timeEnd('test')
+
+  const a = 'https://cdn.bootcdn.net/ajax/libs/hover.css/2.3.1/css/hover.css'
+  const obj = new URL(a)
+
+</script>
+
+</body>
+</html>

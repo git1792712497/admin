@@ -32,11 +32,12 @@ export default defineConfig(({ command, mode }) => {
 			}
 		},
 		build: {
-			assetsInlineLimit: 4096,// 消除打包大小超过500kb警告
+			assetsInlineLimit: 4096,// 小于该值图片打成base64
 			outDir: "dist",
 			minify: "esbuild",
 			target:'es2015',// 目标语言
 			sourcemap: false,
+			cssCodeSplit:true,//css拆分
 			terserOptions: {
 				compress: {
 					drop_console: true,//打包后移除console

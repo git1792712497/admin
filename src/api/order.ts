@@ -5,7 +5,7 @@ export function getOrderList(params?:object):any{
       params,
       interceptors:{
          requestInterceptor(config){
-            console.log('单个请求拦截',config)
+
             return config
          },
       }

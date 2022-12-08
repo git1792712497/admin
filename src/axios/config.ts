@@ -22,7 +22,6 @@ export const axios = new Axios({
    },
    interceptors: {
       requestInterceptor(config: AxiosRequestConfig) {
-         console.log('实例请求拦截')
          config.headers.Authorization = `Basic ${Base64.encode('saber:saber_secret')}`
          config.headers['Blade-Auth'] = user.getToken
          return config
