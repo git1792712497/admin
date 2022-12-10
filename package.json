@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "node fs-extra.js && vite",
-		"build": "vite build",
+		"build": "node fs-extra.js &&  vite build",
 		"preview": "npm run build && vite preview",
 		"mock": "json-server --c ./jsonServer/json_sever_config.json ./jsonServer/db.json"
 	},
