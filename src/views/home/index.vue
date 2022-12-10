@@ -3,10 +3,13 @@
     <template #header>
 
     </template>
+
+    {{$foo}}
     <Loading/>
   </el-card>
 </template>
 
 <script lang="ts" setup>
 import Loading from './Loading.vue'
+
 </script>

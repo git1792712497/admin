@@ -1,46 +1,52 @@
+/*
+https://www.typescriptlang.org/zh/tsconfig
+该文件告诉tsc怎么编译ts文件及静态类型检测
+编辑器也会读取该文件
+*/
 {
   "compilerOptions": {
+    "importHelpers": true, //是否帮助导入一些重要功能模块
     "noUnusedLocals": false,
     "declarationMap": false,
     "declaration": false,
     "incremental": true,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": false,
+    "target": "esnext", //会用babel来编译
+    "module": "esnext", //生产的代码babel还会继续转化
+    "moduleResolution": "node", //模块路径导入包的查找规则
+    "strict": false, //ts中进行严格类型检查(不允许模糊的any等)
     "noLib": false,
     "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true, //导入时,import * as lodash from 'lodash' 合并 import lodash from 'lodash'
     "strictFunctionTypes": false,
-    "jsx": "preserve",
+    "jsx": "preserve", //jsx处理形式
     "baseUrl": "./",
-    "allowJs": true,
+    "allowJs": true, //是否运行js代码
     "noEmit": true,
     "inlineSourceMap": false,
     "emitDeclarationOnly": true,
     "sourceMap": false,
-    "esModuleInterop": true,
+    "esModuleInterop": true, //es Module 和 commonJs可以互相导入
     "resolveJsonModule": true,
     "noUnusedParameters": false,
     "experimentalDecorators": true,
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "esnext"],//指定需要用到的库
     "noImplicitAny": false,
-    "skipLibCheck": true,
+    "skipLibCheck": true, //跳过对整个库对进行类型检测
+    //配置别名
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     "types": ["vite/client"]
   },
+  //那些文件需要编译
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "env.d.ts",
-    "auto-import.d.ts",
     "components.d.ts"
   ],
+  "exclude": ["node_modules"]
 }

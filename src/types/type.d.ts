@@ -1,0 +1,27 @@
+//类型声明
+
+declare const global:string
+
+declare function $foo(value:string):string
+
+declare class Person{
+  name:string
+  age:number
+  constructor(name:string,age:number){
+
+  }
+}
+
+//模块声明
+declare module 'lodash-es'{
+  export function join(args:any):any
+}
+
+//声明文件模块
+declare module '*png'
+
+
+//CDN引入声明
+declare namespace $ {
+  export function ajax(options:any):any
+}
