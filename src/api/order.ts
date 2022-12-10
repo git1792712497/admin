@@ -1,13 +1,7 @@
 import {axios} from "@/axios/config";
-export function getOrderList(params?:object):any{
-   return axios.get({
-      url:`/wh-order/odmproduct/page`,
-      params,
-      interceptors:{
-         requestInterceptor(config){
-
-            return config
-         },
-      }
+export function getOrderList(data?:object):any{
+   return axios.post({
+      url:`/wh-order/odmorder/getList`,
+      data,
    })
 }

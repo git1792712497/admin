@@ -42,7 +42,8 @@ const header = {
 
 const upload = async ({file}: UploadRequestOptions) => {
   console.time('导入时间')
-   const data = await excelToJson(file,header)
+  const data = await excelToJson(file,header)
+  console.log(data,'导入')
   console.timeEnd('导入时间')
   tableData.value.push(...data)
 }

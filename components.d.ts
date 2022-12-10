@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BigScreenScale: typeof import('./src/components/bigScreen/BigScreenScale.vue')['default']
     BigScreenZoom: typeof import('./src/components/bigScreen/BigScreenZoom.vue')['default']
+    CircleClose: typeof import('~icons/ci/rcle-close')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
@@ -37,6 +38,7 @@ declare module '@vue/runtime-core' {
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElPopover: typeof import('element-plus/es')['ElPopover']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
@@ -60,6 +62,7 @@ declare module '@vue/runtime-core' {
     Search: typeof import('./src/components/search/index.vue')['default']
     StepForwardOutlined: typeof import('@ant-design/icons-vue')['StepForwardOutlined']
     SvgIcon: typeof import('./src/components/svgIcon/index.vue')['default']
+    UserFilled: typeof import('@ant-design/icons-vue')['UserFilled']
     WangEditor: typeof import('./src/components/wangEditor/index.vue')['default']
     Waterfall: typeof import('./src/components/waterfall/index.vue')['default']
   }

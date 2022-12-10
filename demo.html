@@ -8,15 +8,14 @@
 <body>
 
 <script>
-   const isType = value => Object.prototype.toString.call(value).slice(8, -1);
+  let obj = {a:1,b:2}
 
-   function app(){
-     console.log('')
-   }
+  let o = JSON.parse(JSON.stringify(obj))
 
 
+  o.a = 100
 
-   console.log(isType(1))
+  console.log(obj)
 </script>
 </body>
 </html>

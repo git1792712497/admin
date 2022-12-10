@@ -18,16 +18,24 @@
     </el-form-item>
   </el-form>
   <div class="login-btn">
-    <el-button :icon="CircleClose" round size="large" @click="resetForm">重置</el-button>
-    <el-button :icon="UserFilled" :loading="loading" round size="large" type="primary" @click="login">
+    <el-button round size="large" @click="resetForm">
+      重置
+      <template #icon>
+        <el-icon><CircleClose /></el-icon>
+      </template>
+    </el-button>
+    <el-button :loading="loading" round size="large" type="primary" @click="login">
       登录
+      <template #icon>
+        <el-icon> <UserFilled/></el-icon>
+      </template>
     </el-button>
   </div>
 </template>
 <script lang="ts" name="LoginForm" setup>
 import md5 from 'md5'
 import {shallowReactive, shallowRef, onMounted, toRaw} from "vue";
-import {CircleClose, UserFilled,User} from "@element-plus/icons-vue";
+import {CircleClose, UserFilled} from "@element-plus/icons-vue";
 import {ElMessage} from 'element-plus'
 import {useRouter} from "vue-router";
 import {userStore} from '@/store/modules/user'
@@ -40,8 +48,8 @@ const router = useRouter()
 let loading = shallowRef(false)
 let loginFormRef = shallowRef();
 let loginForm = shallowReactive({
-  "username": "admin",
-  "password": "wh_order!@#$%^",
+  "username": "admin760435",
+  "password": "admin",
   "grant_type": "password"
 });
 let loginRules = {

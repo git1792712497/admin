@@ -25,7 +25,9 @@
         //file是特殊的Blob
       const el = document.querySelector('#file')
       el.addEventListener('change',e => {
-        console.log(e.target.files);
+        let formData  = new FormData();
+        formData.append("file", e.target.files[0]);
+        console.log(formData)
       })
 
       //拖拽

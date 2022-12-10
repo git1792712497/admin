@@ -29,6 +29,15 @@ export const tools: RouteRecordRaw[] = [
         }
       },
       {
+        path: 'pageSelection',
+        name: 'pageSelection',
+        component: () => import('@/views/tools/pageSelection.vue'),
+        meta: {
+          title: 'element分页选择',
+          icon:'Menu'
+        }
+      },
+      {
         path: 'popup',
         name: 'popup',
         component: () => import('@/views/tools/popup.vue'),
