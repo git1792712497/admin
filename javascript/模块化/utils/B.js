@@ -1,1 +1,0 @@
-export const title = '模块化B'
