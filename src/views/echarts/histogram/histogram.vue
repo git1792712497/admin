@@ -7,7 +7,7 @@
 
 <script lang="ts" name="histogram" setup>
 import { getOption } from './options'
-import {useEcharts} from '@/hooks/useEcharts'
+import { useEcharts } from '@/hooks/useEcharts'
 
 onMounted(async () => {
   const {setOption} = useEcharts('.histogram')

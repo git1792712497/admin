@@ -63,6 +63,15 @@ export const studyNodes: RouteRecordRaw[] = [
 							icon:'Menu'
 						}
 					},
+					{
+						path: 'ref',
+						name: 'v-model',
+						component: () => import('@/views/studyNodes/vue3/v-model/parent.vue'),
+						meta: {
+							title: '组件v-model',
+							icon:'Menu'
+						}
+					},
 				]
 			},
 			{

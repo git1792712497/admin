@@ -11,5 +11,10 @@
 
 <script lang="ts" setup>
 import Loading from './Loading.vue'
+import {useStorage} from "@vueuse/core";
 
+const app = useStorage('key',[{a:'b'}])
+
+
+const obj = ref()
 </script>

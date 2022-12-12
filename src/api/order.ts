@@ -5,3 +5,9 @@ export function getOrderList(data?:object):any{
       data,
    })
 }
+
+export function getAddressList<T>():any{
+   return axios.get({
+      url:`/blade-system/region/lazy-list?notIncludeCode=00`,
+   })
+}

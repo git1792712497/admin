@@ -1,78 +1,32 @@
 <template>
-  <el-table ref="multipleTableRef" :data="tableData" style="width: 100%" @selection-change="handleSelectionChange">
-    <el-table-column type="selection" width="55" />
-    <el-table-column label="Date" width="120">
-      <template #default="scope">{{ scope.row.date }}</template>
-    </el-table-column>
-    <el-table-column label="Name" property="name" width="120" />
-    <el-table-column label="Address" property="address" show-overflow-tooltip />
-  </el-table>
-  <div style="margin-top: 20px">
-    <el-button @click="toggleSelection([tableData[1], tableData[2]])">Toggle selection status of second and third rows </el-button>
-    <el-button @click="toggleSelection()">Clear selection</el-button>
+  <div class="m-4">
+    <p>{{value}}</p>
+    <el-cascader @change="handleChange"  ref="cascader" label="name" value="code" v-model="value" :options="options" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-import { ElTable } from 'element-plus';
+import { ref } from 'vue'
+import { getAddressList } from "@/api/order";
 
-interface User {
-  date: string;
-  name: string;
-  address: string;
+const value = ref([])
+let options = [
+  {
+    code: 'guide',
+    name: 'Guide',
+    children: [
+
+    ],
+  },
+]
+getAddressList().then(res => {
+  console.log(res)
+  options.value = res.data
+})
+const cascader = ref()
+
+const handleChange = (value) => {
+  console.log(cascader.value.getCheckedNodes());
 }
 
-const multipleTableRef = ref<InstanceType<typeof ElTable>>();
-const multipleSelection = ref<User[]>([]);
-const toggleSelection = (rows?: User[]) => {
-  if (rows) {
-    rows.forEach(row => {
-      multipleTableRef.value!.toggleRowSelection(row, undefined);
-    });
-  } else {
-    multipleTableRef.value!.clearSelection();
-  }
-};
-const handleSelectionChange = val => {
-  multipleSelection.value = val;
-};
-
-const tableData: User[] = [
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-02',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-04',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-08',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-06',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-07',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-];
 </script>

@@ -1,4 +1,4 @@
-import fs from 'fs-extra'
+const fs = require('fs-extra')
 let data = fs.readFileSync('./.env') //fs读取文件
 console.log(data.toString().slice(1,10))
 

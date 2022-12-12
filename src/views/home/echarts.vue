@@ -1,14 +1,14 @@
 <template>
-  <v-chart class="chart" :option="option" />
+  <v-chart :option="option" class="chart"/>
 </template>
 
 <script>
-import { use } from 'echarts/core'
-import { CanvasRenderer } from 'echarts/renderers'
-import { PieChart } from 'echarts/charts'
-import { TitleComponent, TooltipComponent, LegendComponent } from 'echarts/components'
+import {PieChart} from 'echarts/charts'
+import {LegendComponent, TitleComponent, TooltipComponent} from 'echarts/components'
+import {use} from 'echarts/core'
+import {CanvasRenderer} from 'echarts/renderers'
+import {defineComponent, ref} from 'vue'
 import VChart from 'vue-echarts'
-import { ref, defineComponent } from 'vue'
 
 use([CanvasRenderer, PieChart, TitleComponent, TooltipComponent, LegendComponent])
 
@@ -40,11 +40,11 @@ export default defineComponent({
           radius: '55%',
           center: ['50%', '60%'],
           data: [
-            { value: 335, name: 'Direct' },
-            { value: 310, name: 'Email' },
-            { value: 234, name: 'Ad Networks' },
-            { value: 135, name: 'Video Ads' },
-            { value: 1548, name: 'Search Engines' },
+            {value: 335, name: 'Direct'},
+            {value: 310, name: 'Email'},
+            {value: 234, name: 'Ad Networks'},
+            {value: 135, name: 'Video Ads'},
+            {value: 1548, name: 'Search Engines'},
           ],
           emphasis: {
             itemStyle: {
@@ -57,7 +57,7 @@ export default defineComponent({
       ],
     })
 
-    return { option }
+    return {option}
   },
 })
 </script>
