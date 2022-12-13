@@ -3,9 +3,7 @@
     <template #header>
 
     </template>
-
-    {{$foo}}
-    <Loading/>
+    <Loading></Loading>
   </el-card>
 </template>
 

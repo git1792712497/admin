@@ -22,6 +22,5 @@ export const userStore = defineStore({
 		getToken(){
 			return this.profile?.access_token
 		},
-		
 	}
 })

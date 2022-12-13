@@ -64,11 +64,11 @@ export const studyNodes: RouteRecordRaw[] = [
 						}
 					},
 					{
-						path: 'ref',
-						name: 'v-model',
-						component: () => import('@/views/studyNodes/vue3/v-model/parent.vue'),
+						path: 'refFamily',
+						name: 'refFamily',
+						component: () => import('@/views/studyNodes/vue3/refFamily.vue'),
 						meta: {
-							title: '组件v-model',
+							title: 'ref全家',
 							icon:'Menu'
 						}
 					},

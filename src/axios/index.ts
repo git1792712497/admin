@@ -13,14 +13,23 @@ class Axios {
   constructor(config: RequestConfig) {
     this.instance = axios.create(config)
     this.interceptors = config.interceptors
-    //全局请求处理
+    //全局请求拦截
     this.instance.interceptors.request.use((config: AxiosRequestConfig) => {
       //实例请求拦截
       return config
     }, (err: any) => {
       console.log(err, '全局请求错误拦截')
+      return Promise.reject(err)
     })
-
+    //全局响应拦截
+    this.instance.interceptors.response.use((result: AxiosResponse) => {
+      console.log('全局响应拦截',result)
+      result.request.responseType === "blob" && download(result)
+      return result.data
+    }, (err: any) => {
+      console.log('全局响应错误', err)
+      return Promise.reject(err)
+    })
     // 实例拦截器
     this.instance.interceptors.request.use(
         this.interceptors?.requestInterceptor,
@@ -30,15 +39,6 @@ class Axios {
         this.interceptors?.responseInterceptor,
         this.interceptors?.responseInterceptorCatch,
     )
-
-    //响应拦截
-    this.instance.interceptors.response.use((result: AxiosResponse) => {
-      console.log('全局响应拦截',result)
-      result.request.responseType === "blob" && download(result)
-      return result.data
-    }, (err: any) => {
-      console.log('全局响应错误', err)
-    })
   }
 
   request<T>(config: RequestConfig): Promise<T> {
@@ -47,12 +47,12 @@ class Axios {
       if (config.paramsToUrl === true) {
         config.url = `${config.url}?${qs.stringify(config.data)}`
       }
+      // 单个请求的请求拦截
+      if (config.interceptors?.requestInterceptor) {
+        config = config.interceptors.requestInterceptor(config)
+      }
       //axios实例上request
       this.instance.request(config).then(res => {
-        // 单个请求的请求拦截
-        if (config.interceptors?.requestInterceptor) {
-          config = config.interceptors.requestInterceptor(config)
-        }
         //单独请求的响应拦截
         if (config.interceptors?.responseInterceptor) {
           res = config.interceptors.responseInterceptor(res)

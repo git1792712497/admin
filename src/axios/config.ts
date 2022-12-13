@@ -27,19 +27,16 @@ export const axios = new Axios({
          return config
       },
       responseInterceptor(config: AxiosResponse) {
-         console.log(config,'实例响应拦截')
+         console.log(config,'实例响应成功拦截')
          return config
       },
       requestInterceptorCatch(error: any) {
-         console.log('请求失败',error)
+         console.log('实例请求失败',error)
          return Promise.reject(error)
       },
       responseInterceptorCatch(error: any) {
          ElMessage({type: 'error', message: error.response?.data.error_description || error.response?.data.msg})
-         console.log('响应错误1',error)
-         if (error.response?.data.code === 401){
-            user.clearUser()
-         }
+         error.response?.data.code === 401 && user.clearUser()
          return Promise.reject(error)
       }
    }

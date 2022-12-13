@@ -46,7 +46,7 @@ https://www.typescriptlang.org/zh/tsconfig
     "src/**/*.tsx",
     "src/**/*.vue",
     "env.d.ts",
-    "components.d.ts"
+    "components.d.ts",
   ],
   "exclude": ["node_modules"]
 }
