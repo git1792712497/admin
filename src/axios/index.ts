@@ -3,14 +3,14 @@ import qs from 'qs'
 import {download} from './download'
 import { ContentType } from './config'
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import type { RequestConfig, Interceptors } from './type'
+import type { CustomRequestConfig, Interceptors } from './type'
 
 
 class Axios {
   instance: AxiosInstance
   interceptors: Interceptors
 
-  constructor(config: RequestConfig) {
+  constructor(config: CustomRequestConfig) {
     this.instance = axios.create(config)
     this.interceptors = config.interceptors
     //全局请求拦截
@@ -41,8 +41,8 @@ class Axios {
     )
   }
 
-  request<T>(config: RequestConfig): Promise<T> {
-    return new Promise((resolve: any, reject) => {
+  request<T = any>(config: CustomRequestConfig){
+    return new Promise<T>((resolve: any, reject) => {
       //参数拼接到url
       if (config.paramsToUrl === true) {
         config.url = `${config.url}?${qs.stringify(config.data)}`
@@ -52,7 +52,7 @@ class Axios {
         config = config.interceptors.requestInterceptor(config)
       }
       //axios实例上request
-      this.instance.request(config).then(res => {
+      this.instance.request<any,T>(config).then(res => {
         //单独请求的响应拦截
         if (config.interceptors?.responseInterceptor) {
           res = config.interceptors.responseInterceptor(res)
@@ -62,19 +62,19 @@ class Axios {
     })
   }
 
-  get(params: RequestConfig) {
+  get(params: CustomRequestConfig) {
     return this.request({...params, method: 'get'})
   }
 
-  post(data: RequestConfig) {
+  post(data: CustomRequestConfig) {
     return this.request({...data, method: 'post'})
   }
 
-  patch(data: RequestConfig) {
+  patch(data: CustomRequestConfig) {
     return this.request({...data, method: 'patch'})
   }
 
-  delete(data: RequestConfig) {
+  delete(data: CustomRequestConfig) {
     return this.request({...data, method: 'delete'})
   }
 
@@ -82,7 +82,7 @@ class Axios {
   不考虑文件大小文件上传,调用后端提供的post请求接口
   FormData携带File对象或者Blob(二进制)对象
   */
-  uploadFile<T>(config: AxiosRequestConfig){
+  uploadFile(config: AxiosRequestConfig){
     const formData = new FormData();
     const customFilename = config.data.name || 'file';
 

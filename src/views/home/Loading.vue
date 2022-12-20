@@ -26,4 +26,10 @@ const handleChange = (value) => {
   console.log(cascader.value.getCheckedNodes());
 }
 
+let timer = setInterval(() => {
+
+},200)
+
+clearInterval(timer)
+
 </script>

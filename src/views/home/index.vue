@@ -3,16 +3,13 @@
     <template #header>
 
     </template>
-    <Loading></Loading>
+    <el-button type="primary" :disabled="!disable" @click="handleSendCode">{{btnText}}</el-button>
   </el-card>
 </template>
 
 <script lang="ts" setup>
-import Loading from './Loading.vue'
-import {useStorage} from "@vueuse/core";
+import {useSendCode} from '@/hooks/useSendCode'
 
-const app = useStorage('key',[{a:'b'}])
-
-
-const obj = ref()
+const { btnText,sendCode,disable} = useSendCode()
+const handleSendCode = () => sendCode
 </script>

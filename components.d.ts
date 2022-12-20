@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BetterScroll: typeof import('./src/components/betterScroll/index.vue')['default']
     BigScreenScale: typeof import('./src/components/bigScreen/BigScreenScale.vue')['default']
     BigScreenZoom: typeof import('./src/components/bigScreen/BigScreenZoom.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']

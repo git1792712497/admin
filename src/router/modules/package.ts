@@ -207,7 +207,16 @@ export const Package: RouteRecordRaw[] = [
 						title: 'hover.css',
 						icon: 'Menu'
 					}
-				}
+				},
+				{
+					path: 'localForage',
+					name: 'localForage',
+					component: () => import('@/views/package/localForage.vue'),
+					meta: {
+						title: 'localForage存储',
+						icon: 'Menu'
+					}
+				},
 			]
 	 }
 ]

@@ -49,7 +49,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 100%; 
 }
 
 .header {
