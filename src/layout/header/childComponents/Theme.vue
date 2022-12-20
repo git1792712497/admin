@@ -30,7 +30,7 @@ import {changePrimary} from '@/hooks/useTheme'
 import SwitchDark from './themeChild/SwitchDark.vue'
 import {shallowRef} from "vue";
 import {globalConfigStore} from "@/store/modules/globalConfig";
-import {colorList} from '@/settings/theme'
+import {colorList} from '@/config/theme'
 let drawerVisible = shallowRef(false)
 const globalConfig = globalConfigStore()
 globalConfig.setTheme()

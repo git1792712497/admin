@@ -8,6 +8,7 @@ import viteMockServe from './vite-plugin-mock'
 import Components from './unplugin-vue-components'
 import visualizer from './rollup-plugin-visualizer'
 import Icons from './unplugin-icons'
+import importToCDN from './vite-plugin-cdn-import'
 
 export default function (){
 	 return [
@@ -20,7 +21,8 @@ export default function (){
 			viteMockServe(),
 		  Components(), //按需导入组件库
 		  visualizer(), //包体积分析
-		  Icons() //iconify
+		  Icons(), //iconify
+		 	importToCDN() //cdn优化
 	]
 }
 

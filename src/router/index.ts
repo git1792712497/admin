@@ -1,6 +1,6 @@
-import {createRouter,createWebHistory} from "vue-router";
+import {createRouter,createWebHashHistory} from "vue-router";
 import type {RouteRecordRaw} from "vue-router";
-import NProgress from '@/settings/nprogress'
+import NProgress from '@/config/nprogress'
 const metaRouters:Record<string, any> = import.meta.glob("./modules/**/*.ts",{ eager: true });
 
 export let routerArray: RouteRecordRaw[] = [];
@@ -46,7 +46,7 @@ export const routes:any = [
 
 import {basicRouter} from './basicRouter'
 const router = createRouter({
-	history: createWebHistory(process.env.BASE_URL),
+	history: createWebHashHistory(process.env.BASE_URL),
 	routes: routes.concat(basicRouter),
 	strict: true,
 	scrollBehavior: () => ({left: 0,top: 0})

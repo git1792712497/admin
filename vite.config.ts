@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import path from "path";
 import installPlugins from './src/plugin'
-import {proxy} from "./src/settings/proxy";
+import {proxy} from "./src/config/proxy";
 
 export default defineConfig(({ command, mode }) => {
 	return {
