@@ -1,0 +1,1 @@
+import{d as s,Y as n,e}from"./runtime-core.esm-bundler-763b24c9.js";const c=s({name:"tsx",setup(){const t=n(1);setInterval(()=>{t.value+=1},100);let a=[1,2,3,4,5,6];return()=>e("section",null,[a.map(r=>e("div",{class:"caret-amber-200 caret-amber-400"},[r]))])}});export{c as default};

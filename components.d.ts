@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BetterScroll: typeof import('./src/components/betterScroll/index.vue')['default']
     BigScreenScale: typeof import('./src/components/bigScreen/BigScreenScale.vue')['default']
     BigScreenZoom: typeof import('./src/components/bigScreen/BigScreenZoom.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
@@ -15,7 +14,6 @@ declare module '@vue/runtime-core' {
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
-    ElCascader: typeof import('element-plus/es')['ElCascader']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElCollapse: typeof import('element-plus/es')['ElCollapse']
     ElCollapseItem: typeof import('element-plus/es')['ElCollapseItem']
