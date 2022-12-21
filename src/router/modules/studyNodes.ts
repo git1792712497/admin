@@ -72,6 +72,15 @@ export const studyNodes: RouteRecordRaw[] = [
 							icon:'Menu'
 						}
 					},
+					{
+						path: 'nextTick',
+						name: 'nextTick',
+						component: () => import('@/views/studyNodes/vue3/nextTick.vue'),
+						meta: {
+							title: 'nextTick细节',
+							icon:'Menu'
+						}
+					},
 				]
 			},
 			{

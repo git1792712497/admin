@@ -37,7 +37,7 @@ export default defineConfig(({ command, mode }) => {
 			assetsInlineLimit: 4096,// 默认4kb 配置图片编译base64时大小，大于以原文件引入，小于会直接编译
 			outDir: "dist",
 			chunkSizeWarningLimit: 500,// 打包文件超大小警告显示，默认500kbs
-			minify: "esbuild",
+			minify: "esbuild", //terser 打包后可移除console
 			target:'es2015',// 目标语言
 			assetsDir: 'assets',// 指定打包生成静态资源的存放路径
 			sourcemap:false,// 构建后是否生成 source map 文件

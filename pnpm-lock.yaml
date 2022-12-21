@@ -67,6 +67,7 @@ specifiers:
   sortablejs: ^1.15.0
   swiper: ^8.4.3
   tailwindcss: ^3.1.8
+  terser: ^5.16.1
   tippy.js: ^6.3.7
   typed.js: ^2.0.12
   typescript: ^4.6.4
@@ -172,13 +173,14 @@ devDependencies:
   prettier: registry.npmmirror.com/prettier/2.8.1
   rollup-plugin-visualizer: registry.npmmirror.com/rollup-plugin-visualizer/5.8.3_rollup@3.5.1
   tailwindcss: registry.npmmirror.com/tailwindcss/3.2.4_postcss@8.4.19
+  terser: registry.npmmirror.com/terser/5.16.1
   typescript: registry.npmmirror.com/typescript/4.9.3
   unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.12.0_f3x7fwckspqxue3wfr5j5ef4wa
   unplugin-element-plus: registry.npmmirror.com/unplugin-element-plus/0.4.1_lbtcezxteh2ldemlqfy5xxbjxi
   unplugin-icons: registry.npmmirror.com/unplugin-icons/0.14.14
   unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.22.11_rollup@3.5.1+vue@3.2.45
-  vite: registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu
-  vite-aliases: registry.npmmirror.com/vite-aliases/0.9.7_kjnfudeuyrjjhku74ogbc2yunu
+  vite: registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa
+  vite-aliases: registry.npmmirror.com/vite-aliases/0.9.7_qilk3nnzbb2pfhlgril4hfwpxa
   vite-plugin-cdn-import: registry.npmmirror.com/vite-plugin-cdn-import/0.3.5_rollup@3.5.1
   vite-plugin-compression: registry.npmmirror.com/vite-plugin-compression/0.5.1_vite@4.0.0
   vite-plugin-mock: registry.npmmirror.com/vite-plugin-mock/2.9.6_6n5bpdgq75c3rocsxyzqmpegtu
@@ -999,6 +1001,15 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
+  registry.npmmirror.com/@jridgewell/source-map/0.3.2:
+    resolution: {integrity: sha512-m7O9o2uR8k2ObDysZYzdfhb08VuEml5oWGiosa1VdaPZ/A6QyPkAJuwN0Q1lhULOf6B7MtQmHENS743hWtCrgw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jridgewell/source-map/-/source-map-0.3.2.tgz}
+    name: '@jridgewell/source-map'
+    version: 0.3.2
+    dependencies:
+      '@jridgewell/gen-mapping': registry.npmmirror.com/@jridgewell/gen-mapping/0.3.2
+      '@jridgewell/trace-mapping': registry.npmmirror.com/@jridgewell/trace-mapping/0.3.17
+    dev: true
+
   registry.npmmirror.com/@jridgewell/sourcemap-codec/1.4.14:
     resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.14.tgz}
     name: '@jridgewell/sourcemap-codec'
@@ -1379,7 +1390,7 @@ packages:
       '@babel/core': registry.npmmirror.com/@babel/core/7.20.5
       '@babel/plugin-transform-typescript': registry.npmmirror.com/@babel/plugin-transform-typescript/7.20.2_@babel+core@7.20.5
       '@vue/babel-plugin-jsx': registry.npmmirror.com/@vue/babel-plugin-jsx/1.1.1_@babel+core@7.20.5
-      vite: registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu
+      vite: registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa
       vue: registry.npmmirror.com/vue/3.2.45
     transitivePeerDependencies:
       - supports-color
@@ -1395,7 +1406,7 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu
+      vite: registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa
       vue: registry.npmmirror.com/vue/3.2.45
     dev: true
 
@@ -2142,6 +2153,12 @@ packages:
       update-browserslist-db: registry.npmmirror.com/update-browserslist-db/1.0.10_browserslist@4.21.4
     dev: true
 
+  registry.npmmirror.com/buffer-from/1.1.2:
+    resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/buffer-from/-/buffer-from-1.1.2.tgz}
+    name: buffer-from
+    version: 1.1.2
+    dev: true
+
   registry.npmmirror.com/builtin-modules/3.3.0:
     resolution: {integrity: sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/builtin-modules/-/builtin-modules-3.3.0.tgz}
     name: builtin-modules
@@ -2370,6 +2387,12 @@ packages:
     dependencies:
       delayed-stream: registry.npmmirror.com/delayed-stream/1.0.0
     dev: false
+
+  registry.npmmirror.com/commander/2.20.3:
+    resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/-/commander-2.20.3.tgz}
+    name: commander
+    version: 2.20.3
+    dev: true
 
   registry.npmmirror.com/commander/7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/-/commander-7.2.0.tgz}
@@ -5800,6 +5823,15 @@ packages:
       urix: registry.npmmirror.com/urix/0.1.0
     dev: true
 
+  registry.npmmirror.com/source-map-support/0.5.21:
+    resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/source-map-support/-/source-map-support-0.5.21.tgz}
+    name: source-map-support
+    version: 0.5.21
+    dependencies:
+      buffer-from: registry.npmmirror.com/buffer-from/1.1.2
+      source-map: registry.npmmirror.com/source-map/0.6.1
+    dev: true
+
   registry.npmmirror.com/source-map-url/0.4.1:
     resolution: {integrity: sha512-cPiFOTLUKvJFIg4SKVScy4ilPPW6rFgMgfuZJPNoDuMs3nC1HbMUycBoJw77xFIp6z1UJQJOfx6C9GMH80DiTw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/source-map-url/-/source-map-url-0.4.1.tgz}
     name: source-map-url
@@ -6085,6 +6117,19 @@ packages:
       is-dom-node: registry.npmmirror.com/is-dom-node/1.0.4
       is-dom-node-list: registry.npmmirror.com/is-dom-node-list/1.2.1
     dev: false
+
+  registry.npmmirror.com/terser/5.16.1:
+    resolution: {integrity: sha512-xvQfyfA1ayT0qdK47zskQgRZeWLoOQ8JQ6mIgRGVNwZKdQMU+5FkCBjmv4QjcrTzyZquRw2FVtlJSRUmMKQslw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/terser/-/terser-5.16.1.tgz}
+    name: terser
+    version: 5.16.1
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': registry.npmmirror.com/@jridgewell/source-map/0.3.2
+      acorn: registry.npmmirror.com/acorn/8.8.1
+      commander: registry.npmmirror.com/commander/2.20.3
+      source-map-support: registry.npmmirror.com/source-map-support/0.5.21
+    dev: true
 
   registry.npmmirror.com/tiny-emitter/2.1.0:
     resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz}
@@ -6376,7 +6421,7 @@ packages:
       chokidar: registry.npmmirror.com/chokidar/3.5.3
       esbuild: registry.npmmirror.com/esbuild/0.15.18
       rollup: registry.npmmirror.com/rollup/3.5.1
-      vite: registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu
+      vite: registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa
       webpack-sources: registry.npmmirror.com/webpack-sources/3.2.3
       webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.6
     dev: true
@@ -6462,7 +6507,7 @@ packages:
       vue: registry.npmmirror.com/vue/3.2.45
     dev: true
 
-  registry.npmmirror.com/vite-aliases/0.9.7_kjnfudeuyrjjhku74ogbc2yunu:
+  registry.npmmirror.com/vite-aliases/0.9.7_qilk3nnzbb2pfhlgril4hfwpxa:
     resolution: {integrity: sha512-MiqZx5NJQDn/I7gYzovop8GzlEDYCxR3i3JCCNap5OWEfBmo4b+jIfpmal22IoBREgx1TtkmwRkHJCBUhnL6jA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-aliases/-/vite-aliases-0.9.7.tgz}
     id: registry.npmmirror.com/vite-aliases/0.9.7
     name: vite-aliases
@@ -6473,7 +6518,7 @@ packages:
       comment-json: registry.npmmirror.com/comment-json/4.2.3
       consola: registry.npmmirror.com/consola/2.15.3
       fast-glob: registry.npmmirror.com/fast-glob/3.2.12
-      vite: registry.npmmirror.com/vite/3.2.5_kjnfudeuyrjjhku74ogbc2yunu
+      vite: registry.npmmirror.com/vite/3.2.5_qilk3nnzbb2pfhlgril4hfwpxa
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6505,7 +6550,7 @@ packages:
       chalk: registry.npmmirror.com/chalk/4.1.2
       debug: registry.npmmirror.com/debug/4.3.4
       fs-extra: registry.npmmirror.com/fs-extra/10.1.0
-      vite: registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu
+      vite: registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6530,7 +6575,7 @@ packages:
       fast-glob: registry.npmmirror.com/fast-glob/3.2.12
       mockjs: registry.npmmirror.com/mockjs/1.1.0
       path-to-regexp: registry.npmmirror.com/path-to-regexp/6.2.1
-      vite: registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu
+      vite: registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -6552,7 +6597,7 @@ packages:
       pathe: registry.npmmirror.com/pathe/0.2.0
       svg-baker: registry.npmmirror.com/svg-baker/1.7.0
       svgo: registry.npmmirror.com/svgo/2.8.0
-      vite: registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu
+      vite: registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6567,10 +6612,10 @@ packages:
     dependencies:
       '@vue/compiler-sfc': registry.npmmirror.com/@vue/compiler-sfc/3.2.45
       magic-string: registry.npmmirror.com/magic-string/0.25.9
-      vite: registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu
+      vite: registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa
     dev: true
 
-  registry.npmmirror.com/vite/3.2.5_kjnfudeuyrjjhku74ogbc2yunu:
+  registry.npmmirror.com/vite/3.2.5_qilk3nnzbb2pfhlgril4hfwpxa:
     resolution: {integrity: sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-3.2.5.tgz}
     id: registry.npmmirror.com/vite/3.2.5
     name: vite
@@ -6605,11 +6650,12 @@ packages:
       resolve: registry.npmmirror.com/resolve/1.22.1
       rollup: registry.npmmirror.com/rollup/2.79.1
       sass: registry.npmmirror.com/sass/1.56.1
+      terser: registry.npmmirror.com/terser/5.16.1
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
     dev: true
 
-  registry.npmmirror.com/vite/4.0.0_kjnfudeuyrjjhku74ogbc2yunu:
+  registry.npmmirror.com/vite/4.0.0_qilk3nnzbb2pfhlgril4hfwpxa:
     resolution: {integrity: sha512-ynad+4kYs8Jcnn8J7SacS9vAbk7eMy0xWg6E7bAhS1s79TK+D7tVFGXVZ55S7RNLRROU1rxoKlvZ/qjaB41DGA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-4.0.0.tgz}
     id: registry.npmmirror.com/vite/4.0.0
     name: vite
@@ -6644,6 +6690,7 @@ packages:
       resolve: registry.npmmirror.com/resolve/1.22.1
       rollup: registry.npmmirror.com/rollup/3.7.3
       sass: registry.npmmirror.com/sass/1.56.1
+      terser: registry.npmmirror.com/terser/5.16.1
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
     dev: true
