@@ -51,10 +51,10 @@ export default defineConfig(({ command, mode }) => {
 			// 在这里配置打包时的rollup配置
 			rollupOptions: {
 				output: {
-					manualChunks(id: string, { getModuleInfo }) {
-						// if (id.includes('node_modules')) {
-						// 	return 'vendor';
-						// }
+					manualChunks(id: string) {
+						if (id.includes('node_modules')) {
+						  return id.toString().split('node_modules/')[2].split('/')[0].toString();
+						}
 					}
 				}
 			}

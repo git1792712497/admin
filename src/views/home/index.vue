@@ -3,13 +3,12 @@
     <template #header>
 
     </template>
-    <el-button type="primary" :disabled="!disable" @click="handleSendCode">{{btnText}}</el-button>
+    <Loading>
+
+    </Loading>
   </el-card>
 </template>
 
 <script lang="ts" setup>
-import {useSendCode} from '@/hooks/useSendCode'
-
-const { btnText,sendCode,disable} = useSendCode()
-const handleSendCode = () => sendCode
+import Loading from './Loading.vue'
 </script>

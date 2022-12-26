@@ -9,6 +9,7 @@ import Components from './unplugin-vue-components'
 import visualizer from './rollup-plugin-visualizer'
 import Icons from './unplugin-icons'
 import importToCDN from './vite-plugin-cdn-import'
+import viteImagemin from './vite-plugin-imagemin'
 
 export default function (){
 	 return [
@@ -22,7 +23,8 @@ export default function (){
 		  Components(), //按需导入组件库
 		  visualizer(), //包体积分析
 		  Icons(), //iconify
-		 	importToCDN() //cdn优化
+		 	importToCDN(), //cdn优化
+		 	viteImagemin() //图片压缩
 	]
 }
 
