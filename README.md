@@ -3,8 +3,7 @@
 request 的Content-Type
 一般我们在开发的过程中需要注意客户端发送请求（Request）时的Content-Type设置，特别是使用ajax的时候，如果设置得不准确，很有可能导致请求失败。比如在spring中，如果接口使用了@RequestBody，spring强大的自动解析功能，会将请求实体的内容自动转换为Bean，但前提是请求的Content-Type必须设置为application/json，否正就会返回415错误。
 
-注：415 错误是 Unsupported media type，即不支持的媒体类型。
-建议：
+415 错误是 Unsupported media type，即不支持的媒体类型。
 如果是一个restful接口（json格式），一般将Content-Type设置为application/json; charset=UTF-8；
 如果是文件上传，一般Content-Type设置为multipart/form-data
 如果普通表单提交，一般Content-Type设置为application/x-www-form-urlencoded
@@ -35,3 +34,8 @@ vue3不在用this ,通过函数来声明,
 
 代理方式变化vue2 => Object.defineProperty 和 vue3 => Proxy
 
+## 学习express和koa区别
+
+express设计初衷是完整强大的,koa是简洁和自由的,类似vue2 到vue3 移除eventBus ,执行异步的过程
+
+洋葱模型 ,koa中间件从最外层如果调用next 会一层一层往下执行,执行到最内层又把数据往外传递返回

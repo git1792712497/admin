@@ -1,1 +1,0 @@
-import{o as t,a as e,b as o,c as n}from"./_overArg-95e1b15c.js";var i=t(Object.keys,Object);const y=i;var p=Object.prototype,u=p.hasOwnProperty;function v(r){if(!e(r))return y(r);var s=[];for(var a in Object(r))u.call(r,a)&&a!="constructor"&&s.push(a);return s}function f(r){return o(r)?n(r):v(r)}export{f as k};
