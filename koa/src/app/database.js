@@ -18,7 +18,6 @@ connectionPool.getConnection((err, connection) => {
 		console.log('获取连接失败~', err)
 		return
 	}
-	
 	// 2.获取connection, 尝试和数据库建立一下连接
 	connection.connect(err => {
 		if (err) {
