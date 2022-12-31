@@ -6,6 +6,10 @@ export const proxy = {
 	'/jsonServer': {
 		target: 'http://localhost:3004',  //你要跨域访问的网址
 		changeOrigin: true,   // 允许跨域
+	},
+	'/koa': {
+		target: 'http://localhost:8000',  //你要跨域访问的网址
+		changeOrigin: true,   // 允许跨域
 	}
 }
 

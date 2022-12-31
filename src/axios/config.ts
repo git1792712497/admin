@@ -42,6 +42,17 @@ export const axios = new Axios({
    }
 })
 
+export const koa = new Axios({
+   baseURL: 'http://localhost:8000',
+   timeout: 10000,
+   interceptors:{
+      requestInterceptor(config:AxiosRequestConfig){
+         config.headers.Authorization = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjdjYmMzZTY2YThlZTQ3NDQ1YzE4NTU5YThlODhhMjQ4IiwibmFtZSI6IuWRqOm-meadgyIsInVzZXJJZCI6MTMsImlhdCI6MTY3MjQ2NDQ5NSwiZXhwIjoxNzA0MDAwNDk1fQ.ivKl91fn9MVKiZgKEdfttkownIWfpRwAd_K2Kh7IFKad8OvuAV41r0YUChv41OXCuDTS_Hn5MvRSscv4wNDdLCjrMHQspTrXihAzVJlhRhEWQ9bTWRxgK-NdUTduxWDaWlGuFrk87qdPrWzQxk1t_0cK9k5_bj-y0gZKS-MCaZA'
+         return config
+      }
+   }
+})
+
 export const music = new Axios({
    baseURL: 'https://music-api.heheda.top',
    timeout: 10000
@@ -50,7 +61,6 @@ export const music = new Axios({
 export const fastMock = new Axios({
    baseURL: 'https://www.fastmock.site/mock/957ffa30daa6a998277620d86656998b/mock',
    timeout: 10000,
-
 })
 
 export const easyMock = new Axios({
