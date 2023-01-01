@@ -2,6 +2,8 @@ const KoaRouter = require('@koa/router')
 const {validateAuth} = require('../middleware/login.js')
 const {create,list,detail,update,remove} = require('../controller/moments.js')
 const {updatePermission} = require('../middleware/moments.js')
+
+
 const momentsRouter = new KoaRouter({prefix: '/moments'})
 
 momentsRouter.post('/save',validateAuth,create)

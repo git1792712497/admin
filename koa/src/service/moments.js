@@ -10,12 +10,12 @@ class MomentsService {
 
     return result
   }
-
+	//查询动态下的用户评论数
   async queryList(size = 10, offset = 0) {
-    //OFFSET 从第几条查询
     const statement = `
 				SELECT moments.id,moments.content,moments.createAt,moments.updateAt,
-				JSON_OBJECT('id',user.id,'name',user.name,'createTime',user.createAt,'updateTime',user.createAt) user
+				JSON_OBJECT('id',user.id,'name',user.name,'createTime',user.createAt,'updateTime',user.createAt) user,
+				(SELECT COUNT(*) FROM comment WHERE moment_id = moments.id) commentCount
 				FROM moments LEFT JOIN user
 				ON moments.user_id = user.id LIMIT ? OFFSET ?`
 
@@ -23,19 +23,24 @@ class MomentsService {
 
     return result
   }
-	
+	//动态详情
 	async queryById(id) {
-		//OFFSET 从第几条查询
-		const statement = `
+		//查询动态
+		const statement1 = `
 				SELECT moments.id,moments.content,moments.createAt,moments.updateAt,
 				JSON_OBJECT('id',user.id,'name',user.name,'createTime',user.createAt,'updateTime',user.createAt) user
 				FROM moments LEFT JOIN user
 				ON moments.user_id = user.id
-				WHERE moments.id = ?
-`
-		const [result] = await connection.execute(statement, [id])
+				WHERE moments.id = ?`
+		//动态下的评论
+		const statement2 = `SELECT
+		comment.id,comment.content,comment.moment_id,comment.comment_id,comment.createAt,comment.updateAt,user.name
+		 FROM comment LEFT JOIN user ON user.id = comment.user_id WHERE moment_id = ?`
 		
-		return result
+		const [result1] = await connection.execute(statement1, [id])
+		const [result2] = await connection.execute(statement2, [id])
+		result1[0].commentList = result2
+		return result1[0]
 	}
 	async updateById(id,content) {
 		//OFFSET 从第几条查询

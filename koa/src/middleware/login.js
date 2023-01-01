@@ -5,7 +5,6 @@ const md5password = require('../utils/md5password.js')
 const validateUser = async (ctx,next) => {
 	//获取http传过来的信息
 	const user = ctx.request.body
-	console.log(user)
 	if (!user.name || !user.password){
 		ctx.body = {
 			message:'用户名或密码不能为空!',
@@ -59,8 +58,6 @@ const validateAuth = async (ctx,next) => {
 	  ctx.user = jwt.verify(token, publicKey, {
 		  algorithms: ['RS256'],
 	  })
-	
-	  console.log('user',ctx.user)
 	  
     //执行下一个中间件
     await next()

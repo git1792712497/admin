@@ -5,7 +5,6 @@ const updatePermission = async (ctx,next) => {
 	const {userId} = ctx.user
 	const {momentId} = ctx.request.query
 	const [result] = await queryById(momentId)
-	console.log('query',userId)
 	if (result && result.user.id === userId){
 		await next()
 	}else {
