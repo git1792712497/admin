@@ -20,6 +20,21 @@ class UserService{
 		const [values] = await connection.execute(statement, [name])
 		return values
 	}
+	
+	//头像存数据库
+	async saveAvatar(filename, mimetype, size, userId) {
+		const statement = 'INSERT INTO avatar (filename, mimetype, size, user_id) VALUES (?, ?, ?, ?);';
+		const [result] = await connection.execute(statement, [filename, mimetype, size, userId])
+		return result
+	}
+	
+	
+	async queryUserAvatar(userId){
+		const statement = `SELECT * FROM avatar WHERE user_id = ?`
+		const [result] = await connection.execute(statement,[userId])
+		//拿最新的
+		return result.pop()
+	}
 }
 
 

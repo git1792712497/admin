@@ -11,6 +11,18 @@ class LabelService {
 		const [result] = await connection.execute(statement,[name])
 		return result
 	}
+	//关联
+	async relevancy(momentId,labelId){
+		const statement = `INSERT INTO moment_label (moment_id,label_id) VALUES (?,?)`
+		const [result] = await connection.execute(statement,[momentId,labelId])
+		return result
+	}
+	
+	async hasRelevancy(momentId,labelId){
+		const statement = `SELECT * FROM moment_label WHERE moment_id = ? && label_id = ?`
+		const [result] = await connection.execute(statement,[momentId,labelId])
+		return !!result.length
+	}
 }
 
 
