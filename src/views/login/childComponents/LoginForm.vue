@@ -48,7 +48,7 @@ const router = useRouter()
 let loading = shallowRef(false)
 let loginFormRef = shallowRef();
 let loginForm = shallowReactive({
-  "username": "admin760435",
+  "username": "admin317050",
   "password": "admin",
   "grant_type": "password"
 });
@@ -102,7 +102,7 @@ onMounted(() => {
   width: 100%;
   margin-top: 40px;
   white-space: nowrap;
-  
+
   .el-button {
     width: 185px;
   }

@@ -47,3 +47,13 @@ express设计初衷是完整强大的,koa是简洁和自由的,类似vue2 到vue
 为了辨别用户身份存在客户端
 
 内存cookie(没有设置过期时间) 和硬盘cookie(有设置过期时间 )
+
+#安装
+dnf install nginx
+#启动
+systemctl start nginx
+#开机重启
+systemctl enable nginx
+#重启(改了nginx配置)
+systemctl restart nginx
+

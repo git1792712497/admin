@@ -6,7 +6,7 @@ const connectionPool = mysql.createPool({
 	port: 3306,
 	database: 'koa',
 	user: 'root',
-	password: '123456',
+	password: '252437+-',
 	connectionLimit: 10 //最大连接池
 })
 

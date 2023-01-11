@@ -1,0 +1,1 @@
+import{bY as e,au as n,bH as t}from"./index-c5a6c875.js";function i(i,s=150,r){let o=()=>{i()};const a=t(o,s);o=a;const d=()=>{r&&r.immediate&&o(),window.addEventListener("resize",o)},c=()=>{window.removeEventListener("resize",o)};return e((()=>{d()})),n((()=>{c()})),[d,c]}export{i as u};

@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@amap/amap-jsapi-loader': ^1.0.1
+  '@amap/amap-jsapi-types': ^0.0.10
   '@ant-design/icons-vue': ^6.1.0
   '@element-plus/icons-vue': ^2.0.9
   '@iconify/json': ^2.1.148
@@ -97,6 +98,7 @@ specifiers:
 
 dependencies:
   '@amap/amap-jsapi-loader': registry.npmmirror.com/@amap/amap-jsapi-loader/1.0.1
+  '@amap/amap-jsapi-types': registry.npmmirror.com/@amap/amap-jsapi-types/0.0.10
   '@ant-design/icons-vue': registry.npmmirror.com/@ant-design/icons-vue/6.1.0_vue@3.2.45
   '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.0.10_vue@3.2.45
   '@smallwei/avue': registry.npmmirror.com/@smallwei/avue/3.2.6_kzqbqp5bukjunzfd4a2yzu62fq
@@ -198,6 +200,12 @@ packages:
     resolution: {integrity: sha512-nPyLKt7Ow/ThHLkSvn2etQlUzqxmTVgK7bIgwdBRTg2HK5668oN7xVxkaiRe3YZEzGzfV2XgH5Jmu2T73ljejw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@amap/amap-jsapi-loader/-/amap-jsapi-loader-1.0.1.tgz}
     name: '@amap/amap-jsapi-loader'
     version: 1.0.1
+    dev: false
+
+  registry.npmmirror.com/@amap/amap-jsapi-types/0.0.10:
+    resolution: {integrity: sha512-znvqLGPBy9NRCr1/3650o9vL1aYl/f1YK0+UGn8lBUvHJXND6uMDJGJsl43cEYglw9/tblwIRxjm4pIotOvSCQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@amap/amap-jsapi-types/-/amap-jsapi-types-0.0.10.tgz}
+    name: '@amap/amap-jsapi-types'
+    version: 0.0.10
     dev: false
 
   registry.npmmirror.com/@ampproject/remapping/2.2.0:

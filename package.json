@@ -4,7 +4,7 @@
 	"version": "20221204.1.NaN",
 	"type": "commonjs",
 	"scripts": {
-		"koa" : "cd koa && npm run dev",
+		"koa": "cd koa && npm run dev",
 		"dev": "node fs-extra.js && vite",
 		"build": "node fs-extra.js &&  vite build",
 		"preview": "npm run build && vite preview",
@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@amap/amap-jsapi-loader": "^1.0.1",
+		"@amap/amap-jsapi-types": "^0.0.10",
 		"@ant-design/icons-vue": "^6.1.0",
 		"@element-plus/icons-vue": "^2.0.9",
 		"@smallwei/avue": "^3.1.0",

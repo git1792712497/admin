@@ -1,0 +1,1 @@
+import{bo as a}from"./index-c5a6c875.js";const s=s=>a.get({url:"/blade-desk/notice/list",params:s}),e=s=>a.post({url:"/blade-desk/notice/submit",params:s}),r=s=>a.get({url:"/blade-desk/notice/detail",params:s}),o=s=>a.post({url:"/blade-desk/notice/remove",params:s},{joinParamsToUrl:!0});export{r as a,s as g,o as r,e as s};

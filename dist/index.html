@@ -1,71 +1,8 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=icon href=favicon.ico><title>电子签约平台</title><style>html,
-    body,
-    #app {
-      height: 100%;
-      margin: 0px;
-      padding: 0px;
-    }
-    .chromeframe {
-      margin: 0.2em 0;
-      background: #ccc;
-      color: #000;
-      padding: 0.2em 0;
-    }
-
-    #loader-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 999999;
-    }
-
-    .loader {
-      position: fixed;
-      left: 48%;
-      top: 48%;
-      width: 50px;
-      height: 50px;
-      animation: spin 2s linear infinite;
-      z-index: 1001;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotateY(0deg);
-      }
-      100% {
-        transform: rotateY(360deg);
-      }
-    }
-
-    #loader-wrapper .loader-section {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgb(0, 0, 0);
-      z-index: 1000;
-    }
-
-    #loader-wrapper .load_title {
-      font-family: 'Open Sans';
-      color: #FFF;
-      font-size: 19px;
-      width: 100%;
-      text-align: center;
-      z-index: 9999999999999;
-      position: absolute;
-      top: 60%;
-      opacity: 1;
-      line-height: 30px;
-    }
-
-    #loader-wrapper .load_title span {
-      font-weight: normal;
-      font-style: italic;
-      font-size: 13px;
-      color: #FFF;
-      opacity: 0.5;
-    }</style><link href=static/css/chunk-libs.3dfb7769.css rel=stylesheet><link href=static/css/app.1173bf6c.css rel=stylesheet></head><body><div id=app><div id=loader-wrapper><img class=loader src=favicon.ico><div class=loader-section></div><div class=load_title>正在加载系统资源，请耐心等待</div></div></div><script>(function(e){function c(c){for(var u,a,h=c[0],t=c[1],r=c[2],k=0,b=[];k<h.length;k++)a=h[k],Object.prototype.hasOwnProperty.call(f,a)&&f[a]&&b.push(f[a][0]),f[a]=0;for(u in t)Object.prototype.hasOwnProperty.call(t,u)&&(e[u]=t[u]);o&&o(c);while(b.length)b.shift()();return d.push.apply(d,r||[]),n()}function n(){for(var e,c=0;c<d.length;c++){for(var n=d[c],u=!0,a=1;a<n.length;a++){var h=n[a];0!==f[h]&&(u=!1)}u&&(d.splice(c--,1),e=t(t.s=n[0]))}return e}var u={},a={runtime:0},f={runtime:0},d=[];function h(e){return t.p+"static/js/"+({}[e]||e)+"."+{"chunk-029b75e0":"b13302e4","chunk-066c1e70":"3cd81dfc","chunk-10f4baad":"57c95398","chunk-025ed5e0":"8027190d","chunk-519483dc":"4e9713bb","chunk-8a66628a":"fea9e858","chunk-1f206b8d":"66165a20","chunk-2d0a2db2":"f2b6ff9e","chunk-2d0be678":"6ec8fe83","chunk-2d0d65e3":"74a0eb6c","chunk-2d0e2366":"64c0e5da","chunk-618cb0d2":"15d8ac2d","chunk-2d0f012d":"71baf6c8","chunk-2d20917e":"dc3d0cd5","chunk-2e30676e":"3f484a33","chunk-9e9c9b90":"5c5cdf13","chunk-cf00aa14":"5cedeb93","chunk-14af10e8":"6decf7b8","chunk-5a2f9c7b":"2b51f7ef","chunk-5ae863d4":"a233630d","chunk-879a068a":"101927e1","chunk-b64eaa0a":"10bfcda2","chunk-3f93175c":"56876d6d","chunk-6e83591c":"a1f301fd","chunk-1c689b90":"803f643b","chunk-50cc6764":"de1df60e","chunk-5927ac35":"608fa190","chunk-f7fecf94":"3824e6b0","chunk-336689e4":"2802f500","chunk-90c9faa4":"5f2b815e","chunk-5faa7a25":"5fd99c3b","chunk-fb13bd6e":"c0698d46","chunk-395d8bf6":"4af14106","chunk-70ea128f":"93fb4f39","chunk-87fb7988":"d7fc1793","chunk-d19c1a98":"df587959","chunk-e302a150":"5ed521bb","chunk-f1f91fbc":"1ae9e861","chunk-6ee33c2f":"6967ee3f","chunk-2e78e312":"e09c68de","chunk-0634cfb7":"ebd0be26","chunk-11f356ff":"5d169c93","chunk-1b599259":"ffbd9c51","chunk-4dd483ad":"cbabb326","chunk-51e4fada":"37d9d280","chunk-5ecee0a7":"fef63299","chunk-637b0ca6":"78a2d60a","chunk-b3695dfe":"85189496","chunk-950959be":"3463c656","chunk-bdfd0090":"bd6dd778","chunk-c6be9124":"6919e75b"}[e]+".js"}function t(c){if(u[c])return u[c].exports;var n=u[c]={i:c,l:!1,exports:{}};return e[c].call(n.exports,n,n.exports,t),n.l=!0,n.exports}t.e=function(e){var c=[],n={"chunk-029b75e0":1,"chunk-066c1e70":1,"chunk-025ed5e0":1,"chunk-8a66628a":1,"chunk-1f206b8d":1,"chunk-2e30676e":1,"chunk-14af10e8":1,"chunk-5a2f9c7b":1,"chunk-5ae863d4":1,"chunk-879a068a":1,"chunk-1c689b90":1,"chunk-50cc6764":1,"chunk-5927ac35":1,"chunk-336689e4":1,"chunk-90c9faa4":1,"chunk-5faa7a25":1,"chunk-fb13bd6e":1,"chunk-395d8bf6":1,"chunk-70ea128f":1,"chunk-87fb7988":1,"chunk-e302a150":1,"chunk-f1f91fbc":1,"chunk-6ee33c2f":1,"chunk-0634cfb7":1,"chunk-11f356ff":1,"chunk-1b599259":1,"chunk-4dd483ad":1,"chunk-51e4fada":1,"chunk-5ecee0a7":1,"chunk-637b0ca6":1,"chunk-b3695dfe":1,"chunk-950959be":1,"chunk-bdfd0090":1,"chunk-c6be9124":1};a[e]?c.push(a[e]):0!==a[e]&&n[e]&&c.push(a[e]=new Promise((function(c,n){for(var u="static/css/"+({}[e]||e)+"."+{"chunk-029b75e0":"265d9d9a","chunk-066c1e70":"70c36ffd","chunk-10f4baad":"31d6cfe0","chunk-025ed5e0":"e1f3db4b","chunk-519483dc":"31d6cfe0","chunk-8a66628a":"d79172b5","chunk-1f206b8d":"348dd908","chunk-2d0a2db2":"31d6cfe0","chunk-2d0be678":"31d6cfe0","chunk-2d0d65e3":"31d6cfe0","chunk-2d0e2366":"31d6cfe0","chunk-618cb0d2":"31d6cfe0","chunk-2d0f012d":"31d6cfe0","chunk-2d20917e":"31d6cfe0","chunk-2e30676e":"000a467b","chunk-9e9c9b90":"31d6cfe0","chunk-cf00aa14":"31d6cfe0","chunk-14af10e8":"d656421c","chunk-5a2f9c7b":"84f98409","chunk-5ae863d4":"747ec1c8","chunk-879a068a":"e96c6b33","chunk-b64eaa0a":"31d6cfe0","chunk-3f93175c":"31d6cfe0","chunk-6e83591c":"31d6cfe0","chunk-1c689b90":"e935173d","chunk-50cc6764":"9add9508","chunk-5927ac35":"1f50deea","chunk-f7fecf94":"31d6cfe0","chunk-336689e4":"edbb2c73","chunk-90c9faa4":"5a6d10f0","chunk-5faa7a25":"4bcb5caa","chunk-fb13bd6e":"57d372c4","chunk-395d8bf6":"2b772466","chunk-70ea128f":"5380b04c","chunk-87fb7988":"b5bdb2c6","chunk-d19c1a98":"31d6cfe0","chunk-e302a150":"5adb7f20","chunk-f1f91fbc":"331f546b","chunk-6ee33c2f":"612b7cf7","chunk-2e78e312":"31d6cfe0","chunk-0634cfb7":"06158bc0","chunk-11f356ff":"1cf25bc4","chunk-1b599259":"70f34038","chunk-4dd483ad":"02b4a20e","chunk-51e4fada":"bbdcb26d","chunk-5ecee0a7":"05d59374","chunk-637b0ca6":"a0e43c6b","chunk-b3695dfe":"6c96c8d3","chunk-950959be":"cc22516b","chunk-bdfd0090":"9d392cdb","chunk-c6be9124":"b27a1e69"}[e]+".css",f=t.p+u,d=document.getElementsByTagName("link"),h=0;h<d.length;h++){var r=d[h],k=r.getAttribute("data-href")||r.getAttribute("href");if("stylesheet"===r.rel&&(k===u||k===f))return c()}var b=document.getElementsByTagName("style");for(h=0;h<b.length;h++){r=b[h],k=r.getAttribute("data-href");if(k===u||k===f)return c()}var o=document.createElement("link");o.rel="stylesheet",o.type="text/css",o.onload=c,o.onerror=function(c){var u=c&&c.target&&c.target.src||f,d=new Error("Loading CSS chunk "+e+" failed.\n("+u+")");d.code="CSS_CHUNK_LOAD_FAILED",d.request=u,delete a[e],o.parentNode.removeChild(o),n(d)},o.href=f;var i=document.getElementsByTagName("head")[0];i.appendChild(o)})).then((function(){a[e]=0})));var u=f[e];if(0!==u)if(u)c.push(u[2]);else{var d=new Promise((function(c,n){u=f[e]=[c,n]}));c.push(u[2]=d);var r,k=document.createElement("script");k.charset="utf-8",k.timeout=120,t.nc&&k.setAttribute("nonce",t.nc),k.src=h(e);var b=new Error;r=function(c){k.onerror=k.onload=null,clearTimeout(o);var n=f[e];if(0!==n){if(n){var u=c&&("load"===c.type?"missing":c.type),a=c&&c.target&&c.target.src;b.message="Loading chunk "+e+" failed.\n("+u+": "+a+")",b.name="ChunkLoadError",b.type=u,b.request=a,n[1](b)}f[e]=void 0}};var o=setTimeout((function(){r({type:"timeout",target:k})}),12e4);k.onerror=k.onload=r,document.head.appendChild(k)}return Promise.all(c)},t.m=e,t.c=u,t.d=function(e,c,n){t.o(e,c)||Object.defineProperty(e,c,{enumerable:!0,get:n})},t.r=function(e){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,c){if(1&c&&(e=t(e)),8&c)return e;if(4&c&&"object"===typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&c&&"string"!=typeof e)for(var u in e)t.d(n,u,function(c){return e[c]}.bind(null,u));return n},t.n=function(e){var c=e&&e.__esModule?function(){return e["default"]}:function(){return e};return t.d(c,"a",c),c},t.o=function(e,c){return Object.prototype.hasOwnProperty.call(e,c)},t.p="",t.oe=function(e){throw console.error(e),e};var r=window["webpackJsonp"]=window["webpackJsonp"]||[],k=r.push.bind(r);r.push=c,r=r.slice();for(var b=0;b<r.length;b++)c(r[b]);var o=k;n()})([]);</script><script src=static/js/chunk-elementUI.3b7f5333.js></script><script src=static/js/chunk-libs.3d2e7e04.js></script><script src=static/js/app.b969303b.js></script></body></html>
+<!doctype html><html lang="en" id="htmlRoot"><head><script src="/_app.config.js?v=2.8.0-1673271466362"></script><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="renderer" content="webkit"/><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0"/><title>站点内容管理系统</title><link rel="icon" href="/favicon.ico"/><script type="module" crossorigin src="./assets/index-c5a6c875.js"></script><link rel="stylesheet" href="./assets/index-6aa08860.css"><link disabled="disabled" id="__VITE_PLUGIN_THEME-ANTD_DARK_THEME_LINK__" rel="alternate stylesheet" href="assets/app-antd-dark-theme-style.e3b0c442.css"></head><body><script>(() => {
+        var htmlRoot = document.getElementById('htmlRoot');
+        var theme = window.localStorage.getItem('__APP__DARK__MODE__');
+        if (htmlRoot && theme) {
+          htmlRoot.setAttribute('data-theme', theme);
+          theme = htmlRoot = null;
+        }
+      })();</script><div id="app"><style>html[data-theme=dark] .app-loading{background-color:#2c344a}html[data-theme=dark] .app-loading .app-loading-title{color:rgb(255 255 255 / 85%)}.app-loading{display:flex;width:100%;height:100%;justify-content:center;align-items:center;flex-direction:column;background-color:#f4f7f9}.app-loading .app-loading-wrap{position:absolute;top:50%;left:50%;display:flex;transform:translate3d(-50%,-50%,0);justify-content:center;align-items:center;flex-direction:column}.app-loading .dots{display:flex;padding:98px;justify-content:center;align-items:center}.app-loading .app-loading-title{display:flex;margin-top:30px;font-size:30px;color:rgb(0 0 0 / 85%);justify-content:center;align-items:center}.app-loading .app-loading-logo{display:block;width:90px;margin:0 auto;margin-bottom:20px}.dot{position:relative;display:inline-block;width:48px;height:48px;margin-top:30px;font-size:32px;transform:rotate(45deg);box-sizing:border-box;-webkit-animation:antRotate 1.2s infinite linear;animation:antRotate 1.2s infinite linear}.dot i{position:absolute;display:block;width:20px;height:20px;background-color:#0065cc;border-radius:100%;opacity:30%;transform:scale(.75);-webkit-animation:antSpinMove 1s infinite linear alternate;animation:antSpinMove 1s infinite linear alternate;transform-origin:50% 50%}.dot i:first-child{top:0;left:0}.dot i:nth-child(2){top:0;right:0;-webkit-animation-delay:.4s;animation-delay:.4s}.dot i:nth-child(3){right:0;bottom:0;-webkit-animation-delay:.8s;animation-delay:.8s}.dot i:nth-child(4){bottom:0;left:0;-webkit-animation-delay:1.2s;animation-delay:1.2s}@-webkit-keyframes antRotate{to{transform:rotate(405deg)}}@keyframes antRotate{to{transform:rotate(405deg)}}@-webkit-keyframes antSpinMove{to{opacity:100%}}@keyframes antSpinMove{to{opacity:100%}}</style><div class="app-loading"><div class="app-loading-wrap"><img src="./resource/img/logo.png" class="app-loading-logo" alt="Logo"/><div class="app-loading-dots"><span class="dot dot-spin"><i></i><i></i><i></i><i></i></span></div><div class="app-loading-title">站点内容管理系统</div></div></div></div></body></html>

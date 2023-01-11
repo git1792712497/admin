@@ -4,6 +4,11 @@ declare const global:string
 
 declare function $foo(value:string):string
 
+//声明接口
+declare interface Window {
+  _AMapSecurityConfig: object;
+}
+
 declare class Person{
   name:string
   age:number
