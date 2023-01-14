@@ -1,10 +1,11 @@
 {
 	"name": "vue3.2_vite",
 	"private": true,
-	"version": "20221204.1.NaN",
+	"version": "20221204.1",
 	"type": "commonjs",
 	"scripts": {
 		"koa": "cd koa && npm run dev",
+		"nuxt": "cd nuxt3 && npm run dev",
 		"dev": "node fs-extra.js && vite",
 		"build": "node fs-extra.js &&  vite build",
 		"preview": "npm run build && vite preview",
