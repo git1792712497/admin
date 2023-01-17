@@ -1,1 +1,0 @@
-function n(n){if("boolean"==typeof n)return!1;if("number"==typeof n)return!1;if(n instanceof Array){if(0==n.length)return!0}else{if(!(n instanceof Object))return"null"==n||null==n||"undefined"==n||null==n||""==n;if("{}"===JSON.stringify(n))return!0}return!1}export{n as v};

@@ -3,7 +3,7 @@ import ElementPlus from "unplugin-element-plus/vite";
 
 export default defineNuxtConfig({
   //https://nuxt.com/modules
-  modules:["@pinia/nuxt"],
+  modules:["@pinia/nuxt"],//
   build:{
     //使用babel进行语法转化
     transpile:['element-plus/es']

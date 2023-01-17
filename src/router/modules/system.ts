@@ -11,14 +11,32 @@ export const directives: RouteRecordRaw[] = [
 		},
 		children: [
 			{
-				path: 'menuList',
-				name: 'menuList',
-				component: () => import('@/views/system/menusList/index.vue'),
+				path: 'user',
+				name: 'user',
+				component: () => import('@/views/system/user/index.vue'),
+				meta: {
+					title: '用户管理',
+					icon:'Menu'
+				}
+			},
+			{
+				path: 'role',
+				name: 'role',
+				component: () => import('@/views/system/role/index.vue'),
+				meta: {
+					title: '角色管理',
+					icon:'Menu'
+				}
+			},
+			{
+				path: 'menu',
+				name: 'menu',
+				component: () => import('@/views/system/menus/index.vue'),
 				meta: {
 					title: '菜单管理',
 					icon:'Menu'
 				}
-			}
+			},
 		]
 	}
 ]

@@ -1,1 +1,0 @@
-import{bo as r}from"./index-c5a6c875.js";function e(e){return r.post({url:"/blade-system/role/submit",params:e})}function s(e){return r.get({url:"/blade-system/role/tree-by-id",params:e})}function a(e){r.post({url:"/blade-system/role/remove",params:e},{joinParamsToUrl:!0})}function t(e){return r.get({url:"/blade-system/role/select",params:e})}export{s as a,t as g,a as r,e as s};

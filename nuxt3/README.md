@@ -121,6 +121,7 @@ console.log(form);
 # APP生命周期(https://nuxt.com/docs/api/advanced/hooks)
 推荐插件方式
 组件生命周期
+那些在服务端那些在客户端
 
 # 网络service
 $fetch 客户端服务的都会发送请求(需要指定key)
@@ -146,7 +147,7 @@ import ElementPlus from "unplugin-element-plus/vite";
 build:{
 //使用babel进行语法转化
 transpile:['element-plus/es']
-},
+}, 
 vite:{
 plugins:[ElementPlus()]
 },

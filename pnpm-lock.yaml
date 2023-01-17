@@ -33,7 +33,7 @@ specifiers:
   driver.js: ^0.9.8
   echarts: ^5.4.0
   echarts-liquidfill: ^3.1.0
-  element-plus: ^2.2.14
+  element-plus: 2.2.28
   esbuild: ^0.15.18
   file-saver: ^2.0.5
   fs-extra: ^11.1.0
@@ -101,7 +101,7 @@ dependencies:
   '@amap/amap-jsapi-types': registry.npmmirror.com/@amap/amap-jsapi-types/0.0.10
   '@ant-design/icons-vue': registry.npmmirror.com/@ant-design/icons-vue/6.1.0_vue@3.2.45
   '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.0.10_vue@3.2.45
-  '@smallwei/avue': registry.npmmirror.com/@smallwei/avue/3.2.6_kzqbqp5bukjunzfd4a2yzu62fq
+  '@smallwei/avue': registry.npmmirror.com/@smallwei/avue/3.2.6_elnqtivg2mdyzngttylmqkpzri
   '@types/echarts': registry.npmmirror.com/@types/echarts/4.9.16
   '@types/fs-extra': registry.npmmirror.com/@types/fs-extra/9.0.13
   '@types/fullpage.js': registry.npmmirror.com/@types/fullpage.js/2.9.3
@@ -123,7 +123,7 @@ dependencies:
   driver.js: registry.npmmirror.com/driver.js/0.9.8
   echarts: registry.npmmirror.com/echarts/5.4.0
   echarts-liquidfill: registry.npmmirror.com/echarts-liquidfill/3.1.0_echarts@5.4.0
-  element-plus: registry.npmmirror.com/element-plus/2.2.26_vue@3.2.45
+  element-plus: registry.npmmirror.com/element-plus/2.2.28_vue@3.2.45
   esbuild: registry.npmmirror.com/esbuild/0.15.18
   file-saver: registry.npmmirror.com/file-saver/2.0.5
   fs-extra: registry.npmmirror.com/fs-extra/11.1.0
@@ -1164,7 +1164,7 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  registry.npmmirror.com/@smallwei/avue/3.2.6_kzqbqp5bukjunzfd4a2yzu62fq:
+  registry.npmmirror.com/@smallwei/avue/3.2.6_elnqtivg2mdyzngttylmqkpzri:
     resolution: {integrity: sha512-84+Qv1DiZOnGiD0ZuSkiEbZmGrSS75GsPQy45lRRmVnt3iw1xINSxfm7wbIkYIAFTSWqVZ9UBoOMMKwfT7/jWg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@smallwei/avue/-/avue-3.2.6.tgz}
     id: registry.npmmirror.com/@smallwei/avue/3.2.6
     name: '@smallwei/avue'
@@ -1178,7 +1178,7 @@ packages:
       axios: registry.npmmirror.com/axios/1.2.0
       countup.js: registry.npmmirror.com/countup.js/1.9.3
       dayjs: registry.npmmirror.com/dayjs/1.11.6
-      element-plus: registry.npmmirror.com/element-plus/2.2.26_vue@3.2.45
+      element-plus: registry.npmmirror.com/element-plus/2.2.28_vue@3.2.45
       vue: registry.npmmirror.com/vue/3.2.45
     dev: false
 
@@ -3462,11 +3462,11 @@ packages:
     version: 1.4.284
     dev: true
 
-  registry.npmmirror.com/element-plus/2.2.26_vue@3.2.45:
-    resolution: {integrity: sha512-O/rdY5m9DkclpVg8r3GynyqCunm7MxSR142xSsjrZA77bi7bcwA3SIy6SPEDqHi5R4KqgkGYgKSp4Q4e3irbYg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/element-plus/-/element-plus-2.2.26.tgz}
-    id: registry.npmmirror.com/element-plus/2.2.26
+  registry.npmmirror.com/element-plus/2.2.28_vue@3.2.45:
+    resolution: {integrity: sha512-BsxF7iEaBydmRfw1Tt++EO9jRBjbtJr7ZRIrnEwz4J3Cwa1IzHCNCcx3ZwcYTlJq9CYFxv94JnbNr1EbkTou3A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/element-plus/-/element-plus-2.2.28.tgz}
+    id: registry.npmmirror.com/element-plus/2.2.28
     name: element-plus
-    version: 2.2.26
+    version: 2.2.28
     peerDependencies:
       vue: ^3.2.0
     dependencies:

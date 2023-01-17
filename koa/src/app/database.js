@@ -6,7 +6,7 @@ const connectionPool = mysql.createPool({
 	port: 3306,
 	database: 'koa',
 	user: 'root',
-	password: '252437+-',
+	password: '123456',
 	connectionLimit: 10 //最大连接池
 })
 
@@ -23,7 +23,7 @@ connectionPool.getConnection((err, connection) => {
 		if (err) {
 			console.log('和数据库交互失败', err)
 		} else {
-			console.log('数据库连接成功, 可以操作数据库')
+			console.log('数据库连接成功')
 		}
 	})
 })

@@ -1,1 +1,0 @@
-import{bo as a}from"./index-c5a6c875.js";const r=r=>a.get({url:"/blade-resource/attach/list",params:r},{joinParamsToUrl:!0,joinTime:!1}),e=r=>a.uploadFile({url:"/api/blade-resource/oss/endpoint/put-file"},r),o=r=>a.post({url:"/blade-resource/attach/remove",params:r},{joinParamsToUrl:!0});export{r as g,o as r,e as u};
