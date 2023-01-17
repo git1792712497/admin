@@ -31,7 +31,7 @@ export const directives: RouteRecordRaw[] = [
 			{
 				path: 'menu',
 				name: 'menu',
-				component: () => import('@/views/system/menus/index.vue'),
+				component: () => import('@/views/system/menu/index.vue'),
 				meta: {
 					title: '菜单管理',
 					icon:'Menu'

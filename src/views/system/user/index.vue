@@ -1,17 +1,20 @@
 <template>
   <el-card>
     <template #header><TopSearch @addRole="handleAddRole"/></template>
-    <AddRoleDialog @refresh="getRoleList" ref="AddRoleDialogRef"/>
-
-    <el-table size="large" border :data="roleList" row-key="id">
-      <el-table-column prop="name" label="角色名称" width="180"/>
-      <el-table-column prop="description" label="角色描述" width="300"/>
+    <AddUserDialog @refresh="getUserList" ref="AddUserDialogRef"/>
+    <el-table v-loading="loading" size="large" border :data="userList" row-key="id">
+      <el-table-column prop="username" label="用户名称" width="180"/>
+      <el-table-column prop="password" label="用户密码" width="180"/>
       <el-table-column prop="createTime" label="创建时间"/>
       <el-table-column prop="updateTime" label="修改时间"/>
-      <el-table-column fixed="right" label="操作" width="150">
+      <el-table-column fixed="right" label="操作" width="200" align="center">
         <template #default="{row}">
-          <el-button link type="primary" size="small">编辑</el-button>
-          <el-button link type="danger" size="small" @click="handleDelete(row.id)">删除</el-button>
+          <el-button link type="primary" size="small">编辑 <el-icon><Edit /></el-icon></el-button>
+          <el-popconfirm title="是否确认删除?" @confirm="handleDelete(row.id)">
+            <template #reference>
+              <el-button link type="danger" size="small">删除<el-icon><Delete /></el-icon></el-button>
+            </template>
+          </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>
@@ -20,23 +23,26 @@
 
 <script setup lang="ts" name="index">
 import TopSearch from "./childComponents/TopSearch.vue";
-import AddRoleDialog from "./childComponents/AddRoleDialog.vue";
-import {getRoleListApi,getDeleteRoleApi} from "./api/index";
-const AddRoleDialogRef = shallowRef()
+import AddUserDialog from "./childComponents/AddUserDialog.vue";
+import {getUserDeleteApi,getUserListApi} from "./api/index";
+const AddUserDialogRef = shallowRef()
 
-let roleList = ref([])
-const getRoleList = async () => {
-  const {data} = await getRoleListApi()
-  roleList.value = data
+let loading = shallowRef(false)
+let userList = ref([])
+const getUserList = async () => {
+  loading.value = true
+  const {data} = await getUserListApi()
+  userList.value = data
+  loading.value = false
 }
-onMounted(getRoleList)
+onMounted(getUserList)
 
 const handleDelete = async id => {
-  await getDeleteRoleApi(id)
-  getRoleList()
+  await getUserDeleteApi(id)
+  await getUserList()
 }
 const handleAddRole = () => {
-  AddRoleDialogRef.value.openDialog()
+  AddUserDialogRef.value.openDialog()
 }
 </script>
 

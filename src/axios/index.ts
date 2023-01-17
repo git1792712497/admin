@@ -23,7 +23,6 @@ class Axios {
     })
     //全局响应拦截
     this.instance.interceptors.response.use((result: AxiosResponse) => {
-      console.log('全局响应拦截',result)
       result.request.responseType === "blob" && download(result)
       return result.data
     }, (err: any) => {

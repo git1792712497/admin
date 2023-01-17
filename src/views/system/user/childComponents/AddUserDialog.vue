@@ -1,14 +1,16 @@
 <template>
-  <el-dialog v-model="dialogVisible" title="新增角色" width="30%">
+  <el-dialog @open="formRef.resetFields()" v-model="dialogVisible" draggable title="新增用户" width="30%">
     <el-form ref="formRef" :model="basicForm" status-icon :rules="rules" label-width="80px">
-      <el-form-item label="角色名称" prop="name">
-        <el-input v-model="basicForm.name" clearable autofocus placeholder="请输入角色名称" />
+      <el-form-item label="用户名称" prop="username">
+        <el-input v-model="basicForm.username" clearable autofocus placeholder="请输入角色名称" />
       </el-form-item>
-      <el-form-item label="菜单权限" prop="menuId">
-        <el-tree-select node-key="id" v-model="basicForm.menuId" :data="menuSelectList" multiple show-checkbox clearable check-on-click-node :props="{ label: 'name', children: 'children', value: 'id' }" style="width: 100%;"/>
+      <el-form-item label="用户密码" prop="password">
+        <el-input v-model="basicForm.password" clearable autofocus placeholder="请输入密码" />
       </el-form-item>
-      <el-form-item label="角色描述" prop="description">
-        <el-input v-model="basicForm.description" :max="255" :rows="3" type="textarea" placeholder="请输入角色描述" />
+      <el-form-item label="所属角色" prop="roleId">
+        <el-select v-model="basicForm.roleId" clearable placeholder="请选择角色" style="width: 100%;">
+          <el-option v-for="item in roleSelectList" :key="item.id" :label="item.name" :value="item.id"/>
+        </el-select>
       </el-form-item>
     </el-form>
     <template #footer>
@@ -24,8 +26,8 @@
 import { rules } from '../options/rules'
 import { ref } from 'vue'
 import type { FormInstance } from 'element-plus'
-import {getAddRoleApi} from '../api/index'
-import {getMenuListApi} from '../../menusList/api'
+import {getUserRegisterApi} from '../api/index'
+import {getRoleListApi} from '../../role/api'
 import { ElMessage } from "element-plus";
 
 const emit = defineEmits(['refresh'])
@@ -41,7 +43,7 @@ const handleConfirm = () => {
     if (!isValid)return
     loading.value = true
     try {
-      const {message} = await getAddRoleApi(toRaw(basicForm))
+      const {message} = await getUserRegisterApi(toRaw(basicForm))
       ElMessage({
         message,
         type: 'success',
@@ -59,12 +61,11 @@ const handleConfirm = () => {
   })
 }
 
-import {generateMenuTree} from '../../menusList/utils/generateMenuTree'
-let menuSelectList = shallowRef([])
+let roleSelectList = shallowRef([])
 const openDialog = async () => {
+  const {data} = await getRoleListApi()
+  roleSelectList.value = data
   dialogVisible.value = true
-  const {data} = await getMenuListApi()
-  menuSelectList.value = generateMenuTree(data)
 }
 const closeDialog = () => (dialogVisible.value = false)
 defineExpose({

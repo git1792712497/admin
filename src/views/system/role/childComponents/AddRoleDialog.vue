@@ -5,7 +5,7 @@
         <el-input v-model="basicForm.name" clearable autofocus placeholder="请输入角色名称" />
       </el-form-item>
       <el-form-item label="菜单权限" prop="menuId">
-        <el-tree-select node-key="id" v-model="basicForm.menuId" :data="menuSelectList" multiple show-checkbox clearable check-on-click-node :props="{ label: 'name', children: 'children', value: 'id' }" style="width: 100%;"/>
+        <el-tree @check="(value,{checkedKeys,halfCheckedKeys}) => basicForm.menuId = [...checkedKeys,...halfCheckedKeys]" node-key="id" :data="menuSelectList" multiple show-checkbox clearable :props="{ label: 'name', children: 'children', value: 'id' }" style="width: 100%;"/>
       </el-form-item>
       <el-form-item label="角色描述" prop="description">
         <el-input v-model="basicForm.description" :max="255" :rows="3" type="textarea" placeholder="请输入角色描述" />
@@ -33,7 +33,9 @@ const emit = defineEmits(['refresh'])
 const dialogVisible = ref(false)
 
 const formRef = ref<FormInstance>()
-let basicForm = reactive({})
+let basicForm = reactive({
+  menuId:[]
+})
 
 let loading = ref(false)
 const handleConfirm = () => {
@@ -59,7 +61,7 @@ const handleConfirm = () => {
   })
 }
 
-import {generateMenuTree} from '../../menusList/utils/generateMenuTree'
+import {generateMenuTree} from '../../menu/utils/generateMenuTree'
 let menuSelectList = shallowRef([])
 const openDialog = async () => {
   dialogVisible.value = true

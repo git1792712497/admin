@@ -4,20 +4,20 @@ class UserService{
 	//创建用户
 	async save(user){
 		// 1.获取用户 user
-		const { name, password } = user
+		const { username, password ,roleId} = user
 		
 		// 2.拼接statement,预处理语句
-		const statement = 'INSERT INTO `user` (name, password) VALUES (?,?);'
+		const statement = 'INSERT INTO `user` (username, password,roleId) VALUES (?,?,?);'
 		
 		// 3.执行sql语句
-		const [result] = await connection.execute(statement, [name, password])
+		const [result] = await connection.execute(statement, [username, password,roleId])
 		
 		return result
 	}
 	
-	async findUserName(name){
-		const statement = 'SELECT * FROM user WHERE name = ?'
-		const [values] = await connection.execute(statement, [name])
+	async findUserName(username){
+		const statement = 'SELECT * FROM user WHERE username = ?'
+		const [values] = await connection.execute(statement, [username])
 		return values
 	}
 	
@@ -34,6 +34,18 @@ class UserService{
 		const [result] = await connection.execute(statement,[userId])
 		//拿最新的
 		return result.pop()
+	}
+	
+	async queryUserList(){
+		const statement = `SELECT * FROM user`
+		const [result] = await connection.execute(statement)
+		return result
+	}
+	
+	async deleteUser(id){
+		const statement = `DELETE FROM user WHERE id = ?`
+		const [result] = await connection.execute(statement,[id])
+		return result
 	}
 }
 

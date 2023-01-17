@@ -1,22 +1,21 @@
-import { koa } from "@/axios/config";
+import { koa } from '@/axios/config'
 
-export function getRoleListApi(){
-  return koa.get({
-    url:`/role/query`
-  })
-}
-
-export function getAddRoleApi(data){
+export function getUserRegisterApi(data) {
   return koa.post({
-    url:`/role/create`,
-    data
+    url: `/user/register`,
+    data,
   })
 }
-export function getDeleteRoleApi(id: string){
+export function getUserListApi() {
+  return koa.get({
+    url: `/user/list`,
+  })
+}
+export function getUserDeleteApi(id) {
   return koa.delete({
-    url:`/role/delete`,
-    data:{
-      id
-    }
+    url: `/user/delete`,
+    data: {
+      id,
+    },
   })
 }

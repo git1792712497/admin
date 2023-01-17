@@ -13,3 +13,12 @@ export function getAddMenuApi(data){
     data
   })
 }
+
+export function getDeleteMenuApi(id:string){
+  return koa.delete({
+    url:`/menu/delete`,
+    data:{
+      id
+    }
+  })
+}

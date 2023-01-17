@@ -8,10 +8,14 @@
       <el-table-column prop="description" label="角色描述" width="300"/>
       <el-table-column prop="createTime" label="创建时间"/>
       <el-table-column prop="updateTime" label="修改时间"/>
-      <el-table-column fixed="right" label="操作" width="150">
+      <el-table-column fixed="right" label="操作" width="200" align="center">
         <template #default="{row}">
-          <el-button link type="primary" size="small">编辑</el-button>
-          <el-button link type="danger" size="small" @click="handleDelete(row.id)">删除</el-button>
+          <el-button link type="primary" size="small">编辑 <el-icon><Edit /></el-icon></el-button>
+          <el-popconfirm title="是否确认删除?" @confirm="handleDelete(row.id)">
+            <template #reference>
+              <el-button link type="danger" size="small">删除<el-icon><Delete /></el-icon></el-button>
+            </template>
+          </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>

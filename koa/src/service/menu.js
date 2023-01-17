@@ -1,4 +1,5 @@
 const connection = require('../app/database.js')
+const generateMenuTree = require('../utils/generateMenuTree.js')
 
 class MenuService {
 	async save(menu) {
@@ -17,12 +18,31 @@ class MenuService {
 		return result
 	}
 	
+	async queryMenuById(id) {
+		let menuList = []
+		const statement = `SELECT menuId FROM role_menu WHERE roleId = ?`
+		const [result] = await connection.execute(statement, [id])
+		for (let {menuId} of result) {
+			const statement = `SELECT * FROM menu WHERE id = ?`
+			const [result] = await connection.execute(statement, [menuId])
+			menuList.push(...result)
+		}
+		return generateMenuTree(menuList)
+	}
+	
 	async query() {
-		// 2.拼接statement,预处理语句
 		const statement = `SELECT * FROM menu`
-		// 3.执行sql语句
 		const [result] = await connection.execute(statement)
-		
+		return result
+	}
+	async queryChildMenu(id) {
+		const statement = `SELECT id FROM menu WHERE parentId = ?`
+		const [result] = await connection.execute(statement,[id])
+		return result
+	}
+	async remove(id) {
+		const statement = `DELETE FROM menu WHERE id = ?`
+		const [result] = await connection.execute(statement,[id])
 		return result
 	}
 }
