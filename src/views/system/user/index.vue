@@ -5,6 +5,7 @@
     <el-table v-loading="loading" size="large" border :data="userList" row-key="id">
       <el-table-column prop="username" label="用户名称" width="180"/>
       <el-table-column prop="password" label="用户密码" width="180"/>
+      <el-table-column prop="roleName" label="所属角色" width="180"/>
       <el-table-column prop="createTime" label="创建时间"/>
       <el-table-column prop="updateTime" label="修改时间"/>
       <el-table-column fixed="right" label="操作" width="200" align="center">

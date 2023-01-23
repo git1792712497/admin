@@ -1,62 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-<script>
-  function generateMenuTree(source, id = 'id', parentId = 'parentId', children = 'children') {
-    let cloneData = JSON.parse(JSON.stringify(source))
-    return cloneData.filter(father => {
-      let branchArr = cloneData.filter(child => father[id] == child[parentId])
-      branchArr.length > 0 ? (father[children] = branchArr) : ''
-      return father[parentId] === null // 如果不是第一层
-    })
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let router = [
+        {
+          path: '/system',
+          name:'system',
+          children: [
+            {
+              path: '/system/user',
+              name:'user',
+            },
+            {
+              path: '/system/role',
+              name:'role',
+            },
+          ],
+        },
+      ]
 
-  let arr = [
-    [
-      {
-        "id": 9,
-        "name": "789",
-        "icon": "12345678",
-        "parentId": null,
-        "path": "/ppp",
-        "sort": 5,
-        "createTime": "2023-01-16T08:49:40.000Z",
-        "updateTime": "2023-01-16T08:49:40.000Z"
-      }
-    ],
-    [
-      {
-        "id": 10,
-        "name": "789",
-        "icon": "12345678",
-        "parentId": 9,
-        "path": "/ppp",
-        "sort": 5,
-        "createTime": "2023-01-16T08:49:53.000Z",
-        "updateTime": "2023-01-16T08:49:53.000Z"
-      }
-    ],
-    [
-      {
-        "id": 11,
-        "name": "00000",
-        "icon": "000",
-        "parentId": 9,
-        "path": "0000l",
-        "sort": 2,
-        "createTime": "2023-01-16T08:56:43.000Z",
-        "updateTime": "2023-01-16T08:56:43.000Z"
-      }
-    ]
-  ]
+      let menu = [
+        {
+          path: '/system',
+          children: [
+            {
+              path: '/system/user',
+            },
+          ],
+        },
+      ]
 
-  console.log(generateMenuTree(arr))
-</script>
-</body>
+      function intersect(arr1, arr2, key) {
+        const map = new Map();
+        arr1.forEach((val) => map.set(val[key]));
+        return arr2.filter((val) => map.has(val[key]));
+      }
+
+      console.log(intersect(menu,router,'path'))
+    </script>
+  </body>
 </html>

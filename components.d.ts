@@ -50,6 +50,7 @@ declare module '@vue/runtime-core' {
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     ElTree: typeof import('element-plus/es')['ElTree']
     ElTreeSelect: typeof import('element-plus/es')['ElTreeSelect']
+    IconSelect: typeof import('./src/components/iconSelect/index.vue')['default']
     InfiniteLoad: typeof import('./src/components/infiniteLoad/index.vue')['default']
     Message: typeof import('./src/components/message/message.vue')['default']
     NoticeBar: typeof import('./src/components/noticeBar/index.vue')['default']

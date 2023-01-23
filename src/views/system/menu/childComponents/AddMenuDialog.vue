@@ -5,7 +5,7 @@
         <el-input v-model="basicForm.name" clearable autofocus placeholder="请输入角色名称" />
       </el-form-item>
       <el-form-item label="菜单图标" prop="icon">
-        <el-input v-model="basicForm.icon" clearable placeholder="请输入菜单图标" />
+        <IconSelect class="w-full" v-model="basicForm.icon"/>
       </el-form-item>
       <el-form-item label="菜单路径" prop="path">
         <el-input v-model="basicForm.path" clearable placeholder="请输入菜单路径" />
@@ -32,6 +32,7 @@ import { ref } from 'vue'
 import type { FormInstance } from 'element-plus'
 import {getAddMenuApi} from '../api'
 import { ElMessage } from "element-plus";
+import IconSelect from '@/components/iconSelect/index.vue'
 
 const emit = defineEmits(['refresh'])
 

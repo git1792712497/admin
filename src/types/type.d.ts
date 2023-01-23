@@ -22,6 +22,8 @@ declare module 'lodash-es'{
   export function join(args:any):any
 }
 
+declare module '@element-plus/icons-vue'
+
 //声明文件模块
 declare module '*png'
 

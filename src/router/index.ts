@@ -39,7 +39,7 @@ export const routes:any = [
 	{
 		path: '',
 		component: () => import('@/layout/index.vue'),
-		name: 'AppMain',
+		name: 'appMain',
 		redirect: '/home'
 	}
 ]
@@ -56,7 +56,7 @@ routerArray.forEach(route => {
 	if (route.meta.fullScreen === true){
 		router.addRoute(route)
 	}else {
-		router.addRoute('AppMain',route)
+		router.addRoute('appMain',route)
 	}
 })
 

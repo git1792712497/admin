@@ -39,6 +39,10 @@ class UserService{
 	async queryUserList(){
 		const statement = `SELECT * FROM user`
 		const [result] = await connection.execute(statement)
+		for (let i = 0,len = result.length;i < len;i ++){
+			const [res] = await connection.execute(`SELECT name FROM role WHERE  id = ?`,[result[i].roleId])
+			result[i].roleName = res[0].name
+		}
 		return result
 	}
 	

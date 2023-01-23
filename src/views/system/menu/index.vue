@@ -29,11 +29,11 @@ let addMenuDialogRef = shallowRef()
 import AddMenuDialog from './childComponents/AddMenuDialog.vue'
 import {generateMenuTree} from './utils/generateMenuTree'
 
-
 let menuData = ref([])
 const getMenuList = async () => {
   const {data} = await getMenuListApi()
   menuData.value = generateMenuTree(data)
+  console.log(menuData.value)
 }
 onMounted(getMenuList)
 
