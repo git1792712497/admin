@@ -12,6 +12,7 @@ specifiers:
   '@types/fs-extra': ^9.0.13
   '@types/fullpage.js': ^2.9.3
   '@types/howler': ^2.2.7
+  '@types/lodash-es': ^4.17.6
   '@types/md5': ^2.3.2
   '@types/node': ^18.7.6
   '@types/prettier': ^2.7.1
@@ -106,6 +107,7 @@ dependencies:
   '@types/fs-extra': registry.npmmirror.com/@types/fs-extra/9.0.13
   '@types/fullpage.js': registry.npmmirror.com/@types/fullpage.js/2.9.3
   '@types/howler': registry.npmmirror.com/@types/howler/2.2.7
+  '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.6
   '@types/md5': registry.npmmirror.com/@types/md5/2.3.2
   '@types/prettier': registry.npmmirror.com/@types/prettier/2.7.1
   '@types/sortablejs': registry.npmmirror.com/@types/sortablejs/1.15.0

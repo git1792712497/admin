@@ -28,21 +28,23 @@
       let menu = [
         {
           path: '/system',
-          children: [
-            {
-              path: '/system/user',
-            },
-          ],
+        },
+        {
+          path: '/system/user',
         },
       ]
 
-      function intersect(arr1, arr2, key) {
-        const map = new Map();
-        arr1.forEach((val) => map.set(val[key]));
-        return arr2.filter((val) => map.has(val[key]));
+
+      function deep(router){
+
       }
 
-      console.log(intersect(menu,router,'path'))
+      deep(router)
+
+      console.log(router)
+
+      console.log(Number)
+
     </script>
   </body>
 </html>
