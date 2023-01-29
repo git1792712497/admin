@@ -1,6 +1,6 @@
 import {RouteRecordRaw} from 'vue-router'
 
-export const home: RouteRecordRaw[] = [
+export default [
 	{
 		path: '/home',
 		component: () => import('@/views/home/index.vue'),
@@ -12,6 +12,5 @@ export const home: RouteRecordRaw[] = [
 			keepAlive:true
 		}
 	}
-]
-
+]	as RouteRecordRaw[]
 

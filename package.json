@@ -24,6 +24,7 @@
 		"@types/lodash-es": "^4.17.6",
 		"@types/md5": "^2.3.2",
 		"@types/prettier": "^2.7.1",
+		"@types/scrollreveal": "^0.0.8",
 		"@types/sortablejs": "^1.15.0",
 		"@types/watermark-dom": "^2.3.1",
 		"@vueuse/core": "^9.2.0",

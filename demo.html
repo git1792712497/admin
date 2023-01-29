@@ -8,42 +8,96 @@
   </head>
   <body>
     <script>
+
       let router = [
         {
-          path: '/system',
-          name:'system',
-          children: [
+          "id": 23,
+          "name": "系统管理",
+          "icon": "Setting",
+          "parentId": null,
+          "path": "/system",
+          "sort": 1,
+          "createTime": "2023-01-19T08:13:51.000Z",
+          "updateTime": "2023-01-19T08:13:51.000Z",
+          "children": [
             {
-              path: '/system/user',
-              name:'user',
+              "id": 24,
+              "name": "用户管理",
+              "icon": "Avatar",
+              "parentId": 23,
+              "path": "/system/user",
+              "sort": 1,
+              "createTime": "2023-01-19T08:15:32.000Z",
+              "updateTime": "2023-01-19T08:15:32.000Z"
             },
             {
-              path: '/system/role',
-              name:'role',
+              "id": 25,
+              "name": "角色管理",
+              "icon": "Avatar",
+              "parentId": 23,
+              "path": "/system/role",
+              "sort": 1,
+              "createTime": "2023-01-19T08:15:47.000Z",
+              "updateTime": "2023-01-19T08:15:47.000Z"
             },
-          ],
-        },
+            {
+              "id": 26,
+              "name": "菜单管理",
+              "icon": "Grid",
+              "parentId": 23,
+              "path": "/system/menu",
+              "sort": 3,
+              "createTime": "2023-01-19T08:16:25.000Z",
+              "updateTime": "2023-01-19T08:16:25.000Z"
+            }
+          ]
+        }
       ]
 
-      let menu = [
+
+      let arr = [
         {
-          path: '/system',
+          "id": 23,
+          "name": "系统管理",
+          "icon": "Setting",
+          "parentId": null,
+          "path": "/system",
+          "sort": 1,
+          "createTime": "2023-01-19T08:13:51.000Z",
+          "updateTime": "2023-01-19T08:13:51.000Z"
         },
         {
-          path: '/system/user',
+          "id": 24,
+          "name": "用户管理",
+          "icon": "Avatar",
+          "parentId": 23,
+          "path": "/system/user",
+          "sort": 1,
+          "createTime": "2023-01-19T08:15:32.000Z",
+          "updateTime": "2023-01-19T08:15:32.000Z"
         },
+        {
+          "id": 25,
+          "name": "角色管理",
+          "icon": "Avatar",
+          "parentId": 23,
+          "path": "/system/role",
+          "sort": 1,
+          "createTime": "2023-01-19T08:15:47.000Z",
+          "updateTime": "2023-01-19T08:15:47.000Z"
+        },
+        {
+          "id": 26,
+          "name": "菜单管理",
+          "icon": "Grid",
+          "parentId": 23,
+          "path": "/system/menu",
+          "sort": 3,
+          "createTime": "2023-01-19T08:16:25.000Z",
+          "updateTime": "2023-01-19T08:16:25.000Z"
+        }
       ]
 
-
-      function deep(router){
-
-      }
-
-      deep(router)
-
-      console.log(router)
-
-      console.log(Number)
 
     </script>
   </body>

@@ -51,7 +51,7 @@
   </el-card>
 </template>
 
-<script setup lang="ts" name="scrollreveal">
+<script setup lang="ts" name="scrollReveal">
 import ScrollReveal from 'scrollreveal'
 
 onMounted(() => {

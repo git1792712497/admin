@@ -1,6 +1,6 @@
 import {RouteRecordRaw} from "vue-router";
 
-export const Package: RouteRecordRaw[] = [
+export default [
 	 {
 			path: '/package',
 			name: 'package',
@@ -182,9 +182,9 @@ export const Package: RouteRecordRaw[] = [
 					}
 				},
 				{
-					path: 'scrollreveal',
-					name: 'scrollreveal',
-					component: () => import('@/views/package/scrollreveal.vue'),
+					path: 'scrollReveal',
+					name: 'scrollReveal',
+					component: () => import('@/views/package/scrollReveal.vue'),
 					meta: {
 						title: '滚动动画',
 						icon: 'Menu'
@@ -219,4 +219,4 @@ export const Package: RouteRecordRaw[] = [
 				},
 			]
 	 }
-]
+] as RouteRecordRaw[]

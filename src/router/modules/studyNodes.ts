@@ -1,6 +1,6 @@
 import {RouteRecordRaw} from "vue-router";
 
-export const studyNodes: RouteRecordRaw[] = [
+export default [
 	{
 		path: '/studyNodes',
 		name: 'studyNodes',
@@ -110,7 +110,7 @@ export const studyNodes: RouteRecordRaw[] = [
 					icon:'Menu'
 				}
 			},
-			
+
 		]
 	}
-]
+] as RouteRecordRaw[]
