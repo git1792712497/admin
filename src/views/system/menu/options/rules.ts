@@ -26,7 +26,11 @@ export const rules: FormRules  = {
     {
       validator(rule, value, callback, source, options) {
         const regex = /^\//
-        if (!regex.test(value)) callback(new Error('路径必须已斜杠开头'))
+        if (!regex.test(value)) {
+          callback(new Error('路径必须已斜杠开头'))
+        }else {
+          callback()
+        }
       }
     }
   ],

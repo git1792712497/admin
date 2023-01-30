@@ -4,7 +4,9 @@
     <AddMenuDialog @refresh="getMenuList" :menuData="menuData" ref="addMenuDialogRef"/>
 		<el-table size="large" border :data="menuData" row-key="id">
 			<el-table-column prop="name" label="菜单名称" width="180"/>
-			<el-table-column prop="icon" label="菜单图标" width="100"/>
+      <el-table-column prop="icon" label="菜单图标" width="100">
+
+      </el-table-column>
 	    <el-table-column prop="path" label="路由路径"/>
       <el-table-column prop="createTime" label="创建时间"/>
       <el-table-column prop="updateTime" label="修改时间"/>

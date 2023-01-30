@@ -8,7 +8,7 @@
           </template>
         </el-input>
       </template>
-      <el-scrollbar height="380px">
+      <el-scrollbar height="300px">
         <nav class="flex justify-start flex-wrap items-center">
           <el-button @click="emit('update:modelValue',item)" v-for="item in Object.keys(Icons)" :key="item" :icon="item"/>
         </nav>
@@ -19,7 +19,6 @@
 
 <script setup lang="ts" name="index">
 import * as Icons from "@element-plus/icons-vue";
-
 
 defineProps({
  modelValue:{

@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login-box">
       <div class="login-left">
-        <img alt="login" src="@/assets/images/login.png"/>
+        <img alt="login" src="@/assets/images/暂无方向.png"/>
       </div>
       <div class="login-form">
         <div class="login-logo">
@@ -44,8 +44,8 @@ import LoginForm from "./childComponents/LoginForm.vue";</script>
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 96%;
-    height: 94%;
+    width: 100%;
+    height: 100%;
     padding: 0 50px;
     background-color: hsl(0deg 0% 100% / 80%);
     border-radius: 10px;

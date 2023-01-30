@@ -54,6 +54,7 @@ const router = createRouter({
 
 routerArray.forEach(route => {
 	if (route.meta.fullScreen === true){
+		console.log(route)
 		router.addRoute(route)
 	}else {
 		router.addRoute('appMain',route)
