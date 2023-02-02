@@ -18,7 +18,7 @@
 </template>
 <script lang="ts" name="Search" setup>
 import Fuse from "fuse.js";
-import {routerArray} from "@/router";
+import {menuList} from "@/router/utils/handleRouter";
 import {useSearchMap} from '@/hooks/useSearchMap'
 import {onMounted,shallowRef,watch,ref} from 'vue'
 
@@ -39,7 +39,7 @@ const clickSearch = () => {
 	isShow.value = !isShow.value
 }
 
-const fuse = new Fuse(useSearchMap(routerArray),{
+const fuse = new Fuse(useSearchMap(menuList),{
 	// 是否按优先级进行排序
 	shouldSort: true,
 	// 匹配算法放弃的时机， 阈值 0.0 需要完美匹配（字母和位置），阈值 1.0 将匹配任何内容。
@@ -97,13 +97,13 @@ watch(value,newValue => {
 	display: flex;
 	align-items: center;
 	font-size: 0 !important;
-	
+
 	.icon-search{
 		font-size: 22px;
 		color: rgb(0 0 0 / 75%);
 		cursor: pointer;
 	}
-	
+
 	.form{
 		margin-left: 5px;
 		--width-of-input: 200px;
@@ -114,7 +114,7 @@ watch(value,newValue => {
 		position: relative;
 		width: var(--width-of-input);
 	}
-	
+
 	.input{
 		width: 100%;
 		color: #282c34;
@@ -126,7 +126,7 @@ watch(value,newValue => {
 		border: none;
 		border-bottom: var(--border-height) solid var(--border-before-color);
 	}
-	
+
 	.input-border{
 		position: absolute;
 		background: var(--el-color-primary);
@@ -136,11 +136,11 @@ watch(value,newValue => {
 		left: 0;
 		transition: 0.3s;
 	}
-	
+
 	input:focus{
 		outline: none;
 	}
-	
+
 	input:focus ~ .input-border{
 		width: 100%;
 	}

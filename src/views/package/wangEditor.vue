@@ -15,9 +15,6 @@
 <script setup lang="ts" name="wangEditor">
 import WangEditor from '@/components/WangEditor/index.vue'
 import { shallowRef } from "vue";
-import {userStore} from "@/store/modules/user";
-
-const user = userStore()
 
 const htmlValue = shallowRef('')
 

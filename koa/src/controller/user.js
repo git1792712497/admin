@@ -2,7 +2,7 @@ const userService = require('../service/user.js')
 const jwt = require('jsonwebtoken')
 const { privateKey } = require('../config/screct.js')
 const fs = require('fs')
-const {queryMenuById} = require('../service/menu.js')
+
 class UserController {
   async createUser(ctx, next) {
     // 1.获取用户传递过来信息
@@ -24,13 +24,12 @@ class UserController {
       expiresIn: 24 * 60 * 60 * 365, //过期时间
       algorithm: 'RS256', //非对称加密算法
     })
-    const menus = await queryMenuById(roleId)
     ctx.body = {
-      code: 200,
       message: '登录成功',
       data: {
         token,
-        menus
+        username,
+        roleId
       },
     }
   }
@@ -58,6 +57,7 @@ class UserController {
       message:'查询成功'
     }
   }
+  
   
   async getDeleteUser(ctx,next){
     const { id } = ctx.request.body

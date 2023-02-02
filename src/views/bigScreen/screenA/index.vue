@@ -1,5 +1,5 @@
 <template>
-  <BigScreenZoom>
+  <BigScreenScale>
     <main class="screen-bg">
       <header class="header"></header>
 
@@ -29,10 +29,10 @@
 
       </footer>
     </main>
-  </BigScreenZoom>
+  </BigScreenScale>
 </template>
 <script lang="ts" name="BigScreenZoom" setup>
-import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
+import BigScreenScale from '@/components/bigScreen/BigScreenScale.vue'
 /*
 动画卡顿优化
 定位创建新的渲染层,启用GPU加速,善于CSS3形变动画
@@ -49,7 +49,7 @@ import BigScreenZoom from '@/components/bigScreen/BigScreenZoom.vue'
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%; 
+  width: 100%;
 }
 
 .header {

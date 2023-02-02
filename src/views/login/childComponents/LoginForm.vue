@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" size="large">
+  <el-form ref="loginFormRef" :model="loginForm" :rules="rules" size="large">
     <el-form-item prop="username">
       <el-input v-model="loginForm.username" placeholder="请输入用户名">
         <template #prefix>
@@ -33,45 +33,37 @@
   </div>
 </template>
 <script lang="ts" name="LoginForm" setup>
-import md5 from 'md5'
-import {shallowReactive, shallowRef, onMounted, toRaw} from "vue";
+import {reactive, shallowRef, onMounted, toRaw} from "vue";
 import {CircleClose, UserFilled} from "@element-plus/icons-vue";
-import {ElMessage} from 'element-plus'
+import {rules} from '../options/rules'
 import {useRouter} from "vue-router";
 import {userStore} from '@/store/modules/user'
+import {menuStore} from "@/store/modules/menu";
+import { ElMessage } from "element-plus";
+const router = useRouter()
 
 const user = userStore()
-const router = useRouter()
+const menu = menuStore()
+
 
 
 // 登录表单数据
 let loading = shallowRef(false)
 let loginFormRef = shallowRef();
-let loginForm = shallowReactive({
-  "username": "admin317050",
+let loginForm = reactive({
+  "username": "admin",
   "password": "admin",
-  "grant_type": "password"
 });
-let loginRules = {
-  username: [{required: true, message: "请输入用户名", trigger: "blur"}],
-  password: [{required: true, message: "请输入密码", trigger: "blur"}]
-}
 
 const login = async () => {
   loginFormRef.value.validate(async (isValid) => {
     if (!isValid) return
     loading.value = true
     try {
-      const {getLogin} = await import('@/api/login')
-      const userForm = JSON.parse(JSON.stringify(toRaw(loginForm)))
-      userForm.password = md5(loginForm.password)
-      const userData = await getLogin(userForm) as any
-      if (!userData?.access_token)return
-      user.setUser(userData)
-      await router.push('/home')
-      ElMessage({type: 'success', message: '登录成功'})
-    } catch (e) {
-      ElMessage({type: 'error', message: '登录失败'})
+      await user.setUser(loginForm)
+      await menu.setMenuList()
+      ElMessage({ type: 'success', message:'登录成功' })
+      router.push('/home')
     } finally {
       loading.value = false
     }

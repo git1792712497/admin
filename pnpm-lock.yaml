@@ -12,6 +12,7 @@ specifiers:
   '@types/fs-extra': ^9.0.13
   '@types/fullpage.js': ^2.9.3
   '@types/howler': ^2.2.7
+  '@types/lodash': ^4.14.191
   '@types/lodash-es': ^4.17.6
   '@types/md5': ^2.3.2
   '@types/node': ^18.7.6
@@ -108,7 +109,7 @@ dependencies:
   '@types/fs-extra': registry.npmmirror.com/@types/fs-extra/9.0.13
   '@types/fullpage.js': registry.npmmirror.com/@types/fullpage.js/2.9.3
   '@types/howler': registry.npmmirror.com/@types/howler/2.2.7
-  '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.6
+  '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.191
   '@types/md5': registry.npmmirror.com/@types/md5/2.3.2
   '@types/prettier': registry.npmmirror.com/@types/prettier/2.7.1
   '@types/scrollreveal': registry.npmmirror.com/@types/scrollreveal/0.0.8
@@ -171,6 +172,7 @@ dependencies:
 devDependencies:
   '@iconify/json': registry.npmmirror.com/@iconify/json/2.1.148
   '@types/file-saver': registry.npmmirror.com/@types/file-saver/2.0.5
+  '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.6
   '@types/node': registry.npmmirror.com/@types/node/18.11.10
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.2.0_vite@4.0.0+vue@3.2.45
   '@vitejs/plugin-vue-jsx': registry.npmmirror.com/@vitejs/plugin-vue-jsx/2.1.1_vite@4.0.0+vue@3.2.45

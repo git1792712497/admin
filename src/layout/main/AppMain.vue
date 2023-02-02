@@ -10,6 +10,7 @@
   </router-view>
 </template>
 
-<script lang="ts" name="content" setup>
-import { keepAliveList } from '@/router'
+<script lang="ts" name="AppMain" setup>
+import { keepAliveList } from '@/router/utils/handleRouter'
 </script>
+

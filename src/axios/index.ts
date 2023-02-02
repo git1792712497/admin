@@ -18,7 +18,6 @@ class Axios {
       //实例请求拦截
       return config
     }, (err: any) => {
-      console.log(err, '全局请求错误拦截')
       return Promise.reject(err)
     })
     //全局响应拦截
@@ -26,7 +25,6 @@ class Axios {
       result.request.responseType === "blob" && download(result)
       return result.data
     }, (err: any) => {
-      console.log('全局响应错误', err)
       return Promise.reject(err)
     })
     // 实例拦截器

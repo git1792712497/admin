@@ -35,6 +35,11 @@ class UserService{
 		//拿最新的
 		return result.pop()
 	}
+	async queryUser(userId){
+		const statement = `SELECT * FROM user WHERE id = ?`
+		const [result] = await connection.execute(statement,[userId])
+		return result
+	}
 	
 	async queryUserList(){
 		const statement = `SELECT * FROM user`

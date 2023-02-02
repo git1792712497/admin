@@ -1,12 +1,7 @@
 import { koa } from "@/axios/config";
 
-
-
-export function getUserMenuListApi(roleId){
+export function getUserMenuListApi(){
   return koa.get({
     url:`/menu/userMenuList`,
-    params:{
-      roleId
-    }
   })
 }

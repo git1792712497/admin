@@ -1,7 +1,7 @@
 <template>
 	<el-dropdown trigger="hover">
 		<div class="avatar">
-			<img alt="avatar" :src="user.profile?.avatar"/>
+			<img alt="avatar" :src="user.avatar"/>
 		</div>
 		<template #dropdown>
 			<el-dropdown-menu>
@@ -12,7 +12,7 @@
 			</el-dropdown-menu>
 		</template>
 	</el-dropdown>
-  <span class="username">{{user.profile?.nick_name}}</span>
+  <span class="username">{{user.username}}</span>
 </template>
 <script lang="ts" name="Avatar" setup>
 import {userStore} from "@/store/modules/user";

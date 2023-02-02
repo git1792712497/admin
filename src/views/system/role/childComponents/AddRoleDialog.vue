@@ -5,10 +5,10 @@
         <el-input v-model="basicForm.name" clearable autofocus placeholder="请输入角色名称" />
       </el-form-item>
       <el-form-item label="角色描述" prop="description">
-        <el-input v-model="basicForm.description" :max="255" :rows="2" type="textarea" placeholder="请输入角色描述" />
+        <el-input v-model="basicForm.description" :max="255" :rows="1" type="textarea" placeholder="请输入角色描述" />
       </el-form-item>
       <el-form-item label="菜单权限" prop="menuId">
-        <el-tree @check="(value,{checkedKeys,halfCheckedKeys}) => basicForm.menuId = [...checkedKeys,...halfCheckedKeys]" node-key="id" :data="menuSelectList" multiple show-checkbox clearable :props="{ label: 'name', children: 'children', value: 'id' }" style="width: 100%;"/>
+        <el-tree @check="(value,{checkedKeys,halfCheckedKeys}) => basicForm.menuId = [...checkedKeys,...halfCheckedKeys]" node-key="id" :data="menuSelectList" multiple show-checkbox clearable :props="{ label: 'title', children: 'children', value: 'id' }" style="width: 100%;"/>
       </el-form-item>
     </el-form>
     <template #footer>
@@ -61,7 +61,7 @@ const handleConfirm = () => {
   })
 }
 
-import {generateMenuTree} from '../../menu/utils/generateMenuTree'
+import {generateMenuTree} from '@/utils/handleMenu'
 let menuSelectList = shallowRef([])
 const openDialog = async () => {
   dialogVisible.value = true

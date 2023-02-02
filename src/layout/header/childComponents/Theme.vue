@@ -13,15 +13,15 @@
 		</div>
 		<div class="theme-item">
 			<span>主题颜色</span>
-			<el-color-picker v-model="globalConfig.themeConfig.primary" :predefine="colorList" @change="changePrimary"/>
+			<el-color-picker v-model="globalConfig.primary" :predefine="colorList" @change="changePrimary"/>
 		</div>
     <el-divider class="divider" content-position="center">
       <el-icon><Setting /></el-icon>
-      页面设置
+      系统设置
     </el-divider>
     <div class="theme-item">
       <span>标签栏</span>
-      <el-switch v-model="globalConfig.themeConfig.tabs" />
+      <el-switch v-model="globalConfig.tabs" />
     </div>
 	</el-drawer>
 </template>
@@ -48,7 +48,7 @@ globalConfig.setTheme()
 	align-items: center;
 	justify-content: space-between;
 	margin: 15px 0;
-	
+
 	span{
 		font-size: 14px;
 	}

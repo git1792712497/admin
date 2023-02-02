@@ -56,11 +56,17 @@ import ScrollReveal from 'scrollreveal'
 
 onMounted(() => {
   // 单个项的动画持续时间2s，从下往上，间隔400ms
-  ScrollReveal().reveal('.feature-item', { distance: '48px', duration: 2000, interval: 400 });
+  ScrollReveal().reveal('.feature-item', {
+    distance: '480px',
+    duration: 2000,
+    interval: 400,
+    origin:'left'
+  });
 })
 </script>
 
 <style scoped lang="less">
+//字体图标
 @import "https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 .wrapper {
   display: flex;

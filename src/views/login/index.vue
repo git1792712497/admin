@@ -16,7 +16,8 @@
 </template>
 
 <script lang="ts" name="login" setup>
-import LoginForm from "./childComponents/LoginForm.vue";</script>
+import LoginForm from "./childComponents/LoginForm.vue";
+</script>
 
 <style lang="less" scoped>
 .login-container {

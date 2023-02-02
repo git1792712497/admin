@@ -1,6 +1,6 @@
 <template>
 <el-switch
-		v-model="globalConfig.themeConfig.isDark"
+		v-model="globalConfig.isDark"
 		@change="useDark"
 		inline-prompt
 		active-color="#0a0a0a"

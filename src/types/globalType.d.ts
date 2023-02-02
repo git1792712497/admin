@@ -17,10 +17,10 @@ declare class Person{
   }
 }
 
-//模块声明
+/*模块声明
 declare module 'lodash-es'{
   export function join(args:any):any
-}
+}*/
 
 declare module '@element-plus/icons-vue'
 

@@ -6,26 +6,26 @@ const validateUser = async (ctx,next) => {
 	//获取http传过来的信息
 	const user = ctx.request.body
 	if (!user.username || !user.password){
+		ctx.status = 400
 		ctx.body = {
 			message:'用户名或密码不能为空!',
-			code:400
 		}
 		return
 	}
 	//判断name是否已经存在数据库中
 	const [data] = await userService.findUserName(user.username)
 	if (!data){
+		ctx.status = 400
 		ctx.body = {
 			message:'用户名不存在',
-			code:400
 		}
 		return
 	}
 	
 	if (data.password != user.password){
+		ctx.status = 400
 		ctx.body = {
 			message:'密码不正确',
-			code:400
 		}
 		return
 	}

@@ -7,7 +7,7 @@
         <TabsView/>
       </el-header>
 			<el-main>
-        <Content/>
+        <AppMain/>
       </el-main>
 			<el-footer><Bottom/></el-footer>
 		</el-container>
@@ -17,7 +17,7 @@
 import Menus from './menus/Menus.vue'
 import TabsView from './tabsView/TabsView.vue'
 import NavBar from './header/NavBar.vue'
-import Content from './main/Content.vue'
+import AppMain from './main/AppMain.vue'
 import Bottom from './bottom/Bottom.vue'
 </script>
 <style lang="less" scoped>

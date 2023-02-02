@@ -14,13 +14,13 @@ export const useDark = ():any => {
 // 修改主题颜色
 export const changePrimary = (val: string) => {
 	if (!val) globalConfig.themeConfig.primary = '#409eff';
-	document.documentElement.style.setProperty("--el-color-primary-dark-2", `${getDarkColor(globalConfig.themeConfig.primary, 0.1)}`);
+	document.documentElement.style.setProperty("--el-color-primary-dark-2", `${getDarkColor(globalConfig.primary, 0.1)}`);
 	document.documentElement.style.setProperty("--geeker-main-bg-color",'#141414');
-	document.documentElement.style.setProperty("--el-color-primary", globalConfig.themeConfig.primary);
+	document.documentElement.style.setProperty("--el-color-primary", globalConfig.primary);
 	for(let i = 1; i <= 9; i ++){
 		document.documentElement.style.setProperty(
 			`--el-color-primary-light-${i}`,
-			`${getLightColor(globalConfig.themeConfig.primary, i / 10)}`
+			`${getLightColor(globalConfig.primary, i / 10)}`
 		);
 	}
 };

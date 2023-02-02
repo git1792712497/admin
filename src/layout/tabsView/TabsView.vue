@@ -1,5 +1,5 @@
 <template>
-  <nav class="tabs-view" v-if="globalConfig.themeConfig.tabs">
+  <nav class="tabs-view" v-if="globalConfig.tabs">
     <el-space>
       <el-tag v-for="(item,index) in tabsView.tabsViewList" :key="item.path"
               :type="$route.path === item.path ? '' : 'info'"

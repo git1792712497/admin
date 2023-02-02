@@ -1,14 +1,18 @@
 const connection = require('../app/database.js')
-const generateMenuTree = require('../utils/generateMenuTree.js')
 
 class MenuService {
 	async save(menu) {
-		console.log(menu)
 		// 2.拼接statement,预处理语句
 		const statement = 'INSERT INTO menu SET ?;'
 		// 3.执行sql语句
 		const [result] = await connection.query(statement, [menu])
 
+		return result
+	}
+	
+	async queryMenuByName(name,path) {
+		const statement = `SELECT name FROM menu WHERE name = ? && path = ?`
+		const [result] = await connection.execute(statement, [name,path])
 		return result
 	}
 	
@@ -27,7 +31,7 @@ class MenuService {
 			const [result] = await connection.execute(statement, [menuId])
 			menuList.push(...result)
 		}
-		return generateMenuTree(menuList)
+		return menuList
 	}
 	
 	async query() {
