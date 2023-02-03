@@ -2,10 +2,16 @@ import { defineStore } from 'pinia'
 import {getUserMenuListApi} from '@/api/menu'
 import { generateMenuTree, menuTreeToRouter, handleRouterPath, getAuthorityButton, getKeepAliveRouter, addRoute, addFullscreenMenu } from '@/utils/handleMenu'
 
+interface MenuStore {
+  isCollapse:boolean
+  menuList: any[]
+  authButton:string[]
+  keepAliveRouter:string[]
+}
 
 export const menuStore = defineStore({
   id: 'menu',
-  state: () => {
+  state: ():MenuStore => {
     return {
       isCollapse: false,
       menuList: [],

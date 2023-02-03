@@ -43,7 +43,7 @@ export const rules: FormRules  = {
   path: [
     {
       type: 'string',
-      required: true,
+      required: false,
       message: '菜单路径是必填项',
       trigger:"blur",
     },
@@ -51,6 +51,10 @@ export const rules: FormRules  = {
       validator(rule, value, callback, source, options) {
         const regex1 = /^\//
         const regex2 = /^http/
+        if (!value){
+          callback()
+          return
+        }
         if (regex1.test(value) || regex2.test(value)) {
           callback()
         } else {

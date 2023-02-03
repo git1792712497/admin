@@ -10,7 +10,7 @@ interface MenuTree extends AddMenuForm{
 
 export function getAuthorityButton(menuList: AddMenuForm[]){
   return menuList.filter((item: AddMenuForm) => {
-    return !item.component && !item.path
+    return item.type === 3
   }).map(item => item.name)
 }
 
@@ -70,7 +70,8 @@ export function handleRouterPath(routes){
       item.path = `${item.path.replace(`${route.path}/`,'')}`
     })
   })
-  return routes
+  //过滤外链菜单不参与路由
+  return routes.filter(item => item.path && !item.meta.isLink)
 }
 
 export function addFullscreenMenu(menuList: MenuTree[]){

@@ -1,7 +1,7 @@
 <template>
   <router-view v-slot="{Component,route}">
     <transition appear mode="out-in" name="el-zoom-in-bottom">
-      <keep-alive :include="keepAliveList">
+      <keep-alive :include="menu.keepAliveRouter">
         <el-scrollbar>
           <component :is="Component"></component>
         </el-scrollbar>
@@ -11,6 +11,7 @@
 </template>
 
 <script lang="ts" name="AppMain" setup>
-import { keepAliveList } from '@/router/utils/handleRouter'
+import {menuStore} from "@/store/modules/menu";
+const menu = menuStore()
 </script>
 

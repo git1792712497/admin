@@ -1,8 +1,8 @@
 <template>
   <el-card>
     <template #header><TopSearch @addRole="handleAddRole"/></template>
-    <AddUserDialog @refresh="getUserList" ref="AddUserDialogRef"/>
-    <el-table v-loading="loading" size="large" border :data="userList" row-key="id">
+    <AddUserDialog @refresh="run" ref="AddUserDialogRef"/>
+    <el-table v-loading="loading" size="large" border :data="data.data" row-key="id">
       <el-table-column prop="username" label="用户名称" width="180"/>
       <el-table-column prop="password" label="用户密码" width="180"/>
       <el-table-column prop="roleName" label="所属角色" width="180"/>
@@ -26,25 +26,16 @@
 import TopSearch from "./childComponents/TopSearch.vue";
 import AddUserDialog from "./childComponents/AddUserDialog.vue";
 import {getUserDeleteApi,getUserListApi} from "./api/index";
-const AddUserDialogRef = shallowRef()
-
-let loading = shallowRef(false)
-let userList = ref([])
-const getUserList = async () => {
-  loading.value = true
-  const {data} = await getUserListApi()
-  userList.value = data
-  loading.value = false
-}
-onMounted(getUserList)
+import {useRequest} from "vue-request";
+const {run,loading,data} = useRequest(getUserListApi)
 
 const handleDelete = async id => {
   await getUserDeleteApi(id)
-  await getUserList()
+  await run()
 }
-const handleAddRole = () => {
-  AddUserDialogRef.value.openDialog()
-}
+
+const AddUserDialogRef = shallowRef()
+const handleAddRole = () => AddUserDialogRef.value.openDialog()
 </script>
 
 <style scoped lang="less">

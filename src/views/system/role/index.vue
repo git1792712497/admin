@@ -1,9 +1,8 @@
 <template>
   <el-card>
     <template #header><TopSearch @addRole="handleAddRole"/></template>
-    <AddRoleDialog @refresh="getRoleList" ref="AddRoleDialogRef"/>
-
-    <el-table size="large" border :data="roleList" row-key="id">
+    <AddRoleDialog @refresh="run" ref="AddRoleDialogRef"/>
+    <el-table v-loading="loading" size="large" border :data="data.data" row-key="id">
       <el-table-column prop="name" label="角色名称" width="180"/>
       <el-table-column prop="description" label="角色描述" width="300"/>
       <el-table-column prop="createTime" label="创建时间"/>
@@ -26,18 +25,15 @@
 import TopSearch from "./childComponents/TopSearch.vue";
 import AddRoleDialog from "./childComponents/AddRoleDialog.vue";
 import {getRoleListApi,getDeleteRoleApi} from "./api/index";
-const AddRoleDialogRef = shallowRef()
+import {useRequest} from "vue-request";
 
-let roleList = ref([])
-const getRoleList = async () => {
-  const {data} = await getRoleListApi()
-  roleList.value = data
-}
-onMounted(getRoleList)
+const AddRoleDialogRef = shallowRef()
+const {run,loading,data} = useRequest(getRoleListApi)
+
 
 const handleDelete = async id => {
   await getDeleteRoleApi(id)
-  getRoleList()
+  run()
 }
 const handleAddRole = () => {
   AddRoleDialogRef.value.openDialog()

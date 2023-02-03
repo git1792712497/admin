@@ -7,9 +7,11 @@
       </template>
       <SubItem :menuList="item.children"></SubItem>
     </el-sub-menu>
-    <el-menu-item v-if="item.meta.type === 2 && item.meta.hidden" :index="item.meta.isLink ? '' : item.path">
+    <el-menu-item v-if="item.meta.type === 2 && item.meta.hidden" :index="item.meta.isLink ? '/' : item.path">
       <el-icon><component :is="item.meta.icon"></component></el-icon>
-      <el-link v-if="item.meta.isLink" :href="item.path" target="_blank"></el-link>
+      <el-link type="primary" v-if="item.meta.isLink" :href="item.path" target="_blank">
+        <span>{{item.meta.title}}</span>
+      </el-link>
       <span v-else>{{item.meta.title}}</span>
     </el-menu-item>
 	</template>
