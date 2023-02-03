@@ -16,6 +16,12 @@ class MenuService {
 		return result
 	}
 	
+	async roleAndMenu(roleId,menuId) {
+		const statement = `INSERT INTO role_menu (roleId,menuId) VALUES (?,?)`
+		const [result] = await connection.execute(statement, [roleId,menuId])
+		return result
+	}
+	
 	async deleteRoleById(id) {
 		const statement = `DELETE role FROM WHERE id = ?`
 		const [result] = await connection.execute(statement, [id])

@@ -20,11 +20,6 @@ export function getKeepAliveRouter(menuList: AddMenuForm[]){
   }).map(item => item.name)
 }
 
-export function getFullscreenMenu(menuList: MenuTree[]){
-  return menuList.filter(item => {
-    return item.fullScreen
-  })
-}
 
 export function generateMenuTree(source, id = 'id', parentId = 'parentId', children = 'children') {
   let cloneData = JSON.parse(JSON.stringify(source))
@@ -50,7 +45,9 @@ export function menuTreeToRouter(menuTree: MenuTree[]){
         icon:item.icon,
         hidden:item.hidden,
         fullScreen:item.fullScreen,
-        keepAlive:item.keepAlive
+        keepAlive:item.keepAlive,
+        isLink:item.isLink,
+        activePath:item.activePath
       }
     }
   })
@@ -76,10 +73,17 @@ export function handleRouterPath(routes){
   return routes
 }
 
+export function addFullscreenMenu(menuList: MenuTree[]){
+  const fullscreenMenu = menuList.filter(item => {
+    return item.fullScreen
+  })
+  return menuTreeToRouter(fullscreenMenu)
+}
 
-export function addRoute(routerList: RouteRecordRaw[]){
+
+export function addRoute(routerList: RouteRecordRaw[],name?:string){
   routerList.forEach((route) => {
-    router.addRoute('AppMain',route)
+    name ? router.addRoute(name,route) : router.addRoute(route)
   })
 }
 

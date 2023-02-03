@@ -58,14 +58,20 @@ class UserController {
     }
   }
   
-  
   async getDeleteUser(ctx,next){
     const { id } = ctx.request.body
-    const data = await userService.deleteUser(id)
-    ctx.body = {
-      code:200,
-      data,
-      message:'删除成功'
+    if(id === 1){
+      ctx.status = 400
+      ctx.body = {
+        message:'默认用户不能被删除'
+      }
+    }else {
+      const data = await userService.deleteUser(id)
+      ctx.body = {
+        code:200,
+        data,
+        message:'删除成功'
+      }
     }
   }
 }

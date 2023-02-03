@@ -2,7 +2,7 @@
   <div>
     <el-popover :width="315" v-model:visible="isPopover" placement="bottom" trigger="click" transition="el-zoom-in-top" popper-class="icon-selector-popper">
       <template #reference>
-        <el-input type="text" @blur="isPopover = false" :modelValue="modelValue" placeholder="请选择图标">
+        <el-input type="text" @blur="isPopover = false" :modelValue="modelValue" placeholder="图标">
           <template #prepend>
             <el-button size="small" :icon="modelValue"/>
           </template>
@@ -23,7 +23,7 @@ import * as Icons from "@element-plus/icons-vue";
 defineProps({
  modelValue:{
    type:String,
-   default:''
+   default:'Menu'
  }
 })
 

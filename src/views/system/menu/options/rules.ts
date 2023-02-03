@@ -49,11 +49,12 @@ export const rules: FormRules  = {
     },
     {
       validator(rule, value, callback, source, options) {
-        const regex = /^\//
-        if (!regex.test(value)) {
-          callback(new Error('菜单路径必须以斜杠开头'))
-        }else {
+        const regex1 = /^\//
+        const regex2 = /^http/
+        if (regex1.test(value) || regex2.test(value)) {
           callback()
+        } else {
+          callback(new Error('菜单路径必须以斜杠开头或http://链接'))
         }
       }
     }
@@ -61,7 +62,7 @@ export const rules: FormRules  = {
   component:[
     {
       type: 'string',
-      required: true,
+      required: false,
       message: '组件路径是必填项',
       trigger:"blur",
     },

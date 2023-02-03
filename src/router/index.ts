@@ -4,7 +4,7 @@ import type {RouteRecordRaw} from 'vue-router'
 export const views: Record<string, any> = import.meta.glob("../views/**/*.vue");
 
 
-export const routes: RouteRecordRaw[] = [
+export const routes: any[] = [
 	{
 		path: '',
 		component: () => import('@/layout/index.vue'),

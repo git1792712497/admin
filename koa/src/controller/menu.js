@@ -1,4 +1,4 @@
-const {save,query,remove,queryChildMenu,queryMenuById,queryMenuByName} = require('../service/menu.js')
+const {save,query,remove,queryChildMenu,queryMenuById,queryMenuByName,roleAndMenu} = require('../service/menu.js')
 const {queryUser} = require('../service/user.js')
 
 class MenuController {
@@ -14,6 +14,11 @@ class MenuController {
     }
     
     const data = await save(menu)
+    //超级管理员自动关联所有菜单
+    if(ctx.user.userId === 1){
+      const [{roleId}] = await queryUser(ctx.user.userId)
+      await roleAndMenu(roleId,data.insertId)
+    }
     ctx.body = {
       code: 200,
       data,

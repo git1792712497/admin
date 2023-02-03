@@ -8,5 +8,7 @@ export interface AddMenuForm {
   keepAlive:0 | 1,
   component:string,
   sort:number,
-  title:string
+  title:string,
+  isLink:0 | 1,
+  activePath?:string
 }

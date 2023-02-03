@@ -15,12 +15,19 @@ class RoleController {
 
   async deleteById(ctx, next) {
     const { id } = ctx.request.body
-    const data = await deleteById(id)
-	  ctx.body = {
-		  code: 200,
-		  message: '删除成功',
-		  data,
-	  }
+    if(id === 1) {
+      ctx.status = 400
+      ctx.body = {
+        message: '超级管理员不能被删除'
+      }
+    }else {
+      const data = await deleteById(id)
+      ctx.body = {
+        code: 200,
+        message: '删除成功',
+        data,
+      }
+    }
   }
 
   async query(ctx, next) {
