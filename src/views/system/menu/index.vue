@@ -1,13 +1,24 @@
 <template>
 	<el-card>
-    <template #header><TopSearch @addMenu="addMenuDialogRef.openDialog()"/></template>
+    <template #header><TopSearch @addMenu="AddMenuDialogRef.openDialog()"/></template>
     <AddMenuDialog @refresh="run" :menuData="menuList" ref="AddMenuDialogRef"/>
 		<el-table v-loading="loading" size="large" border :data="menuList" row-key="id">
 			<el-table-column prop="title" label="菜单名称" width="180"/>
-      <el-table-column prop="icon" label="菜单图标" width="100">
-
+      <el-table-column prop="icon" label="菜单图标" width="100" align="center">
+        <template #default="{row}">
+          <el-button :icon="row.icon"></el-button>
+        </template>
       </el-table-column>
 	    <el-table-column prop="path" label="路由路径"/>
+	    <el-table-column prop="component" label="组件路径"/>
+	    <el-table-column prop="sort" label="排序"/>
+	    <el-table-column prop="type" label="菜单类型">
+        <template #default="{row}">
+          <el-tag type="success" v-if="row.type === 1">目录</el-tag>
+          <el-tag v-if="row.type === 2">菜单</el-tag>
+          <el-tag type="warning" v-if="row.type === 3">按钮</el-tag>
+        </template>
+      </el-table-column>
       <el-table-column prop="createTime" label="创建时间"/>
       <el-table-column prop="updateTime" label="修改时间"/>
       <el-table-column fixed="right" label="操作" width="200" align="center">
@@ -33,7 +44,7 @@ import { useRequest } from 'vue-request';
 
 let AddMenuDialogRef = shallowRef()
 const { data, run ,loading} = useRequest(getMenuListApi);
-const menuList = computed(() => data.value && generateMenuTree(data.value.data))
+const menuList = computed(() => data.value && generateMenuTree(data.value.data.sort((x,y) => x.sort - y.sort)))
 
 const handleDelete = async id => {
   await getDeleteMenuApi(id)

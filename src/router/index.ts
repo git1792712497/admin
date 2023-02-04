@@ -1,10 +1,13 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import NProgress from '@/config/nprogress'
 import type {RouteRecordRaw} from 'vue-router'
-export const views: Record<string, any> = import.meta.glob("../views/**/*.vue");
+import {basicRouter} from './basicRouter'
+import {userStore} from "@/store/modules/user";
+import {menuStore} from '@/store/modules/menu'
 
 
-export const routes: any[] = [
+export const routes: RouteRecordRaw[] = [
+	// @ts-ignore
 	{
 		path: '',
 		component: () => import('@/layout/index.vue'),
@@ -13,7 +16,6 @@ export const routes: any[] = [
 	}
 ]
 
-import {basicRouter} from './basicRouter'
 const router = createRouter({
 	history: createWebHashHistory(process.env.BASE_URL),
 	routes: routes.concat(basicRouter),
@@ -21,17 +23,7 @@ const router = createRouter({
 	scrollBehavior: () => ({left: 0,top: 0})
 })
 
-// menuList.forEach(route => {
-// 	if (route.meta.fullScreen === true){
-// 		console.log(route)
-// 		router.addRoute(route)
-// 	}else {
-// 		router.addRoute('AppMain',route)
-// 	}
-// })
 
-import {userStore} from "@/store/modules/user";
-import {menuStore} from '@/store/modules/menu'
 router.beforeEach(async (to,from) => {
 	NProgress.start()
 	const user = userStore()

@@ -2,9 +2,9 @@ import {globalConfigStore} from "@/store/modules/globalConfig";
 import {getDarkColor, getLightColor} from "@/utils/theme";
 const globalConfig = globalConfigStore()
 
-export const useDark = ():any => {
+export const useDark = () => {
 		const body = document.documentElement;
-		if (globalConfig.themeConfig.isDark){
+		if (globalConfig.isDark){
 			 body.setAttribute("class", "dark");
 		}else {
 			body.setAttribute("class", "");
@@ -13,7 +13,7 @@ export const useDark = ():any => {
 
 // 修改主题颜色
 export const changePrimary = (val: string) => {
-	if (!val) globalConfig.themeConfig.primary = '#409eff';
+	if (!val) globalConfig.primary = '#409eff';
 	document.documentElement.style.setProperty("--el-color-primary-dark-2", `${getDarkColor(globalConfig.primary, 0.1)}`);
 	document.documentElement.style.setProperty("--geeker-main-bg-color",'#141414');
 	document.documentElement.style.setProperty("--el-color-primary", globalConfig.primary);

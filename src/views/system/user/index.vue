@@ -2,7 +2,7 @@
   <el-card>
     <template #header><TopSearch @addRole="handleAddRole"/></template>
     <AddUserDialog @refresh="run" ref="AddUserDialogRef"/>
-    <el-table v-loading="loading" size="large" border :data="data.data" row-key="id">
+    <el-table v-loading="loading" size="large" border :data="data?.data" row-key="id">
       <el-table-column prop="username" label="用户名称" width="180"/>
       <el-table-column prop="password" label="用户密码" width="180"/>
       <el-table-column prop="roleName" label="所属角色" width="180"/>

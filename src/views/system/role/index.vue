@@ -2,7 +2,7 @@
   <el-card>
     <template #header><TopSearch @addRole="handleAddRole"/></template>
     <AddRoleDialog @refresh="run" ref="AddRoleDialogRef"/>
-    <el-table v-loading="loading" size="large" border :data="data.data" row-key="id">
+    <el-table v-loading="loading" size="large" border :data="data?.data" row-key="id">
       <el-table-column prop="name" label="角色名称" width="180"/>
       <el-table-column prop="description" label="角色描述" width="300"/>
       <el-table-column prop="createTime" label="创建时间"/>

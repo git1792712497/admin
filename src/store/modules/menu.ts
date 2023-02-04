@@ -41,7 +41,7 @@ export const menuStore = defineStore({
       //动态加一级路由(全屏)
       addRoute(addFullscreenMenu(sortMenu))
       //动态加二级路由
-      addRoute(routerList,'AppMain')
+      addRoute('AppMain',routerList)
     },
   },
 })

@@ -1,11 +1,11 @@
 <template>
   <router-view v-slot="{Component,route}">
     <transition appear mode="out-in" name="el-zoom-in-bottom">
-      <keep-alive :include="menu.keepAliveRouter">
-        <el-scrollbar>
+      <el-scrollbar>
+        <keep-alive :include="menu.keepAliveRouter">
           <component :is="Component"></component>
-        </el-scrollbar>
-      </keep-alive>
+        </keep-alive>
+      </el-scrollbar>
     </transition>
   </router-view>
 </template>

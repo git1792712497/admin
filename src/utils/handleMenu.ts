@@ -1,8 +1,10 @@
 import {AddMenuForm} from '@/views/system/menu/types/addMenuForm'
-import {views} from '@/router'
 import router from '@/router'
 import type {RouteRecordRaw} from 'vue-router'
 import {cloneDeep} from "lodash-es";
+const views: Record<string, any> = import.meta.glob("../views/**/*.vue");
+const tsx: Record<string, any> = import.meta.glob("../views/**/*.tsx");
+const componentsPath = Object.assign(views,tsx)
 
 interface MenuTree extends AddMenuForm{
   children?: AddMenuForm[]
@@ -55,23 +57,27 @@ export function menuTreeToRouter(menuTree: MenuTree[]){
 
 function loadComponent(componentPath) {
   let value
-  Object.keys(views).forEach(path => {
+  Object.keys(componentsPath).forEach(path => {
     if (path === `../views${componentPath}`){
-      value = views[path]
+      value = componentsPath[path]
     }
   })
   return value
 }
 
-export function handleRouterPath(routes){
-  cloneDeep(routes).forEach(route => {
-    route.children && route.children.forEach(item => {
-      item.children && handleRouterPath(route.children)
+export function handleRouterPath(routes: RouteRecordRaw[]){
+  let routerList = cloneDeep(routes)
+  routerList.forEach(route => {
+    route.children?.forEach(item => {
       item.path = `${item.path.replace(`${route.path}/`,'')}`
+      if (item.children){
+        item.children = item.children.filter(v => v.meta.type !== 3)
+        handleRouterPath(item.children)
+      }
     })
   })
-  //过滤外链菜单不参与路由
-  return routes.filter(item => item.path && !item.meta.isLink)
+  //过滤外链和按钮菜单不参与路由
+  return routerList.filter(item => item.path && !item.meta.isLink)
 }
 
 export function addFullscreenMenu(menuList: MenuTree[]){
@@ -82,9 +88,11 @@ export function addFullscreenMenu(menuList: MenuTree[]){
 }
 
 
-export function addRoute(routerList: RouteRecordRaw[],name?:string){
-  routerList.forEach((route) => {
-    name ? router.addRoute(name,route) : router.addRoute(route)
-  })
+export function addRoute(...args){
+  if (Array.isArray(args.at(0))){
+    args.at(0).forEach(route => router.addRoute(route))
+  }else {
+    args.at(1).forEach(route => router.addRoute(args.at(0),route))
+  }
 }
 

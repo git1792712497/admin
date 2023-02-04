@@ -1,11 +1,10 @@
 <template>
 <div>
-{{menuStore().keepAliveRouter}}
+
+  <el-button type="primary" v-auth="'delete'">按钮</el-button>
 </div>
 </template>
 
-<script lang="ts" setup>
-import { menuStore } from "@/store/modules/menu";
-
+<script lang="ts" setup name="home">
 
 </script>
