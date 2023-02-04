@@ -48,6 +48,31 @@ express设计初衷是完整强大的,koa是简洁和自由的,类似vue2 到vue
 
 内存cookie(没有设置过期时间) 和硬盘cookie(有设置过期时间 )
 
+# **服务器部署**
+## docker
+yum install -y docker
+安装完成后，可以检测一下 Docker 是否安装成功，可以使用下面命令
+yum list installed | grep docker
+自动启动 Docker 的话
+systemctl enable docker
+配置镜像源创建或修改
+/etc/docker/daemon.json 文件
+其内容修改为，这里配置的网易的镜像加速站
+{
+"registry-mirrors": ["http://hub-mirror.c.163.com"]
+}
+配置完镜像源后
+systemctl daemon-reload
+重启 Docker方能生效
+systemctl restart docker.service
+## docker 安装mysql
+sudo docker pull mysql
+镜像拉取完成后，用该镜像创建mysql实例
+sudo docker run -d -p 3306:3306 -v /usr/local/mysql/conf:/etc/mysql/conf.d -v /usr/local/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name  mysql mysql
+创建成功后使用下面命令查看下创建好的mysql实例
+docker ps -a
+开放远程服务器端口链接数据库
+## nginx
 #安装
 dnf install nginx
 #启动
@@ -57,3 +82,32 @@ systemctl enable nginx
 #重启(改了nginx配置)
 systemctl restart nginx
 
+### 3.4. pm2启动node程序
+* PM2是一个Node的进程管理器；
+* 我们可以使用它来管理Node的后台进程；
+* 这样在关闭终端时，Node进程会继续执行，那么服务器就可以继续为前端提供服务了；
+安装pm2：
+```shell
+npm install pm2 -g
+```
+pm2常用的命令：
+```shell
+# 命名进程
+pm2 start ./src/main.js --name koa
+# 显示所有进程状态
+pm2 list               
+# 停止指定的进程
+pm2 stop 0       
+# 停止所有进程
+pm2 stop all           
+# 重启所有进程
+pm2 restart all      
+# 重启指定的进程
+pm2 restart 0          
+# 杀死指定的进程
+pm2 delete 0           
+# 杀死全部进程
+pm2 delete all   
+#后台运行pm2，启动4个app.js，实现负载均衡
+pm2 start app.js -i 4 
+```

@@ -251,49 +251,7 @@ MYSQL_PASSWORD=Coderwhy888.
 
 
 
-### 3.4. pm2启动node程序
 
-刚才我们是通过终端启动的node程序，那么如果终端被关闭掉了呢？
-
-* 那么这个时候相当于启动的Node进程会被关闭掉；
-* 我们将无法继续访问服务器；
-
-在真实的部署过程中，我们会使用一个工具pm2来管理Node的进程：
-
-* PM2是一个Node的进程管理器；
-* 我们可以使用它来管理Node的后台进程；
-* 这样在关闭终端时，Node进程会继续执行，那么服务器就可以继续为前端提供服务了；
-
-安装pm2：
-
-```shell
-npm install pm2 -g
-```
-
-pm2常用的命令：
-
-```shell
-# 命名进程
-pm2 start ./src/main.js --name koa
-# 显示所有进程状态
-pm2 list               
-# 停止指定的进程
-pm2 stop 0       
-# 停止所有进程
-pm2 stop all           
-# 重启所有进程
-pm2 restart all      
-# 重启指定的进程
-pm2 restart 0          
-
-# 杀死指定的进程
-pm2 delete 0           
-# 杀死全部进程
-pm2 delete all   
-
-#后台运行pm2，启动4个app.js，实现负载均衡
-pm2 start app.js -i 4 
-```
 
 
 
