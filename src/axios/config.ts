@@ -33,15 +33,6 @@ export const music = new Axios({
    timeout: 10000
 })
 
-export const fastMock = new Axios({
-   baseURL: 'https://www.fastmock.site/mock/957ffa30daa6a998277620d86656998b/mock',
-   timeout: 10000,
-})
-
-export const easyMock = new Axios({
-   baseURL: 'https://mock.mengxuegu.com/mock/63880da593a67b5f10668ec1',
-   timeout: 10000,
-})
 
 export const mock = new Axios({
    baseURL: 'http://127.0.0.1:8888',
@@ -58,8 +49,4 @@ export const jsonServer = new Axios({
    timeout: 10000
 })
 
-export const image = new Axios({
-   baseURL: 'https://unsplash.com',
-   timeout: 10000
-})
 

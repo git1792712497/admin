@@ -22,9 +22,10 @@ class UserService{
 	}
 	
 	//头像存数据库
-	async saveAvatar(filename, mimetype, size, userId) {
-		const statement = 'INSERT INTO avatar (filename, mimetype, size, user_id) VALUES (?, ?, ?, ?);';
-		const [result] = await connection.execute(statement, [filename, mimetype, size, userId])
+	async saveAvatar(filename, url, size, userId) {
+		console.log(url)
+		const statement = 'INSERT INTO avatar (filename, url, size, user_id) VALUES (?, ?, ?, ?);'
+		const [result] = await connection.execute(statement, [filename, url, size, userId])
 		return result
 	}
 	

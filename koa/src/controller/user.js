@@ -2,6 +2,7 @@ const userService = require('../service/user.js')
 const jwt = require('jsonwebtoken')
 const { privateKey } = require('../config/screct.js')
 const fs = require('fs')
+const cos = require('../app/cos.js')
 
 class UserController {
   async createUser(ctx, next) {
@@ -36,10 +37,23 @@ class UserController {
 
   //头像上传
   async upload(ctx, next) {
-	  const { filename, mimetype, size } = ctx.request.file
+	  const { filename, size } = ctx.request.file
 	  const { userId } = ctx.user
-	  await userService.saveAvatar(filename,mimetype,size,userId)
-	  ctx.body = '文件上传成功'
+    const params = {
+      Bucket: 'cos-1304585490',
+      Region: 'ap-nanjing',
+      Key: filename,
+      FilePath: `./assets/${filename}`,
+      SliceSize: 1024 * 1024 * 5
+    }
+    // 这里省略初始化过程和上传参数
+    const data = await cos.uploadFile(params)
+    const url = `https://${data.Location}`
+    await userService.saveAvatar(filename,url,size,userId)
+    ctx.body = {
+      url,
+      message:'上传成功'
+    }
   }
   
   async showAvatar(ctx,next){

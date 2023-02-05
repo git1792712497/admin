@@ -1,7 +1,7 @@
 <template>
   <el-scrollbar noresize>
     <router-view v-slot="{Component,route}">
-      <transition appear mode="out-in" name="el-zoom-in-bottom">
+      <transition appear mode="out-in" name="el-fade-in">
         <keep-alive :include="menu.keepAliveRouter">
           <component :is="Component"></component>
         </keep-alive>

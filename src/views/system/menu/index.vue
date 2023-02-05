@@ -12,17 +12,17 @@
 	    <el-table-column prop="path" label="路由路径" width="200"/>
 	    <el-table-column prop="component" label="组件路径" width="200"/>
 	    <el-table-column prop="sort" label="排序"/>
-	    <el-table-column prop="type" label="菜单类型">
+	    <el-table-column prop="type" label="菜单类型" width="100">
         <template #default="{row}">
           <el-tag type="success" v-if="row.type === 1">目录</el-tag>
           <el-tag v-if="row.type === 2">菜单</el-tag>
           <el-tag type="warning" v-if="row.type === 3">按钮</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="createTime" label="创建时间" width="250">
+      <el-table-column prop="createTime" label="创建时间" width="230">
         <template #default="{row}">{{$formatTime(row.createTime)}}</template>
       </el-table-column>
-      <el-table-column prop="updateTime" label="修改时间" width="250">
+      <el-table-column prop="updateTime" label="修改时间" width="230">
         <template #default="{row}">{{$formatTime(row.updateTime)}}</template>
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="200" align="center">
@@ -57,5 +57,7 @@ const handleDelete = async id => {
 </script>
 
 <style scoped lang="less">
-
+:deep(.el-button){
+  border: none;
+}
 </style>

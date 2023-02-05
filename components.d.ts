@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AButton: typeof import('ant-design-vue/es')['Button']
+    AUpload: typeof import('ant-design-vue/es')['Upload']
     BigScreenScale: typeof import('./src/components/bigScreen/BigScreenScale.vue')['default']
     BigScreenZoom: typeof import('./src/components/bigScreen/BigScreenZoom.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
