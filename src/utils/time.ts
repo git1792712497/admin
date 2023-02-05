@@ -1,3 +1,11 @@
+import dayjs from 'dayjs'
+
+
+export function formatTime(time:string){
+  return dayjs(time).format('YYYY年MM月DD日HH时mm分ss秒')
+}
+
+
 export function relativeTime(time:number){
   const delta = (new Date().getTime() - time) / 1000
   if (delta / (60 * 60 * 24 * 365) > 1)return `${parseInt(String (delta / (60 * 60 * 24 * 365)))}年前`

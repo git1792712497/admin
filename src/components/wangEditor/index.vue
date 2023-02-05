@@ -17,7 +17,6 @@
 import { nextTick, computed, shallowRef, onBeforeUnmount } from "vue";
 import { IToolbarConfig, IEditorConfig } from "@wangeditor/editor";
 import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
-import {getFileUpload} from '@/api/upload'
 import "@wangeditor/editor/dist/css/style.css";
 
 // 富文本 DOM 元素
@@ -85,8 +84,8 @@ props.editorConfig.MENU_CONF!["uploadImage"] = {
     let formData = new FormData();
     formData.append("file", file);
     try {
-      const {data} = await getFileUpload({file:formData.get('file')});
-      insertFn(data.link);
+      // const {data} = await getFileUpload({file:formData.get('file')});
+      // insertFn(data.link);
     } catch (error) {
       console.log(error);
     }
@@ -112,8 +111,8 @@ props.editorConfig.MENU_CONF!["uploadVideo"] = {
 
     console.log(file,'视频')
     try {
-      const { data } = await getFileUpload({file:formData.get('file')});
-      insertFn(data.link);
+      // const { data } = await getFileUpload({file:formData.get('file')});
+      // insertFn(data.link);
     } catch (error) {
       console.log(error);
     }

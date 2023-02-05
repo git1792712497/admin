@@ -41,12 +41,9 @@
 <script lang="ts" name="sortable" setup>
 import Draggable from 'vuedraggable'
 import Sortable from 'sortablejs';
-import { getOrderList } from "@/api/order";
 
 let tableData = ref([])
-getOrderList({queryType: 'seller'}).then((res: any) => {
-  tableData.value = res?.data.records
-})
+
 const tableRef = shallowRef(null)
 onMounted(() => {
   const el = tableRef.value.$el.querySelector('.el-table__body > tbody')

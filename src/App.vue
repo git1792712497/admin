@@ -1,6 +1,6 @@
 <template>
 	<el-config-provider :button="{autoInsertSpace:false}" :locale="zhCn" :size="globalConfig.componentSize">
-		<router-view/>
+    <router-view></router-view>
 	</el-config-provider>
 </template>
 <script lang="ts" setup name="App">

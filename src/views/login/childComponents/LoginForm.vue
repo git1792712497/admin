@@ -72,16 +72,6 @@ const login = async () => {
 const resetForm = () => {
 
 }
-onMounted(() => {
-  // 监听enter事件（调用登录）
-  document.onkeydown = (e: any) => {
-    e = window.event || e;
-    if (e.code === "Enter" || e.code === "enter" || e.code === "NumpadEnter") {
-      if (loading.value) return;
-      login();
-    }
-  };
-});
 </script>
 <style lang="less" scoped>
 .el-form-item {

@@ -1,10 +1,14 @@
 <template>
-<div>
 
-  <el-button type="primary" v-auth="'delete'">按钮</el-button>
-</div>
+  <div>
+
+  </div>
 </template>
 
 <script lang="ts" setup name="home">
 
 </script>
+
+<style scoped>
+
+</style>

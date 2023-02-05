@@ -6,9 +6,9 @@
         <NavBar/>
         <TabsView/>
       </el-header>
-			<el-main>
-        <AppMain/>
-      </el-main>
+        <el-main>
+          <AppMain/>
+        </el-main>
 			<el-footer><Bottom/></el-footer>
 		</el-container>
 	</el-container>

@@ -2,7 +2,8 @@
 
 declare const global:string
 
-declare function $foo(value:string):string
+/*格式化时间*/
+declare function $formatTime(time:string):string
 
 //声明接口
 declare interface Window {

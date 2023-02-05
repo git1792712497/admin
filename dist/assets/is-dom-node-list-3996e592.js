@@ -1,0 +1,1 @@
+import{i}from"./is-dom-node-b1178aa3.js";function r(t){var o=Object.prototype.toString.call(t),e=/^\[object (HTMLCollection|NodeList|Object)\]$/;return typeof window.NodeList=="object"?t instanceof window.NodeList:t!==null&&typeof t=="object"&&typeof t.length=="number"&&e.test(o)&&(t.length===0||i(t[0]))}export{r as i};

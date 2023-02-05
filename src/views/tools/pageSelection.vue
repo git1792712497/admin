@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts" name="pageSelection">
-import { getOrderList } from "@/api/order";
+
 
 const params = {
   type_equal: 1,
@@ -37,9 +37,6 @@ const {total,data} = toRefs(tableData)
 
 const getOrderData = async () => {
   loading.value = true
-  const res = await getOrderList(params)
-  tableData.total = res.data.total
-  tableData.data = res.data.records
   loading.value = false
 }
 onMounted(getOrderData)

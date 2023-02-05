@@ -6,6 +6,7 @@ import Avue from '@smallwei/avue';
 import '@smallwei/avue/lib/index.css';
 import components from "@/components";
 import directives from '@/directives'
+import {formatTime} from '@/utils/time'
 
 const app = createApp(App)
 
@@ -27,9 +28,8 @@ Object.keys(Icons).forEach(key => {
 	app.component(key, Icons[key]);
 });
 
-app.config.globalProperties.$foo = () => {
-	console.log('全局函数')
-}
+
+app.config.globalProperties.$formatTime = formatTime
 
 app.config.errorHandler = (err,vm,info) => {
 	console.error('全局异常处理',err)

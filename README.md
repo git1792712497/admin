@@ -24,7 +24,18 @@ docker ps -a
 开放远程服务器端口链接数据库
 ## nginx
 #安装
-dnf install nginx
+yum install nginx
+修改配置文件
+etc/nginx/nginx.conf
+具备权限
+user root;
+注释(server下的)
+root /usr/share/nginx/html;
+配置访问路径
+location / {
+root /root/dist/;
+index index.html;
+}
 #启动
 systemctl start nginx
 #开机重启

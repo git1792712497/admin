@@ -1,0 +1,1 @@
+var t=function(){var n=Date.now();return function(i){var e=Date.now();e-n>16?(n=e,i(e)):setTimeout(function(){return t(i)},0)}}(),o=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||t;export{o as i};

@@ -1,0 +1,1 @@
+import{i as o}from"./is-dom-node-b1178aa3.js";import{i as f}from"./is-dom-node-list-3996e592.js";function u(r,i){if(i===void 0&&(i=document),r instanceof Array)return r.filter(o);if(o(r))return[r];if(f(r))return Array.prototype.slice.call(r);if(typeof r=="string")try{var e=i.querySelectorAll(r);return Array.prototype.slice.call(e)}catch(l){return[]}return[]}export{u as t};
