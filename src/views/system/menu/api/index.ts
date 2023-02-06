@@ -22,3 +22,9 @@ export function getDeleteMenuApi(id:string){
     }
   })
 }
+
+export function getUserMenuListApi(){
+  return koa.get({
+    url:`/menu/userMenuList`,
+  })
+}

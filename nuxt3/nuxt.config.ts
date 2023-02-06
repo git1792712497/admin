@@ -6,11 +6,15 @@ export default defineNuxtConfig({
   modules:["@pinia/nuxt"],//
   build:{
     //使用babel进行语法转化
-    transpile:['element-plus/es']
+    transpile:['element-plus/es'],
+  },
+  sourcemap:{
+    server: false,
+    client: false
   },
   vite:{
     // 自动导入样式插件
-    plugins:[ElementPlus()]
+    plugins:[ElementPlus()],
   },
   //混合渲染模式
   routeRules:{

@@ -2,7 +2,7 @@
   <el-card>
     <div class="waterfall" v-infinite-scroll="load" :infinite-scroll-immediate="false">
       <div style="width: 100%;">
-        <img v-for="item in data" :src="item" v-lazy :key="item" :alt="item"/>
+        <img v-for="item in data" :src="item.img" v-lazy :key="item.id" :alt="item"/>
       </div>
     </div>
   </el-card>
@@ -19,11 +19,10 @@ const load = () => {
 }
 
 const loadImage = async () => {
-  const res = await getImageList(number)
+  const res = await getImageList()
   data.value.push(...res)
 }
 onMounted(() => loadImage())
-
 </script>
 
 <style scoped lang="less">

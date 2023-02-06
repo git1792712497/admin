@@ -10,3 +10,10 @@ export function getUserMenuListApi(roleId){
     }
   })
 }
+
+export function getUserLoginApi(data){
+  return koa.post({
+    url:`/user/login`,
+    data
+  })
+}

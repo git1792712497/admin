@@ -1,14 +1,13 @@
 <template>
 <div>
-  <popup v-model="isOpen">
+  <Popup v-model="isOpen">
     aaa
-  </popup>
+  </Popup>
 </div>
 </template>
 
 <script setup lang="ts">
-
-
+import Popup from '@/components/popup/index.vue'
 
 let isOpen = shallowRef(true)
 </script>

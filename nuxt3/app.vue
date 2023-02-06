@@ -1,13 +1,11 @@
 <template>
  <NuxtLayout name="default">
-   <NuxtPage/>
-   <el-button type="primary">按钮</el-button>
+   <h1>nuxt3</h1>
  </NuxtLayout>
 </template>
 
 
 <script setup lang="ts">
-import {ElButton} from "element-plus";
 import { useUserStore } from "~/store/user";
 
 const nuxtApp = useNuxtApp()

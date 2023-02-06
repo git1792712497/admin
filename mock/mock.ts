@@ -5,7 +5,7 @@ export default [
 	 {
     url: '/mock',
     method: 'get',
-    response: () => {
+    response(){
       return [1,2,3,4,5];
     },
   },

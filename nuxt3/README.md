@@ -151,3 +151,6 @@ transpile:['element-plus/es']
 vite:{
 plugins:[ElementPlus()]
 },
+
+# pm2部署
+pm2 start /nuxt3/.output/server/index.mjs --name-nuxt3

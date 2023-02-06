@@ -4,7 +4,8 @@
       <el-autocomplete
           v-model="searchKeyword"
           :fetch-suggestions="handleSearch"
-          :trigger-on-focus="false" clearable
+          :trigger-on-focus="false"
+          clearable
           placeholder="输入城市+关键字搜索"
           @select="handleSelect"/>
     </template>

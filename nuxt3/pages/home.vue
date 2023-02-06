@@ -1,5 +1,7 @@
 <template>
-  <NuxtPage/>
+  <div>
+    nuxt3
+  </div>
 </template>
 
 <script setup lang="ts" name="index">

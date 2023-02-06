@@ -36,6 +36,11 @@ location / {
 root /root/dist/;
 index index.html;
 }
+多个
+location /music {
+alias /music/;
+index index.html;
+}
 #启动
 systemctl start nginx
 #开机重启

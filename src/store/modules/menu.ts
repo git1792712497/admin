@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
-import {getUserMenuListApi} from '@/api/menu'
+import {getUserMenuListApi} from '@/views/system/menu/api'
 import { generateMenuTree, menuTreeToRouter, handleRouterPath, getAuthorityButton, getKeepAliveRouter, addRoute, addFullscreenMenu } from '@/utils/handleMenu'
 
-interface MenuStore {
+export interface MenuStore {
   isCollapse:boolean
   menuList: any[]
   authButton:string[]

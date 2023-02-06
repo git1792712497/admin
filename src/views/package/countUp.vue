@@ -18,8 +18,6 @@ onMounted(() => {
   const countUp = new CountUp(unref(domRef), 20000, {startVal: 0,decimalPlaces:1})
   countUp.start()
 })
-
-
 </script>
 
 <style scoped lang="less">

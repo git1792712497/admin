@@ -19,7 +19,7 @@
 
 <script setup lang="ts" name="popup">
 import { watch } from 'vue'
-
+import {useVModel,useScrollLock} from '@vueuse/core'
 
 const props = defineProps({
   modelValue: {

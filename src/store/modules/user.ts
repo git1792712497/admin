@@ -1,6 +1,6 @@
 import {defineStore} from 'pinia'
 import router from "@/router";
-import { getUserLoginApi } from "@/api/user";
+import { getUserLoginApi } from "@/views/login/api";
 
 interface User {
 	token:string

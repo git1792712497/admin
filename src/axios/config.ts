@@ -23,9 +23,26 @@ export const koa = new Axios({
       return config
     },
     responseInterceptorCatch(error) {
-      ElMessage({ type: 'error', message: error.response.data.message })
+      ElMessage({ type: 'error', message: error.response?.data.message })
     },
   },
+})
+
+
+
+export const fastMock = new Axios({
+  baseURL: 'https://www.fastmock.site/mock/957ffa30daa6a998277620d86656998b/mock',
+  timeout: 10000,
+})
+
+export const mock = new Axios({
+  baseURL: 'http://127.0.0.1:8888',
+  timeout: 10000,
+  interceptors: {
+    requestInterceptor(config: AxiosRequestConfig) {
+      return config
+    }
+  }
 })
 
 export const music = new Axios({
@@ -33,20 +50,5 @@ export const music = new Axios({
    timeout: 10000
 })
 
-
-export const mock = new Axios({
-   baseURL: 'http://127.0.0.1:8888',
-   timeout: 10000,
-   interceptors: {
-      requestInterceptor(config: AxiosRequestConfig) {
-         return config
-      }
-   }
-})
-
-export const jsonServer = new Axios({
-   baseURL: 'http://localhost:3004',
-   timeout: 10000
-})
 
 

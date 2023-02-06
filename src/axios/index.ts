@@ -3,7 +3,7 @@ import qs from 'qs'
 import {download} from './download'
 import { ContentType } from './config'
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import type { CustomRequestConfig, Interceptors } from './type'
+import type { CustomRequestConfig, Interceptors } from '@/types/axios'
 
 
 class Axios {
