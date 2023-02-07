@@ -40,11 +40,17 @@ class MenuService {
 		return menuList
 	}
 	
-	async query() {
-		const statement = `SELECT * FROM menu`
-		const [result] = await connection.execute(statement)
-		return result
+	
+	async query(limit,offset = limit * offset) {
+		const statement1 = `SELECT * FROM menu LIMIT ? OFFSET ?`
+		const statement2 = `SELECT * FROM menu`
+		const [[result1],[result2]] = await Promise.all([connection.query(statement1,[limit,offset]), connection.query(statement2)])
+		return {
+			data:result1,
+			total:result2.length
+		}
 	}
+	
 	async queryChildMenu(id) {
 		const statement = `SELECT id FROM menu WHERE parentId = ?`
 		const [result] = await connection.execute(statement,[id])

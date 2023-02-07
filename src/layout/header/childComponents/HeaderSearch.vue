@@ -18,9 +18,10 @@
 </template>
 <script lang="ts" name="Search" setup>
 import Fuse from "fuse.js";
-import {menuList} from "@/router/utils/handleRouter";
 import {useSearchMap} from '@/hooks/useSearchMap'
 import {onMounted,shallowRef,watch,ref} from 'vue'
+import {store} from "@/store";
+const {menuStore} = store()
 
 onMounted(() => {
 	searchInput.value.addEventListener('focus',() => {
@@ -39,7 +40,7 @@ const clickSearch = () => {
 	isShow.value = !isShow.value
 }
 
-const fuse = new Fuse(useSearchMap(menuList),{
+const fuse = new Fuse(useSearchMap(menuStore.menuList),{
 	// 是否按优先级进行排序
 	shouldSort: true,
 	// 匹配算法放弃的时机， 阈值 0.0 需要完美匹配（字母和位置），阈值 1.0 将匹配任何内容。

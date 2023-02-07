@@ -12,8 +12,6 @@
 
 <script lang="ts" name="player" setup>
 import Player from 'xgplayer'
-
-
 onMounted(() => {
   let player = new Player({
     id: 'player',
@@ -24,7 +22,7 @@ onMounted(() => {
     url: "https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4",
     //传入倍速可选数组
     playbackRate: [0.5, 0.75, 1, 1.5, 2, 3, 4, 5],
-    fluid:true,
+    fluid:false, //流体
     videoInit: true,
     download: true,
     pip: true,
@@ -32,4 +30,6 @@ onMounted(() => {
 })
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+
+</style>

@@ -74,7 +74,7 @@
 		"vue-request": "2.0.0-rc.4",
 		"vue-router": "4.1.6",
 		"vuedraggable": "^4.1.0",
-		"xgplayer": "^3.0.0-alpha.102-5-0",
+		"xgplayer": "^2.32.2",
 		"xlsx": "^0.18.5"
 	},
 	"devDependencies": {

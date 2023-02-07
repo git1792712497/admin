@@ -23,7 +23,7 @@ export const koa = new Axios({
       return config
     },
     responseInterceptorCatch(error) {
-      ElMessage({ type: 'error', message: error.response?.data.message })
+      ElMessage({ type: 'error', message: error?.response.data.message ?? '' })
     },
   },
 })

@@ -1,14 +1,11 @@
 <template>
-  <div>
-    {{menuStore.menuList}}
-  </div>
+  <main id="player"></main>
 </template>
 
-<script lang="ts" setup name="home">
-import {store} from '@/store'
-const {menuStore} = store()
+<script lang="ts" name="player" setup>
+
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>

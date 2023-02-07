@@ -15,12 +15,11 @@
         </div>
       </nav>
     </template>
-    <el-table :data="tableData" :row-key="row => row.orderNo" border highlight-current-row stripe>
-      <el-table-column label="订单编号" prop="orderNo" show-overflow-tooltip width="250"/>
-      <el-table-column label="下单时间" prop="orderDate" show-overflow-tooltip width="180"/>
-      <el-table-column label="详细地址" prop="address" show-overflow-tooltip/>
-      <el-table-column label="收件人" prop="receiver" show-overflow-tooltip/>
-      <el-table-column label="收件人电话" prop="receiverPhone" show-overflow-tooltip/>
+    <el-table :data="tableData" :row-key="row => row.id" border highlight-current-row stripe>
+      <el-table-column label="菜单标题" prop="title" show-overflow-tooltip width="250"/>
+      <el-table-column label="菜单图标" prop="icon" show-overflow-tooltip width="180"/>
+      <el-table-column label="创建时间" prop="createTime" show-overflow-tooltip/>
+      <el-table-column label="更新时间" prop="updateTime" show-overflow-tooltip/>
     </el-table>
   </el-card>
 </template>
@@ -28,17 +27,19 @@
 <script lang="ts" name="excel" setup>
 import {excelToJson,jsonToExcel} from '@/utils/excel'
 import type {UploadRequestOptions} from 'element-plus'
-import { getOrderList } from "@/api/fastMock";
-
-let tableData = ref<any>([])
+import { getMenuListApi } from "@/views/system/menu/api";
 
 const header = {
-  orderNo:'订单编号',
-  orderDate:'下单时间',
-  address:'详细地址',
-  receiver:'收件人',
-  receiverPhone:'收件人电话'
+  title:'菜单标题',
+  icon:'菜单图标',
+  createTime:'创建时间',
+  updateTime:'更新时间',
 }
+
+let tableData = ref([])
+getMenuListApi({limit:10}).then(({data}) => {
+  tableData.value = data
+})
 
 const upload = async ({file}: UploadRequestOptions) => {
   console.time('导入时间')
@@ -49,10 +50,7 @@ const upload = async ({file}: UploadRequestOptions) => {
 }
 
 const handleExcelExport = async () => {
-  const data = await getOrderList()
-  console.log(data)
-  console.time('下载时间')
-  jsonToExcel({data:[...data,...tableData.value],header})
+  jsonToExcel({data:tableData.value,header})
   console.timeEnd('下载时间')
 }
 </script>

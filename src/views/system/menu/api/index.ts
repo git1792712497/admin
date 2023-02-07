@@ -1,9 +1,13 @@
 import { koa } from "@/axios/config";
 
-export function getMenuListApi(params?){
-  return koa.get({
+interface MenuParams{
+limit?:number,offset?:number
+}
+
+export function getMenuListApi(data?:MenuParams){
+  return koa.post({
     url:`/menu/query`,
-    params
+    data
   })
 }
 

@@ -39,7 +39,7 @@ import {rules} from '../options/rules'
 import {useRouter} from "vue-router";
 import {userStore} from '@/store/modules/user'
 import {menuStore} from "@/store/modules/menu";
-import { ElMessage } from "element-plus";
+import { ElNotification } from 'element-plus'
 const router = useRouter()
 
 const user = userStore()
@@ -62,9 +62,18 @@ const login = async () => {
     try {
       await user.setUser(loginForm)
       await menu.setMenuList()
-      ElMessage({ type: 'success', message:'登录成功' })
-      router.push('/home')
-    } finally {
+      await router.push('/home')
+      ElNotification({
+        title: '登录成功',
+        type: 'success',
+      })
+    }catch (e) {
+      ElNotification({
+        title: '登录失败',
+        type: 'error',
+      })
+    }
+    finally {
       loading.value = false
     }
   })

@@ -20,8 +20,9 @@ import "@/assets/style/dark.less";
 import 'virtual:svg-icons-register'
 // tailwind.css
 import "@/assets/style/tailwind.css"
-// ElMessage组件样式要手动导入
+// ElMessage和notification组件样式要手动导入
 import 'element-plus/theme-chalk/el-message.css'
+import 'element-plus/theme-chalk/el-notification.css'
 // 注册element Icons组件
 import * as Icons from "@element-plus/icons-vue";
 Object.keys(Icons).forEach(key => {

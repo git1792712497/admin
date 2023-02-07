@@ -25,16 +25,16 @@ class MenuController {
       message: '创建成功',
     }
   }
-  async query(ctx, body) {
-    const data = await query()
+  async query(ctx, next) {
+    const data = await query(ctx.request.body?.limit ?? 10000,ctx.request.body?.offset ?? 0)
     ctx.body = {
       code: 200,
-      data,
-      message: '创建成功',
+      ...data,
+      message: '查询成功',
     }
   }
 
-  async queryMenuByRoleId(ctx, body) {
+  async queryMenuByRoleId(ctx, next) {
     const {userId} = ctx.user
     const [{roleId}] = await queryUser(userId)
     const data = await queryMenuById(roleId)
@@ -45,7 +45,7 @@ class MenuController {
     }
   }
 
-  async removeMenu(ctx, body) {
+  async removeMenu(ctx, next) {
     const { id } = ctx.request.body
     const childMenu = await queryChildMenu(id)
     if (childMenu.length) {
