@@ -9,7 +9,11 @@ const momentsRouter = new KoaRouter({prefix: '/moments'})
 momentsRouter.post('/save',validateAuth,create)
 momentsRouter.get('/list',list)
 momentsRouter.get('/detail',detail)
-momentsRouter.patch('/update',validateAuth,updatePermission,update)
+
+
+momentsRouter.patch('/update',update)
+
+
 momentsRouter.delete('/remove',validateAuth,updatePermission,remove)
 
 

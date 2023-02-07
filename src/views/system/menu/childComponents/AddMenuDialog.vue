@@ -88,7 +88,7 @@
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" :loading="loading" @click="handleConfirm"> 确定 </el-button>
+        <el-button type="primary" :loading="loading" @click="handleConfirm" v-auth="'addMenu'">确定</el-button>
       </span>
     </template>
   </el-dialog>
@@ -137,7 +137,7 @@ const handleConfirm = () => {
     const menuForm = toRaw(basicForm)
     menuForm.path = currentPath.value + menuForm.path
     try {
-      const {message} = await getAddMenuApi(toRaw(basicForm))
+      const {message} = await getAddMenuApi(menuForm)
       ElMessage({
         message,
         type: 'success',
@@ -162,6 +162,7 @@ const openDialog = async row => {
     Object.keys(toRaw(basicForm)).forEach(key => basicForm[key] = row[key])
   }else {
     currentPath.value = ''
+    basicForm.path = ''
     formRef.value.resetFields()
   }
 }

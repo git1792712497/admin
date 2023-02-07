@@ -1,1 +1,0 @@
-import{k as t}from"./index-6920edb1.js";function n(e){return t.get({url:"/menu/query",params:e})}function r(e){return t.post({url:"/menu/create",data:e})}function a(e){return t.delete({url:"/menu/delete",data:{id:e}})}export{a,n as b,r as g};

@@ -35,6 +35,11 @@ export const fastMock = new Axios({
   timeout: 10000,
 })
 
+export const easyMock = new Axios({
+  baseURL: 'https://mock.mengxuegu.com/mock/63880da593a67b5f10668ec1/map',
+  timeout: 10000,
+})
+
 export const mock = new Axios({
   baseURL: 'http://127.0.0.1:8888',
   timeout: 10000,

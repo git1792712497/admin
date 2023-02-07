@@ -3,15 +3,16 @@ const connection = require('../app/database.js')
 class UserService{
 	//创建用户
 	async save(user){
-		// 1.获取用户 user
 		const { username, password ,roleId} = user
-		
-		// 2.拼接statement,预处理语句
 		const statement = 'INSERT INTO `user` (username, password,roleId) VALUES (?,?,?);'
-		
-		// 3.执行sql语句
 		const [result] = await connection.execute(statement, [username, password,roleId])
-		
+		return result
+	}
+	
+	async update(user){
+		const { username, password ,roleId,id} = user
+		const statement = 'UPDATE user SET username = ?, password = ?,roleId = ? WHERE id = ?'
+		const [result] = await connection.execute(statement, [username, password,roleId,id])
 		return result
 	}
 	
@@ -41,7 +42,11 @@ class UserService{
 		const [result] = await connection.execute(statement,[userId])
 		return result
 	}
-	
+	async queryUserByRoleId(RoleId){
+		const statement = `SELECT * FROM user WHERE roleId = ?`
+		const [result] = await connection.execute(statement,[RoleId])
+		return result
+	}
 	async queryUserList(){
 		const statement = `SELECT * FROM user`
 		const [result] = await connection.execute(statement)

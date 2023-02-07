@@ -14,7 +14,7 @@
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" :loading="loading" @click="handleConfirm"> 确定 </el-button>
+        <el-button v-auth="['addRole']" type="primary" :loading="loading" @click="handleConfirm"> 确定 </el-button>
       </span>
     </template>
   </el-dialog>

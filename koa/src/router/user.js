@@ -1,7 +1,7 @@
 const KoaRouter = require('@koa/router')
 const multer = require('@koa/multer')
 
-const {createUser,sign,upload,showAvatar,getUserList,getDeleteUser} = require('../controller/user.js')
+const {createUser,sign,upload,showAvatar,getUserList,getDeleteUser,updateUser} = require('../controller/user.js')
 const {validateFields,handlePassword} = require('../middleware/register.js')
 const {validateUser,validateAuth} = require('../middleware/login.js')
 
@@ -24,6 +24,7 @@ userRouter.post('/login',validateUser,sign)
 userRouter.post('/avatar',validateAuth,uploadAvatar.single('file'),upload)
 userRouter.get('/showAvatar',showAvatar)
 userRouter.get('/list',getUserList)
-userRouter.delete('/delete',getDeleteUser)
+userRouter.delete('/delete',validateAuth,getDeleteUser)
+userRouter.patch('/update',validateAuth,updateUser)
 
 module.exports = userRouter

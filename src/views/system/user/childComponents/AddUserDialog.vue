@@ -1,5 +1,5 @@
 <template>
-  <el-dialog @open="formRef.resetFields()" v-model="dialogVisible" draggable title="新增用户" width="30%">
+  <el-dialog v-model="dialogVisible" draggable title="新增用户" width="30%">
     <el-form ref="formRef" :model="basicForm" status-icon :rules="rules" label-width="80px">
       <el-form-item label="用户名称" prop="username">
         <el-input v-model="basicForm.username" clearable autofocus placeholder="请输入角色名称" />
@@ -16,7 +16,7 @@
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" :loading="loading" @click="handleConfirm"> 确定 </el-button>
+        <el-button v-auth="['addUser']" type="primary" :loading="loading" @click="handleConfirm"> 确定 </el-button>
       </span>
     </template>
   </el-dialog>
@@ -26,30 +26,42 @@
 import { rules } from '../options/rules'
 import { ref } from 'vue'
 import type { FormInstance } from 'element-plus'
-import {getUserRegisterApi} from '../api/index'
+import { getUserRegisterApi, getUserUpdateApi } from '../api/index'
 import {getRoleListApi} from '../../role/api'
 import { ElMessage } from "element-plus";
 
 const emit = defineEmits(['refresh'])
 
-const dialogVisible = ref(false)
 
 const formRef = ref<FormInstance>()
-let basicForm = reactive({})
+let basicForm = reactive<any>({
+  username:'',
+  password:'',
+  roleId:''
+})
 
+const dialogVisible = ref(false)
 let loading = ref(false)
 const handleConfirm = () => {
   formRef.value.validate(async isValid => {
     if (!isValid)return
     loading.value = true
     try {
-      const {message} = await getUserRegisterApi(toRaw(basicForm))
-      ElMessage({
-        message,
-        type: 'success',
-      })
+      if (basicForm.id){
+        const {message} = await getUserUpdateApi(toRaw(basicForm))
+        ElMessage({
+          message,
+          type: 'success',
+        })
+      }else {
+        const {message} = await getUserRegisterApi(toRaw(basicForm))
+        ElMessage({
+          message,
+          type: 'success',
+        })
+      }
       emit('refresh')
-      closeDialog()
+      dialogVisible.value = false
     }catch (e) {
       ElMessage({
         message:'创建失败',
@@ -62,15 +74,22 @@ const handleConfirm = () => {
 }
 
 let roleSelectList = shallowRef([])
-const openDialog = async () => {
+const openDialog = async (row) => {
+  dialogVisible.value = true
+  if (row){
+    basicForm.id = row.id
+    Object.keys(toRaw(basicForm)).forEach(key => {
+      basicForm[key] = row[key]
+    })
+  }else {
+    await nextTick()
+    formRef.value.resetFields()
+  }
   const {data} = await getRoleListApi()
   roleSelectList.value = data
-  dialogVisible.value = true
 }
-const closeDialog = () => (dialogVisible.value = false)
 defineExpose({
   openDialog,
-  closeDialog,
 })
 </script>
 <style scoped>

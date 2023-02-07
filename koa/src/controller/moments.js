@@ -29,8 +29,8 @@ class MomentsController {
     }
   }
   async update(ctx, next) {
-    let { momentId,content } = ctx.request.query
-    const data = await updateById(momentId,content)
+    let { id,content } = ctx.request.body
+    const data = await updateById({id,content})
     ctx.body = {
       code: 200,
       data,

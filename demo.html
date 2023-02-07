@@ -8,14 +8,10 @@
 </head>
 <body>
 
-<h2>原来的图片：</h2>
-<img  crossorigin="anonymous" src="https://scontent-sjc3-1.cdninstagram.com/v/t51.2885-19/118625310_142004080928947_7255151805884890350_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_cat=1&_nc_ohc=k1LkuRPHcY4AX9Z5XOM&tn=9ewtCzEQZ94fvHio&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-kXSj9_hZCGYtP_Faf_vrfk-tOeE9rI4Hftho1cAQWIA&oe=62C95B4D&_nc_sid=8fd12b" alt="无法显示">
+<script>
 
-<h2>使用代理服务器但没有使用crossorigin之后的图片：</h2>
-<img src="https://circumvent-cors.herokuapp.com/https://scontent-sjc3-1.cdninstagram.com/v/t51.2885-19/118625310_142004080928947_7255151805884890350_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_cat=1&_nc_ohc=k1LkuRPHcY4AX9Z5XOM&tn=9ewtCzEQZ94fvHio&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-kXSj9_hZCGYtP_Faf_vrfk-tOeE9rI4Hftho1cAQWIA&oe=62C95B4D&_nc_sid=8fd12b" alt="无法显示">
-
-<h2>使用代理服务器并且使用crossorigin之后的图片：</h2>
-<img crossorigin="anonymous" src="https://circumvent-cors.herokuapp.com/https://scontent-lax3-2.cdninstagram.com/v/t51.2885-19/275492568_522134272615106_2612620348864564664_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_cat=1&_nc_ohc=oJg8gboQtZ4AX8QkaVt&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT_Oitif7D98aMPdcclG7bAr2I71gWlpoN7WnF4Ob1b0Vg&oe=62CA1568&_nc_sid=8fd12b" alt="无法显示">
-
+  let str = 'http://39.130.133.24:32622/api/wh-storage/warehouseStatistics/whHome'
+  console.log(str.split('wh-storage').at(0) +'wh-storage')
+</script>
 </body>
 </html>

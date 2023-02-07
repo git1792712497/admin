@@ -30,7 +30,7 @@
           <el-button link type="primary" size="small" @click="AddMenuDialogRef.openDialog(row)">编辑 <el-icon><Edit /></el-icon></el-button>
           <el-popconfirm title="是否确认删除?" @confirm="handleDelete(row.id)">
             <template #reference>
-              <el-button link type="danger" size="small">删除<el-icon><Delete /></el-icon></el-button>
+              <el-button link type="danger" size="small"  v-auth="['deleteMenu']">删除<el-icon><Delete /></el-icon></el-button>
             </template>
           </el-popconfirm>
         </template>

@@ -39,10 +39,7 @@ class MomentsService {
 		 FROM comment LEFT JOIN user ON user.id = comment.user_id WHERE moment_id = ?`
 		//动态下的标签
 		const statement3 = `SELECT label.name FROM moment_label LEFT JOIN label ON label.id = label_id WHERE moment_id = ?`
-		
-		const [result1] = await connection.execute(statement1, [id])
-		const [result2] = await connection.execute(statement2, [id])
-		const [result3] = await connection.execute(statement3, [id])
+		const [[result1],[result2],[result3]] = await Promise.all([connection.execute(statement1, [id]),connection.execute(statement2, [id]),connection.execute(statement3, [id])])
 		result1[0].commentList = result2
 		result1[0].labels = result3
 		return result1[0]

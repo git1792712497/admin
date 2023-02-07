@@ -17,7 +17,22 @@ class UserController {
       code: 200,
     }
   }
-
+  
+  
+  //先判断更新用户的id是否等于更新数据
+  async updateUser(ctx, next) {
+    // 1.获取用户传递过来信息
+    const user = ctx.request.body
+    //user保存到数据库中
+    const result = await userService.update(user)
+    //查看数据库结果,返回前端创建成功
+    ctx.body = {
+      message: '用户更新成功',
+      data: result,
+      code: 200,
+    }
+  }
+  
   //颁发令牌生成token
   async sign(ctx, next) {
     const { username, id,roleId } = ctx.userData

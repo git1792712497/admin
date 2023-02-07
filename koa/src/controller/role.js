@@ -1,5 +1,5 @@
 const {save,query,deleteById,saveMenu} = require('../service/role.js')
-
+const {queryUserByRoleId} = require('../service/user.js')
 
 class RoleController {
   async create(ctx, next) {
@@ -21,11 +21,19 @@ class RoleController {
         message: '超级管理员不能被删除'
       }
     }else {
-      const data = await deleteById(id)
-      ctx.body = {
-        code: 200,
-        message: '删除成功',
-        data,
+      const user = await queryUserByRoleId(id)
+      if (user.length){
+        ctx.status = 400
+        ctx.body = {
+          message: '无法删除已关联用户的角色',
+        }
+      }else {
+        const data = await deleteById(id)
+        ctx.body = {
+          code: 200,
+          message: '删除成功',
+          data,
+        }
       }
     }
   }
