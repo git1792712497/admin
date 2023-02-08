@@ -1,17 +1,9 @@
 <template>
-  <el-button type="primary" @click="handle">更新</el-button>
+  <el-card shadow="hover" style="height: 100%;" :body-style="{height:'100%'}">
+
+  </el-card>
 </template>
 
-<script lang="ts" name="player" setup>
-import { update } from "@/views/home/demo";
-const handle = () => {
-  update({content:'aaaaaaabbbbbbbbbbbbaaaaa'}).then(res => {
-    console.log(res)
-  })
-}
+<script lang="ts" setup>
 
 </script>
-
-<style lang="less" scoped>
-
-</style>

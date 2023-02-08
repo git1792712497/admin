@@ -12,6 +12,14 @@ export function getAddRoleApi(data){
     data
   })
 }
+
+export function getRoleUpdateApi(data){
+  return koa.patch({
+    url:`/role/update`,
+    data
+  })
+}
+
 export function getDeleteRoleApi(id: string){
   return koa.delete({
     url:`/role/delete`,

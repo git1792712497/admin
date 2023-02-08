@@ -1,4 +1,4 @@
-const {save,query,deleteById,saveMenu} = require('../service/role.js')
+const {save,query,deleteById,saveMenu,update} = require('../service/role.js')
 const {queryUserByRoleId} = require('../service/user.js')
 
 class RoleController {
@@ -9,6 +9,16 @@ class RoleController {
     ctx.body = {
       code: 200,
       message: '角色创建成功',
+      data,
+    }
+  }
+  
+  async update(ctx, next) {
+    const roleAndMenu = ctx.request.body
+    const data = await update(roleAndMenu)
+    ctx.body = {
+      code: 200,
+      message: '角色更新成功',
       data,
     }
   }

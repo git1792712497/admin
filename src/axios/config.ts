@@ -14,7 +14,7 @@ export const ContentType = {
 
 
 export const koa = new Axios({
-  baseURL: 'http://localhost:8000',
+  baseURL: import.meta.env.VITE_BASEURL,
   timeout: 10000,
   interceptors: {
     requestInterceptor(config: AxiosRequestConfig) {

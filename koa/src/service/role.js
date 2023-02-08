@@ -7,6 +7,16 @@ class RoleService {
     return result
   }
 	
+	
+	async update(roleAndMenu){
+		const { name, description ,menuId,id} = roleAndMenu
+		connection.execute('UPDATE role SET name = ?, description = ? WHERE id = ?', [name, description,id])
+		await connection.execute('DELETE FROM role_menu WHERE roleId = ?', [id])
+		for (let mId of menuId) {
+			await connection.execute(`INSERT INTO role_menu (roleId,menuId) VALUES (?,?)`, [id,mId])
+		}
+	}
+	
 	async saveMenu({roleId,menuIds}){
 		const statement = `INSERT INTO role_menu (roleId,menuId) VALUES (?,?)`
 		for (let menuId of menuIds) {

@@ -8,7 +8,7 @@
         <el-input v-model="basicForm.description" :max="255" :rows="1" type="textarea" placeholder="请输入角色描述" />
       </el-form-item>
       <el-form-item label="菜单权限" prop="menuId">
-        <el-tree @check="(value,{checkedKeys,halfCheckedKeys}) => basicForm.menuId = [...checkedKeys,...halfCheckedKeys]" node-key="id" :data="menuSelectList" multiple show-checkbox clearable :props="{ label: 'title', children: 'children', value: 'id' }" style="width: 100%;"/>
+        <el-tree ref="treeRef" @check="(value,{checkedKeys,halfCheckedKeys}) => basicForm.menuId = [...checkedKeys,...halfCheckedKeys]" node-key="id" :data="menuSelectList" multiple show-checkbox clearable :props="{ label: 'title', children: 'children', value: 'id' }" style="width: 100%;"/>
       </el-form-item>
     </el-form>
     <template #footer>
@@ -24,32 +24,39 @@
 import { rules } from '../options/rules'
 import { ref } from 'vue'
 import type { FormInstance } from 'element-plus'
-import {getAddRoleApi} from '../api/index'
+import {getAddRoleApi,getRoleUpdateApi} from '../api/index'
 import {getMenuListApi} from '../../menu/api'
+import {generateMenuTree} from '@/utils/handleMenu'
 import { ElMessage } from "element-plus";
+import {filterParentNodes} from '../utils/filterParentNodes'
 
 const emit = defineEmits(['refresh'])
 
-const dialogVisible = ref(false)
-
 const formRef = ref<FormInstance>()
-let basicForm = reactive({
+let basicForm = reactive<any>({
+  name:'',
+  description:'',
   menuId:[]
 })
 
+const dialogVisible = ref(false)
 let loading = ref(false)
 const handleConfirm = () => {
   formRef.value.validate(async isValid => {
     if (!isValid)return
     loading.value = true
     try {
-      const {message} = await getAddRoleApi(toRaw(basicForm))
+      if (basicForm.id){
+        await getRoleUpdateApi(basicForm)
+      }else {
+        await getAddRoleApi(toRaw(basicForm))
+      }
+      emit('refresh')
+      dialogVisible.value = false
       ElMessage({
-        message,
+        message:'操作成功',
         type: 'success',
       })
-      emit('refresh')
-      closeDialog()
     }catch (e) {
       ElMessage({
         message:'创建失败',
@@ -61,17 +68,25 @@ const handleConfirm = () => {
   })
 }
 
-import {generateMenuTree} from '@/utils/handleMenu'
+const treeRef = shallowRef()
 let menuSelectList = shallowRef([])
-const openDialog = async () => {
+const openDialog = async ({name,description,menuId,id}) => {
   dialogVisible.value = true
   const {data} = await getMenuListApi()
   menuSelectList.value = generateMenuTree(data)
+  if (id){
+    basicForm.id = id
+    basicForm.name = name
+    basicForm.description = description
+    basicForm.menuId = menuId
+    treeRef.value.setCheckedKeys(filterParentNodes(menuId, menuSelectList.value))
+  }else {
+    formRef.value.resetFields()
+  }
 }
-const closeDialog = () => (dialogVisible.value = false)
+
 defineExpose({
-  openDialog,
-  closeDialog,
+  openDialog
 })
 </script>
 <style scoped>
