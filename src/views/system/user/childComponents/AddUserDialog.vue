@@ -62,11 +62,6 @@ const handleConfirm = () => {
       }
       emit('refresh')
       dialogVisible.value = false
-    }catch (e) {
-      ElMessage({
-        message:'创建失败',
-        type: 'error',
-      })
     }finally {
       loading.value = false
     }

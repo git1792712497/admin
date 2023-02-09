@@ -15,14 +15,22 @@ class RoleController {
   
   async update(ctx, next) {
     const roleAndMenu = ctx.request.body
-    const data = await update(roleAndMenu)
-    ctx.body = {
-      code: 200,
-      message: '角色更新成功',
-      data,
+    const {userId} = ctx.user
+    if(userId === 1) {
+      ctx.status = 400
+      ctx.body = {
+        message: '超级管理员不能被编辑'
+      }
+    }else {
+      const data = await update(roleAndMenu)
+      ctx.body = {
+        code: 200,
+        message: '角色更新成功',
+        data,
+      }
     }
   }
-
+  
   async deleteById(ctx, next) {
     const { id } = ctx.request.body
     if(id === 1) {

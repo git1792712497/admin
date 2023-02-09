@@ -2,18 +2,23 @@ const connection = require('../app/database.js')
 
 class MenuService {
 	async save(menu) {
-		// 2.拼接statement,预处理语句
 		const statement = 'INSERT INTO menu SET ?;'
-		// 3.执行sql语句
 		const [result] = await connection.query(statement, [menu])
-
 		return result
 	}
 	
+	async updateMenu(roleAndMenu){
+		const {path,sort,activePath,isLink,title,component,icon,type,parentId,name,hidden, fullScreen ,keepAlive,id} = roleAndMenu
+		let list = [path,sort,activePath,isLink,title,component,icon,type,parentId,name,hidden, fullScreen ,keepAlive,id]
+		const statement = 'UPDATE menu SET path =? , sort = ?,activePath = ?,isLink = ?,title = ?,component = ?,icon = ?,type = ?,parentId =?,name =?,hidden=?, fullScreen=? ,keepAlive=? WHERE id = ?'
+		connection.execute(statement, list)
+	}
+	
 	async queryMenuByName(name,path) {
-		const statement = `SELECT name FROM menu WHERE name = ? && path = ?`
-		const [result] = await connection.execute(statement, [name,path])
-		return result
+		const statement1 = `SELECT * FROM menu WHERE name = ?`
+		const statement2 = `SELECT * FROM menu WHERE path = ?`
+		const [[[names]],[[paths]]] = await Promise.all([connection.execute(statement1, [name]), connection.execute(statement2, [path])]);
+		return [names,paths]
 	}
 	
 	async roleAndMenu(roleId,menuId) {

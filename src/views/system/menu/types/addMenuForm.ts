@@ -1,5 +1,5 @@
 export interface AddMenuForm {
-  type?: 1 | 2 | 3
+  type: 1 | 2 | 3
   name: string
   icon: string
   path: string
@@ -11,4 +11,6 @@ export interface AddMenuForm {
   title:string,
   isLink:0 | 1,
   activePath?:string
+  parentId?:string,
+  id?:string
 }

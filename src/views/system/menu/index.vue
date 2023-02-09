@@ -1,7 +1,7 @@
 <template>
 	<el-card>
     <template #header><TopSearch @addMenu="AddMenuDialogRef.openDialog()"/></template>
-    <AddMenuDialog @refresh="run" :menuData="menuList" ref="AddMenuDialogRef"/>
+    <AddMenuDialog @refresh="run" ref="AddMenuDialogRef"/>
 		<el-table v-loading="loading" size="large" border :data="menuList" row-key="id">
 			<el-table-column prop="title" label="菜单名称" width="150"/>
       <el-table-column prop="icon" label="菜单图标" width="100" align="center">
@@ -45,14 +45,17 @@ import {getMenuListApi,getDeleteMenuApi} from "./api/index";
 import AddMenuDialog from './childComponents/AddMenuDialog.vue'
 import {generateMenuTree} from '@/utils/handleMenu'
 import { useRequest } from 'vue-request';
+import {menuStore} from '@/store/modules/menu'
 
 let AddMenuDialogRef = shallowRef()
 const { data, run ,loading} = useRequest(getMenuListApi);
 const menuList = computed(() => data.value && generateMenuTree(data.value.data.sort((x,y) => x.sort - y.sort)))
+provide('menuList',menuList)
 
 const handleDelete = async id => {
   await getDeleteMenuApi(id)
   run()
+  menuStore().setMenuList()
 }
 </script>
 

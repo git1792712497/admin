@@ -1,18 +1,9 @@
-const {save,query,remove,queryChildMenu,queryMenuById,queryMenuByName,roleAndMenu} = require('../service/menu.js')
+const {save,query,remove,queryChildMenu,updateMenu,queryMenuById,roleAndMenu} = require('../service/menu.js')
 const {queryUser} = require('../service/user.js')
 
 class MenuController {
   async create(ctx, next) {
     const menu = ctx.request.body
-    const name = await queryMenuByName(menu.name,menu.path)
-    if (menu.type !== 1 && name.length){
-      ctx.status = 400
-      ctx.body = {
-        message: '菜单编号或路由不能重复',
-      }
-      return
-    }
-    
     const data = await save(menu)
     //超级管理员自动关联所有菜单
     if(ctx.user.userId === 1){
@@ -25,6 +16,18 @@ class MenuController {
       message: '创建成功',
     }
   }
+  
+  
+  async update(ctx, next) {
+    const menu = ctx.request.body
+    const data = await updateMenu(menu)
+    ctx.body = {
+      code: 200,
+      data,
+      message: '更新成功',
+    }
+  }
+  
   async query(ctx, next) {
     const data = await query(ctx.request.body?.limit ?? 10000,ctx.request.body?.offset ?? 0)
     ctx.body = {

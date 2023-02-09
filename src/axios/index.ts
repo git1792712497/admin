@@ -15,7 +15,6 @@ class Axios {
     this.interceptors = config.interceptors
     //全局请求拦截
     this.instance.interceptors.request.use((config: AxiosRequestConfig) => {
-      //实例请求拦截
       return config
     }, (err: any) => {
       return Promise.reject(err)

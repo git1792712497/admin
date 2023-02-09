@@ -57,11 +57,6 @@ const handleConfirm = () => {
         message:'操作成功',
         type: 'success',
       })
-    }catch (e) {
-      ElMessage({
-        message:'创建失败',
-        type: 'error',
-      })
     }finally {
       loading.value = false
     }

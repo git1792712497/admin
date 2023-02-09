@@ -24,6 +24,7 @@ export const koa = new Axios({
     },
     responseInterceptorCatch(error) {
       ElMessage({ type: 'error', message: error?.response.data.message ?? '' })
+      return Promise.reject(error)
     },
   },
 })

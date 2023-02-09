@@ -1,6 +1,97 @@
 import type {FormRules} from 'element-plus'
 
-export const rules: FormRules  = {
+
+export const catalogueRules: FormRules  = {
+  sort: [
+    {
+      type: 'number',
+      required: true,
+      message: '目录序号是必选项',
+      trigger:"blur",
+    }
+  ],
+  title: [
+    {
+      type: 'string',
+      required: true,
+      message: '目录标题是必填项',
+      trigger:"blur",
+    }
+  ],
+  icon: [
+    {
+      required: true,
+      message: '目录图标是必选项',
+      trigger:"change",
+    }
+  ],
+  path: [
+    {
+      type: 'string',
+      required: true,
+      message: '菜单路径是必填项',
+      trigger:"blur",
+    },
+    {
+      validator(rule, value, callback, source, options) {
+        const regex1 = /^\//
+        if (!value){
+          callback()
+          return
+        }
+        if (regex1.test(value)) {
+          callback()
+        } else {
+          callback(new Error('目录路径必须以斜杠开头'))
+        }
+      }
+    }
+  ],
+}
+
+
+export const buttonRules: FormRules  = {
+  title: [
+    {
+      type: 'string',
+      required: true,
+      message: '按钮标题是必填项',
+      trigger:"blur",
+    }
+  ],
+  name: [
+    {
+      type: 'string',
+      required: true,
+      message: '按钮标识是必填项',
+      trigger:"blur",
+    }
+  ],
+  icon: [
+    {
+      required: true,
+      message: '按钮图标是必选项',
+      trigger:"change",
+    }
+  ],
+  parentId: [
+    {
+      required: true,
+      message: '父级按钮是必选项',
+      trigger:"change",
+    }
+  ],
+  sort: [
+    {
+      type: 'number',
+      required: true,
+      message: '按钮序号是必选项',
+      trigger:"blur",
+    }
+  ],
+}
+
+export const menuRules: FormRules  = {
   type: [
     {
       type: 'number',
@@ -43,7 +134,7 @@ export const rules: FormRules  = {
   path: [
     {
       type: 'string',
-      required: false,
+      required: true,
       message: '菜单路径是必填项',
       trigger:"blur",
     },

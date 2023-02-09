@@ -1,7 +1,7 @@
 import { koa } from "@/axios/config";
 
 interface MenuParams{
-limit?:number,offset?:number
+  limit?:number,offset?:number
 }
 
 export function getMenuListApi(data?:MenuParams){
@@ -14,6 +14,13 @@ export function getMenuListApi(data?:MenuParams){
 export function getAddMenuApi(data){
   return koa.post({
     url:`/menu/create`,
+    data
+  })
+}
+
+export function getMenuUpdateApi(data){
+  return koa.patch({
+    url:`/menu/update`,
     data
   })
 }
