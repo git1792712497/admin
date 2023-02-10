@@ -20,7 +20,9 @@ sudo docker pull mysql
 镜像拉取完成后，用该镜像创建mysql实例
 sudo docker run -d -p 3306:3306 -v /usr/local/mysql/conf:/etc/mysql/conf.d -v /usr/local/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name  mysql mysql
 创建成功后使用下面命令查看下创建好的mysql实例
-docker ps -a
+docker ps
+启动mysql
+docker start mysql
 开放远程服务器端口链接数据库
 ## nginx
 #安装

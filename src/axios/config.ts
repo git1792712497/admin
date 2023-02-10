@@ -23,13 +23,16 @@ export const koa = new Axios({
       return config
     },
     responseInterceptorCatch(error) {
-      ElMessage({ type: 'error', message: error?.response.data.message ?? '' })
+      ElMessage({ type: 'error', message: error?.response?.data.message ?? '未知错误' })
       return Promise.reject(error)
     },
   },
 })
 
-
+export const jsonServer = new Axios({
+  baseURL: 'http://localhost:3004',
+  timeout: 10000
+})
 
 export const fastMock = new Axios({
   baseURL: 'https://www.fastmock.site/mock/957ffa30daa6a998277620d86656998b/mock',

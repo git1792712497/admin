@@ -1,0 +1,8 @@
+{
+	"port": 3004,
+	"watch": true,
+	"static": "../src/assets",
+	"read-only": false,
+	"no-cors": false,
+	"no-gzip": false
+}
