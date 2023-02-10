@@ -63,7 +63,6 @@ specifiers:
   rollup: 3.5.1
   rollup-plugin-visualizer: ^5.8.3
   sass: ^1.55.0
-  screenfull: ^6.0.2
   scrollreveal: ^4.0.9
   swiper: ^8.4.3
   tailwindcss: ^3.1.8
@@ -145,7 +144,6 @@ dependencies:
   qs: registry.npmmirror.com/qs/6.11.0
   rollup: registry.npmmirror.com/rollup/3.5.1
   sass: registry.npmmirror.com/sass/1.56.1
-  screenfull: registry.npmmirror.com/screenfull/6.0.2
   scrollreveal: registry.npmmirror.com/scrollreveal/4.0.9
   swiper: registry.npmmirror.com/swiper/8.4.5
   tippy.js: registry.npmmirror.com/tippy.js/6.3.7
@@ -7665,13 +7663,6 @@ packages:
     version: 1.2.4
     dev: true
     optional: true
-
-  registry.npmmirror.com/screenfull/6.0.2:
-    resolution: {integrity: sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/screenfull/-/screenfull-6.0.2.tgz}
-    name: screenfull
-    version: 6.0.2
-    engines: {node: ^14.13.1 || >=16.0.0}
-    dev: false
 
   registry.npmmirror.com/scroll-into-view-if-needed/2.2.31:
     resolution: {integrity: sha512-dGCXy99wZQivjmjIqihaBQNjryrz5rueJY7eHfTdyWEiR4ttYpsajb14rn9s5d4DY4EcY6+4+U/maARBXJedkA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/scroll-into-view-if-needed/-/scroll-into-view-if-needed-2.2.31.tgz}

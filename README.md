@@ -54,6 +54,7 @@ systemctl restart nginx
 * PM2是一个Node的进程管理器；
 * 我们可以使用它来管理Node的后台进程；
 * 这样在关闭终端时，Node进程会继续执行，那么服务器就可以继续为前端提供服务了；
+* 修改代码后重启进程
 安装pm2：
 ```shell
 npm install pm2 -g

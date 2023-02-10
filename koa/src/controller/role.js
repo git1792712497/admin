@@ -15,8 +15,7 @@ class RoleController {
   
   async update(ctx, next) {
     const roleAndMenu = ctx.request.body
-    const {userId} = ctx.user
-    if(userId === 1) {
+    if(roleAndMenu.id === 1) {
       ctx.status = 400
       ctx.body = {
         message: '超级管理员不能被编辑'

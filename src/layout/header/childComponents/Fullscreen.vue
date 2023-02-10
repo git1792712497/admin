@@ -6,15 +6,10 @@
 	</div>
 </template>
 <script lang="ts" name="Fullscreen" setup>
-import { shallowRef } from "vue";
-import screenFull from "screenfull";
+import { useFullscreen } from '@vueuse/core'
+const { isFullscreen, toggle } = useFullscreen()
 
-let isFullscreen = shallowRef(false)
 
-const toggle = () => {
-	screenFull.toggle()
-	isFullscreen.value = !isFullscreen.value
-}
 </script>
 <style lang="less" scoped>
 .icon-style{

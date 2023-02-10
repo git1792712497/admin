@@ -27,7 +27,7 @@
 </template>
 <script lang="ts" name="Theme" setup>
 import {changePrimary} from '@/hooks/useTheme'
-import SwitchDark from './themeChild/SwitchDark.vue'
+import SwitchDark from './ThemeChild/SwitchDark.vue'
 import {shallowRef} from "vue";
 import {globalConfigStore} from "@/store/modules/globalConfig";
 import {colorList} from '@/config/theme'

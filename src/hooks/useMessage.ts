@@ -236,8 +236,7 @@ function useMessage(params: MessageParams = {}) {
 }
 
 /** 顶部消息提醒控件 */
-const message = useMessage({
-  duration: 360000
+export default useMessage({
+  duration: 2000
 });
 
-export default message;
