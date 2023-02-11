@@ -64,6 +64,7 @@ declare module '@vue/runtime-core' {
     IconSelect: typeof import('./src/components/iconSelect/index.vue')['default']
     InfiniteLoad: typeof import('./src/components/infiniteLoad/index.vue')['default']
     Message: typeof import('./src/components/message/message.vue')['default']
+    Mian: typeof import('~icons/mi/an')['default']
     NoticeBar: typeof import('./src/components/noticeBar/index.vue')['default']
     Popup: typeof import('./src/components/popup/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

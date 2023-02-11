@@ -1,35 +1,18 @@
 <template>
-  <BigScreenScale>
-    <main class="screen-bg">
-      <header class="header"></header>
-
-      <aside class="left-top">
-
-      </aside>
-
-      <aside class="left-bottom">
-
-      </aside>
-
-      <aside class="right-top">
-
-      </aside>
-
-      <div class="right-center">
-
-      </div>
-      <div class="right-bottom">
-
-      </div>
-
-      <div class="center">
-
-      </div>
-      <footer class="bottom">
-
-      </footer>
-    </main>
-  </BigScreenScale>
+  <div class="big-screen-main">
+    <BigScreenScale>
+      <main class="screen-bg">
+        <header class="header"></header>
+        <aside class="left-top"></aside>
+        <aside class="left-bottom"></aside>
+        <aside class="right-top"></aside>
+        <div class="right-center"></div>
+        <div class="right-bottom"></div>
+        <div class="center"></div>
+        <footer class="bottom"></footer>
+      </main>
+    </BigScreenScale>
+  </div>
 </template>
 <script lang="ts" name="BigScreenZoom" setup>
 import BigScreenScale from '@/components/bigScreen/BigScreenScale.vue'
@@ -40,11 +23,15 @@ import BigScreenScale from '@/components/bigScreen/BigScreenScale.vue'
 */
 </script>
 
-
 <style scoped>
-.screen-bg {
+.big-screen-main{
   background-color: #070a3c;
-  background-image: url(./images/bg.png);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.screen-bg {
+  background: #070a3c url(./images/bg.png);
   height: 100%;
   left: 0;
   position: absolute;

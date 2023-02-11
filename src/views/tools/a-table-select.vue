@@ -1,7 +1,5 @@
 <template>
   <a-card title="ant-design-table分页多选">
-    {{selectedRowData}}
-    {{selectedRowKeys}}
     <a-table
         row-key="id"
         :rowSelection="rowSelection"

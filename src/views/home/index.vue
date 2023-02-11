@@ -1,12 +1,14 @@
 <template>
-  <div class="pagination-container">
+  <div class="app">
 
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 
 </script>
-<style lang="scss">
+
+<style scoped>
+
 
 </style>
