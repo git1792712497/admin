@@ -3,7 +3,7 @@
     <template #header><TopSearch @addMenu="AddMenuDialogRef.openDialog()"/></template>
     <AddMenuDialog @refresh="run" ref="AddMenuDialogRef"/>
 		<el-table v-loading="loading" size="large" border :data="menuList" row-key="id">
-			<el-table-column prop="title" label="菜单名称" width="150"/>
+			<el-table-column prop="title" label="菜单名称" width="250"/>
       <el-table-column prop="icon" label="菜单图标" width="100" align="center">
         <template #default="{row}">
           <el-button :icon="row.icon"></el-button>
@@ -39,7 +39,7 @@
 	</el-card>
 </template>
 
-<script setup lang="ts" name="index">
+<script setup lang="ts" name="menuSystem">
 import TopSearch from "./childComponents/TopSearch.vue";
 import {getMenuListApi,getDeleteMenuApi} from "./api/index";
 import AddMenuDialog from './childComponents/AddMenuDialog.vue'

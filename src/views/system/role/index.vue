@@ -21,7 +21,7 @@
   </el-card>
 </template>
 
-<script setup lang="ts" name="index">
+<script setup lang="ts" name="roleSystem">
 import TopSearch from "./childComponents/TopSearch.vue";
 import AddRoleDialog from "./childComponents/AddRoleDialog.vue";
 import {getRoleListApi,getDeleteRoleApi} from "./api/index";

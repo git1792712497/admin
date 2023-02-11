@@ -20,7 +20,7 @@
     </el-table>
     <br>
     <footer class="flex justify-end">
-      <el-pagination v-model:current-page="current" v-model:page-size="pageSize" :total="data?.total ?? 0" background  layout="total, sizes, prev, pager, next, jumper"/>
+      <el-pagination :default-page-size="1" v-model:current-page="current" v-model:page-size="pageSize" :total="data?.total ?? 0" background  layout="total, sizes, prev, pager, next, jumper"/>
     </footer>
   </el-card>
 </template>

@@ -22,7 +22,7 @@
   </el-card>
 </template>
 
-<script setup lang="ts" name="index">
+<script setup lang="ts" name="userSystem">
 import TopSearch from "./childComponents/TopSearch.vue";
 import AddUserDialog from "./childComponents/AddUserDialog.vue";
 import {getUserDeleteApi,getUserListApi} from "./api/index";

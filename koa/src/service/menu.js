@@ -44,12 +44,16 @@ class MenuService {
 		}
 		return menuList
 	}
+
 	
-	
-	async query(limit,offset = limit * offset) {
+	async query(limit,offset) {
+		console.log('offset',offset)
+		console.log('limit',limit)
+		const page = offset * limit
+		
 		const statement1 = `SELECT * FROM menu LIMIT ? OFFSET ?`
 		const statement2 = `SELECT * FROM menu`
-		const [[result1],[result2]] = await Promise.all([connection.query(statement1,[limit,offset]), connection.query(statement2)])
+		const [[result1],[result2]] = await Promise.all([connection.query(statement1,[limit,page]), connection.query(statement2)])
 		return {
 			data:result1,
 			total:result2.length
