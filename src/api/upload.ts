@@ -1,8 +1,10 @@
 import { koa } from "@/axios/config";
 
-export function getUpload(data){
+export function getUploadApi(file:File){
   return koa.uploadFile({
-    url:`/user/avatar`,
-    data
+    url:`/user/upload`,
+    data:{
+      file
+    }
   })
 }
