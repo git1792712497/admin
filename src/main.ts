@@ -7,6 +7,8 @@ import '@smallwei/avue/lib/index.css';
 import components from "@/components";
 import directives from '@/directives'
 import {formatTime} from '@/utils/time'
+import VueLuckyCanvas from '@lucky-canvas/vue'
+
 
 const app = createApp(App)
 
@@ -43,4 +45,5 @@ app.use(components) //组件
 app.use(directives) //自定义指令
 app.use(pinia)
 app.use(router)
+app.use(VueLuckyCanvas)
 app.mount('#app')
