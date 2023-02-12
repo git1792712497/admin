@@ -8,12 +8,12 @@
     </template>
     <el-image :src="url"></el-image>
 
-    
+
   </el-card>
 </template>
 
 <script lang="ts" name="qrcode" setup>
-// npm install --save qrcode
+//pnpm add qrcode @types/qrcode
 import QRCode from 'qrcode'
 
 let url = shallowRef()

@@ -8,7 +8,7 @@ import components from "@/components";
 import directives from '@/directives'
 import {formatTime} from '@/utils/time'
 import VueLuckyCanvas from '@lucky-canvas/vue'
-
+import VueFullPage from 'vue-fullpage.js'
 
 const app = createApp(App)
 
@@ -46,4 +46,5 @@ app.use(directives) //自定义指令
 app.use(pinia)
 app.use(router)
 app.use(VueLuckyCanvas)
+app.use(VueFullPage)
 app.mount('#app')

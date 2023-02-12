@@ -11,12 +11,12 @@ specifiers:
   '@types/echarts': ^4.9.16
   '@types/file-saver': ^2.0.5
   '@types/fs-extra': ^9.0.13
-  '@types/fullpage.js': ^2.9.3
   '@types/howler': ^2.2.7
   '@types/lodash-es': ^4.17.6
   '@types/md5': ^2.3.2
   '@types/node': ^18.7.6
   '@types/prettier': ^2.7.1
+  '@types/qrcode': ^1.5.0
   '@types/scrollreveal': ^0.0.8
   '@types/sortablejs': ^1.15.0
   '@types/watermark-dom': ^2.3.1
@@ -87,7 +87,6 @@ specifiers:
   vue-awesome-swiper: ^5.0.1
   vue-cropper: ^1.0.5
   vue-echarts: ^6.2.3
-  vue-fullpage.js: ^0.2.7
   vue-request: 2.0.0-rc.4
   vue-router: 4.1.6
   vue-tsc: ^1.0.11
@@ -102,6 +101,7 @@ dependencies:
   '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.0.10_vue@3.2.45
   '@lucky-canvas/vue': registry.npmmirror.com/@lucky-canvas/vue/0.1.11_vue@3.2.45
   '@smallwei/avue': registry.npmmirror.com/@smallwei/avue/3.2.6_elnqtivg2mdyzngttylmqkpzri
+  '@types/qrcode': registry.npmmirror.com/@types/qrcode/1.5.0
   '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.6.0_vue@3.2.45
   '@vueuse/math': registry.npmmirror.com/@vueuse/math/9.6.0_vue@3.2.45
   '@wangeditor/editor': registry.npmmirror.com/@wangeditor/editor/5.1.23
@@ -145,7 +145,6 @@ dependencies:
   vue-awesome-swiper: registry.npmmirror.com/vue-awesome-swiper/5.0.1_swiper@8.4.5+vue@3.2.45
   vue-cropper: registry.npmmirror.com/vue-cropper/1.0.5
   vue-echarts: registry.npmmirror.com/vue-echarts/6.2.3_echarts@5.4.0+vue@3.2.45
-  vue-fullpage.js: registry.npmmirror.com/vue-fullpage.js/0.2.9_vue@3.2.45
   vue-request: registry.npmmirror.com/vue-request/2.0.0-rc.4_vue@3.2.45
   vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.45
   vuedraggable: registry.npmmirror.com/vuedraggable/4.1.0_vue@3.2.45
@@ -157,7 +156,6 @@ devDependencies:
   '@types/echarts': registry.npmmirror.com/@types/echarts/4.9.16
   '@types/file-saver': registry.npmmirror.com/@types/file-saver/2.0.5
   '@types/fs-extra': registry.npmmirror.com/@types/fs-extra/9.0.13
-  '@types/fullpage.js': registry.npmmirror.com/@types/fullpage.js/2.9.3
   '@types/howler': registry.npmmirror.com/@types/howler/2.2.7
   '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.6
   '@types/md5': registry.npmmirror.com/@types/md5/2.3.2
@@ -1256,14 +1254,6 @@ packages:
       '@types/node': registry.npmmirror.com/@types/node/18.11.10
     dev: true
 
-  registry.npmmirror.com/@types/fullpage.js/2.9.3:
-    resolution: {integrity: sha512-mNtlZTRyIDkiu2S+A3JzpdMpzQYT0Wtk7qhBllxItOPyybX7OvTdNdo9vYTGwAqMsa/mUAM95mINW42ODUA5hw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/fullpage.js/-/fullpage.js-2.9.3.tgz}
-    name: '@types/fullpage.js'
-    version: 2.9.3
-    dependencies:
-      '@types/jquery': registry.npmmirror.com/@types/jquery/3.5.14
-    dev: true
-
   registry.npmmirror.com/@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/glob/-/glob-7.2.0.tgz}
     name: '@types/glob'
@@ -1336,14 +1326,6 @@ packages:
       '@types/node': registry.npmmirror.com/@types/node/18.11.10
     dev: true
 
-  registry.npmmirror.com/@types/jquery/3.5.14:
-    resolution: {integrity: sha512-X1gtMRMbziVQkErhTQmSe2jFwwENA/Zr+PprCkF63vFq+Yt5PZ4AlKqgmeNlwgn7dhsXEK888eIW2520EpC+xg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/jquery/-/jquery-3.5.14.tgz}
-    name: '@types/jquery'
-    version: 3.5.14
-    dependencies:
-      '@types/sizzle': registry.npmmirror.com/@types/sizzle/2.3.3
-    dev: true
-
   registry.npmmirror.com/@types/katex/0.14.0:
     resolution: {integrity: sha512-+2FW2CcT0K3P+JMR8YG846bmDwplKUTsWgT2ENwdQ1UdVfRk3GQrh6Mi4sTopy30gI8Uau5CEqHTDZ6YvWIUPA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/katex/-/katex-0.14.0.tgz}
     name: '@types/katex'
@@ -1398,13 +1380,20 @@ packages:
     resolution: {integrity: sha512-juG3RWMBOqcOuXC643OAdSA525V44cVgGV6dUDuiFtss+8Fk5x1hI93Rsld43VeJVIeqlP9I7Fn9/qaVqoEAuQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.11.10.tgz}
     name: '@types/node'
     version: 18.11.10
-    dev: true
 
   registry.npmmirror.com/@types/prettier/2.7.1:
     resolution: {integrity: sha512-ri0UmynRRvZiiUJdiz38MmIblKK+oH30MztdBVR95dv/Ubw6neWSb8u1XpRb72L4qsZOhz+L+z9JD40SJmfWow==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/prettier/-/prettier-2.7.1.tgz}
     name: '@types/prettier'
     version: 2.7.1
     dev: true
+
+  registry.npmmirror.com/@types/qrcode/1.5.0:
+    resolution: {integrity: sha512-x5ilHXRxUPIMfjtM+1vf/GPTRWZ81nqscursm5gMznJeK9M0YnZ1c3bEvRLQ0zSSgedLx1J6MGL231ObQGGhaA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/qrcode/-/qrcode-1.5.0.tgz}
+    name: '@types/qrcode'
+    version: 1.5.0
+    dependencies:
+      '@types/node': registry.npmmirror.com/@types/node/18.11.10
+    dev: false
 
   registry.npmmirror.com/@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/resolve/-/resolve-1.17.1.tgz}
@@ -1426,12 +1415,6 @@ packages:
     resolution: {integrity: sha512-HwD3vSmxjEozI4+uHY7pPxB47gppsv0racBHZreEQFC6K1kBKaIUkCTwUMH6gGFEDmLrgOckfGsTvR/n2yyV6g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/scrollreveal/-/scrollreveal-0.0.8.tgz}
     name: '@types/scrollreveal'
     version: 0.0.8
-    dev: true
-
-  registry.npmmirror.com/@types/sizzle/2.3.3:
-    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/sizzle/-/sizzle-2.3.3.tgz}
-    name: '@types/sizzle'
-    version: 2.3.3
     dev: true
 
   registry.npmmirror.com/@types/sortablejs/1.15.0:
@@ -4707,12 +4690,6 @@ packages:
     os: [darwin]
     requiresBuild: true
     optional: true
-
-  registry.npmmirror.com/fullpage.js/4.0.15:
-    resolution: {integrity: sha512-OKyGyIY4Qlz47AmnYoJ9Kn2XzOyAufTSgkQqa+K2RENeTbmUoctFDX/Ox1LOdacsUNsYKvnty1lrKKYJNEB2Pw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fullpage.js/-/fullpage.js-4.0.15.tgz}
-    name: fullpage.js
-    version: 4.0.15
-    dev: false
 
   registry.npmmirror.com/function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/function-bind/-/function-bind-1.1.1.tgz}
@@ -9229,18 +9206,6 @@ packages:
       resize-detector: registry.npmmirror.com/resize-detector/0.3.0
       vue: registry.npmmirror.com/vue/3.2.45
       vue-demi: registry.npmmirror.com/vue-demi/0.13.11_vue@3.2.45
-    dev: false
-
-  registry.npmmirror.com/vue-fullpage.js/0.2.9_vue@3.2.45:
-    resolution: {integrity: sha512-4U/epF9z5fM+jgqjMe2V5OCmweYZVuiHxLicHv1vML15Ep52P+eb16NBI/p7DTVsXlAVJs5afrGSyu8DEAQyKg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-fullpage.js/-/vue-fullpage.js-0.2.9.tgz}
-    id: registry.npmmirror.com/vue-fullpage.js/0.2.9
-    name: vue-fullpage.js
-    version: 0.2.9
-    peerDependencies:
-      vue: ^3.2.26
-    dependencies:
-      fullpage.js: registry.npmmirror.com/fullpage.js/4.0.15
-      vue: registry.npmmirror.com/vue/3.2.45
     dev: false
 
   registry.npmmirror.com/vue-request/2.0.0-rc.4_vue@3.2.45:
