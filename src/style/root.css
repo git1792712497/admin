@@ -1,0 +1,15 @@
+:root {
+  --blue: #1890FF;
+  --yellow: #fdd835;
+  --green: #4caf50;
+  --red: #f44336;
+  --gray: #5d5d5d;
+  --orange: #d46b08;
+  --purple: #531dab;
+  --cyan: #08979c;
+  --light-green: #42b983;
+  --border-radius: 2px;
+  --text-shadow-bg: #333333;
+  --text-shadow-color: #ffde17;
+  --transition: 0.3s all;
+}

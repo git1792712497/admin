@@ -8,7 +8,6 @@ import components from "@/components";
 import directives from '@/directives'
 import {formatTime} from '@/utils/time'
 import VueLuckyCanvas from '@lucky-canvas/vue'
-import VueFullPage from 'vue-fullpage.js'
 
 const app = createApp(App)
 
@@ -17,11 +16,11 @@ import 'normalize.css'
 // element dark(内置暗黑模式)
 import "element-plus/theme-chalk/dark/css-vars.css";
 // custom element dark(自定义暗黑模式)
-import "@/assets/style/dark.less";
+import "@/style/dark.less";
 //svgIcon
 import 'virtual:svg-icons-register'
 // tailwind.css
-import "@/assets/style/tailwind.css"
+import "@/style/tailwind.css"
 // ElMessage和notification组件样式要手动导入
 import 'element-plus/theme-chalk/el-message.css'
 import 'element-plus/theme-chalk/el-notification.css'
@@ -46,5 +45,4 @@ app.use(directives) //自定义指令
 app.use(pinia)
 app.use(router)
 app.use(VueLuckyCanvas)
-app.use(VueFullPage)
 app.mount('#app')

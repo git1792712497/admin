@@ -1,6 +1,6 @@
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
-import "../assets/style/nprogress.css"
+import "@/style/nprogress.css"
 
 NProgress.configure({
 	easing: "ease", // 动画方式

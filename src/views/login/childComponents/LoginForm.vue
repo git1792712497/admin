@@ -18,23 +18,12 @@
     </el-form-item>
   </el-form>
   <div class="login-btn">
-    <el-button round size="large" @click="resetForm">
-      重置
-      <template #icon>
-        <el-icon><CircleClose /></el-icon>
-      </template>
-    </el-button>
-    <el-button :loading="loading" round size="large" type="primary" @click="login">
-      登录
-      <template #icon>
-        <el-icon> <UserFilled/></el-icon>
-      </template>
-    </el-button>
+    <el-button style="width: 100%;" :loading="loading" round size="large" type="primary" @click="login">登录<template #icon><el-icon> <UserFilled/></el-icon></template></el-button>
   </div>
 </template>
 <script lang="ts" name="LoginForm" setup>
-import {reactive, shallowRef, onMounted, toRaw} from "vue";
-import {CircleClose, UserFilled} from "@element-plus/icons-vue";
+import {reactive, shallowRef} from "vue";
+import {UserFilled} from "@element-plus/icons-vue";
 import {rules} from '../options/rules'
 import {useRouter} from "vue-router";
 import {userStore} from '@/store/modules/user'
@@ -44,8 +33,6 @@ const router = useRouter()
 
 const user = userStore()
 const menu = menuStore()
-
-
 
 // 登录表单数据
 let loading = shallowRef(false)
@@ -78,9 +65,6 @@ const login = async () => {
     }
   })
 }
-const resetForm = () => {
-
-}
 </script>
 <style lang="less" scoped>
 .el-form-item {
@@ -93,7 +77,6 @@ const resetForm = () => {
   width: 100%;
   margin-top: 40px;
   white-space: nowrap;
-
   .el-button {
     width: 185px;
   }
