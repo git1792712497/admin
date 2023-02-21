@@ -90,6 +90,7 @@ specifiers:
   vue-request: 2.0.0-rc.4
   vue-router: 4.1.6
   vue-tsc: ^1.0.11
+  vue-virtual-scroller: 2.0.0-beta.8
   vuedraggable: ^4.1.0
   xgplayer: ^2.32.2
   xlsx: ^0.18.5
@@ -147,6 +148,7 @@ dependencies:
   vue-echarts: registry.npmmirror.com/vue-echarts/6.2.3_echarts@5.4.0+vue@3.2.45
   vue-request: registry.npmmirror.com/vue-request/2.0.0-rc.4_vue@3.2.45
   vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.45
+  vue-virtual-scroller: registry.npmmirror.com/vue-virtual-scroller/2.0.0-beta.8_vue@3.2.45
   vuedraggable: registry.npmmirror.com/vuedraggable/4.1.0_vue@3.2.45
   xgplayer: registry.npmmirror.com/xgplayer/2.32.2
   xlsx: registry.npmmirror.com/xlsx/0.18.5
@@ -6319,6 +6321,12 @@ packages:
     version: 1.0.0
     dev: false
 
+  registry.npmmirror.com/mitt/2.1.0:
+    resolution: {integrity: sha512-ILj2TpLiysu2wkBbWjAmww7TkZb65aiQO+DkVdUTBpBXq+MHYiETENkKFMtsJZX1Lf4pe4QOrTSjIfUwN5lRdg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mitt/-/mitt-2.1.0.tgz}
+    name: mitt
+    version: 2.1.0
+    dev: false
+
   registry.npmmirror.com/mitt/3.0.0:
     resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mitt/-/mitt-3.0.0.tgz}
     name: mitt
@@ -9208,6 +9216,17 @@ packages:
       vue-demi: registry.npmmirror.com/vue-demi/0.13.11_vue@3.2.45
     dev: false
 
+  registry.npmmirror.com/vue-observe-visibility/2.0.0-alpha.1_vue@3.2.45:
+    resolution: {integrity: sha512-flFbp/gs9pZniXR6fans8smv1kDScJ8RS7rEpMjhVabiKeq7Qz3D9+eGsypncjfIyyU84saU88XZ0zjbD6Gq/g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-observe-visibility/-/vue-observe-visibility-2.0.0-alpha.1.tgz}
+    id: registry.npmmirror.com/vue-observe-visibility/2.0.0-alpha.1
+    name: vue-observe-visibility
+    version: 2.0.0-alpha.1
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.45
+    dev: false
+
   registry.npmmirror.com/vue-request/2.0.0-rc.4_vue@3.2.45:
     resolution: {integrity: sha512-Nv/CpfKlfwW9SVHakEukeSQpuqSwskeJsHK4gfw8KB8NZogWfR8+EU+XupLe+Dapnm+RAP+wZYzhw89v3Zyx2g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-request/-/vue-request-2.0.0-rc.4.tgz}
     id: registry.npmmirror.com/vue-request/2.0.0-rc.4
@@ -9222,6 +9241,17 @@ packages:
     dependencies:
       vue: registry.npmmirror.com/vue/3.2.45
       vue-demi: registry.npmmirror.com/vue-demi/0.13.11_vue@3.2.45
+    dev: false
+
+  registry.npmmirror.com/vue-resize/2.0.0-alpha.1_vue@3.2.45:
+    resolution: {integrity: sha512-7+iqOueLU7uc9NrMfrzbG8hwMqchfVfSzpVlCMeJQe4pyibqyoifDNbKTZvwxZKDvGkB+PdFeKvnGZMoEb8esg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-resize/-/vue-resize-2.0.0-alpha.1.tgz}
+    id: registry.npmmirror.com/vue-resize/2.0.0-alpha.1
+    name: vue-resize
+    version: 2.0.0-alpha.1
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.45
     dev: false
 
   registry.npmmirror.com/vue-router/4.1.6_vue@3.2.45:
@@ -9270,6 +9300,20 @@ packages:
     dependencies:
       is-plain-object: registry.npmmirror.com/is-plain-object/3.0.1
       vue: registry.npmmirror.com/vue/3.2.45
+    dev: false
+
+  registry.npmmirror.com/vue-virtual-scroller/2.0.0-beta.8_vue@3.2.45:
+    resolution: {integrity: sha512-b8/f5NQ5nIEBRTNi6GcPItE4s7kxNHw2AIHLtDp+2QvqdTjVN0FgONwX9cr53jWRgnu+HRLPaWDOR2JPI5MTfQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-virtual-scroller/-/vue-virtual-scroller-2.0.0-beta.8.tgz}
+    id: registry.npmmirror.com/vue-virtual-scroller/2.0.0-beta.8
+    name: vue-virtual-scroller
+    version: 2.0.0-beta.8
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      mitt: registry.npmmirror.com/mitt/2.1.0
+      vue: registry.npmmirror.com/vue/3.2.45
+      vue-observe-visibility: registry.npmmirror.com/vue-observe-visibility/2.0.0-alpha.1_vue@3.2.45
+      vue-resize: registry.npmmirror.com/vue-resize/2.0.0-alpha.1_vue@3.2.45
     dev: false
 
   registry.npmmirror.com/vue/3.2.45:

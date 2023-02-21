@@ -4,7 +4,7 @@ export let nanoid = (t = 21) => {
 }
 
 //检测平台
-export const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+export const detectDeviceType = () => navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i) ? 'Mobile' : 'Desktop';
 
 //数组转对象
 export function arrayToObject(arr, key, val) {

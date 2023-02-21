@@ -5,6 +5,8 @@ declare const global:string
 /*格式化时间*/
 declare function $formatTime(time:string):string
 
+declare module "vue-virtual-scroller"
+
 //声明接口
 declare interface Window {
   _AMapSecurityConfig: object;

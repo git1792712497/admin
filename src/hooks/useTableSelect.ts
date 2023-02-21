@@ -1,5 +1,6 @@
 //分页选择切换成失效hooks
 
+import {ref,computed} from 'vue'
 
 
 export function useTableSelect<T>(){
