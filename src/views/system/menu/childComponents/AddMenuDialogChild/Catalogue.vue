@@ -13,7 +13,7 @@
       <IconSelect class="w-full" v-model="basicForm.icon"/>
     </el-form-item>
     <el-form-item label="目录排序" prop="sort">
-      <el-input-number v-model="basicForm.sort" :min="0" placeholder="目录序号" style="width: 100%;"/>
+      <el-input-number v-model="basicForm.sort" placeholder="目录序号" style="width: 100%;"/>
     </el-form-item>
   </el-form>
 </template>

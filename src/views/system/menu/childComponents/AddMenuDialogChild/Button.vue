@@ -10,7 +10,7 @@
       <el-tree-select @clear="basicForm.path = ''" @current-change="({path}) => basicForm.path = path" v-model="basicForm.parentId" :data="menuList" check-strictly clearable :props="{ label: 'title', children: 'children', value: 'id' }" style="width: 100%;"/>
     </el-form-item>
     <el-form-item label="按钮排序" prop="sort">
-      <el-input-number v-model="basicForm.sort" :min="0" placeholder="按钮序号" style="width: 100%;"/>
+      <el-input-number v-model="basicForm.sort" placeholder="按钮序号" style="width: 100%;"/>
     </el-form-item>
   </el-form>
 </template>

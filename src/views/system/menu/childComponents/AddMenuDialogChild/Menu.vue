@@ -34,7 +34,7 @@
       </el-col>
       <el-col :span="12">
         <el-form-item label="菜单排序" prop="sort">
-          <el-input-number v-model="basicForm.sort" :min="0" placeholder="菜单序号" style="width: 100%;"/>
+          <el-input-number v-model="basicForm.sort" placeholder="菜单序号" style="width: 100%;"/>
         </el-form-item>
       </el-col>
     </el-row>
