@@ -4,8 +4,8 @@ function eventSource(request, response) {
 	let pathname = parsedURL.pathname;
 	if (pathname === "/EventSource") {
 		response.writeHead(200, {
-			"Content-Type": "text/event-stream",
-			"Cache-Control": "no-store",
+			"Content-Type": "text/event-stream",// 规定把报头设置为 text/event-stream
+			"Cache-Control": "no-store",// 设置不对页面进行缓存
 			"Access-Control-Allow-Origin": "*"
 		});
 		
