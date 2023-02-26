@@ -63,6 +63,28 @@ onMounted(() => {
     origin:'left'
   });
 })
+
+
+/*
+| 属性/方法 |  类型   |               示例值 | 说明                                                                                                  |
+| --------- | :-----: | -------------------: | ----------------------------------------------------------------------------------------------------- |
+| container | DOM/css 选择器 | window.document.documentElement | `html`是默认容器。值类型支持两种，一种是 DOM 对象，一种是 css 选择器                 |
+| duration  | number  |                  600 | 持续时间.单位为 ms                                                                                    |
+| reset     | boolean |                 true | 元素离开视口后返回初始位置, 等待下一次触发, 值为 false 时动画只触发一次                               |
+| origin    | string  |             'bottom' | 指定动画方向。可选值 top,right,bottom,left |
+| delay     | number  |                  500 | 动画开始前的延迟时间, 触发的动画 reset 永远不会使用延迟。                                             |
+| distance  | string  |              '-50px' | 控制元素在显示时移动的距离。接受的单位 px,em,%                                                        |
+| easing    | string  |        'ease-in-out' | 控制动画速度。可选值:ease ease-in ease-in-out ease-out step-start step-end steps() cubic-bezier()     |
+| opacity   | number  |                  0.5 | 初始透明度                                                                      |
+| rotate    | object  | { x: 0, y: 0, z: 0 } | 指定开始的旋转角度 |
+| scale     | number  |                  0.8 | 指定在显示之前元素的大小。                                                                            |
+| mobile    | boolean |                 true | 是否在移动端执行                                                                                      |
+| beforeReveal |    function    |         (ele)=>console.log(ele) | 执行之前的回调函数                                                               |
+| afterReveal  |    function    |         (ele)=>console.log(ele) | 执行之后的回调函数                                                               |
+| viewOffset | object | { top: 0, right: 0, bottom: 0, left: 0 } | 增加viewport或容器边界，单位像素. `{ top: 48 }`, if you have a 48px tall fixed toolbar.                            |
+| viewFactor | number | 0.20 | 0.20表示元素在产生动画之前，它的20%在viewport或容器的边界之内 |
+*/
+
 </script>
 
 <style scoped lang="less">
