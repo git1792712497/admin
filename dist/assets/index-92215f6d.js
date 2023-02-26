@@ -1,0 +1,1 @@
+import{k as t}from"./menu-b7fe4809.js";function o(){return t.get({url:"/role/query"})}function l(e){return t.post({url:"/role/create",data:e})}function u(e){return t.patch({url:"/role/update",data:e})}function a(e){return t.delete({url:"/role/delete",data:{id:e}})}export{l as a,a as b,o as c,u as g};

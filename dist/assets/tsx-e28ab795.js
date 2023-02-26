@@ -1,0 +1,1 @@
+import{g as s,r as n,c as e}from"./@vue-f164b9f1.js";import"./@amap-9fd45ac7.js";const m=s({name:"tsx",setup(){const t=n(1);setInterval(()=>{t.value+=1},100);let r=[1,2,3,4,5,6];return()=>e("section",null,[r.map(a=>e("div",{class:"caret-amber-200 caret-amber-400"},[a]))])}});export{m as default};

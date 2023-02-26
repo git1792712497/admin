@@ -17,7 +17,7 @@
 
 <script setup lang="ts" name="socket.IO">
 import { io } from "socket.io-client";
-const socket = io("http://localhost:8082");
+const socket = io(import.meta.env.VITE_SOCKET);
 import { ElMessage } from "element-plus";
 let value = shallowRef()
 

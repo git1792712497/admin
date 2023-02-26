@@ -7,11 +7,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AButton: typeof import('ant-design-vue/es')['Button']
     ACard: typeof import('ant-design-vue/es')['Card']
     APagination: typeof import('ant-design-vue/es')['Pagination']
     ATable: typeof import('ant-design-vue/es')['Table']
-    AUpload: typeof import('ant-design-vue/es')['Upload']
     BigScreenScale: typeof import('./src/components/bigScreen/BigScreenScale.vue')['default']
     BigScreenZoom: typeof import('./src/components/bigScreen/BigScreenZoom.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
@@ -63,14 +61,9 @@ declare module '@vue/runtime-core' {
     ElTree: typeof import('element-plus/es')['ElTree']
     ElTreeSelect: typeof import('element-plus/es')['ElTreeSelect']
     ElUpload: typeof import('element-plus/es')['ElUpload']
-    Icon: typeof import('~icons/ic/on')['default']
-    IconifyIcon: typeof import('~icons/ic/onify-icon')['default']
     IconSelect: typeof import('./src/components/iconSelect/index.vue')['default']
     InfiniteLoad: typeof import('./src/components/infiniteLoad/index.vue')['default']
-    'MaterialSymbols:10kOutline': typeof import('~icons/material-symbols/10k-outline')['default']
-    MaterialSymbols10kOutline: typeof import('~icons/material-symbols/10k-outline')['default']
     Message: typeof import('./src/components/message/message.vue')['default']
-    Mian: typeof import('~icons/mi/an')['default']
     NoticeBar: typeof import('./src/components/noticeBar/index.vue')['default']
     Popup: typeof import('./src/components/popup/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

@@ -31,7 +31,6 @@ const verifyUpdateMenu = async (ctx, next) => {
 	console.log('path',paths)
 	console.log(menu.id)
 	
-	
 	if (menu.type === 1) {
 		if (paths?.path && menu.id !== paths.id) {
 			ctx.status = 400
