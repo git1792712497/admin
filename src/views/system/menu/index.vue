@@ -46,9 +46,9 @@ import AddMenuDialog from './childComponents/AddMenuDialog.vue'
 import {generateMenuTree} from '@/utils/handleMenu'
 import { useRequest } from 'vue-request';
 import {menuStore} from '@/store/modules/menu'
-
 let AddMenuDialogRef = shallowRef()
 const { data, run ,loading} = useRequest(getMenuListApi);
+
 const menuList = computed(() => data.value && generateMenuTree(data.value.data.sort((x,y) => x.sort - y.sort)))
 provide('menuList',menuList)
 
