@@ -29,14 +29,15 @@
  let object = reactive({
   num:1,
  })
+
  watch(() => object,(newValue,oldValue,onCleanup) => {
    onCleanup(() => {
      console.log('副作用')
    })
    console.log(newValue)
    console.log(oldValue)
- })
- 
+ },{immediate:true,})
+
  const handleClick = () => {
    object.num += 1
  }
