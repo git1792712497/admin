@@ -8,7 +8,10 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ACard: typeof import('ant-design-vue/es')['Card']
+    ACol: typeof import('ant-design-vue/es')['Col']
     APagination: typeof import('ant-design-vue/es')['Pagination']
+    ARow: typeof import('ant-design-vue/es')['Row']
+    ASpace: typeof import('ant-design-vue/es')['Space']
     ATable: typeof import('ant-design-vue/es')['Table']
     BigScreenScale: typeof import('./src/components/bigScreen/BigScreenScale.vue')['default']
     BigScreenZoom: typeof import('./src/components/bigScreen/BigScreenZoom.vue')['default']

@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+// @ts-ignore
 import path from "path";
 import installPlugins from './src/plugin'
 import {proxy} from "./src/config/proxy";
@@ -23,7 +24,8 @@ export default defineConfig(({ command, mode }) => {
 				scopeBehaviour: "global"
 			},
 			preprocessorOptions: {
-				less: {}
+				less: {},
+				scss: {}
 			}
 		},
 		resolve: {
