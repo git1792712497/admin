@@ -40,6 +40,7 @@
 		"fuse.js": "^6.6.2",
 		"gsap": "^3.11.3",
 		"hover.css": "^2.3.2",
+		"html2canvas": "^1.4.1",
 		"js-base64": "^3.7.2",
 		"jsbarcode": "^3.11.5",
 		"localforage": "^1.10.0",
