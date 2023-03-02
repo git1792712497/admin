@@ -37,6 +37,7 @@ specifiers:
   driver.js: ^0.9.8
   echarts: ^5.4.0
   echarts-liquidfill: ^3.1.0
+  echarts-wordcloud: ^2.1.0
   element-plus: 2.2.28
   esbuild: ^0.15.18
   file-saver: ^2.0.5
@@ -121,6 +122,7 @@ dependencies:
   driver.js: registry.npmmirror.com/driver.js/0.9.8
   echarts: registry.npmmirror.com/echarts/5.4.0
   echarts-liquidfill: registry.npmmirror.com/echarts-liquidfill/3.1.0_echarts@5.4.0
+  echarts-wordcloud: registry.npmmirror.com/echarts-wordcloud/2.1.0_echarts@5.4.0
   element-plus: registry.npmmirror.com/element-plus/2.2.28_vue@3.2.45
   esbuild: registry.npmmirror.com/esbuild/0.15.18
   file-saver: registry.npmmirror.com/file-saver/2.0.5
@@ -3508,6 +3510,17 @@ packages:
     id: registry.npmmirror.com/echarts-liquidfill/3.1.0
     name: echarts-liquidfill
     version: 3.1.0
+    peerDependencies:
+      echarts: ^5.0.1
+    dependencies:
+      echarts: registry.npmmirror.com/echarts/5.4.0
+    dev: false
+
+  registry.npmmirror.com/echarts-wordcloud/2.1.0_echarts@5.4.0:
+    resolution: {integrity: sha512-Kt1JmbcROgb+3IMI48KZECK2AP5lG6bSsOEs+AsuwaWJxQom31RTNd6NFYI01E/YaI1PFZeueaupjlmzSQasjQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/echarts-wordcloud/-/echarts-wordcloud-2.1.0.tgz}
+    id: registry.npmmirror.com/echarts-wordcloud/2.1.0
+    name: echarts-wordcloud
+    version: 2.1.0
     peerDependencies:
       echarts: ^5.0.1
     dependencies:
