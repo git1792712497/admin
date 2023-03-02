@@ -1,4 +1,6 @@
-export function getOption1():any{
+import type { EChartsOption } from "echarts";
+
+export function getOption(): EChartsOption{
 	return {
 		series: [
 			{
@@ -25,7 +27,7 @@ export function getOption1():any{
 					position: 'outside',
 					color: 'red',
 					fontSize: 16,
-					formatter: function (params) {
+					formatter: function (params:any) {
 						return `${params.data.name}${params.data.value}`
 					}
 				},
@@ -41,10 +43,10 @@ export function getOption1():any{
 						color:'red'
 					}
 				},
-				
+
 			}
 		],
-		
+
 		/*图例组件来源data里面的name*/
 		legend: {
 			//格式化

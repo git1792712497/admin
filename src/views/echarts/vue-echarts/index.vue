@@ -1,5 +1,10 @@
 <template>
-  <v-chart :option="option" class="chart"/>
+  <el-card shadow="hover" style="height: 100%;" :body-style="{height:'100%'}">
+    <template #header>
+    </template>
+
+    <v-chart autoresize :loading="false" :option="option" class="chart"/>
+  </el-card>
 </template>
 
 <script>
@@ -10,6 +15,7 @@ import {CanvasRenderer} from 'echarts/renderers'
 import {defineComponent, ref} from 'vue'
 import VChart from 'vue-echarts'
 
+console.log(VChart)
 use([CanvasRenderer, PieChart, TitleComponent, TooltipComponent, LegendComponent])
 
 export default defineComponent({

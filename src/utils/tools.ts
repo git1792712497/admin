@@ -29,3 +29,4 @@ export const isMap = (val) => isType(val) === '[object Map]'
 export const isSet = (val) => isType(val) === '[object Set]'
 export const isPromise = (val) => isType(val) === '[object Promise]'
 export const isSymbol = (val) => typeof val === 'symbol'
+export const isEmpty = (val: any): val is boolean => !val && val !== 0;

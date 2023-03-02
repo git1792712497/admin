@@ -1,6 +1,7 @@
 import { getHistogramData } from "@/api/fastMock";
+import type { EChartsOption } from "echarts";
 
-export async function getOption() {
+export async function getOption(): Promise<EChartsOption> {
 	const {data} = await getHistogramData()
 	return {
 		backgroundColor: 'rgba(55,0,0,0.1)',
@@ -25,7 +26,7 @@ export async function getOption() {
 			backgroundColor: 'rgba(255,0,0,0.1)',
 			containLabel: true //绘图区域包含坐标轴名称
 		},
-		
+
 		dataZoom: [
 			{
 				show: true,

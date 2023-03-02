@@ -1,4 +1,6 @@
-export function getOption2(){
+import type { EChartsOption } from "echarts";
+
+export function getOption(): EChartsOption{
 	// =====准备数据=====
 	let pieDatas = [
 		{
@@ -38,7 +40,7 @@ export function getOption2(){
 			color: "#00C6FF",
 		},
 	];
-	
+
 	// 将 pieDatas 格式的 数据映射为 系列图所需要的数据格式
 	let data = pieDatas.map((item) => {
 		return {
@@ -49,13 +51,13 @@ export function getOption2(){
 			},
 		};
 	});
-	
+
 	// 求出总数
 	let total = pieDatas.reduce((a, b) => {
 		return a + b.value * 1;
 	}, 0);
 	// =====准备数据=====
-	
+
 	// 2.指定图表的配置项和数据
 	return {
 		backgroundColor: "rbg(40,46,72)",
@@ -68,7 +70,7 @@ export function getOption2(){
 				fontSize: 19,
 				color: "white",
 			},
-			
+
 			// 副标题使用-富文本语法：{style_name|value}， 注意不能有空格
 			subtext: `{totalSty|${total}}`,
 			subtextStyle: {
@@ -88,7 +90,6 @@ export function getOption2(){
 			top: "18%",
 			itemGap: 20,
 			itemWidth: 16,
-			itemHeigth: 16,
 			icon: "rect",
 			// 自定义图例的名称
 			formatter: function (name) {

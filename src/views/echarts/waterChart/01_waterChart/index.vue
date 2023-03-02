@@ -46,6 +46,6 @@ onMounted(() => {
 <style lang="less" scoped>
 .waterChart {
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 </style>

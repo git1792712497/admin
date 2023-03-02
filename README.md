@@ -49,7 +49,6 @@ systemctl start nginx
 systemctl enable nginx
 #重启(改了nginx配置)
 systemctl restart nginx
-
 ### 3.4. pm2启动node程序
 * PM2是一个Node的进程管理器；
 * 我们可以使用它来管理Node的后台进程；
@@ -80,6 +79,7 @@ pm2 delete all
 #后台运行pm2，启动4个app.js，实现负载均衡
 pm2 start app.js -i 4 
 ```
+
 
 
 

@@ -20,6 +20,6 @@ onMounted(async ()=>{
 <style scoped>
 .lineChart{
   width: 100%;
-  height: 90%;
+  height: 100%;
 }
 </style>

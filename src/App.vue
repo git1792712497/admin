@@ -13,15 +13,5 @@ if (!import.meta.env.DEV){
 </script>
 
 <style lang="less">
-html, body, #app{
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-/*解决出现滚动条*/
-.el-card{
-  box-sizing: border-box;
-}
+@import "./style/global.css";
 </style>
