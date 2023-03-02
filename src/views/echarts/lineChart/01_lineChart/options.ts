@@ -1,9 +1,11 @@
-export async function getOption(echarts){
+import type { EChartsOption } from "echarts";
+
+export async function getOption(echarts): Promise<EChartsOption>{
 	return {
 		backgroundColor: '#ffffff',
+		a:'v',
 		title: {
 			text: '政策补贴额度',
-			x: 'left',
 			textStyle: { fontSize: '15', color: '#3a3d42' },
 		},
 		grid: { top: 70, right: 20, bottom: 30, left: 30 },
@@ -74,5 +76,5 @@ export async function getOption(echarts){
 			},
 		],
 	}
-	
+
 }
