@@ -22,7 +22,7 @@ const router = createRouter({
 	strict: true,
 	scrollBehavior: () => ({left: 0,top: 0})
 })
-
+console.log(router,'aa')
 
 router.beforeEach(async (to,from) => {
 	NProgress.start()

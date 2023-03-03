@@ -5,21 +5,35 @@
   <title></title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: fixed;
+    }
   </style>
 </head>
 <body>
+
 <div>
 
 </div>
 
 <script>
-  function Component() {
+  const div = document.querySelector('div')
 
+  function run() {
+    if (div.offsetLeft > 1000){
+      return
+    }
+    div.style.left = `${div.offsetLeft + 1}px`
+    requestAnimationFrame(run)
   }
+  requestAnimationFrame(run)
 
-  const component = new Component()
 
-  console.log(component instanceof Component)
+
+  // cancelAnimationFrame(timer)
 </script>
 </body>
 </html>

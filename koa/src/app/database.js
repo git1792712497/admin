@@ -2,11 +2,11 @@ const mysql = require('mysql2')
 
 // 1.创建连接池
 const connectionPool = mysql.createPool({
-	host: 'localhost',
+	host: 'mysql.sqlpub.com',
 	port: 3306,
-	database: 'koa',
-	user: 'root',
-	password: '123456',
+	database: 'mysql1792712497',
+	user: 'mysql1792712497',
+	password: '4282275013f61a6d',
 	connectionLimit: 10 //最大连接池
 })
 

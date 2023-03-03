@@ -11,7 +11,7 @@
       </el-table-column>
 	    <el-table-column prop="path" label="路由路径" width="200"/>
 	    <el-table-column prop="component" label="组件路径" width="200"/>
-	    <el-table-column prop="sort" label="排序"/>
+	    <el-table-column prop="sort" label="排序" width="70"/>
 	    <el-table-column prop="type" label="菜单类型" width="100">
         <template #default="{row}">
           <el-tag type="success" v-if="row.type === 1">目录</el-tag>

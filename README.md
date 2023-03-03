@@ -24,6 +24,8 @@ docker ps
 启动mysql
 docker start mysql
 开放远程服务器端口链接数据库
+开机自启
+docker update --restart=always mysql
 ## nginx
 #安装
 yum install nginx
@@ -79,21 +81,6 @@ pm2 delete all
 #后台运行pm2，启动4个app.js，实现负载均衡
 pm2 start app.js -i 4 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
