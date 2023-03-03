@@ -1,5 +1,6 @@
 const mysql = require('mysql2')
 
+
 // 1.创建连接池
 const connectionPool = mysql.createPool({
 	host: 'mysql.sqlpub.com',
